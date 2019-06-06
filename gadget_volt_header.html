@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Header Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="rsvp.latest.min.js"></script>
+    <script src="renderjs.latest.min.js"></script>
+    <script src="gadget_volt_header.js"></script>
+  </head>
+  <body>
+    <header class="volt-header mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <a data-i19n="href,header-https://www.volteuropa.org;title,header-https://www.volteuropa.org" href="https://www.volteuropa.org" class="volt-button__home" title="https://www.volteuropa.org">
+          <img class="volt-image__logo" src="img/volt.min.png" alt="VoltEuropa" />
+        </a>
+        <h1 class="volt-header__site-headline">Lille</h1>
+        <div class="mdl-layout-spacer"></div>
+
+        <div class="volt-navbar volt-navbar__about">
+          <ul class="volt-navbar-list">
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Volt">Volt</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Vision and Values">Vision et Valeurs</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Team">L'Équipe</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Challenges">Les défis</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Statutes">Statuts</a></li>
+            <li class="volt-navbar-item volt-navbar-item-last">
+              <a class="volt-navbar-link volt-navbar-menu">
+                <i class="material-icons">info</i>
+                <h4 class="volt-navbar-link-title" data-i18n="menu-Who we are?">Qui sommes nous ?</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="volt-navbar volt-navbar__elections">
+          <ul class="volt-navbar-list">
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Approach">Approche</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Programme">Programme</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Candidates">Candidats</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Donate">Faire un Don</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Campaign Shop">Boutique Électorale</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Press Kit">Dossier de Presse</a></li>
+            <li class="volt-navbar-item volt-navbar-item-last">
+              <a class="volt-navbar-link volt-navbar-menu">
+                <i class="material-icons">how_to_vote</i>
+                <h4 class="volt-navbar-link-title" data-i18n="menu-Elections">Élections</h2>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="volt-navbar volt-navbar__participate">
+          <ul class="volt-navbar-list">
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Events">Événements</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Become Member">Devenir Membre</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Become Volunteer">Soit Bénévolt</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Become Candidate">Etre Candidat</li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Contribute">Contribuer</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Start a Team">Lancer une Équipe</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Donate">Faire un don</a></li>
+            <li class="volt-navbar-item volt-navbar-item-last">
+              <a class="volt-navbar-link volt-navbar-menu">
+                <i class="material-icons">record_voice_over</i>
+                <h4 class="volt-navbar-link-title" data-i18n="menu-Participate">Participer</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="volt-navbar volt-navbar__stay_informed">
+          <ul class="volt-navbar-list">
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Publications">Publications</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Volt Bulletin">Bulletin</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Euronews">EU News</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Blog">Blog</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Faq">Faq</a></li>
+            <li class="volt-navbar-item volt-navbar-item-last">
+              <a class="volt-navbar-link volt-navbar-menu">
+                <i class="material-icons">notifications</i>
+                <h4 class="volt-navbar-link-title" data-i18n="menu-Stay Informed">Rester Informés</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button__donate">
+          <i class="material-icons">euro_symbol</i><h4 class="volt-navbar-link-title" data-i18n="header-Donate">Faire un don</h4>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button__join">
+          <i class="material-icons">person_add</i><h4 class="volt-navbar-link-title" data-i18n="header-Join Volt">Rejoindre Volt</h4>
+        </button>
+
+        <!--form name="volt-open-menu-->
+        <!--button id="volt-button__open-menu" class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">language</i>
+        </button -->
+        <!--/form-->
+        <!--ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu" for="volt-button__open-menu">
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-eu"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="eu" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Europe">Europe</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-al"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="al" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Albania">Albania</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-at"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="at" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Austria">Austria</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-be"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="be" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Belgium">Belgium</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-bu"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="bu" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Bulgaria">Bulgaria</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-hr"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="hr" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Croatia">Croatia</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-cy"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="cy" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Cyprus">Cyprus</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-cz"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="cz" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Czech">Czech Republic</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-dk"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="dk" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Denmark">Denmark</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-ee"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="ee" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Estonia">Estonia</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-fi"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="fi" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Finland">Finland</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-fr"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="fr" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-France">France</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-de"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="de" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Germany">Germany</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-gr"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="gr" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Greece">Greece</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-hu"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="hu" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Hungary">Hungary</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-ie"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="ie" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Ireland">Ireland</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-it"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="it" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Italy">Italy</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-lv"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="lv" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Latvia">Latvia</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-lt"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="lt" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Lithuania">Lithuania</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-lu"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="lu" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Luxembourg">Luxembourg</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-mt"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="mt" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Malta">Malta</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-nl"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="nl" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Netherlands">Netherlands</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-pl"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="pl" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Poland">Poland</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-pt"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="pt" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Portugal">Portugal</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-ro"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="ro" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Romania">Romania</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-sk"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="sk" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Slovakia">Slovakia</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-si"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="si" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Slovenia">Slovenia</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-es"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="es" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Spain">Spain</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-se"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="se" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-Sweden">Sweden</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-uk"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="uk" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-United Kingdom">United Kingdom</button>
+            </form>
+          </li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider volt-custom-menu-action">
+            <i class="volt__lang volt__lang-us"></i>
+            <form name="volt-select-country" class="volt-form__select-country">
+              <input type="hidden" name="volt-country" value="us" />
+              <button type="submit" class="mdl-button mdl-js-button" data-i18n="header-United States">United States</button>
+            </form>
+          </li>
+        </ul-->
+      </div>
+    </header>
+  </body>
+</html>

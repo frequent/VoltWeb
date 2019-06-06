@@ -1,0 +1,868 @@
+/* ============================ FONTS ======================================= */
+/* ---------------------- Material Design Icons ----------------------------- */
+/* thx https://github.com/google/material-design-icons/issues/786#issuecomment-487055009 */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(font/MaterialIcons-Regular.Custom.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(font/MaterialIcons-Regular.Custom.woff2) format('woff2'),
+       url(font/MaterialIcons-Regular.Custom.woff) format('woff'),
+       url(font/MaterialIcons-Regular.Custom.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+/* -------------------------- Ubuntu Web Font ------------------------------- */
+/* ubuntu-regular - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('font/ubuntu-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+       url('font/ubuntu-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('font/ubuntu-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('font/ubuntu-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('font/ubuntu-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('font/ubuntu-v12-latin-regular.svg#Ubuntu') format('svg'); /* Legacy iOS */
+}
+/* ubuntu-700 - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('font/ubuntu-v12-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+       url('font/ubuntu-v12-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('font/ubuntu-v12-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('font/ubuntu-v12-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('font/ubuntu-v12-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('font/ubuntu-v12-latin-700.svg#Ubuntu') format('svg'); /* Legacy iOS */
+}
+/* ----------------------- Fontawesome brands ------------------------------- */
+/*! * Font Awesome Free 5.1.1 by @fontawesome - https://fontawesome.com * 
+      License - https://fontawesome.com/license 
+      (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) */
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  src: url('font/fa-brands-400.eot');
+  src: url('font/fa-brands-400.eot?#iefix') format("embedded-opentype"),
+       url('font/fa-brands-400.woff2') format("woff2"),
+       url('font/fa-brands-400.woff') format("woff"),
+       url('font/fa-brands-400.ttf') format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.fa,.fab,.fal,.far,.fas{
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing:antialiased;
+  display:inline-block;
+  font-style:normal;
+  font-variant:normal;
+  text-rendering:auto;
+  line-height:1
+}
+.fab {
+  font-family:"Font Awesome 5 Brands"
+}
+.fa-facebook:before{
+  content:"\f09a"
+}
+.fa-facebook-f:before{
+  content:"\f39e"
+}
+.fa-twitter:before{
+    content:"\f099"
+}
+.fa-twitter-square:before{
+    content:"\f081"
+}
+.fa-instagram:before {
+  content: "\f16d";
+}
+.fa-linkedin:before {
+  content: "\f08c";
+}
+.fa-rss:before {
+  content: "\f09e";
+}
+/* ============================= THEMEING =================================== */
+/* https://coolors.co/612095-ffffff-fcfcfc-191923-8a2fd2 */
+/*                                         6c6c73 */
+.volt-body {
+  height: 100%;
+  background-color: #612095;
+}
+.volt-header {
+  background-color: #612095;
+}
+.volt-page-content {
+  background-color: #612095;
+}
+.volt-header .volt-navbar .volt-navbar-link {
+  color: #fff;
+}
+/* ============================= HEADER ===================================== */
+.volt-body > div > .mdl-layout__container {
+  z-index: 2;
+}
+.volt-button__home {
+  margin-right: 1em;
+}
+.volt-image__logo {
+  height: 32px;
+  width: auto;
+}
+.volt-header {
+  position: fixed;
+}
+.volt-header__site-headline {
+  font-family: Ubuntu;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+}
+@media only screen and (max-width: 32em) {
+  .volt-header__site-headline {
+    font-size: 1.25em;
+  }
+  .mdl-layout__header-row {
+    z-index: 10;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .mdl-layout__header-row {
+    padding: 0 1em 0 1em;
+  }
+}
+/* since we brake the mdl-logic with the manual fixed header above */
+.mdl-layout__container + div {
+  padding-top: 6em;
+}
+
+/* ============================= NAVBAR ===================================== */
+.volt-header .volt-navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 4em;
+  pointer-events: none;
+}
+.volt-header .volt-navbar .volt-navbar-item {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  pointer-events: all;
+}
+.volt-header .volt-navbar .volt-navbar-item-link,
+.volt-header .volt-navbar .volt-navbar-item-link:active,
+.volt-header .volt-navbar .volt-navbar-item-link:hover,
+.volt-header .volt-navbar .volt-navbar-item-link:visited {
+  text-decoration: none;
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item .volt-navbar-link {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* toggle button = last list element */
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:last-child,
+.volt-header__button {
+  position: fixed;
+  top: 4px;
+  visibility: visible;
+  font-size: 1.5em;
+  display: inline-block;
+  text-align: center;
+  width: 8%;
+  min-width: 3em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-header__button {
+  color: #FED766;
+  border-radius: 0;
+  padding: .25em 0;
+  height: 56px;
+}
+.volt-header__button .material-icons {
+  top: 47%;
+}
+.volt-header .volt-navbar__about .volt-navbar-list .volt-navbar-item:last-child {
+  right: 40%;
+}
+.volt-header .volt-navbar__elections .volt-navbar-list .volt-navbar-item:last-child {
+  right: 32%;
+}
+.volt-header .volt-navbar__participate .volt-navbar-list .volt-navbar-item:last-child {
+  right: 24%;
+}
+.volt-header .volt-navbar__stay_informed .volt-navbar-list .volt-navbar-item:last-child {
+  right: 16%;
+}
+.volt-header__button__donate {
+ right: 8%; 
+}
+.volt-header__button__join {
+  right: 0;
+}
+.volt-navbar-item-last {
+  cursor: pointer;
+}
+.volt-navbar-item-last:hover {
+  background-color: rgba(255,255,255,.7);
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:last-child .volt-navbar-link {
+  width: 100%;
+  padding: .5em 0;
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:last-child .volt-navbar-link-title,
+.volt-header__button .volt-navbar-link-title {
+  margin: .25em 0 0 0;
+  padding: 0;
+  font-size: .5em;
+  font-weight: bold;
+  line-height: .5em;
+  font-family: Ubuntu;
+}
+.volt-header__button .volt-navbar-link-title {
+  text-transform: none;
+  display: block;
+  margin-top: 3.5em;
+}
+.volt-header .volt-navbar {
+  width: 100%;
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item {
+  display: none;
+}
+
+/* closed */
+.volt-header .volt-navbar .volt-navbar-list {
+  position: relative;
+  visibility: hidden;
+  min-height: inherit;
+  top: -10em;
+  transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in;
+	/*transition-timing-function: cubic-bezier(0.17, 0.04, 0.03, 0.94);*/
+}
+/* opened */
+.volt-header .volt-navbar .volt-navbar-list-responsive {
+  visibility: visible;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 4.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  min-height: 222px; /* 145 for 3 items */
+  transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.volt-header .volt-navbar .volt-navbar-list-responsive .volt-navbar-item:not(:last-child) {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.volt-header .volt-navbar .volt-navbar-list-responsive .volt-navbar-item:not(:last-child) .volt-navbar-link {
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: inherit;
+  display: block;
+  text-align: left;
+  font-size: 1.25em;
+}
+
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:not(:last-child) {
+  background: #FCFCFC;
+  border-bottom: 1px solid #191923;
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:not(:last-child):hover {
+  background: #efe9f4;
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:not(:last-child) .volt-navbar-link {
+  color: #191923;
+  font-family: Ubuntu;
+  font-weight: normal;
+}
+
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:not(:last-child):after {
+  font-family: 'Material Icons';
+  /* https://github.com/google/material-design-icons/blob/master/iconfont/codepoints */
+  content: "chevron_right";
+  -webkit-font-feature-settings: 'liga' 1;
+  -moz-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga' 1;
+  position: absolute;
+  right: .25em;
+  font-size: 1.5em;
+  padding-top: .4em;
+  color: #191923;
+  z-index: 1;
+  top: 0;
+}
+.volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:not(:last-child):before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  border-top: 1px solid #191923;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  opacity: .1;
+}
+
+@media (max-width: 54em) {
+  .volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:last-child .volt-navbar-link-title,
+  .volt-header__button .volt-navbar-link-title {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    visibility: hidden;
+  }
+}
+@media (max-width: 32em) {
+  .volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:last-child {
+    top: 58px;
+    width: 25%;
+    background-color: #612095;
+    z-index: 10;
+  }
+  .volt-header__button {
+    width: 15%;
+  }
+  .volt-header__button__donate {
+   right: 15%; 
+  }
+  .volt-header__button__join {
+    right: 0;
+  }
+  .volt-header .volt-navbar .volt-navbar-list-responsive {
+    padding-top: 7.7em;
+  }
+  .volt-header .volt-navbar .volt-navbar-list .volt-navbar-item:last-child:hover {
+    background-color: rgb(144,103,172) /* rgba(97,38,136,.7) */;
+  }
+  .volt-header .volt-navbar__about .volt-navbar-list .volt-navbar-item:last-child {
+    right: 75%;
+  }
+  .volt-header .volt-navbar__elections .volt-navbar-list .volt-navbar-item:last-child {
+    right: 50%;
+  }
+  .volt-header .volt-navbar__participate .volt-navbar-list .volt-navbar-item:last-child {
+    right: 25%;
+  }
+  .volt-header .volt-navbar__stay_informed .volt-navbar-list .volt-navbar-item:last-child {
+    right: 0;
+  }
+}
+/* ============================= FOOTER ===================================== */
+.volt-footer {
+  position: relative;
+}
+.volt-footer__top,
+.volt-footer__bottom,
+.volt-footer .volt-footer__header, 
+.volt-footer .volt-navbar__header {
+  font-family: 'Ubuntu';
+}
+.volt-footer .volt-navbar__header {
+  font-weight: 700;
+}
+.volt-footer__top {
+  background-color: #FCFCFC;
+}
+.volt-footer__bottom {
+  background-color: #612095;
+}
+.volt-footer__header {
+  border-bottom: 1px solid #612095;
+  line-height: 1.75em;
+  color: #612095;
+}
+.volt-footer__content {
+  width: 100%;
+}
+.volt-footer__content-menu {
+  display: inline-block;
+  vertical-align: top;
+  width: 19.4%;
+}
+.volt-footer .volt-footer__navbar {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 3em;
+  min-height: 12em;
+}
+@media (max-width: 72em) {
+  .volt-footer__content-menu {
+    font-size: .8em;
+  }
+}
+@media (max-width: 54em) {
+  .volt-navbar__item {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 54em) {
+  .volt-footer__content-menu {
+    font-size: 1em;
+    width: 100%;
+    display: block;
+  }
+  .volt-footer .volt-footer__navbar {
+    display: block;
+    margin: 0;
+    min-height: auto;
+  }
+}
+.volt-footer__top {
+  width: 100%;
+  padding: .5em 15% 1em 15%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-footer .volt-navbar {
+  display: inline-block;
+  vertical-align: top;
+}
+.volt-footer__top .volt-navbar__header {
+  color: #191923;
+  margin-top: .5em;
+  font-size: 1.5em;
+}
+.volt-footer__top .volt-navbar__list {
+  list-style: none;
+  padding: 0;
+}
+.volt-footer__top .volt-navbar__link {
+  text-decoration: none;
+  color: #191923;
+  font-size: 1.25em;
+}
+@media (min-width: 32em) {
+  .volt-footer__top .volt-navbar__link:hover {
+    color: #6c6c73;
+    color: rgba(97, 32, 149, .3);
+  }
+}
+.volt-footer__top .volt-navbar__item {
+  padding: .1em 0;
+}
+.volt-footer__top-header:after {
+  content: "";
+  border: 1px solid rgba(235, 215, 202, .35);
+  width: 100%;
+  display: block;
+  margin-top: -2px;
+  font-size: 2em;
+}
+.volt-footer__bottom {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em 16% 0 16%;
+  text-align: center;
+}
+@media (max-width: 54em) {
+  .volt-footer__top {
+    padding: 1em 2em 1em;
+  }
+  .volt-footer__bottom {
+    padding: auto 1em;
+  }
+}
+.volt-footer__bottom_content {
+  margin: 0;
+  padding: .5em 0;
+  text-align: center;
+  color: #ffffff;
+}
+.volt-footer__floater {
+  float: right;
+  margin-top: -3em;
+  padding-right: 20vh;
+}
+.volt-footer__social-media-link {
+  font-size: 1.5em;
+  margin: 0 .25em;
+  text-decoration: none;
+  color: #612095;
+  position: relative;
+  top: -.1em;
+}
+.volt-footer__social-media-link:hover {
+  opacity: 1;
+  color: #6c6c73;
+  color: rgba(97, 32, 149, .3);
+}
+.volt-footer__social-media-link .material-icons {
+  line-height: 21px;
+  vertical-align: text-bottom;
+}
+@media (max-width: 32em) {
+  .volt-footer__top,
+  .volt-footer__bottom {
+    padding: 0;
+  }
+  .volt-footer__header {
+    text-align: center;
+    border: 0 none;
+    padding: .5em 0;
+    margin: 0;
+  }
+  .volt-footer__content-menu .volt-navbar {
+    width: 100%;
+  }
+  .volt-footer__content-menu .volt-navbar__item {
+    border-top: 1px solid #191923;
+  }
+  .volt-footer__content-menu .volt-navbar__item .volt-navbar__link {
+    padding: .5em 1.5em .5em 1em;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .volt-footer__content-menu .volt-navbar__item:after {
+    font-family: 'Material Icons';
+    /* https://github.com/google/material-design-icons/blob/master/iconfont/codepoints */
+    content: "chevron_right";
+    -webkit-font-feature-settings: 'liga' 1;
+    -moz-font-feature-settings: 'liga' 1;
+    font-feature-settings: 'liga' 1;
+    position: absolute;
+    right: .25em;
+    font-size: 1.5em;
+    padding-top: .4em;
+  }
+  .volt-footer__content-menu .volt-navbar__item:last-child {
+    border-bottom: 1px solid #191923;
+  }
+  .volt-footer__top .volt-navbar__header {
+    font-size: 1.25em;
+    padding: 0 .75em;
+    margin-top: 0;
+    text-align: center;
+  }
+  .volt-footer__floater {
+    float: none;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+  .volt-footer__top .volt-navbar__item:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    border-top: 1px solid #191923;
+    left: 0;
+    right: 0;
+    margin-top: -2px;
+    opacity: .1;
+  }
+  .volt-footer__content-menu .volt-navbar__item:last-child:before {
+    border-bottom: 1px solid #191923;
+    height: 39px;
+  }
+  .volt-footer__top .volt-navbar__item:hover,
+  .volt-footer__top .volt-navbar__item:focus {
+    background: #FCFCFC;
+    background: rgba(97, 32, 149, .1);
+  }
+}
+.volt-action__banner-calendar {
+  position: absolute;
+  width: 24em;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+/* overrides for the calendar-banner */
+@media (max-width: 54em) {
+  .volt-footer__floater {
+    margin-top: -3.2em;
+    padding-right: 34%;
+    padding-right: 50vh;
+  }
+  .volt-action__banner-calendar {
+    width: 20em;
+  }
+}
+@media (max-width: 32em) {
+  .volt-action__banner-calendar {
+    width: 14em;
+  }
+  .volt-footer__floater {
+    float: none;
+    margin-top: 0;
+    text-align: left;
+    padding-left: .5em;
+    padding-right: 0;
+  }
+  .volt-footer__header {
+    text-align: left;
+    padding-left: .5em;
+  }
+  .volt-footer__bottom_content {
+    text-align: left;
+    padding-left: .75em;
+  }
+}
+
+/* ============================= Slider ===================================== */
+.volt-slider {
+  position: relative;
+}
+.volt-slider__control-left {
+  position: absolute;
+  top: 69%;
+  z-index: 1;
+  left: 10%;
+}
+.volt-slider__control-right {
+  position: absolute;
+  top: 69%;
+  z-index: 1;
+  right: 10%;
+}
+.volt-slider__card {
+  background: orange;
+}
+.volt-slider__cart-title {
+  
+}
+/* background 
+.volt-slider__card-title:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, .7);
+  width: 100%;
+  height: 100%;
+  top: -1em;
+  left: 0;
+  -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  -webkit-transform: rotate(-21deg);
+  -moz-transform: rotate(-21deg);
+  -ms-transform: rotate(-21deg);
+  -o-transform: rotate(-21deg);
+  transform: rotate(-21deg);
+  z-index: -1;
+}
+.volt-slider__card-title:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, .7);
+  width: 100%;
+  height: 100%;
+  top: 1em;
+  left: 0;
+  -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  -webkit-transform: rotate(-21deg);
+  -moz-transform: rotate(-21deg);
+  -ms-transform: rotate(-21deg);
+  -o-transform: rotate(-21deg);
+  transform: rotate(-21deg);
+  z-index: -1;
+}
+*/
+.volt-slider__control-right .next,
+.volt-slider__control-left .prev {
+  background-color: #26404c;
+}
+.volt-slider__control-right .next:hover,
+.volt-slider__control-left .prev:hover {
+  color: #eff1f3;
+}
+.volt-slider__card-image {
+  max-width: 100%;
+}
+@media (max-width: 54em) {
+  .volt-slider__card-image {
+    -webkit-clip-path: polygon(20% 0, 80% 0%, 80% 100%, 20% 100%);
+    clip-path: polygon(20% 0, 80% 0%, 80% 100%, 20% 100%);
+  }
+}
+
+/* =========================== Newsreel ===================================== */
+.volt-newsreel {
+  position: relative;
+  z-index: 1;
+  padding: 2em 15% 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.12), 0 1px 5px -2px rgba(0,0,0,.12), 0 0 4px 0 rgba(0,0,0,.12);
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-property: max-height,box-shadow;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+@media (min-width: 54em) {
+  .volt-newsreel {
+    padding: 2em 15% 2em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .volt-newsreel__content {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .volt-newsreel__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 1em;
+  }
+  .volt-newsreel__item .volt-newsreel__image {
+    max-width: 16em;
+  }
+  .volt-newsreel__item:nth-child(1):nth-last-child(1) {
+    width: 100%;
+  }
+  .volt-newsreel__item:first-child:nth-last-child(2),
+  .volt-newsreel__item:first-child:nth-last-child(2) ~  .volt-newsreel__item {
+    width: 49.9%;
+  }
+  .volt-newsreel__item:first-child:nth-last-child(3),
+  .volt-newsreel__item:first-child:nth-last-child(3) ~  .volt-newsreel__item {
+    width: 33%;
+  }
+  .volt-newsreel__item:first-child:nth-last-child(4),
+  .volt-newsreel__item:first-child:nth-last-child(4) ~  .volt-newsreel__item {
+    width: 24.5%;
+  }
+  .volt-newsreel__item:first-child:nth-last-child(5),
+  .volt-newsreel__item:first-child:nth-last-child(5) ~  .volt-newsreel__item {
+    width: 19.8%;
+  }
+}
+@media (max-width: 54em) {
+  .volt-newsreel__content {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+  }
+  .volt-newsreel__content::-webkit-scrollbar {
+    width: .6em;
+    height: .6em;
+  }
+  /*
+  .volt-newsreel__content::-webkit-scrollbar-thumb {
+    background: rgba(97, 32, 149, .1);
+  }
+  .volt-newsreel__content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  */
+  .volt-newsreel__content > .volt-newsreel__item {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 8em;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .volt-newsreel__content .volt-newsreel__image {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 0 5%;
+    height: 100%;
+  }
+  .volt-newsreel > .volt-newsreel__pointer {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: rgba(97, 32, 149, .1);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 .25rem 0.5rem;
+    position: relative;
+  }
+  .volt-newsreel > .volt-newsreel__pointer:active {
+    top: 1px;
+    background: #612095;
+  }
+  .volt-newsreel > .volt-newsreel__pointer:focus {
+    background: #612095;
+  }
+}
+@media (max-width: 32em) {
+  .volt-newsreel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .volt-newsreel__content > .volt-newsreel__item {
+    width: 100%;
+  }
+}
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+  .volt-newsreel > .volt-newsreel__pointer {
+    display: none;
+  }
+}
+
+
