@@ -113,6 +113,37 @@
 .fa-rss:before {
   content: "\f09e";
 }
+/* =============================  FLAGS ===================================== */
+.volt-lang {
+  background: url(img/flags.min.png) no-repeat;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: .5em;
+  left: .5em;
+  display: block;
+}
+.volt-lang__UK {
+  background-position: -32px -64px;
+}
+.volt-lang__PL {
+  background-position: -160px -128px;
+}
+.volt-lang__DE {
+  background-position: -64px -32px;
+}
+.volt-lang__FR {
+  background-position: 0 -64px;
+}
+.volt-lang__IT {
+  background-position: 0 -96px;
+}
+.volt-lang_ES {
+  background-position: -160px -32px
+}
+.volt-lang_DK {
+  background-position: -96px -32px;
+}
 /* ============================= THEMEING =================================== */
 /* https://coolors.co/612095-ffffff-fcfcfc-191923-8a2fd2 */
 /*                                         6c6c73 */
@@ -626,7 +657,7 @@
   .volt-footer__floater {
     margin-top: -3.2em;
     padding-right: 34%;
-    padding-right: 50vh;
+    padding-right: 30vh;
   }
   .volt-action__banner-calendar {
     width: 20em;
@@ -727,6 +758,162 @@
     -webkit-clip-path: polygon(20% 0, 80% 0%, 80% 100%, 20% 100%);
     clip-path: polygon(20% 0, 80% 0%, 80% 100%, 20% 100%);
   }
+}
+/* ============================ Dialog ====================================== */
+.volt-dialog,
+.volt-dialog .volt-lang,
+.volt-dialog .mdl-menu__item,
+.mdl-selectfield__placeholder {
+  font-family: 'Ubuntu';;
+}
+.volt-dialog {
+  width: 60%;
+}
+@media (max-width: 54em) {
+  .volt-dialog {
+    width: 80%;
+  }
+}
+.volt-dialog__wrapper {
+  width: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-dialog__title {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 0;
+}
+.volt-dialog__select {
+  width: 60%;
+}
+@media (max-width: 54em) {
+  .volt-dialog__select {
+    width: 55%;
+  }
+}
+@media (max-width: 54em) {
+  .volt-dialog__select {
+    width: 100%; 
+  }
+}
+.volt-dialog .mdl-selectfield__select {
+  font-size: 1.125em;
+  font-family: Ubuntu;
+}
+.volt-dialog .is-focused .volt-country__label {
+  color: #612095;
+}
+.volt-dialog .is-focused .volt-country__label:after {
+  background: #612095;
+}
+.volt-dialog .mdl-menu__container.is-visible,
+.volt-dialog .mdl-menu__container.is-visible .mdl-menu__outline,
+.volt-dialog .mdl-menu__container.is-visible .mdl-menu,
+.volt-dialog .mdl-menu__container.is-visible .mdl-menu__item:hover {
+  min-width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-dialog .mdl-menu__container.is-visible .mdl-menu__item {
+  padding-left: 3.5em;
+}
+.getmdl-select .mdl-icon-toggle__label {
+  float: right;
+  margin-top: -30px;
+  color: rgba(0,0,0,0.4);
+  transform: rotate(0);
+  transition: transform 0.3s;
+}
+.volt-dialog__floater {
+  padding-right: 0;
+  padding-left: 1.5vh;
+}
+@media (max-width: 54em) {
+  .volt-dialog__floater {
+    padding-bottom: 1em;
+  }  
+}
+.volt-dialog__social-media-link {
+  font-size: 1.5em;
+  margin: 0 .25em;
+  text-decoration: none;
+  color: #612095;
+  position: relative;
+  top: -.1em;
+}
+.volt-dialog__button {
+  background-color: #612095;
+  color: #fff;
+  padding: .5em;
+  border: 0 none;
+  text-decoration: none;
+  font-size: 1.25em;
+  border-radius: .25em;
+}
+button.volt-dialog__button {
+  font-size: 1.1em;
+  font-family: Ubuntu;
+  text-decoration: none;
+  text-transform: none;
+  vertical-align: middle;
+  padding: 0 .5em;
+}
+.volt-dialog .mdl-card__actions.mdl-card--border {
+  border: 0 none;
+}
+.volt-dialog__actions {
+  width: 100%;
+  padding-top: 0.5em;
+  padding-left: 1.75em;
+  padding-right: 1.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-dialog__action-form {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: .25em;
+}
+.volt-dialog__action-form .mdl-button .material-icons {
+  margin-top: -.2em;
+}
+.volt-dialog__button.volt-link__disabled {
+  background-color: rgba(0,0,0, 0.26);
+  pointer-events: none;
+}
+.volt-dialog__social-media-link.volt-link__disabled {
+  pointer-events: none;
+  color: rgba(0,0,0, 0.26);
+}
+.volt-dialog__social-media-link:hover,
+.volt-dialog__button:hover {
+  opacity: 1;
+  color: #6c6c73;
+  color: rgba(97, 32, 149, .3);
+}
+.volt-dialog__social-media-link .material-icons {
+  line-height: 21px;
+  vertical-align: text-bottom;
+}
+
+
+/* ============================ Map ====================================== */
+.volt-map__wrapper {
+  width: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-map {
+  height: 480px;
 }
 
 /* =========================== Newsreel ===================================== */

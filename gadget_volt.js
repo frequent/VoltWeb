@@ -7,19 +7,31 @@
   // parameters
   /////////////////////////////
   var OPTION_DICT = {};
+  var DICT = {};
   var ATTR = "data-attr";
   var I18N = "data-i18n";
   var LB = "[";
   var RB = "]";
-  var VOLT = "volt_jio";
+  var TRANSLATION = "translation";
+  var SETTINGS = "settings";
   var DOCUMENT = window.document;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
-  var FALLBACK_LANGUAGE = "en";
-  //var NAME = "name";
+  var FALLBACK_LANGUAGE = "fr";
+
 
   /////////////////////////////
   // methods
   /////////////////////////////
+  function getFallbackDict (my_locale) {
+    return {
+      "rows": [
+        {"id": FALLBACK_PATH + my_locale + "/names.json", "value": DICT},
+        {"id": FALLBACK_PATH + my_locale + "/ui.json", "value": DICT}
+      ],
+      "total_rows": 0
+    };
+  }
+
   function getLang(nav) {
     return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
   }
@@ -27,10 +39,10 @@
   // this could be passed in default option-dict
   function getConfig(my_language) {
     return {
-      "type": "volt_storage",
+      "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language
-      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language,
+      "__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
   }
 
@@ -55,7 +67,8 @@
     // state
     /////////////////////////////
     .setState({
-      "locale": getLang(window.navigator).substring(0, 2) || "en"
+      "locale": getLang(window.navigator).substring(0, 2) || FALLBACK_LANGUAGE,
+      "ios": null
     })
 
     /////////////////////////////
@@ -70,9 +83,10 @@
         "ui_dict": {}
       };
 
-      return gadget.declareGadget("gadget_jio.html", {
-        "scope": "volt_jio"
-      });
+      return RSVP.all([
+        gadget.declareGadget("gadget_jio.html", {"scope": "translation"}),
+        gadget.declareGadget("gadget_jio.html", {"scope": "settings"})
+      ]);
     })
 
     /////////////////////////////
@@ -109,6 +123,7 @@
       }
     })
 
+
     // ---------------------- JIO bridge ---------------------------------------
     // this is the JIO storage connectiong to the backend for content, in this
     // case we fetch everything from Github, but it might be plucked to any
@@ -121,22 +136,28 @@
       });
     })
 
-    // (re-)initialise storage
-    .declareMethod("volt_create", function (my_option_dict) {
-      return this.route(VOLT, "createJIO", my_option_dict);
+    .declareMethod("github_create", function (my_option_dict) {
+      return this.route(TRANSLATION, "createJIO", my_option_dict);
+    })
+    .declareMethod("github_get", function (my_id) {
+      console.log("CALLED GET", my_id)
+      return this.route(TRANSLATION, "get", my_id);
+    })
+    .declareMethod("github_allDocs", function () {
+      return this.route(TRANSLATION, "allDocs");
     })
 
-    // get content of a specific page/template
-    .declareMethod("volt_get", function (my_id) {
-      return this.route(VOLT, "get", my_id);
+    .declareMethod("setting_create", function (my_option_dict) {
+      return this.route(SETTINGS, "createJIO", my_option_dict);
     })
-
-    // get a dictionary of all available pages on the storage in a specific 
-    // folder and language
-    // NOTE: in theory this would allow customising the whole site, eg making
-    // the footer/header menus dependent on the pages listed
-    .declareMethod("volt_allDocs", function () {
-      return this.route(VOLT, "allDocs");
+    .declareMethod("setting_getAttachment", function (my_id, my_tag, my_dict) {
+      return this.route(SETTINGS, "getAttachment", my_id, my_tag, my_dict);
+    })
+    .declareMethod("setting_putAttachment", function (my_id, my_tag, my_dict) {
+      return this.route(SETTINGS, "putAttachment", my_id, my_tag, my_dict);
+    })
+    .declareMethod("setting_removeAttachment", function (my_id, my_tag) {
+      return this.route(SETTINGS, "removeAttachment", my_id, my_tag);
     })
 
     // -------------------.--- Render ------------------------------------------
@@ -144,12 +165,15 @@
       var gadget = this;
       var dict = gadget.property_dict;
       var locale = gadget.state.locale;
-
+      mergeDict(dict, my_option_dict);
       return new RSVP.Queue()
         .push(function () {
-          return gadget.volt_create(getConfig(locale));
+          return new RSVP.all([
+            gadget.setting_create({"type": "local", "sessiononly": false}),
+            gadget.github_create(getConfig(locale))
+          ]);
         })
-        .push(function (gadget_list) {
+        .push(function () {
           return gadget.buildContentLookupDict();
         })
         .push(function () {
@@ -180,14 +204,6 @@
       if (delta.hasOwnProperty("locale")) {
         state.locale = delta.locale;
       }
-      if (delta.hasOwnProperty("online")) {
-        state.online = delta.online;
-        if (state.online) {
-          gadget.element.classList.remove("volt-offline");
-        } else {
-          gadget.element.classList.add("volt-offline");
-        }
-      }
       return;
     })
 
@@ -195,28 +211,30 @@
       var gadget = this;
       var dict = gadget.property_dict;
 
-      return gadget.volt_allDocs()
-        .push(function (my_file_list) {
-          if (my_file_list.data.total_rows === 0) {
-            return gadget.updateStorage(FALLBACK_LANGUAGE);
-          }
-          my_file_list.data.rows.map(function (row) {
-            dict.url_dict[row.id.split("/").pop().replace(".json", "")] = row.id;
-          });
-        })
+      return gadget.github_allDocs()
 
         // we only need a language to build the dict, so in case of errors like
         // on OS X/Safari 9, which cannot handle Github APIv3 redirect, we just
-        // build the thing by hand... and fail somewhere else
+        // build the thing by hand.
         .push(undefined, function(whatever) {
-          // var i;
-          //for (i = 1; i < 32; i += 1) {
-          //  dict.url_dict[i] = FALLBACK + gadget.state.locale + "/" + i + ".json";
-          //}
-          dict.url_dict["ui"] = FALLBACK_PATH + gadget.state.locale + "/ui.json";
-
-          // jump back into the promise success chain
-          return;
+          return getFallbackDict(gadget.state.locale);
+        })
+        .push(function (my_response) {
+          if (my_response.data.total_rows === 0) {
+            return gadget.updateStorage(FALLBACK_LANGUAGE)
+              .push(function () {
+                return gadget.github_allDocs();
+              });
+          }
+          return my_response;
+        })
+        .push(function (my_data) {
+          console.log(my_data)
+          my_data.data.rows.map(function (row) {
+            console.log("Now we're ok")
+            dict.url_dict[row.id.split("/").pop().replace(".json", "")] = row.id;
+            return;
+          });
         });
     })
 
@@ -224,13 +242,18 @@
       var gadget = this;
       var dict = gadget.property_dict;
       var url_dict = dict.url_dict;
+      console.log("getting translations")
       return new RSVP.Queue()
         .push(function () {
-          return gadget.volt_get(url_dict.ui);
+          return RSVP.all([
+            gadget.github_get(url_dict.ui),
+            gadget.github_get(url_dict.names)
+          ]);
         })
-        .push(function (data) {
-          dict.ui_dict = data;
-          return gadget.translateDom(data);
+        .push(function (data_list) {
+          console.log(data_list)
+          dict.ui_dict = mergeDict(data_list[0], data_list[1]);
+          return gadget.translateDom(dict.ui_dict);
         });
     })
 
@@ -244,13 +267,7 @@
           return gadget.stateChange({"locale": my_language});
         })
         .push(function () {
-          return gadget.volt_create(getConfig(my_language));
-        })
-        .push(function () {
-          return gadget.buildContentLookupDict();
-        })
-        .push(function () {
-          return gadget.fetchTranslationAndUpdateDom();
+          return gadget.github_create(getConfig(my_language));
         });
     })
     
@@ -289,8 +306,6 @@
           }
           body.appendChild(fragment);
         });
-    })
-
-    ;
+    });
 
 }(window, rJS, RSVP));

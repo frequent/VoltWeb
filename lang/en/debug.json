@@ -6,5 +6,9 @@
   {
     "path": "lang/en/ui.json",
     "download_url": "https://softinst103163.host.vifib.net/site/lang/en/ui.json"
+  },
+  {
+    "path": "lang/en/names.json",
+    "download_url": "https://softinst103163.host.vifib.net/site/lang/en/names.json"
   }
 ]
