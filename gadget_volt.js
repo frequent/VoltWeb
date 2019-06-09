@@ -41,8 +41,8 @@
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language,
-      "__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language
+      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
   }
 
