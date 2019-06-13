@@ -6,7 +6,9 @@
   /////////////////////////////
   // parameters
   /////////////////////////////
-  var OPTION_DICT = {};
+  var OPTION_DICT = {
+    "country_id": "FR"
+  };
   var DICT = {};
   var ATTR = "data-attr";
   var I18N = "data-i18n";
@@ -22,27 +24,27 @@
   /////////////////////////////
   // methods
   /////////////////////////////
+  function getLang(nav) {
+    return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
+  }
+
   function getFallbackDict (my_locale) {
     return {
       "rows": [
         {"id": FALLBACK_PATH + my_locale + "/names.json", "value": DICT},
         {"id": FALLBACK_PATH + my_locale + "/ui.json", "value": DICT}
       ],
-      "total_rows": 0
+      "total_rows": 2
     };
   }
 
-  function getLang(nav) {
-    return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
-  }
-
   // this could be passed in default option-dict
-  function getConfig(my_language) {
+  function getConfigDict(my_language) {
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language
-      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language,
+      "__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
   }
 
@@ -140,7 +142,6 @@
       return this.route(TRANSLATION, "createJIO", my_option_dict);
     })
     .declareMethod("github_get", function (my_id) {
-      console.log("CALLED GET", my_id)
       return this.route(TRANSLATION, "get", my_id);
     })
     .declareMethod("github_allDocs", function () {
@@ -170,7 +171,7 @@
         .push(function () {
           return new RSVP.all([
             gadget.setting_create({"type": "local", "sessiononly": false}),
-            gadget.github_create(getConfig(locale))
+            gadget.github_create(getConfigDict(locale))
           ]);
         })
         .push(function () {
@@ -229,9 +230,7 @@
           return my_response;
         })
         .push(function (my_data) {
-          console.log(my_data)
           my_data.data.rows.map(function (row) {
-            console.log("Now we're ok")
             dict.url_dict[row.id.split("/").pop().replace(".json", "")] = row.id;
             return;
           });
@@ -242,7 +241,6 @@
       var gadget = this;
       var dict = gadget.property_dict;
       var url_dict = dict.url_dict;
-      console.log("getting translations")
       return new RSVP.Queue()
         .push(function () {
           return RSVP.all([
@@ -251,7 +249,6 @@
           ]);
         })
         .push(function (data_list) {
-          console.log(data_list)
           dict.ui_dict = mergeDict(data_list[0], data_list[1]);
           return gadget.translateDom(dict.ui_dict);
         });
@@ -267,7 +264,7 @@
           return gadget.stateChange({"locale": my_language});
         })
         .push(function () {
-          return gadget.github_create(getConfig(my_language));
+          return gadget.github_create(getConfigDict(my_language));
         });
     })
     

@@ -8,6 +8,20 @@
     <script src="renderjs.latest.min.js"></script>
     <script src="gadget_volt_header.js"></script>
     <script src="lib/polyfill.dialog.js"></script>
+
+    <script id="country_select_template" type="text/x-supplant">
+      <div class="volt-dialog__select mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+        <select class="mdl-selectfield__select volt-select__country" id="country" name="country">
+          <option value=""></option>
+          {content}
+        </select>
+        <label class="mdl-selectfield__label volt-country__label" for="country" data-i18n="dialog-Choose Country">Choisir un Pays</label>
+      </div>
+    </script>
+
+    <script id="country_option_template" type="text/x-supplant">
+      <option value="{id}"><i class="volt-lang volt-lang__{id}"></i><span data-i18n="{country_i18n}" {selected}>{country_name}</span></option>
+    </script>
   </head>
   <body>
     <header class="volt-header mdl-layout__header">
@@ -31,7 +45,7 @@
             <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Volt">Volt</a></li>
             <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Vision and Values">Vision et Valeurs</a></li>
             <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Team">L'Équipe</a></li>
-            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Challenges">Les défis</a></li>
+            <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Challenges">Nos défis</a></li>
             <li class="volt-navbar-item"><a class="volt-navbar-link" href="" data-i18n="menu-Statutes">Statuts</a></li>
             <li class="volt-navbar-item volt-navbar-item-last">
               <a class="volt-navbar-link volt-navbar-menu">
@@ -53,7 +67,7 @@
             <li class="volt-navbar-item volt-navbar-item-last">
               <a class="volt-navbar-link volt-navbar-menu">
                 <i class="material-icons">how_to_vote</i>
-                <h4 class="volt-navbar-link-title" data-i18n="menu-Elections">Élections</h2>
+                <h4 class="volt-navbar-link-title" data-i18n="menu-Elections">Élections</h4>
               </a>
             </li>
           </ul>
@@ -99,73 +113,43 @@
         <button class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button__join">
           <i class="material-icons">person_add</i><h4 class="volt-navbar-link-title" data-i18n="header-Join Volt">Rejoindre Volt</h4>
         </button>
-
-        <dialog class="mdl-dialog volt-dialog volt-dialog-scope">
-          <h2 class="volt-dialog__title mdl-dialog__title" data-i18n="dialog-Discover Volt">Découvrir Volt</h2>
-          <div class="volt-dialog__wrapper">
-            <div class="volt-dialog__select mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
-              <select class="mdl-selectfield__select" id="country" name="country">
-                <option value=""></option>
-                <option value="AL"><i class="volt-lang volt-lang__AL"></i><span data-i18n="Albania">Albanie</span></option>
-                <option value="AT"><i class="volt-lang volt-lang__AT"></i><span data-i18n="Austria">Autriche</span></option>
-                <option value="BE"><i class="volt-lang volt-lang__BE"></i><span data-i18n="Belgium">Belgique</span></option>
-                <option value="BU"><i class="volt-lang volt-lang__BU"></i><span data-i18n="Bulgaria">Bulgarie</span></option>
-                <option value="CY"><i class="volt-lang volt-lang__CY"></i><span data-i18n="Cyprus">Chypre</span></option>
-                <option value="CZ"><i class="volt-lang volt-lang__CZ"></i><span data-i18n="Czechia">Tchéquie</span></option>
-                <option value="DK"><i class="volt-lang volt-lang__DK"></i><span data-i18n="Denmark">Danemark</span></option>
-                <option value="DE"><i class="volt-lang volt-lang__DE"></i><span data-i18n="Germany">Allemagne</span></option>
-                <option value="EE"><i class="volt-lang volt-lang__EE"></i><span data-i18n="Estonia">Estonie</span></option>
-                <option value="ES"><i class="volt-lang volt-lang__ES"></i><span data-i18n="Spain">Espagne</span></option>
-                <option value="FI"><i class="volt-lang volt-lang__FI"></i><span data-i18n="Finland">Finlande</span></option>
-                <option value="FR" selected><i class="volt-lang volt-lang__FR"></i><span data-i18n="France">France</span></option>
-                <option value="GR"><i class="volt-lang volt-lang__GR"></i><span data-i18n="Greece">Grèce</span></option>
-                <option value="HU"><i class="volt-lang volt-lang__HU"></i><span data-i18n="Hungary">Hongrie</span></option>
-                <option value="HR"><i class="volt-lang volt-lang__HR"></i><span data-i18n="Croatia">Croatie</span></option>
-                <option value="IE"><i class="volt-lang volt-lang__IE"></i><span data-i18n="Ireland">Irlande</span></option>
-                <option value="IT"><i class="volt-lang volt-lang__IT"></i><span data-i18n="Italy">Italie<option value</option>
-                <option value="LV"><i class="volt-lang volt-lang__LV"></i><span data-i18n="Latvia">Lettonie</span></option>
-                <option value="LT"><i class="volt-lang volt-lang__LT"></i><span data-i18n="Lithuania">Lituanie</span></option>
-                <option value="LU"><i class="volt-lang volt-lang__LU"></i><span data-i18n="Luxemburg">Luxembourg</span></option>
-                <option value="MT"><i class="volt-lang volt-lang__MT"></i><span data-i18n="Malta">Malte</span></option>
-                <option value="NL"><i class="volt-lang volt-lang__NL"></i><span data-i18n="Netherlands">Pays-Bas</span></option>
-                <option value="PL"><i class="volt-lang volt-lang__PL"></i><span data-i18n="Poland">Pologne</span></option>
-                <option value="PT"><i class="volt-lang volt-lang__PT"></i><span data-i18n="Portugal">Portugal</span></option>
-                <option value="RO"><i class="volt-lang volt-lang__RO"></i><span data-i18n="Romania">Romanie</span></option>
-                <option value="SK"><i class="volt-lang volt-lang__SK"></i><span data-i18n="Slovakia">Slovakie</span></option>
-                <option value="SI"><i class="volt-lang volt-lang__SI"></i><span data-i18n="Slovenia">Slovénie</span></option>
-                <option value="SE"><i class="volt-lang volt-lang__SE"></i><span data-i18n="Sweden">Suede</span></option>
-                <option value="UK"><i class="volt-lang volt-lang__UK"></i><span data-i18n="United Kingdom">Royaume-Uni</span></option>
-              </select>
-              <label class="mdl-selectfield__label volt-country__label" for="country" data-i18n="dialog-Choose Country">Choisir un Pays</label>
-            </div>
-            <div class="volt-dialog__floater">
-              <a class="volt-dialog__social-media-link volt-link__disabled" href=""><i class="fab fa fa-facebook"></i></a>
-              <a class="volt-dialog__social-media-link volt-link__disabled" href=""><i class="fab fa fa-twitter"></i></a>
-              <a class="volt-dialog__button volt-dialog__button-light volt-link__disabled" href="" data-i18n="dialog-Visit Site">Visit Site</a>
-            </div>
-          </div>
-
-          <div class="volt-map__wrapper"></div>
-          <div class="mdl-card__actions mdl-card--border volt-dialog__actions">
-            <form name="volt-fullscreen" class="volt-dialog__action-form">
-              <button type="submit" class="volt-dialog__button mdl-button">
-                <i class="material-icons">fullscreen</i>
-                <span data-i18n="dialog-Fullscreen">Plein Écran</span>
-              </button>
-            </form>
-            <form name="volt-minimize" class="volt-dialog__action-form">
-              <button type="submit" class="volt-dialog__button mdl-button">
-                <i class="material-icons">fullscreen_exit</i>
-                <span data-i18n="dialog-Minimize">Minimiser</span>
-              </button>
-            </form>
-            <form name="volt-dialog" data-action="scope" class="volt-dialog__action-form">
-              <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
-            </form>
-          </div>
-        </dialog>
-
       </div>
     </header>
+    <dialog class="mdl-dialog volt-dialog volt-dialog-scope">
+      <h2 class="volt-dialog__title mdl-dialog__title" data-i18n="dialog-Discover Volt">Découvrir Volt</h2>
+      <div class="volt-dialog__wrapper">
+        <div class="volt-dialog__select-wrapper"></div>
+        <!--div class="volt-dialog__select mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+          <select class="mdl-selectfield__select volt-select__country" id="country" name="country">
+            <option value=""></option>
+          </select>
+          <label class="mdl-selectfield__label volt-country__label" for="country" data-i18n="dialog-Choose Country">Choisir un Pays</label>
+        </div-->
+        <div class="volt-dialog__floater">
+          <a class="volt-link volt-dialog__social-media-link volt-link__disabled" target="_blank" href=""><i class="fab fa fa-facebook"></i></a>
+          <a class="volt-link volt-dialog__social-media-link volt-link__disabled" target="_blank" href=""><i class="fab fa fa-twitter"></i></a>
+          <a class="volt-link volt-dialog__button volt-link__disabled" target="_blank" href="" data-i18n="dialog-Visit Site">Visit Site</a>
+        </div>
+      </div>
+
+      <div class="volt-map__wrapper"></div>
+      <div class="mdl-card__actions mdl-card--border volt-dialog__actions">
+        <form name="volt-fullscreen" class="volt-dialog__action-form volt-dialog__action-full">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen</i>
+            <span data-i18n="dialog-Fullscreen">Plein Écran</span>
+          </button>
+        </form>
+        <form name="volt-minimize" class="volt-dialog__action-form volt-dialog__action-exit volt-hidden">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen_exit</i>
+            <span data-i18n="dialog-Minimize">Minimiser</span>
+          </button>
+        </form>
+        <form name="volt-dialog" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
+        </form>
+      </div>
+    </dialog>
   </body>
 </html>

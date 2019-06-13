@@ -1,4 +1,12 @@
 {
+  "EU": {
+    "position": [54.5260, 15.2551],
+    "i18n": "Europe",
+    "facebook_url": "https://www.facebook.com/VoltEuropa/",
+    "twitter_url": "https://twitter.com/volteuropa",
+    "web_url": "https://www.volteuropa.org",
+    "city_list": []
+  },
   "AL": {
     "position": [41.1533, 20.1683],
     "i18n": "Albania",
@@ -366,9 +374,9 @@
   "FR": {
     "position": [47.824905, 2.618787],
     "i18n": "France",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.voltfrance.org/",
+    "twitter_url": "https://twitter.com/volt_france",
+    "web_url": "https://www.voltfrance.org",
     "city_list": [
       {
         "position": [50.62925,3.057256],

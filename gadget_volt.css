@@ -767,12 +767,22 @@
   font-family: 'Ubuntu';;
 }
 .volt-dialog {
-  width: 60%;
+  width: 50%;
 }
 @media (max-width: 54em) {
   .volt-dialog {
     width: 80%;
   }
+}
+.volt-dialog.volt-dialog-fullscreen {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
 }
 .volt-dialog__wrapper {
   width: 100%;
@@ -795,7 +805,7 @@
     width: 55%;
   }
 }
-@media (max-width: 54em) {
+@media (max-width: 32em) {
   .volt-dialog__select {
     width: 100%; 
   }
@@ -832,6 +842,7 @@
 .volt-dialog__floater {
   padding-right: 0;
   padding-left: 1.5vh;
+  display: inline-block;
 }
 @media (max-width: 54em) {
   .volt-dialog__floater {
@@ -897,11 +908,23 @@ button.volt-dialog__button {
   color: #6c6c73;
   color: rgba(97, 32, 149, .3);
 }
+.volt-link.volt-dialog__button:hover {
+  background-color: rgba(158,158,158,.2);
+  color: rgba(97, 32, 149, .3);
+}
 .volt-dialog__social-media-link .material-icons {
   line-height: 21px;
   vertical-align: text-bottom;
 }
-
+/* kudos: jQuery Mobile */
+.volt-hidden {
+  position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px,1px,1px,1px);
+  visibility: hidden;
+}
 
 /* ============================ Map ====================================== */
 .volt-map__wrapper {
@@ -914,6 +937,8 @@ button.volt-dialog__button {
 }
 .volt-map {
   height: 480px;
+  max-height: 70%;
+  max-height: 65vh;
 }
 
 /* =========================== Newsreel ===================================== */
