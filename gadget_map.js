@@ -168,7 +168,9 @@
           return getFallbackDict();
         })
         .push(function (response) {
-          return gadget.pins_get(response.data.rows[0].id);
+
+          // ah, this 1 ... rather stupid
+          return gadget.pins_get(response.data.rows[1].id);
         })
         .push(function (data) {
           dict.marker_dict = data;
