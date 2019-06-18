@@ -8,6 +8,8 @@
   /////////////////////////////
   var RESPONSIVE_CLASS = "volt-navbar-list-responsive";
   var ARR = [];
+  var ESC = "Esc";
+  var ESCAPE = "Escape";
   var CANVAS = "canvas";
   var STR = "";
   var CLICK = "click";
@@ -54,10 +56,10 @@
   }
 
   function compare( a, b ) {
-    if ( a.last_nom < b.last_nom ){
+    if ( a.name < b.name ){
       return -1;
     }
-    if ( a.last_nom > b.last_nom ){
+    if ( a.name > b.name ){
       return 1;
     }
     return 0;
@@ -97,7 +99,8 @@
       response += getTemplate(KLASS, "country_option_template").supplant({
         "id": entry.id,
         "country_i18n": entry.i18n,
-        "country_name": entry.name
+        "country_name": entry.name,
+        "selected": my_country === entry.id ? "selected": STR
       });
     });
     setDom(getElem(my_dialog, ".volt-dialog__select-wrapper"), getTemplate(
@@ -120,6 +123,13 @@
   KLASS
 
     /////////////////////////////
+    // state
+    /////////////////////////////
+    .setState({
+      "dialog_pending": null 
+    })
+
+    /////////////////////////////
     // ready
     /////////////////////////////
     .ready(function (gadget) {
@@ -127,7 +137,6 @@
       gadget.property_dict = {
         "navbar_list": el.querySelectorAll(".volt-navbar-list"),
         "menu_button_list": getElem(el, ".volt-navbar-menu"),
-        "header": getElem(el,".volt-header"),
         "map_wrapper": getElem(el, ".volt-map__wrapper"),
         "dialog": getElem(el, ".volt-dialog-scope"),
         "dialog_full": getElem(el, ".volt-dialog__action-full"),
@@ -184,6 +193,15 @@
     /////////////////////////////
     // declared methods
     /////////////////////////////
+    // ---------------------- StateChange --------------------------------------
+    .declareMethod("stateChange", function (delta) {
+      var gadget = this;
+      var state = gadget.state;
+      if (delta.hasOwnProperty("dialog_pending")) {
+        state.dialog_pending = delta.dialog_pending;
+      }
+      return;
+    })
 
     // -------------------------- Dialogs --------------------------------------
     .declareMethod("expandDialog", function (my_event, my_fullscreen) {
@@ -203,66 +221,15 @@
           return my_declared_gadget.redrawMap();
         });
     })
-    .declareMethod("handleDialog", function (my_event) {
-      var gadget = this;
-      var dict = gadget.property_dict;
-      var dialog = dict.dialog;
-      var active_element = DOCUMENT.activeElement;
-      var clear;
-      
-      if (active_element && active_element.classList.contains("volt-dialog-close")) {
-        dialog.close();
-        return;
-      }
-      if (!dialog.open) {
-        if (!dialog.showModal) {
-          DIALOG_POLYFILL.registerDialog(dialog);
-        }
 
-        return gadget.getDeclaredGadget("map")
-          .push(function (my_declared_gadget) {
-            dict.map_gadget = my_declared_gadget;
-            return RSVP.all([
-              dict.map_gadget.render({
-                "id": dict.country_id,
-                "name_dict": dict.ui_dict,
-                "selected": ""
-              }),
-              gadget.swapMenuClass()
-            ]);
-          })
-          .push(function () {
-            
-            dialog.showModal();
-            return dict.map_gadget.renderMap();
-          })
-          .push(function(marker_dict) {
-
-            // only if language changed
-            // language change
-            // fix css so it stays side by side
-            // fix popups with facebook/twitter/website links
-            // show all europe pins on europe
-            // set selected attribute based on global config
-            updateSelect(dialog, marker_dict, dict.country_id, dict.ui_dict);
-            window.componentHandler.upgradeElements(dialog);
-          });
-      }
-      dialog.close();
-      return;
-    })
     
     // -------------------.--- Render ------------------------------------------
     .declareMethod("render", function (my_option_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
-      var header = dict.header;
       mergeDict(dict, my_option_dict);
-      window.componentHandler.upgradeElements(header);
-      return new RSVP.Queue()
-        .push(function () {
-          return gadget.remoteTranslate(my_option_dict.ui_dict, header);
-        });
+      //window.componentHandler.upgradeElements(gadget.element);
+      return gadget.remoteTranslate(my_option_dict.ui_dict, gadget.element);
     })
 
     .declareMethod("swapMenuClass", function (my_list) {
@@ -282,6 +249,52 @@
     /////////////////////////////
     // declared jobs
     /////////////////////////////
+    .declareJob("closeDialog", function (my_event) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var dialog = dict.dialog;
+      dialog.close();
+      return gadget.stateChange({"dialog_pending": null});
+    })
+
+    .declareMethod("openDialog", function (my_event) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var dialog = dict.dialog;
+      var active_element = DOCUMENT.activeElement;
+
+      if (gadget.state.dialog_pending) {
+        return;
+      }
+      return new RSVP.Queue()
+        .push(function () {
+          return gadget.stateChange({"dialog_pending": true});
+        })
+        .push(function () {
+          if (!dialog.showModal) {
+            DIALOG_POLYFILL.registerDialog(dialog);
+          }
+          return gadget.getDeclaredGadget("map");
+        })
+        .push(function (my_gadget) {
+          dict.map_gadget = my_gadget;
+          return RSVP.all([
+            dict.map_gadget.render({
+              "id": dict.country_id,
+              "ui_dict": dict.ui_dict
+            }),
+            gadget.swapMenuClass()
+          ]);
+        })
+        .push(function () {
+          dialog.showModal();
+          return dict.map_gadget.renderMap();
+        })
+        .push(function(marker_dict) {
+          updateSelect(dialog, marker_dict, dict.country_id, dict.ui_dict);
+          window.componentHandler.upgradeElements(dialog);
+        });
+    })
 
     /////////////////////////////
     // declared service
@@ -290,7 +303,15 @@
     /////////////////////////////
     // event bindings
     /////////////////////////////
+    .onEvent("keydown", function (event) {
+      //console.log("keydown", event)
+      if (event.key === ESCAPE || event.key === ESC) {
+        return this.closeDialog(event);
+      }
+    }, false, false)
+
     .onEvent("click", function (event) {
+      //console.log("click")
       var list = getParent(event.target, LIST);
       if (list) {
         return this.swapMenuClass(list);
@@ -305,14 +326,18 @@
     }, false, false)
 
     .onEvent("submit", function (event) {
+      //console.log("submit")
       switch (event.target.getAttribute(NAME)) {
         case "volt-dialog":
-          return this.handleDialog(event);
+          return this.openDialog(event);
+        case "volt-dialog-close":
+          return this.closeDialog(event);
         case "volt-fullscreen":
           return this.expandDialog(event, true);
         case "volt-minimize":
           return this.expandDialog(event);
       }
     }, false, true);
+
 
 }(window, rJS, RSVP));

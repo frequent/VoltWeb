@@ -18,9 +18,7 @@
     // ready
     /////////////////////////////
     .ready(function (gadget) {
-      gadget.property_dict = {
-        "footer": gadget.element.querySelector(".volt-footer")
-      };
+      gadget.property_dict = {};
     })
 
     /////////////////////////////
@@ -38,9 +36,7 @@
 
     // -------------------.--- Render ------------------------------------------
     .declareMethod("render", function (my_option_dict) {
-      var footer = this.property_dict.footer;
-      window.componentHandler.upgradeElements(footer);
-      return this.remoteTranslate(my_option_dict.ui_dict, footer);
+      return this.remoteTranslate(my_option_dict.ui_dict, this.element);
     })
 
     /////////////////////////////

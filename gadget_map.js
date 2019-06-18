@@ -9,6 +9,8 @@
   //var INTERSECTION_OBSERVER = window.IntersectionObserver;
   var PINS = "pins";
   var DICT = {};
+  var STR = "";
+  var EU = "EU";
   var ICON_CONFIG = {
     "iconUrl": "img/s-marker-icon.png",
     "iconSize": [15,25],
@@ -23,6 +25,9 @@
   };
   var MARKERS = [];
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/map/markers.json";
+  var LINK_DISABLED = "volt-link__disabled";
+  var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
+  var KLASS = rJS(window);
 
   /////////////////////////////
   // methods
@@ -37,9 +42,21 @@
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "map",
-      "__debug": "https://softinst103163.host.vifib.net/site/map/debug.json"
+      "path": "map"
+      //"__debug": "https://softinst103163.host.vifib.net/site/map/debug.json"
     };
+  }
+
+  function getAllCities(my_data) {
+    var city_list = [];
+    var obj;
+    for (obj in my_data) {
+      if (my_data.hasOwnProperty(obj)) {
+        city_list = city_list.concat(my_data[obj].city_list);
+      }
+    }
+    my_data[EU].city_list = city_list;
+    return my_data[EU];
   }
 
   function getElem(my_element, my_selector) {
@@ -53,7 +70,21 @@
     }, my_return_dict);
   }
 
-  rJS(window)
+  function getTemplate(my_klass, my_id) {
+    return my_klass.__template_element.getElementById(my_id).innerHTML;
+  }
+
+  // poor man's templates. thx, http://javascript.crockford.com/remedial.html
+  if (!String.prototype.supplant) {
+    String.prototype.supplant = function (o) {
+      return this.replace(TEMPLATE_PARSER, function (a, b) {
+        var r = o[b];
+        return typeof r === "string" || typeof r === "number" ? r : a;
+      });
+    };
+  }
+
+  KLASS
 
     /////////////////////////////
     // state
@@ -82,6 +113,7 @@
     // acquired methods
     /////////////////////////////
     .declareAcquiredMethod("updateSocialMediaTab", "updateSocialMediaTab")
+    .declareAcquiredMethod("remoteTranslate", "remoteTranslate")
 
     /////////////////////////////
     // declared methods
@@ -115,7 +147,7 @@
     .declareMethod("render", function (my_option_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
-      window.componentHandler.upgradeDom();
+      //window.componentHandler.upgradeDom();
 
       mergeDict(dict, my_option_dict || {});
       if (dict.map) {
@@ -133,7 +165,6 @@
           return gadget.pins_allDocs();
         })
         .push(undefined, function (err) {
-          throw err;
           return getFallbackDict();
         })
         .push(function (response) {
@@ -141,9 +172,6 @@
         })
         .push(function (data) {
           dict.marker_dict = data;
-          return gadget.updateSocialMediaTab(data[gadget.state.country]);
-        })
-        .push(function () {
           return gadget.initialiseMap();
         });
     })
@@ -174,7 +202,7 @@
       id = my_id || gadget.state.country;
       return gadget.stateChange({
         "country": id,
-        "country_dict": dict.marker_dict[id]
+        "country_dict": id === EU ? getAllCities(dict.marker_dict) : dict.marker_dict[id]
       })
       .push(function () {
         return gadget.updateSocialMediaTab(gadget.state.country_dict);
@@ -204,12 +232,25 @@
         }
         dict.map.setView(data.position, 5);
         dict.icon = L.icon(ICON_CONFIG);
-        dict.map.scrollWheelZoom.disable();
+        //dict.map.scrollWheelZoom.disable();
         dict.tileLayer = L.tileLayer(MAP_URL, MAP_CONFIG).addTo(dict.map);
         dict.markerLayer = L.layerGroup(data.city_list.map(function (city) {
-          var header = "<strong>" + dict.name_dict[city.i18n] + "</strong><br/>";
-          return L.marker(city.position, {"icon": dict.icon}).bindPopup(header);
+          var content = getTemplate(KLASS, "marker_link_template").supplant({
+            "city_name": dict.ui_dict[city.i18n],
+            "facebook_url": city.facebook_url || STR,
+            "facebook_disabled": city.facebook_url === undefined ? LINK_DISABLED : STR,
+            "twitter_url": city.twitter_url || STR,
+            "twitter_disabled": city.twitter_url === undefined ? LINK_DISABLED : STR,
+            "web_url": city.web_url || STR,
+            "web_disabled": city.web_url === undefined ? LINK_DISABLED : STR
+          });
+          return L.marker(city.position, {"icon": dict.icon})
+            .bindPopup(content)
+            .on('popupopen', function (event) {
+              return gadget.remoteTranslate(dict.ui_dict, event.popup._source._popup._contentNode);
+            });
         })).addTo(dict.map);
+          
 
         // pass back marker dict to update/init select element
         return dict.marker_dict;
@@ -223,18 +264,18 @@
     /////////////////////////////
     // event bindings
     /////////////////////////////
-    .onEvent("click", function (event) {
-      var gadget = this;
-      if (event.target.classList.contains("volt-map")) {
-        gadget.property_dict.map.scrollWheelZoom.enable();
-      }
-    })
+    //.onEvent("click", function (event) {
+    //  var gadget = this;
+    //  if (event.target.classList.contains("volt-map")) {
+    //    gadget.property_dict.map.scrollWheelZoom.enable();
+    //  }
+    //}, false, false)
 
-    .onEvent("mouseout", function (event) {
-      var gadget = this;
-      if (event.target.classList.contains("volt-map")) {
-        gadget.property_dict.map.scrollWheelZoom.disable();
-      }
-    });
+    //.onEvent("mouseout", function (event) {
+    //  var gadget = this;
+    //  if (event.target.classList.contains("volt-map")) {
+    //    gadget.property_dict.map.scrollWheelZoom.disable();
+    //  }
+    //}, false, false);
 
 }(window, rJS, RSVP, L));

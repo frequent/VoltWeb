@@ -43,8 +43,8 @@
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language,
-      "__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language
+      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
   }
 
@@ -84,7 +84,6 @@
         "content_dict": {},
         "ui_dict": {}
       };
-
       return RSVP.all([
         gadget.declareGadget("gadget_jio.html", {"scope": "translation"}),
         gadget.declareGadget("gadget_jio.html", {"scope": "settings"})
@@ -106,7 +105,6 @@
     .declareMethod("translateDom", function (my_payload) {
       var dictionary = my_payload[0];
       var dom = my_payload[1];
-
       if (dom && !isString(dom)) {
 
         // translate texts

@@ -4,6 +4,11 @@
     "i18n": "Europe",
     "facebook_url": "https://www.facebook.com/VoltEuropa/",
     "twitter_url": "https://twitter.com/volteuropa",
+    "instagram_url": "https://www.instagram.com/volteuropa",
+    "youtube_url": "https://www.youtube.com/c/VoltEuropa",
+    "linkedin_url": "https://www.linkedin.com/company/11067656/",
+    "reddit_url": "https://www.reddit.com/r/VoltEuropa/",
+    "whatsapp_url": "",
     "web_url": "https://www.volteuropa.org",
     "city_list": []
   },
@@ -12,6 +17,11 @@
     "i18n": "Albania",
     "facebook_url": "",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -23,9 +33,14 @@
   "AT": {
     "position": [47.5162, 14.5501],
     "i18n": "Austria",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltOesterreich/",
+    "twitter_url": "https://twitter.com/volteuropa",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltoesterreich.org/",
     "city_list": [
       {
         "position": [48.2081743,16.3738189],
@@ -48,9 +63,14 @@
   "BE": {
     "position": [50.5039, 4.4699],
     "i18n": "Belgium",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltBelgie/",
+    "twitter_url": "https://twitter.com/VoltBelgium",
+    "web_url": "https://www.voltbelgie.org/",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "city_list": [
       {
           "position": [50.643909,5.571560],
@@ -86,9 +106,14 @@
   "BU": {
     "position": [42.7339, 25.4858],
     "i18n": "Bulgaria",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltBulgaria/",
+    "twitter_url": "https://twitter.com/volteuropa",
+    "web_url": "https://www.voltbulgaria.org/",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "city_list": [
       {
         "position": [42.6977082,23.3218675],
@@ -145,6 +170,11 @@
     "i18n": "Switzerland",
     "facebook_url": "",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [    
       {
@@ -156,8 +186,13 @@
   "CY": {
     "position": [35.1264, 33.4299],
     "i18n": "Cyprus",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltCyprus/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url":"",
     "city_list": [
       {
@@ -173,9 +208,14 @@
   "CZ": {
     "position": [49.8175, 15.4730],
     "i18n": "Czechia",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltCzechia",
+    "twitter_url": "https://www.voltczechia.org/",
+    "instagram_url": "https://www.instagram.com/voltczechia",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "web_url": "https://www.voltczechia.org/",
+    "whatsapp_url": "",
     "city_list": [
       {
         "position": [50.0755381,14.4378005],
@@ -186,9 +226,14 @@
   "DK": {
     "position": [56.2639, 9.5018],
     "i18n": "Denmark",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltDanmark/",
+    "twitter_url": "https://twitter.com/voltdanmark?lang=en",
+    "instagram_url": "https://www.instagram.com/Voltdanmark/",
+    "youtube_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/volt-danmark/",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltdanmark.org/",
     "city_list": [
       {
           "position": [57.0488,9.9217],
@@ -212,9 +257,14 @@
   "DE": {
     "position": [51.1657, 10.4515],
     "i18n": "Germany",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltDeutschland/",
+    "twitter_url": "https://twitter.com/deutschlandvolt",
+    "instagram_url": "https://www.instagram.com/voltdeutschland/",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltdeutschland.org/",
     "city_list": [    
       {
           "position": [52.3758916,9.732010400000002],
@@ -311,8 +361,13 @@
   "EE": {
     "position": [58.5975, 24.9873],
     "i18n": "Estonia",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltEstonia/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -324,9 +379,14 @@
   "ES": {
     "position": [40.4637, 3.7492],
     "i18n": "Spain",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltEspana/",
+    "twitter_url": "https://twitter.com/voltespana",
+    "instagram_url": "https://instagram.com/voltesp/",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltespana.org/",
     "city_list": [
       {
           "position": [43.2630, -2.9350],
@@ -361,8 +421,13 @@
   "FI": {
     "position": [61.9241, 25.7482],
     "i18n": "Finland",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltFinland/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -376,6 +441,11 @@
     "i18n": "France",
     "facebook_url": "https://www.voltfrance.org/",
     "twitter_url": "https://twitter.com/volt_france",
+    "instagram_url": "https://www.instagram.com/volt_france/",
+    "youtube_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/voltfrance",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "https://www.voltfrance.org",
     "city_list": [
       {
@@ -431,8 +501,13 @@
   "GR": {
     "position": [39.0742, 21.8243],
     "i18n": "Greece",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltGreece/",
     "twitter": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -444,8 +519,13 @@
   "HU": {
     "position": [47.1625, 19.5033],
     "i18n": "Hungary",
-    "facebook_url":"",
+    "facebook_url":"https://www.facebook.com/VoltHungary/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -457,8 +537,13 @@
   "HR": {
     "position": [45.1000, 15.2000],
     "i18n": "Croatia",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltCroatia/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -470,8 +555,13 @@
   "IE": {
     "position": [53.1424, 7.6921],
     "i18n": "Ireland",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltIreland/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -482,9 +572,14 @@
   "IT": {
     "position":[41.8719, 12.5674],
     "i18n": "Italy",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://it-it.facebook.com/VoltITA/",
+    "twitter_url": "https://twitter.com/voltitalia",
+    "instagram_url": "https://www.instagram.com/voltitalia/",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltitalia.org/",
     "city_list": [
       {
           "position": [38.1156879,13.3612671],
@@ -585,6 +680,11 @@
     "i18n": "Latvia",
     "facebook_url": "",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -596,8 +696,13 @@
   "LT": {
     "position": [55.1694, 23.8813],
     "i18n": "Lithuania",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltLatvia/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -609,9 +714,14 @@
   "LU": {
     "position": [49.8153, 6.1333],
     "i18n": "Luxemburg",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltLuxembourg",
+    "twitter_url": "https://twitter.com/voltluxembourg",
+    "instagram_url": "https://www.instagram.com/voltluxembourg",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltluxembourg.org/",
     "city_list": [
       {
           "position": [49.61162100000001,6.1319346],
@@ -622,8 +732,13 @@
   "MT": {
     "position": [35.9375, 14.3754],
     "i18n": "Malta",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltMalta/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -635,9 +750,14 @@
   "NL": {
     "position": [52.1326, 5.2913],
     "i18n": "Netherlands",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltNederland/",
+    "twitter_url": "https://twitter.com/VoltNederland/",
+    "instagram_url": "https://www.instagram.com/voltnederland",
+    "youtube_url": "https://www.youtube.com/channel/UCyczP3mO2CDr9k9JbBEB8vA?view_as=subscriber",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "https://wa.me/31683415616",
+    "web_url": "https://www.voltnederland.org/",
     "city_list": [
       {
           "position": [52.632381,4.753375],
@@ -731,6 +851,11 @@
     "i18n": "Norway",
     "facebook_url": "",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -742,8 +867,13 @@
   "PL": {
     "position": [51.9194, 19.1451],
     "i18n": "Poland",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/Volt-Poland/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [    
       {
@@ -759,8 +889,13 @@
   "PT": {
     "position": [39.3999, 8.2245],
     "i18n": "Portugal",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltPortugal/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -772,8 +907,13 @@
   "RO": {
     "position": [45.9432, 24.9668],
     "i18n": "Romania",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltRomania/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [
       {
@@ -789,16 +929,26 @@
   "SK": {
     "position": [48.6690, 19.6990],
     "i18n": "Slovakia",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltSlovakia/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": []
   },
   "SI": {
     "position": [46.1512, 14.9955],
     "i18n": "Slovenia",
-    "facebook_url": "",
+    "facebook_url": "https://www.facebook.com/VoltSlovenia/",
     "twitter_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
     "web_url": "",
     "city_list": [    
       {
@@ -810,9 +960,14 @@
   "SE": {
     "position": [60.1282, 18.6435],
     "i18n": "Sweden",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltSweden/",
+    "twitter_url": "https://www.twitter.com/voltsverige",
+    "instagram_url": "https://www.instagram.com/voltsverige",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltsverige.org/",
     "city_list": [
       {
           "position": [59.85856380000001,17.6389267],
@@ -827,9 +982,14 @@
   "UK": {
     "position": [55.3781, 3.4360],
     "i18n": "United Kingdom",
-    "facebook_url": "",
-    "twitter_url": "",
-    "web_url": "",
+    "facebook_url": "https://www.facebook.com/VoltUKingdom/",
+    "twitter_url": "https://twitter.com/UkVolt?lang=en-gb",
+    "instagram_url": "https://www.instagram.com/voltukofficial/",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "reddit_url": "",
+    "whatsapp_url": "",
+    "web_url": "https://www.voltuk.org/",
     "city_list": [
       {
           "position": [51.5073509,-0.1277583],

@@ -20,14 +20,13 @@
     </script>
 
     <script id="country_option_template" type="text/x-supplant">
-      <option value="{id}"><i class="volt-lang volt-lang__{id}"></i><span data-i18n="{country_i18n}" {selected}>{country_name}</span></option>
+      <option value="{id}" {selected}><i class="volt-lang volt-lang__{id}"></i><span data-i18n="{country_i18n}">{country_name}</span></option>
     </script>
   </head>
   <body>
-    <header class="volt-header mdl-layout__header">
       <div class="mdl-layout__header-row">
         <form name="volt-dialog" data-action="scope">
-          <button class="mdl-button mdl-js-button mdl-button--icon">
+          <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">language</i>
           </button>
         </form>
@@ -114,17 +113,11 @@
           <i class="material-icons">person_add</i><h4 class="volt-navbar-link-title" data-i18n="header-Join Volt">Rejoindre Volt</h4>
         </button>
       </div>
-    </header>
+
     <dialog class="mdl-dialog volt-dialog volt-dialog-scope">
       <h2 class="volt-dialog__title mdl-dialog__title" data-i18n="dialog-Discover Volt">Découvrir Volt</h2>
       <div class="volt-dialog__wrapper">
         <div class="volt-dialog__select-wrapper"></div>
-        <!--div class="volt-dialog__select mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
-          <select class="mdl-selectfield__select volt-select__country" id="country" name="country">
-            <option value=""></option>
-          </select>
-          <label class="mdl-selectfield__label volt-country__label" for="country" data-i18n="dialog-Choose Country">Choisir un Pays</label>
-        </div-->
         <div class="volt-dialog__floater">
           <a class="volt-link volt-dialog__social-media-link volt-link__disabled" target="_blank" href=""><i class="fab fa fa-facebook"></i></a>
           <a class="volt-link volt-dialog__social-media-link volt-link__disabled" target="_blank" href=""><i class="fab fa fa-twitter"></i></a>
@@ -146,7 +139,7 @@
             <span data-i18n="dialog-Minimize">Minimiser</span>
           </button>
         </form>
-        <form name="volt-dialog" class="volt-dialog__action-form">
+        <form name="volt-dialog-close" class="volt-dialog__action-form">
           <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
         </form>
       </div>
