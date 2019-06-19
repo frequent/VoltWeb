@@ -40,5 +40,7 @@
   "dialog-Minimize": "Minimize",
   "dialog-Choose Country": "Choose Country",
   "dialog-Visit Site": "Visit Site",
-  "dialog-Website": "Website"
+  "dialog-Website": "Website",
+  "footer-English": "English",
+  "footer-French": "French"
 }

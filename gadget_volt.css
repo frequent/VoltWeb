@@ -114,7 +114,7 @@
   content: "\f09e";
 }
 /* =============================  FLAGS ===================================== */
-.volt-lang {
+/*.volt-lang {
   background: url(img/flags.min.png) no-repeat;
   position: absolute;
   width: 32px;
@@ -144,6 +144,7 @@
 .volt-lang_DK {
   background-position: -96px -32px;
 }
+*/
 /* ============================= THEMEING =================================== */
 /* https://coolors.co/612095-ffffff-fcfcfc-191923-8a2fd2 */
 /*                                         6c6c73 */
@@ -541,7 +542,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 1em 16% 0 16%;
+  padding: .5em 16% .5em 16%;
   text-align: center;
 }
 @media (max-width: 54em) {
@@ -550,6 +551,11 @@
   }
   .volt-footer__bottom {
     padding: auto 1em;
+  }
+}
+@media (max-width: 32em) {
+  .volt-footer__bottom {
+    text-align: left;
   }
 }
 .volt-footer__bottom_content {
@@ -688,7 +694,23 @@
     padding-left: .75em;
   }
 }
-
+.volt-footer__bottom_content,
+.volt-footer__language_select {
+  display: inline-block;
+}
+.volt-select__language {
+  background: transparent;
+  color: #fff;
+  border: 0 none;
+  font-family: Ubuntu;
+}
+.volt-pipe {
+ color: #fff;
+ font-family: Ubuntu;
+}
+.volt-select__language-option {
+  color: #612095;
+}
 /* =============================== Main ===================================== */
 .volt-layout__content {
   width: 100%;

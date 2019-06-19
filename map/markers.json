@@ -1,5 +1,5 @@
 {
-  "EU": {
+  "eu": {
     "position": [54.5260, 15.2551],
     "i18n": "Europe",
     "facebook_url": "https://www.facebook.com/VoltEuropa/",
@@ -12,7 +12,7 @@
     "web_url": "https://www.volteuropa.org",
     "city_list": []
   },
-  "AL": {
+  "al": {
     "position": [41.1533, 20.1683],
     "i18n": "Albania",
     "facebook_url": "",
@@ -30,7 +30,7 @@
       }
     ]
   },
-  "AT": {
+  "at": {
     "position": [47.5162, 14.5501],
     "i18n": "Austria",
     "facebook_url": "https://www.facebook.com/VoltOesterreich/",
@@ -60,7 +60,7 @@
       }
     ]
   },
-  "BE": {
+  "be": {
     "position": [50.5039, 4.4699],
     "i18n": "Belgium",
     "facebook_url": "https://www.facebook.com/VoltBelgie/",
@@ -103,7 +103,7 @@
       }
     ]
   },
-  "BU": {
+  "bu": {
     "position": [42.7339, 25.4858],
     "i18n": "Bulgaria",
     "facebook_url": "https://www.facebook.com/VoltBulgaria/",
@@ -165,7 +165,7 @@
       }
     ]
   },
-  "CH": {
+  "ch": {
     "position": [46.8182, 8.2275],
     "i18n": "Switzerland",
     "facebook_url": "",
@@ -183,7 +183,7 @@
       }
     ]
   },
-  "CY": {
+  "cy": {
     "position": [35.1264, 33.4299],
     "i18n": "Cyprus",
     "facebook_url": "https://www.facebook.com/VoltCyprus/",
@@ -205,7 +205,7 @@
       }
     ]
   },
-  "CZ": {
+  "cz": {
     "position": [49.8175, 15.4730],
     "i18n": "Czechia",
     "facebook_url": "https://www.facebook.com/VoltCzechia",
@@ -223,7 +223,7 @@
       }
     ]
   },
-  "DK": {
+  "dk": {
     "position": [56.2639, 9.5018],
     "i18n": "Denmark",
     "facebook_url": "https://www.facebook.com/VoltDanmark/",
@@ -254,7 +254,7 @@
       }
     ]
   },
-  "DE": {
+  "de": {
     "position": [51.1657, 10.4515],
     "i18n": "Germany",
     "facebook_url": "https://www.facebook.com/VoltDeutschland/",
@@ -358,7 +358,7 @@
       }
     ]
   },
-  "EE": {
+  "ee": {
     "position": [58.5975, 24.9873],
     "i18n": "Estonia",
     "facebook_url": "https://www.facebook.com/VoltEstonia/",
@@ -376,7 +376,7 @@
       }
     ]
   },
-  "ES": {
+  "es": {
     "position": [40.4637, 3.7492],
     "i18n": "Spain",
     "facebook_url": "https://www.facebook.com/VoltEspana/",
@@ -418,7 +418,7 @@
       }
     ]
   },
-  "FI": {
+  "fi": {
     "position": [61.9241, 25.7482],
     "i18n": "Finland",
     "facebook_url": "https://www.facebook.com/VoltFinland/",
@@ -436,7 +436,7 @@
       }
     ]
   },
-  "FR": {
+  "fr": {
     "position": [47.824905, 2.618787],
     "i18n": "France",
     "facebook_url": "https://www.voltfrance.org/",
@@ -498,7 +498,7 @@
       }
     ]
   },
-  "GR": {
+  "gr": {
     "position": [39.0742, 21.8243],
     "i18n": "Greece",
     "facebook_url": "https://www.facebook.com/VoltGreece/",
@@ -516,7 +516,7 @@
       }
     ]
   },
-  "HU": {
+  "hu": {
     "position": [47.1625, 19.5033],
     "i18n": "Hungary",
     "facebook_url":"https://www.facebook.com/VoltHungary/",
@@ -534,7 +534,7 @@
       }
     ]
   },
-  "HR": {
+  "hr": {
     "position": [45.1000, 15.2000],
     "i18n": "Croatia",
     "facebook_url": "https://www.facebook.com/VoltCroatia/",
@@ -552,7 +552,7 @@
       }
     ]
   },
-  "IE": {
+  "ie": {
     "position": [53.1424, 7.6921],
     "i18n": "Ireland",
     "facebook_url": "https://www.facebook.com/VoltIreland/",
@@ -569,7 +569,7 @@
           "i18n": "Dublin, Ireland"
       }]
   },
-  "IT": {
+  "it": {
     "position":[41.8719, 12.5674],
     "i18n": "Italy",
     "facebook_url": "https://it-it.facebook.com/VoltITA/",
@@ -675,7 +675,7 @@
       }
     ]
   },
-  "LV": {
+  "lv": {
     "position": [56.8796, 24.6032],
     "i18n": "Latvia",
     "facebook_url": "",
@@ -693,7 +693,7 @@
       }
     ]
   },
-  "LT": {
+  "lt": {
     "position": [55.1694, 23.8813],
     "i18n": "Lithuania",
     "facebook_url": "https://www.facebook.com/VoltLatvia/",
@@ -711,7 +711,7 @@
       }
     ]
   },
-  "LU": {
+  "lu": {
     "position": [49.8153, 6.1333],
     "i18n": "Luxemburg",
     "facebook_url": "https://www.facebook.com/VoltLuxembourg",
@@ -729,7 +729,7 @@
       }
     ]
   },
-  "MT": {
+  "mt": {
     "position": [35.9375, 14.3754],
     "i18n": "Malta",
     "facebook_url": "https://www.facebook.com/VoltMalta/",
@@ -747,7 +747,7 @@
       }
     ]
   },
-  "NL": {
+  "nl": {
     "position": [52.1326, 5.2913],
     "i18n": "Netherlands",
     "facebook_url": "https://www.facebook.com/VoltNederland/",
@@ -846,7 +846,7 @@
       }
     ]
   },
-  "NO": {
+  "no": {
     "position": [60.4720, 8.4689],
     "i18n": "Norway",
     "facebook_url": "",
@@ -864,7 +864,7 @@
       }
     ]
   },
-  "PL": {
+  "pl": {
     "position": [51.9194, 19.1451],
     "i18n": "Poland",
     "facebook_url": "https://www.facebook.com/Volt-Poland/",
@@ -886,7 +886,7 @@
       }
     ]
   },
-  "PT": {
+  "pt": {
     "position": [39.3999, 8.2245],
     "i18n": "Portugal",
     "facebook_url": "https://www.facebook.com/VoltPortugal/",
@@ -904,7 +904,7 @@
       }
     ]
   },
-  "RO": {
+  "ro": {
     "position": [45.9432, 24.9668],
     "i18n": "Romania",
     "facebook_url": "https://www.facebook.com/VoltRomania/",
@@ -939,7 +939,7 @@
     "web_url": "",
     "city_list": []
   },
-  "SI": {
+  "si": {
     "position": [46.1512, 14.9955],
     "i18n": "Slovenia",
     "facebook_url": "https://www.facebook.com/VoltSlovenia/",
@@ -957,7 +957,7 @@
       }
     ]
   },
-  "SE": {
+  "se": {
     "position": [60.1282, 18.6435],
     "i18n": "Sweden",
     "facebook_url": "https://www.facebook.com/VoltSweden/",
@@ -979,7 +979,7 @@
       }
     ]
   },
-  "UK": {
+  "uk": {
     "position": [55.3781, 3.4360],
     "i18n": "United Kingdom",
     "facebook_url": "https://www.facebook.com/VoltUKingdom/",

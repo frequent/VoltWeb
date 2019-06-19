@@ -1,29 +1,40 @@
 /*jslint maxlen: 80, indent: 2 */
-/*global window, rJS, RSVP */
-(function (window, rJS, RSVP) {
+/*global window, rJS, RSVP, JSON */
+(function (window, rJS, RSVP, JSON) {
   "use strict";
 
   /////////////////////////////
   // parameters
   /////////////////////////////
+
+  // let this be a site configuration dictionary (obviously missing parameters)
   var OPTION_DICT = {
-    "country_id": "FR"
+    "country_id": "fr"
   };
+
   var DICT = {};
   var ATTR = "data-attr";
   var I18N = "data-i18n";
   var LB = "[";
   var RB = "]";
+  var STR = "";
   var TRANSLATION = "translation";
   var SETTINGS = "settings";
+  var TEN_MINUTES = 600000;
   var DOCUMENT = window.document;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
   var FALLBACK_LANGUAGE = "fr";
-
-
   /////////////////////////////
   // methods
   /////////////////////////////
+  function up(my_string) {
+    return my_string.toUpperCase();
+  }
+
+  function getTimeStamp() {
+    return new window.Date().getTime();
+  }
+
   function getLang(nav) {
     return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
   }
@@ -70,7 +81,7 @@
     /////////////////////////////
     .setState({
       "locale": getLang(window.navigator).substring(0, 2) || FALLBACK_LANGUAGE,
-      "ios": null
+      "ios": null,
     })
 
     /////////////////////////////
@@ -82,7 +93,8 @@
       gadget.property_dict = {
         "url_dict": {},
         "content_dict": {},
-        "ui_dict": {}
+        "ui_dict": {},
+        "content_wrapper": getElem(gadget.element, ".volt-layout")
       };
       return RSVP.all([
         gadget.declareGadget("gadget_jio.html", {"scope": "translation"}),
@@ -93,10 +105,39 @@
     /////////////////////////////
     // published methods
     /////////////////////////////
-
     // poor man's i18n translations
     .allowPublicAcquisition("remoteTranslate", function (my_payload) {
       return this.translateDom(my_payload);
+    })
+
+    .allowPublicAcquisition("changeLanguage", function (my_event) {
+      var gadget = this;
+      var select = my_event[0].target;
+      var dict = gadget.property_dict;
+      var lang = select.options[select.selectedIndex].value;
+
+      // mdl-events still bound multiple times, stateChange is too slow to trp
+      if (dict.stop) {
+        return;
+      }
+      dict.stop = true;
+      if (gadget.state.locale === lang) {
+        return;
+      }
+      return new RSVP.Queue()
+        .push(function () {
+          return RSVP.all([
+            gadget.updateStorage(lang),
+            gadget.setSetting("lang", lang)
+          ]);
+        })
+        .push(function () {
+          return gadget.buildContentLookupDict();
+        })
+        .push(function () {
+          dict.stop = null;
+          return gadget.fetchTranslationAndUpdateDom();
+        });
     })
 
     /////////////////////////////
@@ -123,6 +164,43 @@
       }
     })
 
+    // ------------------------- Settings --------------------------------------
+    .declareMethod("getSetting", function (my_setting) {
+      var gadget = this;
+      return gadget.setting_getAttachment("/", my_setting, {format: "text"})
+        .push(function (response) {
+          var payload = JSON.parse(response);
+          if (getTimeStamp() - payload.timestamp > TEN_MINUTES) {
+            return gadget.setting_removeAttachment("/", "token");
+          }
+          return payload[my_setting];
+        })
+        .push(undefined, function (my_error) {
+          return gadget.handleError(my_error, {"404": 0});
+        });
+    })
+
+    .declareMethod("setSetting", function (my_setting, my_value) {
+      var payload = {"timestamp": getTimeStamp()};
+      payload[my_setting] = my_value;
+      return this.setting_putAttachment("/", my_setting, new Blob([
+        JSON.stringify(payload)
+      ], {type: "text/plain"}));
+    })
+
+    .declareMethod("handleError", function (my_err, my_err_dict) {
+      var code;
+      var err = my_err.target ? JSON.parse(my_err.target.response).error : my_err;
+
+      for (code in my_err_dict) {
+        if (my_err_dict.hasOwnProperty(code)) {
+          if ((err.status_code + STR) === code) {
+            return my_err_dict[code];
+          }
+        }
+      }
+      throw err;
+    })
 
     // ---------------------- JIO bridge ---------------------------------------
     // this is the JIO storage connectiong to the backend for content, in this
@@ -165,10 +243,24 @@
       var dict = gadget.property_dict;
       var locale = gadget.state.locale;
       mergeDict(dict, my_option_dict);
+
       return new RSVP.Queue()
         .push(function () {
-          return new RSVP.all([
-            gadget.setting_create({"type": "local", "sessiononly": false}),
+          return gadget.setting_create({"type": "local", "sessiononly": false});
+        })
+        .push(function () {
+          return gadget.getSetting("lang");
+        })
+        .push(function (my_stored_language) {
+          if (my_stored_language !== undefined) {
+            dict.country_id = my_stored_language;
+            return RSVP.all([
+              gadget.stateChange({"locale": my_stored_language}),
+              gadget.github_create(getConfigDict(my_stored_language))
+            ]);
+          }
+          return RSVP.all([
+            gadget.setSetting("lang", locale),
             gadget.github_create(getConfigDict(locale))
           ]);
         })
@@ -179,14 +271,13 @@
           return RSVP.all([
             gadget.getDeclaredGadget("header"),
             gadget.getDeclaredGadget("footer"),
-            gadget.fetchTranslationAndUpdateDom(locale)
+            gadget.fetchTranslationAndUpdateDom()
           ]);
         })
         .push(function (gadget_list) {
-          my_option_dict.ui_dict = dict.ui_dict;
           return RSVP.all([
-            gadget_list[0].render(my_option_dict),
-            gadget_list[1].render(my_option_dict)
+            gadget_list[0].render(dict),
+            gadget_list[1].render(dict)
           ]);
         })
         .push(function () {
@@ -235,7 +326,7 @@
         });
     })
 
-    .declareMethod("fetchTranslationAndUpdateDom", function (my_language) {
+    .declareMethod("fetchTranslationAndUpdateDom", function () {
       var gadget = this;
       var dict = gadget.property_dict;
       var url_dict = dict.url_dict;
@@ -248,7 +339,7 @@
         })
         .push(function (data_list) {
           dict.ui_dict = mergeDict(data_list[0], data_list[1]);
-          return gadget.translateDom(dict.ui_dict);
+          return gadget.translateDom([dict.ui_dict, dict.content_wrapper]);
         });
     })
 
@@ -303,4 +394,4 @@
         });
     });
 
-}(window, rJS, RSVP));
+}(window, rJS, RSVP, JSON));
