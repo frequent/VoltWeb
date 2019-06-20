@@ -252,7 +252,7 @@
           return gadget.getSetting("lang");
         })
         .push(function (my_stored_language) {
-          if (my_stored_language !== undefined) {
+          if (my_stored_language !== 0) {
             dict.country_id = my_stored_language;
             return RSVP.all([
               gadget.stateChange({"locale": my_stored_language}),

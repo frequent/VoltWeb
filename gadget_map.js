@@ -153,7 +153,6 @@
       if (dict.map) {
         return;
       }
-
       return new RSVP.Queue()
         .push(function () {
           return RSVP.all([

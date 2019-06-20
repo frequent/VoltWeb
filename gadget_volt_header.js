@@ -161,7 +161,6 @@
     .allowPublicAcquisition("updateSocialMediaTab", function (my_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
-      console.log(my_dict)
       var country_dict = my_dict[0] || my_dict;
       var link_list = dict.scm_container.querySelectorAll(".volt-link");
       var fb_link = link_list[0];
