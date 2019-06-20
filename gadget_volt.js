@@ -176,7 +176,7 @@
           return payload[my_setting];
         })
         .push(undefined, function (my_error) {
-          return gadget.handleError(my_error, {"404": 0});
+          return gadget.handleError(my_error, {"404": undefined});
         });
     })
 
@@ -253,7 +253,7 @@
         })
         .push(function (my_stored_language) {
           console.log(my_stored_language);
-          if (my_stored_language) {
+          if (my_stored_language !== undefined) {
             return RSVP.all([
               gadget.setSetting("lang", locale),
               gadget.github_create(getConfigDict(locale))
