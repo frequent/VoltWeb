@@ -252,16 +252,17 @@
           return gadget.getSetting("lang");
         })
         .push(function (my_stored_language) {
-          if (my_stored_language !== 0) {
-            dict.country_id = my_stored_language;
+          console.log(my_stored_language);
+          if (my_stored_language) {
             return RSVP.all([
-              gadget.stateChange({"locale": my_stored_language}),
-              gadget.github_create(getConfigDict(my_stored_language))
+              gadget.setSetting("lang", locale),
+              gadget.github_create(getConfigDict(locale))
             ]);
           }
+          dict.country_id = my_stored_language;
           return RSVP.all([
-            gadget.setSetting("lang", locale),
-            gadget.github_create(getConfigDict(locale))
+            gadget.stateChange({"locale": my_stored_language}),
+            gadget.github_create(getConfigDict(my_stored_language))
           ]);
         })
         .push(function () {
