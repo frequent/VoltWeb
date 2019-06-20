@@ -253,7 +253,7 @@
         })
         .push(function (my_stored_language) {
           console.log(my_stored_language);
-          if (my_stored_language !== undefined) {
+          if (my_stored_language === undefined) {
             return RSVP.all([
               gadget.setSetting("lang", locale),
               gadget.github_create(getConfigDict(locale))
