@@ -157,7 +157,7 @@
         .push(function () {
           return RSVP.all([
             gadget.pins_create(getConfigDict()),
-            gadget.stateChange({"country": dict.id})
+            gadget.stateChange({"country": dict.id, "country_dict": dict.country_dict})
           ]);
         })
         .push(function () {
@@ -193,7 +193,6 @@
       var gadget = this;
       var dict = gadget.property_dict;
       var id;
-
       if (my_id === gadget.state.country) {
         return;
       }

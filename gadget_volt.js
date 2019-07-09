@@ -17,6 +17,7 @@
   var I18N = "data-i18n";
   var LB = "[";
   var RB = "]";
+  var HREF = "href";
   var STR = "";
   var TRANSLATION = "translation";
   var SETTINGS = "settings";
@@ -24,6 +25,7 @@
   var DOCUMENT = window.document;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
   var FALLBACK_LANGUAGE = "fr";
+
   /////////////////////////////
   // methods
   /////////////////////////////
@@ -116,7 +118,7 @@
       var dict = gadget.property_dict;
       var lang = select.options[select.selectedIndex].value;
 
-      // mdl-events still bound multiple times, stateChange is too slow to trp
+      // mdl-events still bound multiple times, stateChange is too slow to trap
       if (dict.stop) {
         return;
       }
@@ -158,7 +160,7 @@
           var attr_list = el.getAttribute(ATTR).split(";");
           attr_list.forEach(function (attr_value_pair) {
             var attr_pair = attr_value_pair.split(":");
-            el.setAttribute(attr_pair[0], attr_pair[1]);
+            el.setAttribute(attr_pair[0], dictionary[attr_pair[1]]);
           });
         });
       }
@@ -252,7 +254,6 @@
           return gadget.getSetting("lang");
         })
         .push(function (my_stored_language) {
-          console.log(my_stored_language);
           if (my_stored_language === undefined) {
             return RSVP.all([
               gadget.setSetting("lang", locale),
@@ -314,13 +315,17 @@
           if (my_response.data.total_rows === 0) {
             return gadget.updateStorage(FALLBACK_LANGUAGE)
               .push(function () {
-                return gadget.github_allDocs();
+                return RSVP.all([
+                  gadget.github_allDocs(),
+                  gadget.setSetting("lang", FALLBACK_LANGUAGE),
+                  gadget.stateChange({"locale": FALLBACK_LANGUAGE})
+                ]);
               });
           }
-          return my_response;
+          return [my_response];
         })
-        .push(function (my_data) {
-          my_data.data.rows.map(function (row) {
+        .push(function (my_response_list) {
+          my_response_list[0].data.rows.map(function (row) {
             dict.url_dict[row.id.split("/").pop().replace(".json", "")] = row.id;
             return;
           });

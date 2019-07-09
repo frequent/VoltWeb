@@ -23,7 +23,7 @@
   var LIST = "volt-navbar-list";
   var LINK = "volt-navbar-link";
   var HIDDEN = "volt-hidden";
-  var FULLSCREN = "volt-dialog-fullscreen";
+  var FULLSCREEN = "volt-dialog-fullscreen";
   var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
   var KLASS = rJS(window);
 
@@ -208,11 +208,11 @@
       var gadget = this;
       var dict = gadget.property_dict;
       if (my_fullscreen) {
-        dict.dialog.classList.add(FULLSCREN);
+        dict.dialog.classList.add(FULLSCREEN);
         dict.dialog_full.classList.add(HIDDEN);
         dict.dialog_exit.classList.remove(HIDDEN);
       } else {
-        dict.dialog.classList.remove(FULLSCREN);
+        dict.dialog.classList.remove(FULLSCREEN);
         dict.dialog_full.classList.remove(HIDDEN);
         dict.dialog_exit.classList.add(HIDDEN);
       }
@@ -221,14 +221,13 @@
           return my_declared_gadget.redrawMap();
         });
     })
-
     
     // -------------------.--- Render ------------------------------------------
     .declareMethod("render", function (my_option_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
       mergeDict(dict, my_option_dict);
-      //window.componentHandler.upgradeElements(gadget.element);
+
       return gadget.remoteTranslate(my_option_dict.ui_dict, gadget.element);
     })
 
@@ -262,7 +261,6 @@
       var dict = gadget.property_dict;
       var dialog = dict.dialog;
       var active_element = DOCUMENT.activeElement;
-
       if (gadget.state.dialog_pending) {
         return;
       }
@@ -304,14 +302,12 @@
     // event bindings
     /////////////////////////////
     .onEvent("keydown", function (event) {
-      //console.log("keydown", event)
       if (event.key === ESCAPE || event.key === ESC) {
         return this.closeDialog(event);
       }
     }, false, false)
 
     .onEvent("click", function (event) {
-      //console.log("click")
       var list = getParent(event.target, LIST);
       if (list) {
         return this.swapMenuClass(list);
@@ -326,7 +322,6 @@
     }, false, false)
 
     .onEvent("submit", function (event) {
-      //console.log("submit")
       switch (event.target.getAttribute(NAME)) {
         case "volt-dialog":
           return this.openDialog(event);
