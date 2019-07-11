@@ -46,7 +46,7 @@
         function (error) {
           if ((error.target !== undefined) &&
               (error.target.status === 404)) {
-            throw new jIO.util.jIOError("Cannot find document", 404);
+            throw new jIO.util.jIOError("Cannot find document: " + id, 404);
           }
           throw error;
         }

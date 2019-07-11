@@ -6092,11 +6092,11 @@ var arrayExtend = function () {
   }
   return {type:"complex",operator:operator,query_list:query_list2};
 
-}, simpleQuerySetKey = function (query, key) {
+}, querySetKey = function (query, key) {
   var i;
   if (query.type === "complex") {
     for (i = 0; i < query.query_list.length; ++i) {
-      simpleQuerySetKey (query.query_list[i],key);
+      querySetKey(query.query_list[i], key);
     }
     return true;
   }
@@ -6105,6 +6105,8 @@ var arrayExtend = function () {
     return true;
   }
   return false;
+}, parseQuotedString = function (string) {
+  return string.replace(/(?:\\(")|(\\[^"]))/g, '$1$2');
 },
   error_offsets = [],
   error_lookaheads = [],
@@ -6217,7 +6219,7 @@ case 12:
  this.$ = $$[$0-1]; 
 break;
 case 13:
- simpleQuerySetKey($$[$0], $$[$0-2]); this.$ = $$[$0]; 
+ querySetKey($$[$0], $$[$0-2]); this.$ = $$[$0]; 
 break;
 case 15:
  $$[$0].operator = $$[$0-1] ; this.$ = $$[$0]; 
@@ -6226,7 +6228,7 @@ case 17:
  this.$ = mkSimpleQuery('', $$[$0]); 
 break;
 case 18:
- this.$ = mkSimpleQuery('', $$[$0-1]); 
+ this.$ = mkSimpleQuery('', parseQuotedString($$[$0-1])); 
 break;
 }
 },
@@ -6930,6 +6932,9 @@ return new Parser;
       throw new TypeError("jioquery.sortOn(): " +
                           "Argument 1 is not of type 'array'");
     }
+    if (sort_on_option.length === 0) {
+      return list;
+    }
     list.sort(generateSortFunction(
       key_schema,
       sort_on_option
@@ -7346,21 +7351,8 @@ return new Parser;
    * #crossLink "Query/toString:method"
    */
   ComplexQuery.prototype.toString = function () {
-    var str_list = [], this_operator = this.operator;
-    if (this.operator === "NOT") {
-      str_list.push("NOT (");
-      str_list.push(this.query_list[0].toString());
-      str_list.push(")");
-      return str_list.join(" ");
-    }
-    this.query_list.forEach(function (query) {
-      str_list.push("(");
-      str_list.push(query.toString());
-      str_list.push(")");
-      str_list.push(this_operator);
-    });
-    str_list.length -= 1;
-    return str_list.join(" ");
+    /*global objectToSearchText */
+    return objectToSearchText(this.toJSON());
   };
 
   /**
@@ -7458,21 +7450,71 @@ return new Parser;
                         "Argument 1 is not a search text or a parsable object");
   };
 
+  function ensureString(value) {
+    if (value === undefined) { return "undefined"; }
+    if (value === null) { return "null"; }
+    return value.toString();
+  }
+
+  function renderSearchTextValue(value) {
+    return '"' + ensureString(value).replace(/"/g, '\\"') + '"';
+  }
+
   function objectToSearchText(query) {
-    var str_list = [];
-    if (query.type === "complex") {
-      str_list.push("(");
-      (query.query_list || []).forEach(function (sub_query) {
-        str_list.push(objectToSearchText(sub_query));
-        str_list.push(query.operator);
-      });
-      str_list.length -= 1;
-      str_list.push(")");
-      return str_list.join(" ");
-    }
+    var i = 0,
+      query_list = null,
+      string_list = null,
+      operator = "",
+      common_key = "";
     if (query.type === "simple") {
       return (query.key ? query.key + ": " : "") +
-        (query.operator || "") + ' "' + query.value + '"';
+        (query.operator || "") + ' ' +
+        renderSearchTextValue(query.value);
+    }
+    if (query.type === "complex") {
+      query_list = query.query_list;
+      if (!query_list || query_list.length === 0) {
+        return "";
+      }
+      operator = query.operator || "";
+      if (operator === "NOT") {
+        // fallback to AND operator if several queries are given
+        // i.e. `NOT ( a AND b )`
+        return "NOT ( " + objectToSearchText(
+          {type: "complex", operator: "AND", query_list: query_list}
+        ) + " )";
+      }
+      if (query_list.length === 1) {
+        return objectToSearchText(query_list[0]);
+      }
+
+      common_key = query_list[i].key;
+      for (i = 1; i < query_list.length; i += 1) {
+        if (query_list[i].type !== "simple" ||
+            query_list[i].key !== common_key) {
+          break;
+        }
+      }
+      string_list = [];
+      if (i === query_list.length) {
+        for (i = 0; i < query_list.length; i += 1) {
+          string_list.push(
+            (query_list[i].operator || "") +
+              ' ' + renderSearchTextValue(query_list[i].value)
+          );
+        }
+      } else {
+        common_key = "";
+        for (i = 0; i < query_list.length; i += 1) {
+          string_list.push(objectToSearchText(query_list[i]));
+        }
+      }
+      if (string_list.length > 1) {
+        return (common_key ? common_key + ": " : "") +
+          "( " + string_list.join(" " + operator + " ") + " )";
+      }
+      return (common_key ? common_key + ": " : "") +
+        string_list[0];
     }
     throw new TypeError("This object is not a query");
   }
@@ -7641,8 +7683,7 @@ return new Parser;
    * #crossLink "Query/toString:method"
    */
   SimpleQuery.prototype.toString = function () {
-    return (this.key ? this.key + ":" : "") +
-      (this.operator ? " " + this.operator : "") + ' "' + this.value + '"';
+    return objectToSearchText(this.toJSON());
   };
 
   /**
@@ -8080,16 +8121,10 @@ return new Parser;
  * See https://www.nexedi.com/licensing for rationale and options.
  */
 /*global window, RSVP, Blob, XMLHttpRequest, QueryFactory, Query, atob,
-  FileReader, ArrayBuffer, Uint8Array, navigator */
+  FileReader, ArrayBuffer, Uint8Array */
 (function (window, RSVP, Blob, QueryFactory, Query, atob,
-           FileReader, ArrayBuffer, Uint8Array, navigator) {
+           FileReader, ArrayBuffer, Uint8Array) {
   "use strict";
-
-  if (window.openDatabase === undefined) {
-    window.openDatabase = function () {
-      throw new Error('WebSQL is not supported by ' + navigator.userAgent);
-    };
-  }
 
   /* Safari does not define DOMError */
   if (window.DOMError === undefined) {
@@ -8536,6 +8571,7 @@ return new Parser;
       if (context.hasCapacity("list") &&
           ((options.query === undefined) || context.hasCapacity("query")) &&
           ((options.sort_on === undefined) || context.hasCapacity("sort")) &&
+          ((options.group_by === undefined) || context.hasCapacity("group")) &&
           ((options.select_list === undefined) ||
            context.hasCapacity("select")) &&
           ((options.include_docs === undefined) ||
@@ -8622,7 +8658,7 @@ return new Parser;
   window.jIO = jIO;
 
 }(window, RSVP, Blob, QueryFactory, Query, atob,
-  FileReader, ArrayBuffer, Uint8Array, navigator));
+  FileReader, ArrayBuffer, Uint8Array));
 /*
  * Rusha, a JavaScript implementation of the Secure Hash Algorithm, SHA-1,
  * as defined in FIPS PUB 180-1, tuned for high performance with large inputs.
@@ -10337,7 +10373,8 @@ return new Parser;
               });
           }
           report.log(id, options.from_local ? LOG_UNEXPECTED_REMOTE_ATTACHMENT :
-                                              LOG_UNEXPECTED_LOCAL_ATTACHMENT);
+                                              LOG_UNEXPECTED_LOCAL_ATTACHMENT,
+                     JSON.stringify(attachment_dict));
         }, function (error) {
           if ((error instanceof jIO.util.jIOError) &&
               (error.status_code === 404)) {
@@ -11226,6 +11263,139 @@ return new Parser;
 
 }(jIO, JSON, RSVP));
 /*
+ * Copyright 2015, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+/*jslint nomen: true*/
+/*global RSVP, Blob, LZString, DOMException*/
+(function (RSVP, Blob, LZString, DOMException) {
+  "use strict";
+
+  /**
+   * The jIO ZipStorage extension
+   *
+   * @class ZipStorage
+   * @constructor
+   */
+
+  var MIME_TYPE = "application/x-jio-utf16_lz_string";
+
+  function ZipStorage(spec) {
+    this._sub_storage = jIO.createJIO(spec.sub_storage);
+  }
+
+  ZipStorage.prototype.get = function () {
+    return this._sub_storage.get.apply(this._sub_storage,
+                                        arguments);
+  };
+
+  ZipStorage.prototype.post = function () {
+    return this._sub_storage.post.apply(this._sub_storage,
+                                        arguments);
+  };
+
+  ZipStorage.prototype.put = function () {
+    return this._sub_storage.put.apply(this._sub_storage,
+                                       arguments);
+  };
+
+  ZipStorage.prototype.remove = function () {
+    return this._sub_storage.remove.apply(this._sub_storage,
+                                          arguments);
+  };
+
+  ZipStorage.prototype.hasCapacity = function () {
+    return this._sub_storage.hasCapacity.apply(this._sub_storage,
+                                               arguments);
+  };
+
+  ZipStorage.prototype.buildQuery = function () {
+    return this._sub_storage.buildQuery.apply(this._sub_storage,
+                                              arguments);
+  };
+
+  ZipStorage.prototype.getAttachment = function (id, name) {
+    var that = this;
+    return that._sub_storage.getAttachment(id, name)
+      .push(function (blob) {
+        if (blob.type !== MIME_TYPE) {
+          return blob;
+        }
+        return new RSVP.Queue()
+          .push(function () {
+            return jIO.util.readBlobAsText(blob, 'utf16');
+          })
+          .push(function (evt) {
+            var result =
+              LZString.decompressFromUTF16(evt.target.result);
+            if (result === '') {
+              return blob;
+            }
+            try {
+              return jIO.util.dataURItoBlob(
+                result
+              );
+            } catch (error) {
+              if (error instanceof DOMException) {
+                return blob;
+              }
+              throw error;
+            }
+          });
+      });
+  };
+
+  function myEndsWith(str, query) {
+    return (str.indexOf(query) === str.length - query.length);
+  }
+
+  ZipStorage.prototype.putAttachment = function (id, name, blob) {
+    var that = this;
+    if ((blob.type.indexOf("text/") === 0) || myEndsWith(blob.type, "xml") ||
+        myEndsWith(blob.type, "json")) {
+      return new RSVP.Queue()
+        .push(function () {
+          return jIO.util.readBlobAsDataURL(blob);
+        })
+        .push(function (data) {
+          var result = LZString.compressToUTF16(data.target.result);
+          blob = new Blob([result],
+                          {type: MIME_TYPE});
+          return that._sub_storage.putAttachment(id, name, blob);
+        });
+    }
+    return this._sub_storage.putAttachment.apply(this._sub_storage,
+                                                 arguments);
+  };
+
+  ZipStorage.prototype.removeAttachment = function () {
+    return this._sub_storage.removeAttachment.apply(this._sub_storage,
+                                                    arguments);
+  };
+
+  ZipStorage.prototype.allAttachments = function () {
+    return this._sub_storage.allAttachments.apply(this._sub_storage,
+                                                  arguments);
+  };
+
+  jIO.addStorage('zip', ZipStorage);
+}(RSVP, Blob, LZString, DOMException));
+/*
  * Copyright 2017, Nexedi SA
  *
  * This program is free software: you can Use, Study, Modify and Redistribute
@@ -11639,6 +11809,2121 @@ return new Parser;
   jIO.addStorage('http', HttpStorage);
 
 }(jIO, RSVP, Blob));/*
+ * Copyright 2013, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+/**
+ * JIO Dropbox Storage. Type = "dropbox".
+ * Dropbox "database" storage.
+ */
+/*global Blob, jIO, RSVP*/
+/*jslint nomen: true*/
+
+(function (jIO, RSVP, Blob, JSON) {
+  "use strict";
+  var GET_URL = "https://content.dropboxapi.com/2/files/download",
+    UPLOAD_URL = "https://content.dropboxapi.com/2/files/upload",
+    REMOVE_URL = "https://api.dropboxapi.com/2/files/delete_v2",
+    CREATE_DIR_URL = "https://api.dropboxapi.com/2/files/create_folder_v2",
+    METADATA_URL = "https://api.dropboxapi.com/2/files/get_metadata",
+    LIST_FOLDER_URL = "https://api.dropboxapi.com/2/files/list_folder",
+    LIST_MORE_URL = "https://api.dropboxapi.com/2/files/list_folder/continue";
+
+  function restrictDocumentId(id) {
+    if (id.indexOf("/") !== 0) {
+      throw new jIO.util.jIOError("id " + id + " is forbidden (no begin /)",
+                                  400);
+    }
+    if (id.lastIndexOf("/") !== (id.length - 1)) {
+      throw new jIO.util.jIOError("id " + id + " is forbidden (no end /)",
+                                  400);
+    }
+    return id.slice(0, -1);
+  }
+
+  function restrictAttachmentId(id) {
+    if (id.indexOf("/") !== -1) {
+      throw new jIO.util.jIOError("attachment " + id + " is forbidden",
+                                  400);
+    }
+  }
+
+  function recursiveAllAttachments(result, token, id, cursor) {
+    var data,
+      url;
+    if (cursor === undefined) {
+      data = {
+        "path": id,
+        "recursive": false,
+        "include_media_info": false,
+        "include_deleted": false,
+        "include_has_explicit_shared_members": false,
+        "include_mounted_folders": true
+      };
+      url = LIST_FOLDER_URL;
+    } else {
+      data = {"cursor": cursor};
+      url = LIST_MORE_URL;
+    }
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "POST",
+          url: url,
+          headers: {
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json"
+          },
+          data: JSON.stringify(data)
+        });
+      })
+      .push(function (evt) {
+        var obj = JSON.parse(evt.target.response || evt.target.responseText),
+          i;
+        for (i = 0; i < obj.entries.length; i += 1) {
+          if (obj.entries[i][".tag"] === "file") {
+            result[obj.entries[i].name] = {};
+          }
+        }
+        if (obj.has_more) {
+          return recursiveAllAttachments(result, token, id, obj.cursor);
+        }
+        return result;
+      }, function (error) {
+        if (error.target !== undefined && error.target.status === 409) {
+          var err_content = JSON.parse(error.target.response ||
+                                       error.target.responseText);
+          if ((err_content.error['.tag'] === 'path') &&
+              (err_content.error.path['.tag'] === 'not_folder')) {
+            throw new jIO.util.jIOError("Not a directory: " + id + "/",
+                                        404);
+          }
+          if ((err_content.error['.tag'] === 'path') &&
+              (err_content.error.path['.tag'] === 'not_found')) {
+            throw new jIO.util.jIOError("Cannot find document: " + id + "/",
+                                        404);
+          }
+        }
+        throw error;
+      });
+  }
+
+  /**
+   * The JIO Dropbox Storage extension
+   *
+   * @class DropboxStorage
+   * @constructor
+   */
+  function DropboxStorage(spec) {
+    if (typeof spec.access_token !== 'string' || !spec.access_token) {
+      throw new TypeError("Access Token' must be a string " +
+                          "which contains more than one character.");
+    }
+    this._access_token = spec.access_token;
+  }
+
+  DropboxStorage.prototype.put = function (id, param) {
+    var that = this;
+    id = restrictDocumentId(id);
+    if (Object.getOwnPropertyNames(param).length > 0) {
+      // Reject if param has some properties
+      throw new jIO.util.jIOError("Can not store properties: " +
+                                  Object.getOwnPropertyNames(param), 400);
+    }
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "POST",
+          url: CREATE_DIR_URL,
+          headers: {
+            "Authorization": "Bearer " + that._access_token,
+            "Content-Type": "application/json"
+          },
+          data: JSON.stringify({"path": id, "autorename": false})
+        });
+      })
+      .push(undefined, function (err) {
+        if ((err.target !== undefined) &&
+            (err.target.status === 409)) {
+          var err_content = JSON.parse(err.target.response ||
+                                       err.target.responseText);
+          if ((err_content.error['.tag'] === 'path') &&
+              (err_content.error.path['.tag'] === 'conflict')) {
+            // Directory already exists, no need to fail
+            return;
+          }
+        }
+        throw err;
+      });
+  };
+
+  DropboxStorage.prototype.remove = function (id) {
+    id = restrictDocumentId(id);
+    return jIO.util.ajax({
+      type: "POST",
+      url: REMOVE_URL,
+      headers: {
+        "Authorization": "Bearer " + this._access_token,
+        "Content-Type": "application/json"
+      },
+      data: JSON.stringify({"path": id})
+    });
+  };
+
+  DropboxStorage.prototype.get = function (id) {
+    var that = this;
+
+    if (id === "/") {
+      return {};
+    }
+    id = restrictDocumentId(id);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "POST",
+          url: METADATA_URL,
+          headers: {
+            "Authorization": "Bearer " + that._access_token,
+            "Content-Type": "application/json"
+          },
+          data: JSON.stringify({"path": id})
+        });
+      })
+      .push(function (evt) {
+        var obj = JSON.parse(evt.target.response ||
+                             evt.target.responseText);
+        if (obj[".tag"] === "folder") {
+          return {};
+        }
+        throw new jIO.util.jIOError("Not a directory: " + id + "/", 404);
+      }, function (error) {
+        if (error.target !== undefined && error.target.status === 409) {
+          var err_content = JSON.parse(error.target.response ||
+                                       error.target.responseText);
+          if ((err_content.error['.tag'] === 'path') &&
+              (err_content.error.path['.tag'] === 'not_found')) {
+            throw new jIO.util.jIOError("Cannot find document: " + id + "/",
+                                        404);
+          }
+        }
+        throw error;
+      });
+  };
+
+  DropboxStorage.prototype.allAttachments = function (id) {
+    id = restrictDocumentId(id);
+    return recursiveAllAttachments({}, this._access_token, id);
+  };
+
+  //currently, putAttachment will fail with files larger than 150MB,
+  //due to the Dropbox API. the API provides the "chunked_upload" method
+  //to pass this limit, but upload process becomes more complex to implement.
+  //
+  //putAttachment will also create a folder if you try to put an attachment
+  //to an inexisting foler.
+
+  DropboxStorage.prototype.putAttachment = function (id, name, blob) {
+    id = restrictDocumentId(id);
+    restrictAttachmentId(name);
+
+    return jIO.util.ajax({
+      type: "POST",
+      url: UPLOAD_URL,
+      headers: {
+        "Authorization": "Bearer " + this._access_token,
+        "Content-Type": "application/octet-stream",
+        "Dropbox-API-Arg": JSON.stringify({
+          "path": id + "/" + name,
+          "mode": "overwrite",
+          "autorename": false,
+          "mute": false
+        })
+      },
+      data: blob
+    });
+  };
+
+  DropboxStorage.prototype.getAttachment = function (id, name) {
+    var context = this;
+
+    id = restrictDocumentId(id);
+    restrictAttachmentId(name);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          url: GET_URL,
+          type: "POST",
+          dataType: "blob",
+          headers: {
+            "Authorization": "Bearer " + context._access_token,
+            "Dropbox-API-Arg": JSON.stringify({"path": id + "/" + name})
+          }
+        });
+      })
+      .push(function (evt) {
+        if (evt.target.response instanceof Blob) {
+          return evt.target.response;
+        }
+        return new Blob(
+          [evt.target.responseText],
+          {"type": evt.target.getResponseHeader('Content-Type') ||
+            "application/octet-stream"}
+        );
+      }, function (error) {
+        if (error.target !== undefined && error.target.status === 409) {
+          if (!(error.target.response instanceof Blob)) {
+            var err_content = JSON.parse(error.target.responseText);
+            if ((err_content.error['.tag'] === 'path') &&
+                (err_content.error.path['.tag'] === 'not_found')) {
+              throw new jIO.util.jIOError("Cannot find attachment: " +
+                                          id + "/, " + name, 404);
+            }
+            throw error;
+          }
+          return new RSVP.Queue()
+            .push(function () {
+              return jIO.util.readBlobAsText(error.target.response);
+            })
+            .push(function (evt) {
+              var err_content2 = JSON.parse(evt.target.result);
+              if ((err_content2.error['.tag'] === 'path') &&
+                  (err_content2.error.path['.tag'] === 'not_found')) {
+                throw new jIO.util.jIOError("Cannot find attachment: " +
+                                            id + "/, " + name, 404);
+              }
+              throw error;
+            });
+        }
+        throw error;
+      });
+  };
+
+  //removeAttachment removes also directories.(due to Dropbox API)
+
+  DropboxStorage.prototype.removeAttachment = function (id, name) {
+    var that = this;
+    id = restrictDocumentId(id);
+    restrictAttachmentId(name);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "POST",
+          url: REMOVE_URL,
+          headers: {
+            "Authorization": "Bearer " + that._access_token,
+            "Content-Type": "application/json"
+          },
+          data: JSON.stringify({"path": id + "/" + name})
+        });
+      }).push(undefined, function (error) {
+        if (error.target !== undefined && error.target.status === 409) {
+          var err_content = JSON.parse(error.target.response ||
+                                       error.target.responseText);
+          if ((err_content.error['.tag'] === 'path_lookup') &&
+              (err_content.error.path_lookup['.tag'] === 'not_found')) {
+            throw new jIO.util.jIOError("Cannot find attachment: " +
+                                        id + "/, " + name, 404);
+          }
+        }
+        throw error;
+      });
+  };
+
+  jIO.addStorage('dropbox', DropboxStorage);
+
+}(jIO, RSVP, Blob, JSON));
+/*
+ * Copyright 2013, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+
+/*jslint nomen: true*/
+/*global jIO, RSVP, DOMParser, Blob */
+
+// JIO Dav Storage Description :
+// {
+//   type: "dav",
+//   url: {string},
+//   basic_login: {string} // Basic authentication
+// }
+
+// NOTE: to get the authentication type ->
+// curl --verbose  -X OPTION http://domain/
+// In the headers: "WWW-Authenticate: Basic realm="DAV-upload"
+
+(function (jIO, RSVP, DOMParser, Blob) {
+  "use strict";
+
+  function ajax(storage, options) {
+    if (options === undefined) {
+      options = {};
+    }
+    if (storage._authorization !== undefined) {
+      if (options.headers === undefined) {
+        options.headers = {};
+      }
+      options.headers.Authorization = storage._authorization;
+    }
+
+    if (storage._with_credentials !== undefined) {
+      if (options.xhrFields === undefined) {
+        options.xhrFields = {};
+      }
+      options.xhrFields.withCredentials = storage._with_credentials;
+    }
+//       if (start !== undefined) {
+//         if (end !== undefined) {
+//           headers.Range = "bytes=" + start + "-" + end;
+//         } else {
+//           headers.Range = "bytes=" + start + "-";
+//         }
+//       }
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax(options);
+      });
+  }
+
+  function restrictDocumentId(id) {
+    if (id.indexOf("/") !== 0) {
+      throw new jIO.util.jIOError("id " + id + " is forbidden (no begin /)",
+                                  400);
+    }
+    if (id.lastIndexOf("/") !== (id.length - 1)) {
+      throw new jIO.util.jIOError("id " + id + " is forbidden (no end /)",
+                                  400);
+    }
+    return id;
+  }
+
+  function restrictAttachmentId(id) {
+    if (id.indexOf("/") !== -1) {
+      throw new jIO.util.jIOError("attachment " + id + " is forbidden",
+                                  400);
+    }
+  }
+
+  /**
+   * The JIO WebDAV Storage extension
+   *
+   * @class DavStorage
+   * @constructor
+   */
+  function DavStorage(spec) {
+    if (typeof spec.url !== 'string') {
+      throw new TypeError("DavStorage 'url' is not of type string");
+    }
+    this._url = spec.url;
+    // XXX digest login
+    if (typeof spec.basic_login === 'string') {
+      this._authorization = "Basic " + spec.basic_login;
+    }
+    this._with_credentials = spec.with_credentials;
+  }
+
+  DavStorage.prototype.put = function (id, param) {
+    var that = this;
+    id = restrictDocumentId(id);
+    if (Object.getOwnPropertyNames(param).length > 0) {
+      // Reject if param has some properties
+      throw new jIO.util.jIOError("Can not store properties: " +
+                                  Object.getOwnPropertyNames(param), 400);
+    }
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(that, {
+          type: "MKCOL",
+          url: that._url + id
+        });
+      })
+      .push(undefined, function (err) {
+        if ((err.target !== undefined) &&
+            (err.target.status === 405)) {
+          return;
+        }
+        throw err;
+      });
+  };
+
+  DavStorage.prototype.remove = function (id) {
+    id = restrictDocumentId(id);
+    return ajax(this, {
+      type: "DELETE",
+      url: this._url + id
+    });
+  };
+
+  DavStorage.prototype.get = function (id) {
+    var context = this;
+    id = restrictDocumentId(id);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(context, {
+          type: "PROPFIND",
+          url: context._url + id,
+          dataType: "text",
+          headers: {
+            // Increasing this value is a performance killer
+            Depth: "1"
+          }
+        });
+      })
+      .push(function () {
+        return {};
+      }, function (error) {
+        if ((error.target !== undefined) &&
+            (error.target.status === 404)) {
+          throw new jIO.util.jIOError("Cannot find document", 404);
+        }
+        throw error;
+      });
+  };
+
+  DavStorage.prototype.allAttachments = function (id) {
+
+    var context = this;
+    id = restrictDocumentId(id);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(context, {
+          type: "PROPFIND",
+          url: context._url + id,
+          dataType: "text",
+          headers: {
+            // Increasing this value is a performance killer
+            Depth: "1"
+          }
+        });
+      })
+
+
+      .push(function (response) {
+        // Extract all meta informations and return them to JSON
+
+        var i,
+          attachment = {},
+          new_id,
+          attachment_list = new DOMParser().parseFromString(
+            response.target.responseText,
+            "text/xml"
+          ).querySelectorAll(
+            "D\\:response, response"
+          );
+
+        // exclude parent folder and browse
+        for (i = 1; i < attachment_list.length; i += 1) {
+          // XXX Only get files for now
+          new_id = attachment_list[i].querySelector("D\\:href, href").
+            textContent.split('/').slice(-1)[0];
+          // XXX Ugly
+          if ((new_id !== undefined) && (new_id !== "")) {
+            attachment[new_id] = {};
+          }
+        }
+        return attachment;
+
+      }, function (error) {
+        if ((error.target !== undefined) &&
+            (error.target.status === 404)) {
+          throw new jIO.util.jIOError("Cannot find document", 404);
+        }
+        throw error;
+      });
+
+  };
+
+
+  DavStorage.prototype.putAttachment = function (id, name, blob) {
+    var that = this;
+    id = restrictDocumentId(id);
+    restrictAttachmentId(name);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(that, {
+          type: "PUT",
+          url: that._url + id + name,
+          data: blob
+        });
+      })
+      .push(undefined, function (error) {
+        if (error.target.status === 403 || error.target.status === 424) {
+          throw new jIO.util.jIOError("Cannot access subdocument", 404);
+        }
+        throw error;
+      });
+  };
+
+  DavStorage.prototype.getAttachment = function (id, name) {
+    var context = this;
+    id = restrictDocumentId(id);
+    restrictAttachmentId(name);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(context, {
+          type: "GET",
+          url: context._url + id + name,
+          dataType: "blob"
+        });
+      })
+      .push(function (response) {
+        return new Blob(
+          [response.target.response || response.target.responseText],
+          {"type": response.target.getResponseHeader('Content-Type') ||
+                   "application/octet-stream"}
+        );
+      }, function (error) {
+        if ((error.target !== undefined) &&
+            (error.target.status === 404)) {
+          throw new jIO.util.jIOError("Cannot find attachment: "
+                                      + id + " , " + name,
+                                      404);
+        }
+        throw error;
+      });
+
+  };
+
+  DavStorage.prototype.removeAttachment = function (id, name) {
+    var context = this;
+    id = restrictDocumentId(id);
+    restrictAttachmentId(name);
+
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(context, {
+          type: "DELETE",
+          url: context._url + id + name
+        });
+      })
+      .push(undefined, function (error) {
+        if ((error.target !== undefined) &&
+            (error.target.status === 404)) {
+          throw new jIO.util.jIOError("Cannot find attachment: "
+                                      + id + " , " + name,
+                                      404);
+        }
+        throw error;
+      });
+  };
+
+  // JIO COMMANDS //
+
+  // wedDav methods rfc4918 (short summary)
+  // COPY     Reproduces single resources (files) and collections (directory
+  //          trees). Will overwrite files (if specified by request) but will
+  //          respond 209 (Conflict) if it would overwrite a tree
+  // DELETE   deletes files and directory trees
+  // GET      just the vanilla HTTP/1.1 behaviour
+  // HEAD     ditto
+  // LOCK     locks a resources
+  // MKCOL    creates a directory
+  // MOVE     Moves (rename or copy) a file or a directory tree. Will
+  //          'overwrite' files (if specified by the request) but will respond
+  //          209 (Conflict) if it would overwrite a tree.
+  // OPTIONS  If WebDAV is enabled and available for the path this reports the
+  //          WebDAV extension methods
+  // PROPFIND Retrieves the requested file characteristics, DAV lock status
+  //          and 'dead' properties for individual files, a directory and its
+  //          child files, or a directory tree
+  // PROPPATCHset and remove 'dead' meta-data properties
+  // PUT      Update or create resource or collections
+  // UNLOCK   unlocks a resource
+
+  // Notes: all Ajax requests should be CORS (cross-domain)
+  // adding custom headers triggers preflight OPTIONS request!
+  // http://remysharp.com/2011/04/21/getting-cors-working/
+
+  jIO.addStorage('dav', DavStorage);
+
+}(jIO, RSVP, DOMParser, Blob));
+/*
+ * Copyright 2015, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+/**
+ * JIO Google Drive Storage. Type = "gdrive".
+ * Google Drive "database" storage.
+ */
+/*global jIO, Blob, RSVP, UriTemplate, JSON*/
+/*jslint nomen: true*/
+
+(function (jIO, Blob, RSVP, UriTemplate, JSON) {
+  "use strict";
+
+  var UPLOAD_URL = "https://www.googleapis.com{/upload}/drive/v2/files{/id}" +
+      "{?uploadType,access_token}",
+    upload_template = UriTemplate.parse(UPLOAD_URL),
+    REMOVE_URL = "https://www.googleapis.com/drive/v2/" +
+      "files{/id,trash}{?access_token}",
+    remove_template = UriTemplate.parse(REMOVE_URL),
+    LIST_URL = "https://www.googleapis.com/drive/v2/files" +
+      "?prettyPrint=false{&pageToken}&q=trashed=false" +
+      "&fields=nextPageToken,items(id){&access_token}",
+    list_template = UriTemplate.parse(LIST_URL),
+    GET_URL = "https://www.googleapis.com/drive/v2/files{/id}{?alt}",
+    get_template = UriTemplate.parse(GET_URL);
+
+  function handleError(error, id) {
+    if (error.target.status === 404) {
+      throw new jIO.util.jIOError(
+        "Cannot find document: " + id,
+        404
+      );
+    }
+    throw error;
+  }
+
+  function listPage(result, token) {
+    var i,
+      obj;
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          "type": "GET",
+          "url": list_template.expand({
+            pageToken : (result.nextPageToken || ""),
+            access_token: token
+          })
+        });
+      })
+      .push(function (data) {
+        obj = JSON.parse(data.target.response || data.target.responseText);
+        for (i = 0; i < obj.items.length; i += 1) {
+          obj.items[i].value = {};
+          result.push(obj.items[i]);
+        }
+        result.nextPageToken = obj.nextPageToken;
+        return result;
+      }, handleError);
+  }
+
+  function checkName(name) {
+    if (name !== "enclosure") {
+      throw new jIO.util.jIOError("Only support 'enclosure' attachment", 400);
+    }
+  }
+
+  /**
+   * The JIO Google Drive Storage extension
+   *
+   * @class GdriveStorage
+   * @constructor
+   */
+  function GdriveStorage(spec) {
+    if (spec === undefined || spec.access_token === undefined ||
+        typeof spec.access_token !== 'string') {
+      throw new TypeError("Access Token must be a string " +
+                          "which contains more than one character.");
+    }
+    if (spec.trashing !== undefined &&
+        (spec.trashing !== true && spec.trashing !== false)) {
+      throw new TypeError("trashing parameter" +
+                          " must be a boolean (true or false)");
+    }
+    this._trashing = spec.trashing || true;
+    this._access_token = spec.access_token;
+    return;
+  }
+
+  function recursiveAllDocs(result, accessToken) {
+    return new RSVP.Queue()
+      .push(function () {
+        return listPage(result, accessToken);
+      })
+      .push(function () {
+        if (result.nextPageToken) {
+          return recursiveAllDocs(result, accessToken);
+        }
+        return result;
+      });
+  }
+
+  GdriveStorage.prototype.hasCapacity = function (name) {
+    return (name === "list");
+  };
+
+  GdriveStorage.prototype.buildQuery = function () {
+    return recursiveAllDocs([], this._access_token);
+  };
+
+  function sendMetaData(id, param, token) {
+    var boundary = "-------314159265358979323846";
+
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          "type": id ? "PUT" : "POST",
+          "url": upload_template.expand({
+            access_token: token,
+            id: id || [],
+            upload: id ? [] : "upload",
+            uploadType: "multipart"
+          }),
+          headers: {
+            "Content-Type" : 'multipart/related; boundary="' + boundary + '"'
+          },
+          data: '--' + boundary + '\n' +
+            'Content-Type: application/json; charset=UTF-8\n\n' +
+            JSON.stringify(param) + '\n\n--' + boundary + "--"
+        });
+      })
+      .push(function (result) {
+        var obj = JSON.parse(result.target.responseText);
+
+        return obj.id;
+      },
+            function (error) {handleError(error, id); });
+  }
+
+  GdriveStorage.prototype.put = function (id, param) {
+    return sendMetaData(id, param, this._access_token);
+  };
+
+  GdriveStorage.prototype.post = function (param) {
+    return sendMetaData(undefined, param, this._access_token);
+  };
+
+  function sendData(id, blob, token) {
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          "type": "PUT",
+          "url": upload_template.expand({
+            access_token: token,
+            upload: "upload",
+            id: id,
+            uploadType: "media"
+          }),
+          data: blob
+        });
+      })
+      .push(function (data) {
+        data = JSON.parse(data.target.responseText);
+        if (data.mimeType === "application/vnd.google-apps.folder") {
+          throw new jIO.util.jIOError("cannot put attachments to folder", 400);
+        }
+        return data;
+      }, function (error) {handleError(error, id); });
+  }
+
+  GdriveStorage.prototype.putAttachment = function (id, name, blob) {
+    checkName(name);
+    return sendData(id, blob, this._access_token);
+  };
+
+  GdriveStorage.prototype.remove = function (id) {
+    var that  = this;
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: that._trashing ? "POST" : "DELETE",
+          url: remove_template.expand({
+            id : id,
+            access_token : that._access_token,
+            trash : that._trashing ? "trash" : []
+          })
+        });
+      })
+      .push(undefined, function (error) {handleError(error, id); });
+  };
+
+  function getData(id, attach, token) {
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "GET",
+          dataType: attach ? "blob" : "json",
+          url: get_template.expand({
+            id: id,
+            alt: attach ? "media" : [],
+            access_token: token
+          }),
+          headers: {
+            "Authorization" : "Bearer " + token
+          }
+        });
+      })
+      .push(function (evt) {
+        return evt.target.response ||
+          (attach ? new Blob([evt.target.responseText],
+                             {"type" :
+                              evt.target.responseHeaders["Content-Type"]}) :
+              JSON.parse(evt.target.responseText));
+      }, function (error) {handleError(error, id); });
+  }
+
+  GdriveStorage.prototype.get = function (id) {
+    return getData(id, false, this._access_token);
+  };
+
+  GdriveStorage.prototype.getAttachment = function (id, name) {
+    checkName(name);
+    return getData(id, true, this._access_token);
+  };
+
+  GdriveStorage.prototype.allAttachments = function (id) {
+    var token = this._access_token;
+
+    return new RSVP.Queue()
+      .push(function () {
+        return getData(id, false, token);
+      })
+      .push(function (data) {
+        if (data.mimeType === "application/vnd.google-apps.folder") {
+          return {};
+        }
+        return {"enclosure": {}};
+      });
+  };
+
+  jIO.addStorage('gdrive', GdriveStorage);
+
+}(jIO, Blob, RSVP, UriTemplate, JSON));
+/*
+ * Copyright 2014, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+/*jslint nomen: true */
+/*global RSVP*/
+
+/**
+ * JIO Union Storage. Type = 'union'.
+ * This provide a unified access other multiple storage.
+ * New document are created in the first sub storage.
+ * Document are searched in each sub storage until it is found.
+ * 
+ *
+ * Storage Description:
+ *
+ *     {
+ *       "type": "union",
+ *       "storage_list": [
+ *         sub_storage_description_1,
+ *         sub_storage_description_2,
+ *
+ *         sub_storage_description_X,
+ *       ]
+ *     }
+ *
+ * @class UnionStorage
+ */
+
+(function (jIO, RSVP) {
+  "use strict";
+
+  /**
+   * The JIO UnionStorage extension
+   *
+   * @class UnionStorage
+   * @constructor
+   */
+  function UnionStorage(spec) {
+    if (!Array.isArray(spec.storage_list)) {
+      throw new jIO.util.jIOError("storage_list is not an Array", 400);
+    }
+    var i;
+    this._storage_list = [];
+    for (i = 0; i < spec.storage_list.length; i += 1) {
+      this._storage_list.push(jIO.createJIO(spec.storage_list[i]));
+    }
+  }
+
+  UnionStorage.prototype._getWithStorageIndex = function () {
+    var i,
+      index = 0,
+      context = this,
+      arg = arguments,
+      result = this._storage_list[0].get.apply(this._storage_list[0], arg);
+
+    function handle404(j) {
+      result
+        .push(undefined, function (error) {
+          if ((error instanceof jIO.util.jIOError) &&
+              (error.status_code === 404)) {
+            return context._storage_list[j].get.apply(context._storage_list[j],
+                                                      arg)
+              .push(function (doc) {
+                index = j;
+                return doc;
+              });
+          }
+          throw error;
+        });
+    }
+
+    for (i = 1; i < this._storage_list.length; i += 1) {
+      handle404(i);
+    }
+    return result
+      .push(function (doc) {
+        return [index, doc];
+      });
+  };
+
+  /*
+   * Get a document
+   * Try on each substorage on after the other
+   */
+  UnionStorage.prototype.get = function () {
+    return this._getWithStorageIndex.apply(this, arguments)
+      .push(function (result) {
+        return result[1];
+      });
+  };
+
+  /*
+   * Get attachments list
+   * Try on each substorage on after the other
+   */
+  UnionStorage.prototype.allAttachments = function () {
+    var argument_list = arguments,
+      context = this;
+    return this._getWithStorageIndex.apply(this, arguments)
+      .push(function (result) {
+        var sub_storage = context._storage_list[result[0]];
+        return sub_storage.allAttachments.apply(sub_storage, argument_list);
+      });
+  };
+
+  /*
+   * Post a document
+   * Simply store on the first substorage
+   */
+  UnionStorage.prototype.post = function () {
+    return this._storage_list[0].post.apply(this._storage_list[0], arguments);
+  };
+
+  /*
+   * Put a document
+   * Search the document location, and modify it in its storage.
+   */
+  UnionStorage.prototype.put = function () {
+    var arg = arguments,
+      context = this;
+    return this._getWithStorageIndex(arg[0])
+      .push(undefined, function (error) {
+        if ((error instanceof jIO.util.jIOError) &&
+            (error.status_code === 404)) {
+          // Document does not exist, create in first substorage
+          return [0];
+        }
+        throw error;
+      })
+      .push(function (result) {
+        // Storage found, modify in it directly
+        var sub_storage = context._storage_list[result[0]];
+        return sub_storage.put.apply(sub_storage, arg);
+      });
+  };
+
+  /*
+   * Remove a document
+   * Search the document location, and remove it from its storage.
+   */
+  UnionStorage.prototype.remove = function () {
+    var arg = arguments,
+      context = this;
+    return this._getWithStorageIndex(arg[0])
+      .push(function (result) {
+        // Storage found, remove from it directly
+        var sub_storage = context._storage_list[result[0]];
+        return sub_storage.remove.apply(sub_storage, arg);
+      });
+  };
+
+  UnionStorage.prototype.buildQuery = function () {
+    var promise_list = [],
+      i,
+      id_dict = {},
+      len = this._storage_list.length,
+      sub_storage;
+    for (i = 0; i < len; i += 1) {
+      sub_storage = this._storage_list[i];
+      promise_list.push(sub_storage.buildQuery.apply(sub_storage, arguments));
+    }
+    return new RSVP.Queue()
+      .push(function () {
+        return RSVP.all(promise_list);
+      })
+      .push(function (result_list) {
+        var result = [],
+          sub_result,
+          sub_result_len,
+          j;
+        len = result_list.length;
+        for (i = 0; i < len; i += 1) {
+          sub_result = result_list[i];
+          sub_result_len = sub_result.length;
+          for (j = 0; j < sub_result_len; j += 1) {
+            if (!id_dict.hasOwnProperty(sub_result[j].id)) {
+              id_dict[sub_result[j].id] = null;
+              result.push(sub_result[j]);
+            }
+          }
+        }
+        return result;
+      });
+  };
+
+  UnionStorage.prototype.hasCapacity = function (name) {
+    var i,
+      len,
+      result,
+      sub_storage;
+    if ((name === "list") ||
+            (name === "query") ||
+            (name === "select")) {
+      result = true;
+      len = this._storage_list.length;
+      for (i = 0; i < len; i += 1) {
+        sub_storage = this._storage_list[i];
+        result = result && sub_storage.hasCapacity(name);
+      }
+      return result;
+    }
+    return false;
+  };
+
+  UnionStorage.prototype.repair = function () {
+    var i,
+      promise_list = [];
+    for (i = 0; i < this._storage_list.length; i += 1) {
+      promise_list.push(this._storage_list[i].repair.apply(
+        this._storage_list[i],
+        arguments
+      ));
+    }
+    return RSVP.all(promise_list);
+  };
+
+  UnionStorage.prototype.getAttachment = function () {
+    var argument_list = arguments,
+      context = this;
+    return this._getWithStorageIndex.apply(this, arguments)
+      .push(function (result) {
+        var sub_storage = context._storage_list[result[0]];
+        return sub_storage.getAttachment.apply(sub_storage, argument_list);
+      });
+  };
+
+  UnionStorage.prototype.putAttachment = function () {
+    var argument_list = arguments,
+      context = this;
+    return this._getWithStorageIndex.apply(this, arguments)
+      .push(function (result) {
+        var sub_storage = context._storage_list[result[0]];
+        return sub_storage.putAttachment.apply(sub_storage, argument_list);
+      });
+  };
+
+  UnionStorage.prototype.removeAttachment = function () {
+    var argument_list = arguments,
+      context = this;
+    return this._getWithStorageIndex.apply(this, arguments)
+      .push(function (result) {
+        var sub_storage = context._storage_list[result[0]];
+        return sub_storage.removeAttachment.apply(sub_storage, argument_list);
+      });
+  };
+
+  jIO.addStorage('union', UnionStorage);
+
+}(jIO, RSVP));
+/*
+ * Copyright 2019, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+/**
+ * JIO Linshare Storage. Type = "linshare".
+ * Linshare "database" storage.
+ * http://download.linshare.org/components/linshare-core/2.2.2/
+ * Can't set up id, implied can't put new document
+ */
+/*global jIO, RSVP, UriTemplate, FormData, Blob*/
+/*jslint nomen: true*/
+
+(function (jIO, RSVP, UriTemplate, FormData, Blob) {
+  "use strict";
+
+  function makeRequest(storage, uuid, options, download) {
+    if (options === undefined) {
+      options = {};
+    }
+    if (options.xhrFields === undefined) {
+      options.xhrFields = {};
+    }
+
+    if (options.headers === undefined) {
+      options.headers = {};
+    }
+
+    // Prefer JSON by default
+    if (download === true) {
+      options.url = storage._blob_template.expand({uuid: uuid});
+      options.dataType = 'blob';
+    } else {
+      options.url = storage._url_template.expand({uuid: uuid || ""});
+      if (!options.headers.hasOwnProperty('Accept')) {
+        options.headers.Accept = 'application/json';
+        options.dataType = 'json';
+      }
+    }
+
+    // Use cookie based auth
+    if (storage.hasOwnProperty('_access_token')) {
+      options.headers.Authorization = "Basic " + storage._access_token;
+    } else {
+      options.xhrFields.withCredentials = true;
+    }
+
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax(options);
+      })
+      .push(function (event) {
+        if (download === true) {
+          return (
+            event.target.response ||
+            // sinon does not fill the response attribute
+            new Blob([event.target.responseText], {type: 'text/plain'})
+          );
+        }
+
+        return (
+          event.target.response ||
+          // sinon does not fill the response attribute
+          JSON.parse(event.target.responseText)
+        );
+      });
+  }
+
+  /**
+   * The JIO Linshare Storage extension
+   *
+   * @class LinshareStorage
+   * @constructor
+   */
+  function LinshareStorage(spec) {
+
+    if (typeof spec.url !== "string" || !spec.url) {
+      throw new TypeError("Linshare 'url' must be a string " +
+                          "which contains more than one character.");
+    }
+    this._url_template = UriTemplate.parse(
+      spec.url + '/linshare/webservice/rest/user/v2/documents/{uuid}'
+    );
+    this._blob_template = UriTemplate.parse(
+      spec.url + '/linshare/webservice/rest/user/v2/documents/{uuid}/download'
+    );
+
+    if (spec.hasOwnProperty('access_token')) {
+      this._access_token = spec.access_token;
+    }
+  }
+
+  var capacity_list = ['list', 'include'];
+  LinshareStorage.prototype.hasCapacity = function (name) {
+    return (capacity_list.indexOf(name) !== -1);
+  };
+
+  function sortByModificationDate(entry1, entry2) {
+    var date1 = entry1.modificationDate,
+      date2 = entry2.modificationDate;
+    return (date1 === date2) ? 0 : ((date1 < date2) ? 1 : -1);
+  }
+
+  function getDocumentList(storage, options) {
+    return makeRequest(storage, "", {
+      type: "GET"
+    })
+      .push(function (entry_list) {
+        // Linshare only allow to get the full list of documents
+        // First, sort the entries by modificationDate in order to
+        // drop the 'old' entries with the same 'name'
+        // (as linshare does not to update an existing doc)
+        entry_list.sort(sortByModificationDate);
+
+        // Only return one document per name
+        // Keep the newer document
+        var entry_dict = {},
+          i,
+          len = entry_list.length,
+          entry_name,
+          entry,
+          result_list = [];
+
+        for (i = 0; i < len; i += 1) {
+          entry_name = entry_list[i].name;
+
+          // If we only need one precise name, no need to check the others
+          if (!options.hasOwnProperty('only_id') ||
+              (options.only_id === entry_name)) {
+
+            if (!entry_dict.hasOwnProperty(entry_name)) {
+              entry = {
+                id: entry_name,
+                value: {},
+                _linshare_uuid: entry_list[i].uuid
+              };
+              if (options.include_docs === true) {
+                try {
+                  entry.doc = JSON.parse(entry_list[i].metaData) || {};
+                } catch (error) {
+                  // Metadata are not always JSON
+                  entry.doc = {};
+                }
+              }
+              result_list.push(entry);
+
+              if (options.all_revision !== true) {
+                // If we only want to fetch 'one revision',
+                // ie, the latest document matching this id
+                entry_dict[entry_name] = null;
+
+                if (options.only_id === entry_name) {
+                  // Document has been found, no need to check all the others
+                  break;
+                }
+              }
+            }
+          }
+        }
+
+        return result_list;
+      });
+  }
+
+  LinshareStorage.prototype.buildQuery = function (options) {
+    return getDocumentList(this, {
+      include_docs: options.include_docs
+    });
+  };
+
+  LinshareStorage.prototype.get = function (id) {
+    // It is not possible to get a document by its name
+    // The only way is to list all of them, and find it manually
+    return getDocumentList(this, {
+      include_docs: true,
+      only_id: id
+    })
+      .push(function (result_list) {
+        if (result_list.length === 1) {
+          return result_list[0].doc;
+        }
+
+        throw new jIO.util.jIOError(
+          "Can't find document with id : " + id,
+          404
+        );
+      });
+  };
+
+  function createLinshareDocument(storage, id, doc, blob) {
+    var data = new FormData();
+    data.append('file', blob, id);
+    data.append('filesize', blob.size);
+    data.append('filename', id);
+    data.append('description', doc.title || doc.description || '');
+    data.append('metadata', jIO.util.stringify(doc));
+    return makeRequest(storage, '', {
+      type: 'POST',
+      data: data
+    });
+  }
+
+  LinshareStorage.prototype.put = function (id, doc) {
+    var storage = this;
+    return getDocumentList(storage, {
+      include_docs: true,
+      only_id: id
+    })
+      .push(function (result_list) {
+        if (result_list.length === 1) {
+          // Update existing document metadata
+          var data = {
+            uuid: result_list[0]._linshare_uuid,
+            metaData: jIO.util.stringify(doc),
+            name: id,
+            description: doc.title || doc.description || ''
+          };
+          return makeRequest(storage, result_list[0]._linshare_uuid, {
+            type: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            data: jIO.util.stringify(data)
+          });
+        }
+        // Create a new one
+        return createLinshareDocument(storage, id, doc, new Blob());
+      });
+  };
+
+  LinshareStorage.prototype.remove = function (id) {
+    var storage = this;
+    // Delete all entries matching the id
+    return getDocumentList(storage, {
+      only_id: id,
+      all_revision: true
+    })
+      .push(function (result_list) {
+        var promise_list = [],
+          i,
+          len = result_list.length;
+        for (i = 0; i < len; i += 1) {
+          promise_list.push(
+            makeRequest(storage, result_list[i]._linshare_uuid, {
+              type: "DELETE"
+            })
+          );
+        }
+        return RSVP.all(promise_list);
+      });
+  };
+
+  LinshareStorage.prototype.allAttachments = function (id) {
+    return this.get(id)
+      .push(function () {
+        return {enclosure: {}};
+      });
+  };
+
+  function restrictAttachmentId(name) {
+    if (name !== "enclosure") {
+      throw new jIO.util.jIOError(
+        "attachment name " + name + " is forbidden in linshare",
+        400
+      );
+    }
+  }
+
+  LinshareStorage.prototype.putAttachment = function (id, name, blob) {
+    restrictAttachmentId(name);
+    var storage = this;
+    return storage.get(id)
+      .push(function (doc) {
+        // Create a new document with the same id but a different blob content
+        return createLinshareDocument(storage, id, doc, blob);
+      });
+  };
+
+  LinshareStorage.prototype.getAttachment = function (id, name) {
+    restrictAttachmentId(name);
+    var storage = this;
+    // It is not possible to get a document by its name
+    // The only way is to list all of them, and find it manually
+    return getDocumentList(storage, {
+      only_id: id
+    })
+      .push(function (result_list) {
+        if (result_list.length === 1) {
+          return makeRequest(storage, result_list[0]._linshare_uuid, {
+          }, true);
+        }
+
+        throw new jIO.util.jIOError(
+          "Can't find document with id : " + id,
+          404
+        );
+      });
+  };
+
+  jIO.addStorage('linshare', LinshareStorage);
+
+}(jIO, RSVP, UriTemplate, FormData, Blob));
+/*
+ * Copyright 2013, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+// JIO ERP5 Storage Description :
+// {
+//   type: "erp5"
+//   url: {string}
+// }
+
+/*jslint nomen: true, unparam: true */
+/*global jIO, UriTemplate, FormData, RSVP, URI, Blob,
+         SimpleQuery, ComplexQuery*/
+
+(function (jIO, UriTemplate, FormData, RSVP, URI, Blob,
+           SimpleQuery, ComplexQuery) {
+  "use strict";
+
+  function ajax(storage, options) {
+    if (options === undefined) {
+      options = {};
+    }
+    if (options.xhrFields === undefined) {
+      options.xhrFields = {};
+    }
+    if (storage._access_token !== undefined) {
+      if (options.headers === undefined) {
+        options.headers = {};
+      }
+      options.headers['X-ACCESS-TOKEN'] = storage._access_token;
+      options.xhrFields.withCredentials = false;
+    } else {
+      options.xhrFields.withCredentials = true;
+    }
+
+    return jIO.util.ajax(options);
+  }
+
+  function getSiteDocument(storage) {
+    return new RSVP.Queue()
+      .push(function () {
+        return ajax(storage, {
+          "type": "GET",
+          "url": storage._url
+        });
+      })
+      .push(function (event) {
+        return JSON.parse(event.target.responseText);
+      });
+  }
+
+  function getDocumentAndHateoas(storage, id, options) {
+    if (options === undefined) {
+      options = {};
+    }
+    return getSiteDocument(storage)
+      .push(function (site_hal) {
+        // XXX need to get modified metadata
+        return new RSVP.Queue()
+          .push(function () {
+            return ajax(storage, {
+              "type": "GET",
+              "url": UriTemplate.parse(site_hal._links.traverse.href)
+                                .expand({
+                  relative_url: id,
+                  view: options._view
+                })
+            });
+          })
+          .push(undefined, function (error) {
+            if ((error.target !== undefined) &&
+                (error.target.status === 404)) {
+              throw new jIO.util.jIOError("Cannot find document: " + id, 404);
+            }
+            throw error;
+          });
+      });
+  }
+
+  var allowed_field_dict = {
+    "StringField": null,
+    "EmailField": null,
+    "IntegerField": null,
+    "FloatField": null,
+    "TextAreaField": null
+  };
+
+  function extractPropertyFromFormJSON(json) {
+    var form = json._embedded._view,
+      converted_json = {
+        portal_type: json._links.type.name
+      },
+      form_data_json = {},
+      field,
+      key,
+      prefix_length,
+      result;
+
+    if (json._links.hasOwnProperty('parent')) {
+      converted_json.parent_relative_url =
+        new URI(json._links.parent.href).segment(2);
+    }
+
+    form_data_json.form_id = {
+      "key": [form.form_id.key],
+      "default": form.form_id["default"]
+    };
+    // XXX How to store datetime
+    for (key in form) {
+      if (form.hasOwnProperty(key)) {
+        field = form[key];
+        prefix_length = 0;
+        if (key.indexOf('my_') === 0 && field.editable) {
+          prefix_length = 3;
+        }
+        if (key.indexOf('your_') === 0) {
+          prefix_length = 5;
+        }
+        if ((prefix_length !== 0) &&
+            (allowed_field_dict.hasOwnProperty(field.type))) {
+          form_data_json[key.substring(prefix_length)] = {
+            "default": field["default"],
+            "key": field.key
+          };
+          converted_json[key.substring(prefix_length)] = field["default"];
+        }
+      }
+    }
+
+    result = {
+      data: converted_json,
+      form_data: form_data_json
+    };
+    if (form.hasOwnProperty('_actions') &&
+        form._actions.hasOwnProperty('put')) {
+      result.action_href = form._actions.put.href;
+    }
+    return result;
+  }
+
+  function extractPropertyFromForm(context, id) {
+    return context.getAttachment(id, "view")
+      .push(function (blob) {
+        return jIO.util.readBlobAsText(blob);
+      })
+      .push(function (evt) {
+        return JSON.parse(evt.target.result);
+      })
+      .push(function (json) {
+        return extractPropertyFromFormJSON(json);
+      });
+  }
+
+  // XXX docstring
+  function ERP5Storage(spec) {
+    if (typeof spec.url !== "string" || !spec.url) {
+      throw new TypeError("ERP5 'url' must be a string " +
+                          "which contains more than one character.");
+    }
+    this._url = spec.url;
+    this._default_view_reference = spec.default_view_reference;
+    if (spec.hasOwnProperty('access_token')) {
+      this._access_token = spec.access_token;
+    }
+  }
+
+  function convertJSONToGet(json) {
+    var key,
+      result = json.data;
+    // Remove all ERP5 hateoas links / convert them into jIO ID
+    for (key in result) {
+      if (result.hasOwnProperty(key)) {
+        if (!result[key]) {
+          delete result[key];
+        }
+      }
+    }
+    return result;
+  }
+
+  ERP5Storage.prototype.get = function (id) {
+    return extractPropertyFromForm(this, id)
+      .push(function (result) {
+        return convertJSONToGet(result);
+      });
+  };
+
+  ERP5Storage.prototype.post = function (data) {
+    var context = this,
+      new_id;
+
+    return getSiteDocument(this)
+      .push(function (site_hal) {
+        var form_data = new FormData();
+        form_data.append("portal_type", data.portal_type);
+        form_data.append("parent_relative_url", data.parent_relative_url);
+        return ajax(context, {
+          type: "POST",
+          url: site_hal._actions.add.href,
+          data: form_data
+        });
+      })
+      .push(function (evt) {
+        var location = evt.target.getResponseHeader("X-Location"),
+          uri = new URI(location);
+        new_id = uri.segment(2);
+        return context.put(new_id, data);
+      })
+      .push(function () {
+        return new_id;
+      });
+  };
+
+  ERP5Storage.prototype.put = function (id, data) {
+    var context = this;
+
+    return extractPropertyFromForm(context, id)
+      .push(function (result) {
+        var key,
+          json = result.form_data,
+          form_data = {};
+        form_data[json.form_id.key] = json.form_id["default"];
+
+        // XXX How to store datetime:!!!!!
+        for (key in data) {
+          if (data.hasOwnProperty(key)) {
+            if (key === "form_id") {
+              throw new jIO.util.jIOError(
+                "ERP5: forbidden property: " + key,
+                400
+              );
+            }
+            if ((key !== "portal_type") && (key !== "parent_relative_url")) {
+              if (!json.hasOwnProperty(key)) {
+                throw new jIO.util.jIOError(
+                  "ERP5: can not store property: " + key,
+                  400
+                );
+              }
+              form_data[json[key].key] = data[key];
+            }
+          }
+        }
+        if (!result.hasOwnProperty('action_href')) {
+          throw new jIO.util.jIOError(
+            "ERP5: can not modify document: " + id,
+            403
+          );
+        }
+        return context.putAttachment(
+          id,
+          result.action_href,
+          new Blob([JSON.stringify(form_data)], {type: "application/json"})
+        );
+      });
+  };
+
+  ERP5Storage.prototype.allAttachments = function (id) {
+    var context = this;
+    return getDocumentAndHateoas(this, id)
+      .push(function () {
+        if (context._default_view_reference === undefined) {
+          return {
+            links: {}
+          };
+        }
+        return {
+          view: {},
+          links: {}
+        };
+      });
+  };
+
+  ERP5Storage.prototype.getAttachment = function (id, action, options) {
+    var storage = this;
+    if (options === undefined) {
+      options = {};
+    }
+    if (action === "view") {
+      if (this._default_view_reference === undefined) {
+        throw new jIO.util.jIOError(
+          "Cannot find attachment view for: " + id,
+          404
+        );
+      }
+      return getDocumentAndHateoas(this, id,
+                                   {"_view": this._default_view_reference})
+        .push(function (response) {
+          var result = JSON.parse(response.target.responseText);
+          // Remove all ERP5 hateoas links / convert them into jIO ID
+
+          // XXX Change default action to an jio urn with attachment name inside
+          // if Base_edit, do put URN
+          // if others, do post URN (ie, unique new attachment name)
+          // XXX Except this attachment name should be generated when
+          return new Blob(
+            [JSON.stringify(result)],
+            {"type": 'application/hal+json'}
+          );
+        });
+    }
+    if (action === "links") {
+      return getDocumentAndHateoas(this, id)
+        .push(function (response) {
+          return new Blob(
+            [JSON.stringify(JSON.parse(response.target.responseText))],
+            {"type": 'application/hal+json'}
+          );
+        });
+    }
+    if (action.indexOf(this._url) === 0) {
+      return new RSVP.Queue()
+        .push(function () {
+          var start,
+            end,
+            range,
+            request_options = {
+              "type": "GET",
+              "dataType": "blob",
+              "url": action
+            };
+          if (options.start !== undefined ||  options.end !== undefined) {
+            start = options.start || 0;
+            end = options.end;
+            if (end !== undefined && end < 0) {
+              throw new jIO.util.jIOError("end must be positive",
+                                          400);
+            }
+            if (start < 0) {
+              range = "bytes=" + start;
+            } else if (end === undefined) {
+              range = "bytes=" + start + "-";
+            } else {
+              if (start > end) {
+                throw new jIO.util.jIOError("start is greater than end",
+                                            400);
+              }
+              range = "bytes=" + start + "-" + end;
+            }
+            request_options.headers = {Range: range};
+          }
+          return ajax(storage, request_options);
+        })
+        .push(function (evt) {
+          if (evt.target.response === undefined) {
+            return new Blob(
+              [evt.target.responseText],
+              {"type": evt.target.getResponseHeader("Content-Type")}
+            );
+          }
+          return evt.target.response;
+        });
+    }
+    throw new jIO.util.jIOError("ERP5: not support get attachment: " + action,
+                                400);
+  };
+
+  ERP5Storage.prototype.putAttachment = function (id, name, blob) {
+    var storage = this;
+    // Assert we use a callable on a document from the ERP5 site
+    if (name.indexOf(this._url) !== 0) {
+      throw new jIO.util.jIOError("Can not store outside ERP5: " +
+                                  name, 400);
+    }
+
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.readBlobAsText(blob);
+      })
+      .push(function (evt) {
+        var form_data = JSON.parse(evt.target.result),
+          data = new FormData(),
+          array,
+          i,
+          key,
+          value;
+        for (key in form_data) {
+          if (form_data.hasOwnProperty(key)) {
+            if (Array.isArray(form_data[key])) {
+              array = form_data[key];
+            } else {
+              array = [form_data[key]];
+            }
+            for (i = 0; i < array.length; i += 1) {
+              value = array[i];
+              if (typeof value === "object") {
+                data.append(key, jIO.util.dataURItoBlob(value.url),
+                            value.file_name);
+              } else {
+                data.append(key, value);
+              }
+            }
+          }
+        }
+        return ajax(storage, {
+          "type": "POST",
+          "url": name,
+          "data": data,
+          "dataType": "blob"
+        });
+      });
+  };
+
+  ERP5Storage.prototype.hasCapacity = function (name) {
+    return ((name === "list") || (name === "query") ||
+            (name === "select") || (name === "limit") ||
+            (name === "sort") || (name === "group"));
+  };
+
+  function isSingleLocalRoles(parsed_query) {
+    if ((parsed_query instanceof SimpleQuery) &&
+        (parsed_query.operator === undefined) &&
+        (parsed_query.key === 'local_roles')) {
+      // local_roles:"Assignee"
+      return parsed_query.value;
+    }
+  }
+
+  function isSingleDomain(parsed_query) {
+    if ((parsed_query instanceof SimpleQuery) &&
+        (parsed_query.operator === undefined) &&
+        (parsed_query.key !== undefined) &&
+        (parsed_query.key.indexOf('selection_domain_') === 0)) {
+      // domain_region:"europe/france"
+      var result = {};
+      result[parsed_query.key.slice('selection_domain_'.length)] =
+        parsed_query.value;
+      return result;
+    }
+  }
+
+  function isMultipleLocalRoles(parsed_query) {
+    var i,
+      sub_query,
+      is_multiple = true,
+      local_role_list = [];
+    if ((parsed_query instanceof ComplexQuery) &&
+        (parsed_query.operator === 'OR')) {
+
+      for (i = 0; i < parsed_query.query_list.length; i += 1) {
+        sub_query = parsed_query.query_list[i];
+        if ((sub_query instanceof SimpleQuery) &&
+            (sub_query.key !== undefined) &&
+            (sub_query.key === 'local_roles')) {
+          local_role_list.push(sub_query.value);
+        } else {
+          is_multiple = false;
+        }
+      }
+      if (is_multiple) {
+        // local_roles:"Assignee" OR local_roles:"Assignor"
+        return local_role_list;
+      }
+    }
+  }
+
+  ERP5Storage.prototype.buildQuery = function (options) {
+    var storage = this;
+//     if (typeof options.query !== "string") {
+//       options.query = (options.query ?
+//                        jIO.Query.objectToSearchText(options.query) :
+//                        undefined);
+//     }
+    return getSiteDocument(this)
+      .push(function (site_hal) {
+        var query = options.query,
+          i,
+          key,
+          parsed_query,
+          sub_query,
+          result_list,
+          local_roles,
+          local_role_found = false,
+          selection_domain,
+          sort_list = [],
+          group_list = [];
+        if (options.query) {
+          parsed_query = jIO.QueryFactory.create(options.query);
+          result_list = isSingleLocalRoles(parsed_query);
+          if (result_list) {
+            query = undefined;
+            local_roles = result_list;
+          } else {
+            result_list = isSingleDomain(parsed_query);
+            if (result_list) {
+              query = undefined;
+              selection_domain = result_list;
+            } else {
+
+              result_list = isMultipleLocalRoles(parsed_query);
+              if (result_list) {
+                query = undefined;
+                local_roles = result_list;
+              } else if ((parsed_query instanceof ComplexQuery) &&
+                         (parsed_query.operator === 'AND')) {
+
+                // portal_type:"Person" AND local_roles:"Assignee"
+                // AND selection_domain_region:"europe/france"
+                for (i = 0; i < parsed_query.query_list.length; i += 1) {
+                  sub_query = parsed_query.query_list[i];
+
+                  if (!local_role_found) {
+                    result_list = isSingleLocalRoles(sub_query);
+                    if (result_list) {
+                      local_roles = result_list;
+                      parsed_query.query_list.splice(i, 1);
+                      query = jIO.Query.objectToSearchText(parsed_query);
+                      local_role_found = true;
+                    } else {
+                      result_list = isMultipleLocalRoles(sub_query);
+                      if (result_list) {
+                        local_roles = result_list;
+                        parsed_query.query_list.splice(i, 1);
+                        query = jIO.Query.objectToSearchText(parsed_query);
+                        local_role_found = true;
+                      }
+                    }
+                  }
+
+                  result_list = isSingleDomain(sub_query);
+                  if (result_list) {
+                    parsed_query.query_list.splice(i, 1);
+                    query = jIO.Query.objectToSearchText(parsed_query);
+                    if (selection_domain) {
+                      for (key in result_list) {
+                        if (result_list.hasOwnProperty(key)) {
+                          selection_domain[key] = result_list[key];
+                        }
+                      }
+                    } else {
+                      selection_domain = result_list;
+                    }
+                    i -= 1;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        if (options.sort_on) {
+          for (i = 0; i < options.sort_on.length; i += 1) {
+            sort_list.push(JSON.stringify(options.sort_on[i]));
+          }
+        }
+
+        if (options.group_by) {
+          group_list = options.group_by;
+        }
+
+        if (selection_domain) {
+          selection_domain = JSON.stringify(selection_domain);
+        }
+
+        return ajax(storage, {
+          "type": "GET",
+          "url": UriTemplate.parse(site_hal._links.raw_search.href)
+                            .expand({
+              query: query,
+              // XXX Force erp5 to return embedded document
+              select_list: options.select_list || ["title", "reference"],
+              limit: options.limit,
+              sort_on: sort_list,
+              group_by: group_list,
+              local_roles: local_roles,
+              selection_domain: selection_domain
+            })
+        });
+      })
+      .push(function (response) {
+        return JSON.parse(response.target.responseText);
+      })
+      .push(function (catalog_json) {
+        var data = catalog_json._embedded.contents,
+          count = data.length,
+          i,
+          uri,
+          item,
+          result = [];
+        for (i = 0; i < count; i += 1) {
+          item = data[i];
+          uri = new URI(item._links.self.href);
+          delete item._links;
+          result.push({
+            id: uri.segment(2),
+            value: item
+          });
+        }
+        return result;
+      });
+  };
+
+  jIO.addStorage("erp5", ERP5Storage);
+
+}(jIO, UriTemplate, FormData, RSVP, URI, Blob,
+  SimpleQuery, ComplexQuery));
+/*
  * Copyright 2014, Nexedi SA
  *
  * This program is free software: you can Use, Study, Modify and Redistribute
@@ -12549,4 +14834,1176 @@ return new Parser;
   jIO.addStorage('local', LocalStorage);
 
 }(jIO, sessionStorage, localStorage, RSVP));
+/*
+ * Copyright 2014, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
 
+/**
+ * JIO Indexed Database Storage.
+ *
+ * A local browser "database" storage greatly more powerful than localStorage.
+ *
+ * Description:
+ *
+ *    {
+ *      "type": "indexeddb",
+ *      "database": <string>
+ *    }
+ *
+ * The database name will be prefixed by "jio:", so if the database property is
+ * "hello", then you can manually reach this database with
+ * `indexedDB.open("jio:hello");`. (Or
+ * `indexedDB.deleteDatabase("jio:hello");`.)
+ *
+ * For more informations:
+ *
+ * - http://www.w3.org/TR/IndexedDB/
+ * - https://developer.mozilla.org/en-US/docs/IndexedDB/Using_IndexedDB
+ */
+
+/*jslint nomen: true */
+/*global indexedDB, jIO, RSVP, Blob, Math, IDBKeyRange, IDBOpenDBRequest,
+        DOMError, Event*/
+
+(function (indexedDB, jIO, RSVP, Blob, Math, IDBKeyRange, IDBOpenDBRequest,
+           DOMError) {
+  "use strict";
+
+  // Read only as changing it can lead to data corruption
+  var UNITE = 2000000;
+
+  function IndexedDBStorage(description) {
+    if (typeof description.database !== "string" ||
+        description.database === "") {
+      throw new TypeError("IndexedDBStorage 'database' description property " +
+                          "must be a non-empty string");
+    }
+    this._database_name = "jio:" + description.database;
+  }
+
+  IndexedDBStorage.prototype.hasCapacity = function (name) {
+    return ((name === "list") || (name === "include"));
+  };
+
+  function buildKeyPath(key_list) {
+    return key_list.join("_");
+  }
+
+  function handleUpgradeNeeded(evt) {
+    var db = evt.target.result,
+      store;
+
+    store = db.createObjectStore("metadata", {
+      keyPath: "_id",
+      autoIncrement: false
+    });
+    // It is not possible to use openKeyCursor on keypath directly
+    // https://www.w3.org/Bugs/Public/show_bug.cgi?id=19955
+    store.createIndex("_id", "_id", {unique: true});
+
+    store = db.createObjectStore("attachment", {
+      keyPath: "_key_path",
+      autoIncrement: false
+    });
+    store.createIndex("_id", "_id", {unique: false});
+
+    store = db.createObjectStore("blob", {
+      keyPath: "_key_path",
+      autoIncrement: false
+    });
+    store.createIndex("_id_attachment",
+                      ["_id", "_attachment"], {unique: false});
+    store.createIndex("_id", "_id", {unique: false});
+  }
+
+  function waitForOpenIndexedDB(db_name, callback) {
+    var request;
+
+    function canceller() {
+      if ((request !== undefined) && (request.result !== undefined)) {
+        request.result.close();
+      }
+    }
+
+    function resolver(resolve, reject) {
+      // Open DB //
+      request = indexedDB.open(db_name);
+      request.onerror = function (error) {
+        canceller();
+        if ((error !== undefined) &&
+            (error.target instanceof IDBOpenDBRequest) &&
+            (error.target.error instanceof DOMError)) {
+          reject("Connection to: " + db_name + " failed: " +
+                 error.target.error.message);
+        } else {
+          reject(error);
+        }
+      };
+
+      request.onabort = function () {
+        canceller();
+        reject("Aborting connection to: " + db_name);
+      };
+
+      request.ontimeout = function () {
+        reject("Connection to: " + db_name + " timeout");
+      };
+
+      request.onblocked = function () {
+        canceller();
+        reject("Connection to: " + db_name + " was blocked");
+      };
+
+      // Create DB if necessary //
+      request.onupgradeneeded = handleUpgradeNeeded;
+
+      request.onversionchange = function () {
+        canceller();
+        reject(db_name + " was upgraded");
+      };
+
+      request.onsuccess = function () {
+        var result;
+        try {
+          result = callback(request.result);
+        } catch (error) {
+          reject(error);
+        }
+        return new RSVP.Queue()
+          .push(function () {
+            return result;
+          })
+          .push(function (final_result) {
+            canceller();
+            resolve(final_result);
+          }, function (error) {
+            canceller();
+            reject(error);
+          });
+      };
+    }
+
+    return new RSVP.Promise(resolver, canceller);
+  }
+
+  function waitForTransaction(db, stores, flag, callback) {
+    var tx = db.transaction(stores, flag);
+    function canceller() {
+      try {
+        tx.abort();
+      } catch (unused) {
+        // Transaction already finished
+        return;
+      }
+    }
+    function resolver(resolve, reject) {
+      var result;
+      try {
+        result = callback(tx);
+      } catch (error) {
+        reject(error);
+      }
+      tx.oncomplete = function () {
+        return new RSVP.Queue()
+          .push(function () {
+            return result;
+          })
+          .push(resolve, function (error) {
+            canceller();
+            reject(error);
+          });
+      };
+      tx.onerror = reject;
+      tx.onabort = reject;
+    }
+    return new RSVP.Promise(resolver, canceller);
+  }
+
+  function waitForIDBRequest(request) {
+    return new RSVP.Promise(function (resolve, reject) {
+      request.onerror = reject;
+      request.onsuccess = resolve;
+    });
+  }
+
+  function waitForAllSynchronousCursor(request, callback) {
+    var force_cancellation = false;
+
+    function canceller() {
+      force_cancellation = true;
+    }
+
+    function resolver(resolve, reject) {
+      request.onerror = reject;
+      request.onsuccess = function (evt) {
+        var cursor = evt.target.result;
+        if (cursor && !force_cancellation) {
+          try {
+            callback(cursor);
+          } catch (error) {
+            reject(error);
+          }
+          // continue to next iteration
+          cursor["continue"]();
+        } else {
+          resolve();
+        }
+      };
+    }
+    return new RSVP.Promise(resolver, canceller);
+  }
+
+  IndexedDBStorage.prototype.buildQuery = function (options) {
+    var result_list = [],
+      context = this;
+
+    function pushIncludedMetadata(cursor) {
+      result_list.push({
+        "id": cursor.key,
+        "value": {},
+        "doc": cursor.value.doc
+      });
+    }
+
+    function pushMetadata(cursor) {
+      result_list.push({
+        "id": cursor.key,
+        "value": {}
+      });
+    }
+
+    return new RSVP.Queue()
+      .push(function () {
+        return waitForOpenIndexedDB(context._database_name, function (db) {
+          return waitForTransaction(db, ["metadata"], "readonly",
+                                    function (tx) {
+              if (options.include_docs === true) {
+                return waitForAllSynchronousCursor(
+                  tx.objectStore("metadata").index("_id").openCursor(),
+                  pushIncludedMetadata
+                );
+              }
+              return waitForAllSynchronousCursor(
+                tx.objectStore("metadata").index("_id").openKeyCursor(),
+                pushMetadata
+              );
+            });
+        });
+      })
+      .push(function () {
+        return result_list;
+      });
+  };
+
+  IndexedDBStorage.prototype.get = function (id) {
+    var context = this;
+    return new RSVP.Queue()
+      .push(function () {
+        return waitForOpenIndexedDB(context._database_name, function (db) {
+          return waitForTransaction(db, ["metadata"], "readonly",
+                                    function (tx) {
+              return waitForIDBRequest(tx.objectStore("metadata").get(id));
+            });
+        });
+      })
+      .push(function (evt) {
+        if (evt.target.result) {
+          return evt.target.result.doc;
+        }
+        throw new jIO.util.jIOError(
+          "IndexedDB: cannot find object '" + id + "' in the 'metadata' store",
+          404
+        );
+      });
+  };
+
+  IndexedDBStorage.prototype.allAttachments = function (id) {
+    var attachment_dict = {},
+      context = this;
+
+    function addEntry(cursor) {
+      attachment_dict[cursor.primaryKey.slice(cursor.key.length + 1)] = {};
+    }
+
+    return new RSVP.Queue()
+      .push(function () {
+        return waitForOpenIndexedDB(context._database_name, function (db) {
+          return waitForTransaction(db, ["metadata", "attachment"], "readonly",
+                                    function (tx) {
+              return RSVP.all([
+                waitForIDBRequest(tx.objectStore("metadata").get(id)),
+                waitForAllSynchronousCursor(
+                  tx.objectStore("attachment").index("_id")
+                    .openKeyCursor(IDBKeyRange.only(id)),
+                  addEntry
+                )
+              ]);
+            });
+        });
+      })
+      .push(function (result_list) {
+        var evt = result_list[0];
+        if (!evt.target.result) {
+          throw new jIO.util.jIOError(
+            "IndexedDB: cannot find object '" + id +
+              "' in the 'metadata' store",
+            404
+          );
+        }
+
+        return attachment_dict;
+      });
+  };
+
+  IndexedDBStorage.prototype.put = function (id, metadata) {
+    return waitForOpenIndexedDB(this._database_name, function (db) {
+      return waitForTransaction(db, ["metadata"], "readwrite",
+                                function (tx) {
+          return waitForIDBRequest(tx.objectStore("metadata").put({
+            "_id": id,
+            "doc": metadata
+          }));
+        });
+    });
+  };
+
+  IndexedDBStorage.prototype.remove = function (id) {
+    return waitForOpenIndexedDB(this._database_name, function (db) {
+      return waitForTransaction(db, ["metadata", "attachment", "blob"],
+                                "readwrite", function (tx) {
+
+          var promise_list = [],
+            metadata_store = tx.objectStore("metadata"),
+            attachment_store = tx.objectStore("attachment"),
+            blob_store = tx.objectStore("blob");
+
+          function deleteAttachment(cursor) {
+            promise_list.push(
+              waitForIDBRequest(attachment_store.delete(cursor.primaryKey))
+            );
+          }
+          function deleteBlob(cursor) {
+            promise_list.push(
+              waitForIDBRequest(blob_store.delete(cursor.primaryKey))
+            );
+          }
+
+          return RSVP.all([
+            waitForIDBRequest(metadata_store.delete(id)),
+            waitForAllSynchronousCursor(
+              attachment_store.index("_id")
+                              .openKeyCursor(IDBKeyRange.only(id)),
+              deleteAttachment
+            ),
+            waitForAllSynchronousCursor(
+              blob_store.index("_id")
+                        .openKeyCursor(IDBKeyRange.only(id)),
+              deleteBlob
+            ),
+          ])
+            .then(function () {
+              return RSVP.all(promise_list);
+            });
+        });
+    });
+  };
+
+  IndexedDBStorage.prototype.getAttachment = function (id, name, options) {
+    if (options === undefined) {
+      options = {};
+    }
+    var db_name = this._database_name,
+      start,
+      end,
+      array_buffer_list = [];
+
+    start = options.start || 0;
+    end = options.end;
+
+    // Stream the blob content
+    if ((start !== 0) || (end !== undefined)) {
+
+      if (start < 0 || ((end !== undefined) && (end < 0))) {
+        throw new jIO.util.jIOError(
+          "_start and _end must be positive",
+          400
+        );
+      }
+      if ((end !== undefined) && (start > end)) {
+        throw new jIO.util.jIOError("_start is greater than _end",
+                                    400);
+      }
+
+      return new RSVP.Queue()
+        .push(function () {
+          return waitForOpenIndexedDB(db_name, function (db) {
+            return waitForTransaction(db, ["blob"], "readonly",
+                                      function (tx) {
+                var key_path = buildKeyPath([id, name]),
+                  blob_store = tx.objectStore("blob"),
+                  start_index,
+                  end_index,
+                  promise_list = [];
+
+
+                start_index = Math.floor(start / UNITE);
+                if (end !== undefined) {
+                  end_index =  Math.floor(end / UNITE);
+                  if (end % UNITE === 0) {
+                    end_index -= 1;
+                  }
+                }
+
+                function getBlobKey(cursor) {
+                  var index = parseInt(
+                    cursor.primaryKey.slice(key_path.length + 1),
+                    10
+                  ),
+                    i;
+
+                  if ((start !== 0) && (index < start_index)) {
+                    // No need to fetch blobs at the start
+                    return;
+                  }
+                  if ((end !== undefined) && (index > end_index)) {
+                    // No need to fetch blobs at the end
+                    return;
+                  }
+
+                  i = index - start_index;
+                  // Extend array size
+                  while (i > promise_list.length) {
+                    promise_list.push(null);
+                    i -= 1;
+                  }
+                  // Sort the blob by their index
+                  promise_list.splice(
+                    index - start_index,
+                    0,
+                    waitForIDBRequest(blob_store.get(cursor.primaryKey))
+                  );
+                }
+
+                // Get all blob keys to check if they must be fetched
+                return waitForAllSynchronousCursor(
+                  blob_store.index("_id_attachment")
+                    .openKeyCursor(IDBKeyRange.only([id, name])),
+                  getBlobKey
+                )
+                  .then(function () {
+                    return RSVP.all(promise_list);
+                  });
+              });
+          });
+        })
+        .push(function (result_list) {
+          // No need to keep the IDB open
+          var blob,
+            index,
+            i;
+
+          for (i = 0; i < result_list.length; i += 1) {
+            array_buffer_list.push(result_list[i].target.result.blob);
+          }
+          blob = new Blob(array_buffer_list,
+                          {type: "application/octet-stream"});
+          index = Math.floor(start / UNITE) * UNITE;
+          if (end === undefined) {
+            end = blob.length;
+          } else {
+            end = end - index;
+          }
+          return blob.slice(start - index, end,
+                            "application/octet-stream");
+        });
+    }
+
+    // Request the full blob
+    return new RSVP.Queue()
+      .push(function () {
+        return waitForOpenIndexedDB(db_name, function (db) {
+          return waitForTransaction(db, ["attachment", "blob"], "readonly",
+                                    function (tx) {
+              var key_path = buildKeyPath([id, name]),
+                attachment_store = tx.objectStore("attachment"),
+                blob_store = tx.objectStore("blob");
+
+              function getBlob(cursor) {
+                var index = parseInt(
+                  cursor.primaryKey.slice(key_path.length + 1),
+                  10
+                ),
+                  i = index;
+                // Extend array size
+                while (i > array_buffer_list.length) {
+                  array_buffer_list.push(null);
+                  i -= 1;
+                }
+                // Sort the blob by their index
+                array_buffer_list.splice(
+                  index,
+                  0,
+                  cursor.value.blob
+                );
+              }
+
+              return RSVP.all([
+                // Get the attachment info (mime type)
+                waitForIDBRequest(attachment_store.get(
+                  key_path
+                )),
+                // Get all needed blobs
+                waitForAllSynchronousCursor(
+                  blob_store.index("_id_attachment")
+                    .openCursor(IDBKeyRange.only([id, name])),
+                  getBlob
+                )
+              ]);
+            });
+        });
+
+      })
+      .push(function (result_list) {
+        // No need to keep the IDB open
+        var blob,
+          attachment = result_list[0].target.result;
+
+        // Should raise if key is not good
+        if (!attachment) {
+          throw new jIO.util.jIOError(
+            "IndexedDB: cannot find object '" +
+                buildKeyPath([id, name]) +
+                "' in the 'attachment' store",
+            404
+          );
+        }
+
+        blob = new Blob(array_buffer_list,
+                        {type: attachment.info.content_type});
+        if (blob.length !== attachment.info.total_length) {
+          throw new jIO.util.jIOError(
+            "IndexedDB: attachment '" +
+                buildKeyPath([id, name]) +
+                "' in the 'attachment' store is broken",
+            500
+          );
+        }
+        return blob;
+      });
+  };
+
+  IndexedDBStorage.prototype.putAttachment = function (id, name, blob) {
+    var db_name = this._database_name;
+    return new RSVP.Queue()
+      .push(function () {
+        // Split the blob first
+        return jIO.util.readBlobAsArrayBuffer(blob);
+      })
+      .push(function (event) {
+        var array_buffer = event.target.result,
+          blob_part = [],
+          total_size = blob.size,
+          handled_size = 0;
+
+        while (handled_size < total_size) {
+          blob_part.push(array_buffer.slice(handled_size,
+                                            handled_size + UNITE));
+          handled_size += UNITE;
+        }
+
+        return waitForOpenIndexedDB(db_name, function (db) {
+          return waitForTransaction(db, ["attachment", "blob"], "readwrite",
+                                    function (tx) {
+              var blob_store,
+                promise_list,
+                delete_promise_list = [],
+                key_path = buildKeyPath([id, name]),
+                i;
+              // First write the attachment info on top of previous
+              promise_list = [
+                waitForIDBRequest(tx.objectStore("attachment").put({
+                  "_key_path": key_path,
+                  "_id": id,
+                  "_attachment": name,
+                  "info": {
+                    "content_type": blob.type,
+                    "length": blob.size
+                  }
+                }))
+              ];
+              // Then, write all blob parts on top of previous
+              blob_store = tx.objectStore("blob");
+              for (i = 0; i < blob_part.length; i += 1) {
+                promise_list.push(
+                  waitForIDBRequest(blob_store.put({
+                    "_key_path": buildKeyPath([id, name, i]),
+                    "_id" : id,
+                    "_attachment" : name,
+                    "_part" : i,
+                    "blob": blob_part[i]
+                  }))
+                );
+              }
+
+              function deleteEntry(cursor) {
+                var index = parseInt(
+                  cursor.primaryKey.slice(key_path.length + 1),
+                  10
+                );
+                if (index >= blob_part.length) {
+                  delete_promise_list.push(
+                    waitForIDBRequest(blob_store.delete(cursor.primaryKey))
+                  );
+                }
+              }
+
+              // Finally, remove all remaining blobs
+              promise_list.push(
+                waitForAllSynchronousCursor(
+                  blob_store.index("_id_attachment")
+                            .openKeyCursor(IDBKeyRange.only([id, name])),
+                  deleteEntry
+                )
+              );
+
+              return RSVP.all(promise_list)
+                .then(function () {
+                  if (delete_promise_list.length) {
+                    return RSVP.all(delete_promise_list);
+                  }
+                });
+            });
+        });
+      });
+  };
+
+  IndexedDBStorage.prototype.removeAttachment = function (id, name) {
+    return waitForOpenIndexedDB(this._database_name, function (db) {
+      return waitForTransaction(db, ["attachment", "blob"], "readwrite",
+                                function (tx) {
+          var promise_list = [],
+            attachment_store = tx.objectStore("attachment"),
+            blob_store = tx.objectStore("blob");
+
+          function deleteEntry(cursor) {
+            promise_list.push(
+              waitForIDBRequest(blob_store.delete(cursor.primaryKey))
+            );
+          }
+
+          return RSVP.all([
+            waitForIDBRequest(
+              attachment_store.delete(buildKeyPath([id, name]))
+            ),
+            waitForAllSynchronousCursor(
+              blob_store.index("_id_attachment")
+                        .openKeyCursor(IDBKeyRange.only([id, name])),
+              deleteEntry
+            )
+          ])
+            .then(function () {
+              return RSVP.all(promise_list);
+            });
+
+        });
+    });
+  };
+
+  jIO.addStorage("indexeddb", IndexedDBStorage);
+}(indexedDB, jIO, RSVP, Blob, Math, IDBKeyRange, IDBOpenDBRequest, DOMError));
+/*
+ * Copyright 2015, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+
+/*jslint nomen: true*/
+/*global jIO, RSVP, DOMException, Blob, crypto, Uint8Array, ArrayBuffer*/
+
+(function (jIO, RSVP, DOMException, Blob, crypto, Uint8Array, ArrayBuffer) {
+  "use strict";
+
+  /*
+  The cryptography system used by this storage is AES-GCM.
+  Here is an example of how to generate a key to the json format:
+
+  return new RSVP.Queue()
+    .push(function () {
+      return crypto.subtle.generateKey({name: "AES-GCM", length: 256},
+                                       true, ["encrypt", "decrypt"]);
+    })
+    .push(function (key) {
+      return crypto.subtle.exportKey("jwk", key);
+    })
+    .push(function (json_key) {
+      var jio = jIO.createJIO({
+        type: "crypt",
+        key: json_key,
+        sub_storage: {storage_definition}
+      });
+    });
+
+  Find more informations about this cryptography system on
+  https://github.com/diafygi/webcrypto-examples#aes-gcm
+  */
+
+  /**
+   * The JIO Cryptography Storage extension
+   *
+   * @class CryptStorage
+   * @constructor
+   */
+
+  var MIME_TYPE = "application/x-jio-aes-gcm-encryption";
+
+  function CryptStorage(spec) {
+    this._key = spec.key;
+    this._jsonKey = true;
+    this._sub_storage = jIO.createJIO(spec.sub_storage);
+  }
+
+  function convertKey(that) {
+    return new RSVP.Queue()
+      .push(function () {
+        return crypto.subtle.importKey("jwk", that._key,
+                                       "AES-GCM", false,
+                                       ["encrypt", "decrypt"]);
+      })
+      .push(function (res) {
+        that._key = res;
+        that._jsonKey = false;
+        return;
+      });
+  }
+
+  CryptStorage.prototype.get = function () {
+    return this._sub_storage.get.apply(this._sub_storage,
+                                       arguments);
+  };
+
+  CryptStorage.prototype.post = function () {
+    return this._sub_storage.post.apply(this._sub_storage,
+                                        arguments);
+  };
+
+  CryptStorage.prototype.put = function () {
+    return this._sub_storage.put.apply(this._sub_storage,
+                                       arguments);
+  };
+
+  CryptStorage.prototype.remove = function () {
+    return this._sub_storage.remove.apply(this._sub_storage,
+                                          arguments);
+  };
+
+  CryptStorage.prototype.hasCapacity = function () {
+    return this._sub_storage.hasCapacity.apply(this._sub_storage,
+                                               arguments);
+  };
+
+  CryptStorage.prototype.buildQuery = function () {
+    return this._sub_storage.buildQuery.apply(this._sub_storage,
+                                              arguments);
+  };
+
+
+  CryptStorage.prototype.putAttachment = function (id, name, blob) {
+    var initializaton_vector = crypto.getRandomValues(new Uint8Array(12)),
+      that = this;
+
+    return new RSVP.Queue()
+      .push(function () {
+        if (that._jsonKey === true) {
+          return convertKey(that);
+        }
+        return;
+      })
+      .push(function () {
+        return jIO.util.readBlobAsDataURL(blob);
+      })
+      .push(function (dataURL) {
+        //string->arraybuffer
+        var strLen = dataURL.target.result.length,
+          buf = new ArrayBuffer(strLen),
+          bufView = new Uint8Array(buf),
+          i;
+
+        dataURL = dataURL.target.result;
+        for (i = 0; i < strLen; i += 1) {
+          bufView[i] = dataURL.charCodeAt(i);
+        }
+        return crypto.subtle.encrypt({
+          name : "AES-GCM",
+          iv : initializaton_vector
+        },
+                                     that._key, buf);
+      })
+      .push(function (coded) {
+        var final_blob = new Blob([initializaton_vector, coded],
+                                  {type: MIME_TYPE});
+        return that._sub_storage.putAttachment(id, name, final_blob);
+      });
+  };
+
+  CryptStorage.prototype.getAttachment = function (id, name) {
+    var that = this;
+
+    return that._sub_storage.getAttachment(id, name)
+      .push(function (blob) {
+        if (blob.type !== MIME_TYPE) {
+          return blob;
+        }
+        return new RSVP.Queue()
+          .push(function () {
+            if (that._jsonKey === true) {
+              return convertKey(that);
+            }
+            return;
+          })
+          .push(function () {
+            return jIO.util.readBlobAsArrayBuffer(blob);
+          })
+          .push(function (coded) {
+            var initializaton_vector;
+
+            coded = coded.target.result;
+            initializaton_vector = new Uint8Array(coded.slice(0, 12));
+            return new RSVP.Queue()
+              .push(function () {
+                return crypto.subtle.decrypt({
+                  name : "AES-GCM",
+                  iv : initializaton_vector
+                },
+                                             that._key, coded.slice(12));
+              })
+              .push(function (arr) {
+                //arraybuffer->string
+                arr = String.fromCharCode.apply(null, new Uint8Array(arr));
+                return jIO.util.dataURItoBlob(arr);
+              })
+              .push(undefined, function (error) {
+                if (error instanceof DOMException) {
+                  return blob;
+                }
+                throw error;
+              });
+          });
+      });
+  };
+
+  CryptStorage.prototype.removeAttachment = function () {
+    return this._sub_storage.removeAttachment.apply(this._sub_storage,
+                                                    arguments);
+  };
+
+  CryptStorage.prototype.allAttachments = function () {
+    return this._sub_storage.allAttachments.apply(this._sub_storage,
+                                                  arguments);
+  };
+
+  jIO.addStorage('crypt', CryptStorage);
+
+}(jIO, RSVP, DOMException, Blob, crypto, Uint8Array, ArrayBuffer));
+/*
+ * Copyright 2017, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+/*jslint nomen: true */
+/*global RSVP, UriTemplate*/
+(function (jIO, RSVP, UriTemplate) {
+  "use strict";
+
+  var GET_POST_URL = "https://graph.facebook.com/v2.9/{+post_id}" +
+      "?fields={+fields}&access_token={+access_token}",
+    get_post_template = UriTemplate.parse(GET_POST_URL),
+    GET_FEED_URL = "https://graph.facebook.com/v2.9/{+user_id}/feed" +
+        "?fields={+fields}&limit={+limit}&since={+since}&access_token=" +
+        "{+access_token}",
+    get_feed_template = UriTemplate.parse(GET_FEED_URL);
+
+  function FBStorage(spec) {
+    if (typeof spec.access_token !== 'string' || !spec.access_token) {
+      throw new TypeError("Access Token must be a string " +
+                          "which contains more than one character.");
+    }
+    if (typeof spec.user_id !== 'string' || !spec.user_id) {
+      throw new TypeError("User ID must be a string " +
+                          "which contains more than one character.");
+    }
+    this._access_token = spec.access_token;
+    this._user_id = spec.user_id;
+    this._default_field_list = spec.default_field_list || [];
+    this._default_limit = spec.default_limit || 500;
+  }
+
+  FBStorage.prototype.get = function (id) {
+    var that = this;
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "GET",
+          url: get_post_template.expand({post_id: id,
+            fields: that._default_field_list, access_token: that._access_token})
+        });
+      })
+      .push(function (result) {
+        return JSON.parse(result.target.responseText);
+      });
+  };
+
+  function paginateResult(url, result, select_list) {
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.ajax({
+          type: "GET",
+          url: url
+        });
+      })
+      .push(function (response) {
+        return JSON.parse(response.target.responseText);
+      },
+        function (err) {
+          throw new jIO.util.jIOError("Getting feed failed " + err.toString(),
+            err.target.status);
+        })
+      .push(function (response) {
+        if (response.data.length === 0) {
+          return result;
+        }
+        var i, j, obj = {};
+        for (i = 0; i < response.data.length; i += 1) {
+          obj.id = response.data[i].id;
+          obj.value = {};
+          for (j = 0; j < select_list.length; j += 1) {
+            obj.value[select_list[j]] = response.data[i][select_list[j]];
+          }
+          result.push(obj);
+          obj = {};
+        }
+        return paginateResult(response.paging.next, result, select_list);
+      });
+  }
+
+  FBStorage.prototype.buildQuery = function (query) {
+    var that = this, fields = [], limit = this._default_limit,
+      template_argument = {
+        user_id: this._user_id,
+        limit: limit,
+        access_token: this._access_token
+      };
+    if (query.include_docs) {
+      fields = fields.concat(that._default_field_list);
+    }
+    if (query.select_list) {
+      fields = fields.concat(query.select_list);
+    }
+    if (query.limit) {
+      limit = query.limit[1];
+    }
+    template_argument.fields = fields;
+    template_argument.limit = limit;
+    return paginateResult(get_feed_template.expand(template_argument), [],
+      fields)
+      .push(function (result) {
+        if (!query.limit) {
+          return result;
+        }
+        return result.slice(query.limit[0], query.limit[1]);
+      });
+  };
+
+  FBStorage.prototype.hasCapacity = function (name) {
+    var this_storage_capacity_list = ["list", "select", "include", "limit"];
+    if (this_storage_capacity_list.indexOf(name) !== -1) {
+      return true;
+    }
+  };
+
+  jIO.addStorage('facebook', FBStorage);
+
+}(jIO, RSVP, UriTemplate));/*
+ * Copyright 2018, Nexedi SA
+ *
+ * This program is free software: you can Use, Study, Modify and Redistribute
+ * it under the terms of the GNU General Public License version 3, or (at your
+ * option) any later version, as published by the Free Software Foundation.
+ *
+ * You can also Link and Combine this program with other software covered by
+ * the terms of any of the Free Software licenses or any of the Open Source
+ * Initiative approved licenses and Convey the resulting work. Corresponding
+ * source of such a combination shall include the source code for all other
+ * software used.
+ *
+ * This program is distributed WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See COPYING file for full licensing terms.
+ * See https://www.nexedi.com/licensing for rationale and options.
+ */
+
+/*jslint nomen: true*/
+/*global jIO, RSVP, DOMParser, XMLSerializer*/
+(function (jIO, RSVP, DOMParser, XMLSerializer) {
+  "use strict";
+
+  var parser = new DOMParser(),
+    serializer = new XMLSerializer();
+
+  function makeXmlRpcRequest(file, from, to) {
+    var xml = parser.parseFromString(
+      '<?xml version="1.0" encoding="UTF-8"?><methodCall>' +
+        '<methodName>convertFile</methodName><params>' +
+        '<param><value><string></string></value></param>' +
+        '<param><value><string></string></value></param>' +
+        '<param><value><string></string></value></param></params></methodCall>',
+      'text/xml'
+    ),
+      string_list = xml.getElementsByTagName('string');
+    string_list[0].textContent = file;
+    string_list[1].textContent = from;
+    string_list[2].textContent = to;
+    return serializer.serializeToString(xml);
+  }
+
+  /**
+   * convert a blob 
+   * from a format to another
+   * return converted blob.
+   **/
+  function convert(url, blob, from, to) {
+    return new RSVP.Queue()
+      .push(function () {
+        return jIO.util.readBlobAsDataURL(blob);
+      })
+      .push(function (result) {
+        return jIO.util.ajax({
+          type: 'POST',
+          url: url,
+          data: makeXmlRpcRequest(
+            result.target.result.split('base64,')[1],
+            from,
+            to
+          )
+        });
+      })
+      .push(function (result) {
+        var data = parser.parseFromString(
+          result.target.responseText,
+          "application/xml"
+        ), error;
+        if (data.getElementsByTagName('fault').length === 0) {
+          return jIO.util.base64toBlob(
+            data.querySelector('string').textContent,
+            to
+          );
+        }
+        error = new jIO.util.jIOError('Conversion failed', 500);
+        error.detail = data.querySelector('string').textContent;
+        throw error;
+      });
+  }
+
+  /**
+   * The jIO CloudoooStorage extension
+   *
+   * Convert attachment : att_id?from="format"&to="format"
+   * 
+   * @class CloudoooStorage
+   * @constructor
+   */
+  function CloudoooStorage(spec) {
+    this._url = spec.url;
+    this._sub_storage = jIO.createJIO(spec.sub_storage);
+  }
+
+  CloudoooStorage.prototype.get = function () {
+    return this._sub_storage.get.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.put = function () {
+    return this._sub_storage.put.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.remove = function () {
+    return this._sub_storage.remove.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.getAttachment = function () {
+    return this._sub_storage.getAttachment.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.putAttachment = function (id, name, blob) {
+    var storage = this;
+    return storage.get(id)
+      .push(function (doc) {
+        return convert(storage._url, blob, doc.from, doc.to);
+      })
+      .push(function (converted_blob) {
+        return storage._sub_storage.putAttachment(id, name, converted_blob);
+      });
+  };
+
+  CloudoooStorage.prototype.allAttachments = function () {
+    return this._sub_storage.allAttachments.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.repair = function () {
+    return this._sub_storage.repair.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.hasCapacity = function () {
+    return this._sub_storage.hasCapacity.apply(this._sub_storage, arguments);
+  };
+
+  CloudoooStorage.prototype.buildQuery = function () {
+    return this._sub_storage.buildQuery.apply(this._sub_storage, arguments);
+  };
+
+  jIO.addStorage('cloudooo', CloudoooStorage);
+
+}(jIO, RSVP, DOMParser, XMLSerializer));

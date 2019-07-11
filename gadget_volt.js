@@ -1,13 +1,13 @@
 /*jslint maxlen: 80, indent: 2 */
-/*global window, rJS, RSVP, JSON */
-(function (window, rJS, RSVP, JSON) {
+/*global window, rJS, RSVP, JSON, Object, Blob */
+(function (window, rJS, RSVP, JSON, Object, Blob) {
   "use strict";
 
   /////////////////////////////
   // parameters
   /////////////////////////////
 
-  // let this be a site configuration dictionary (obviously missing parameters)
+  // let this be a site configuration dictionary (obviously missing a lot still)
   var OPTION_DICT = {
     "country_id": "fr"
   };
@@ -20,6 +20,7 @@
   var HREF = "href";
   var STR = "";
   var TRANSLATION = "translation";
+  var CONTENT ="content";
   var SETTINGS = "settings";
   var TEN_MINUTES = 600000;
   var DOCUMENT = window.document;
@@ -29,18 +30,8 @@
   /////////////////////////////
   // methods
   /////////////////////////////
-  function up(my_string) {
-    return my_string.toUpperCase();
-  }
 
-  function getTimeStamp() {
-    return new window.Date().getTime();
-  }
-
-  function getLang(nav) {
-    return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
-  }
-
+  // ios OS9 doesn't support github api v3 redirects, create response by hand
   function getFallbackDict (my_locale) {
     return {
       "rows": [
@@ -56,9 +47,21 @@
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language
-      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language,
+      "__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
+  }
+
+  function up(my_string) {
+    return my_string.toUpperCase();
+  }
+
+  function getTimeStamp() {
+    return new window.Date().getTime();
+  }
+
+  function getLang(nav) {
+    return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
   }
 
   function mergeDict(my_return_dict, my_new_dict) {
@@ -83,7 +86,6 @@
     /////////////////////////////
     .setState({
       "locale": getLang(window.navigator).substring(0, 2) || FALLBACK_LANGUAGE,
-      "ios": null,
     })
 
     /////////////////////////////
@@ -91,14 +93,15 @@
     /////////////////////////////
     .ready(function (gadget) {
 
-      // yaya, should be localstorage caling repair to sync
+      // shabby. We should use content-storage for that, replicate with github
+      // and repair should convert from github format into the format we require
       gadget.property_dict = {
-        "url_dict": {},
         "content_dict": {},
         "ui_dict": {},
         "content_wrapper": getElem(gadget.element, ".volt-layout")
       };
       return RSVP.all([
+        gadget.declareGadget("gadget_jio.html", {"scope": "content"}),
         gadget.declareGadget("gadget_jio.html", {"scope": "translation"}),
         gadget.declareGadget("gadget_jio.html", {"scope": "settings"})
       ]);
@@ -134,11 +137,11 @@
           ]);
         })
         .push(function () {
-          return gadget.buildContentLookupDict();
+          return gadget.buildContentLookupDict(true);
         })
         .push(function () {
           dict.stop = null;
-          return gadget.fetchTranslationAndUpdateDom();
+          return;
         });
     })
 
@@ -173,7 +176,13 @@
         .push(function (response) {
           var payload = JSON.parse(response);
           if (getTimeStamp() - payload.timestamp > TEN_MINUTES) {
-            return gadget.setting_removeAttachment("/", "token");
+            return new RSVP.Queue()
+              .push(function () {
+                return gadget.resetStorage(true);
+              })
+              .push(function () {
+                return gadget.setting_removeAttachment("/", "token");
+              });
           }
           return payload[my_setting];
         })
@@ -226,6 +235,34 @@
       return this.route(TRANSLATION, "allDocs");
     })
 
+    .declareMethod("content_create", function (my_option_dict) {
+      return this.route(CONTENT, "createJIO", my_option_dict);
+    })
+    .declareMethod("content_get", function (my_id) {
+      return this.route(CONTENT, "get", my_id);
+    })
+    .declareMethod("content_put", function (my_id, my_meta_data) {
+      return this.route(CONTENT, "put", my_id, my_meta_data);
+    })
+    .declareMethod("content_remove", function (my_id) {
+      return this.route(CONTENT, "remove", my_id);
+    })
+    .declareMethod("content_putAttachment", function (my_id, my_name, my_blob) {
+      return this.route(CONTENT, "putAttachment", my_id, my_name, my_blob);
+    })
+    .declareMethod("content_getAttachment", function (my_id, my_name, my_dict) {
+      return this.route(CONTENT, "getAttachment", my_id, my_name, my_dict);
+    })
+    .declareMethod("content_removeAttachment", function (my_id, my_name) {
+      return this.route(CONTENT, "removeAttachment", my_id, my_name);
+    })
+    .declareMethod("content_allAttachments", function (my_id) {
+      return this.route(CONTENT, "allAttachments", my_id);
+    })
+    .declareMethod("content_allDocs", function (my_option_dict) {
+      return this.route(CONTENT, "allDocs", my_option_dict);
+    })
+
     .declareMethod("setting_create", function (my_option_dict) {
       return this.route(SETTINGS, "createJIO", my_option_dict);
     })
@@ -248,7 +285,10 @@
 
       return new RSVP.Queue()
         .push(function () {
-          return gadget.setting_create({"type": "local", "sessiononly": false});
+          return RSVP.all([
+            gadget.setting_create({"type": "local", "sessiononly": false}),
+            gadget.content_create({"type": "indexeddb", "database": "volt"})
+          ]);
         })
         .push(function () {
           return gadget.getSetting("lang");
@@ -272,8 +312,7 @@
         .push(function () {
           return RSVP.all([
             gadget.getDeclaredGadget("header"),
-            gadget.getDeclaredGadget("footer"),
-            gadget.fetchTranslationAndUpdateDom()
+            gadget.getDeclaredGadget("footer")
           ]);
         })
         .push(function (gadget_list) {
@@ -299,53 +338,158 @@
       return;
     })
 
-    .declareMethod("buildContentLookupDict", function () {
+    // ---------------------- Data Handlers --------------------------------------
+    .declareMethod("getRemoteDataUrlIndex", function () {
       var gadget = this;
-      var dict = gadget.property_dict;
+      return new RSVP.Queue()
+        .push(function () {
+          return gadget.github_allDocs();
+        })
 
-      return gadget.github_allDocs()
-
-        // we only need a language to build the dict, so in case of errors like
-        // on OS X/Safari 9, which cannot handle Github APIv3 redirect, we just
+        // we only need language to build the dict, so in case of errors on
+        // OS X/Safari 9, which cannot handle Github APIv3 redirect, we just
         // build the thing by hand.
-        .push(undefined, function(whatever) {
+        .push(undefined, function (whatever) {
           return getFallbackDict(gadget.state.locale);
         })
-        .push(function (my_response) {
-          if (my_response.data.total_rows === 0) {
-            return gadget.updateStorage(FALLBACK_LANGUAGE)
-              .push(function () {
-                return RSVP.all([
-                  gadget.github_allDocs(),
+
+        // call passed but set language (eg XX) does not exist, use fallback
+        .push(function (response) {
+          if (response.data.total_rows > 0) {
+            return response;
+          }
+          return gadget.updateStorage(FALLBACK_LANGUAGE)
+            .push(function () {
+              return RSVP.all([
+                gadget.github_allDocs()
+                  .push(function (document_dict) {
+                    return new RSVP.Queue()
+                      .push(function () {
+                        return RSVP.all(
+                          document_dict.data.rows.map(function (row) {
+                            return gadget.content_put(row.id, DICT);  
+                          })
+                        );
+                      })
+                      .push(function () {
+                        return document_dict;
+                      });
+                  }),
                   gadget.setSetting("lang", FALLBACK_LANGUAGE),
                   gadget.stateChange({"locale": FALLBACK_LANGUAGE})
                 ]);
-              });
-          }
-          return [my_response];
-        })
-        .push(function (my_response_list) {
-          my_response_list[0].data.rows.map(function (row) {
-            dict.url_dict[row.id.split("/").pop().replace(".json", "")] = row.id;
-            return;
-          });
+            })
+            .push(function (response_list) {
+              return response_list[0];
+            });
         });
     })
 
-    .declareMethod("fetchTranslationAndUpdateDom", function () {
+    .declareMethod("getRemoteData", function (my_url_list) {
       var gadget = this;
-      var dict = gadget.property_dict;
-      var url_dict = dict.url_dict;
       return new RSVP.Queue()
         .push(function () {
-          return RSVP.all([
-            gadget.github_get(url_dict.ui),
-            gadget.github_get(url_dict.names)
-          ]);
+          return RSVP.all(my_url_list.map(function (row) {
+            return gadget.github_get(row.id)
+              .push(function (data) {
+                return new RSVP.Queue()
+                  .push(function () {
+                    return gadget.content_putAttachment(
+                      row.id,
+                      "data",
+                      new Blob([JSON.stringify(data)], {type: "application/json"})
+                    );
+                  })
+                  .push(function () {
+                    return data;
+                  });
+              });
+          }));
         })
-        .push(function (data_list) {
-          dict.ui_dict = mergeDict(data_list[0], data_list[1]);
-          return gadget.translateDom([dict.ui_dict, dict.content_wrapper]);
+        .push(function (response_list) {
+          return mergeDict(response_list[0], response_list[1]);
+        });
+    })
+
+
+    .declareMethod("buildContentLookupDict", function (my_purge) {
+      var gadget = this;
+      var dummy_response = [DICT, DICT];
+      var queue = new RSVP.Queue();
+      var url_list;
+
+      // indexeddb first, if not available/change language = purge), ask remote
+      if (my_purge === undefined) {
+        queue.push(function () {
+          return gadget.content_allDocs();
+        });
+      }
+
+      return queue
+        .push(function (response) {
+          if (response && response.data.total_rows > 0) {
+            return response;
+          }
+          return gadget.getRemoteDataUrlIndex();
+        })
+
+        //this response will not be empty (from indexeddb or github or fallback)
+        .push(function (document_dict) {
+          url_list = document_dict.data.rows.filter(function (x) {
+            return x.id.indexOf("debug") === -1;
+          });
+          return RSVP.all(url_list.map(function (row) {
+            return gadget.content_getAttachment(row.id, "data", {"format": "json"});
+          }));
+        })
+
+        // in case something fails
+        .push(undefined, function (my_error) {
+          return gadget.handleError(my_error, {"404": dummy_response});
+        })
+        .push(function (response_list) {
+          var list = response_list || dummy_response;
+          var data = mergeDict(list[0], list[1]);
+
+          // if indexeddb is empty we need to fetch remote data
+          if (Object.keys(data).length === 0 && data.constructor === Object) {
+            return gadget.getRemoteData(url_list);
+          }
+          return data;
+        })
+
+        // getRemoteData or the previous call return a merged dict
+        .push(function (data_dict) {
+          var dict = gadget.property_dict;
+          dict.ui_dict = data_dict;
+          return gadget.translateDom([data_dict, dict.content_wrapper]);
+        });
+    })
+
+    // wipe indexeddb
+    .declareMethod("resetStorage", function (my_purge) {
+      console.log("PURGING")
+      var gadget = this;
+      return new RSVP.Queue()
+        .push(function () {
+          return gadget.content_allDocs();
+        })
+        .push(function (document_list) {
+          return RSVP.all(
+            document_list.data.rows.map(function (row) {
+              return gadget.content_allAttachments(row.id)
+                .push(function (attachment_dict) {
+                  return RSVP.all(
+                    Object.keys(attachment_dict).map(function (key) {
+                      return gadget.content_removeAttachment(row.id, key);
+                    })
+                  );
+                })
+                .push(function () {
+                  return gadget.content_remove(row.id);
+                });
+            })
+          );
         });
     })
 
@@ -400,4 +544,4 @@
         });
     });
 
-}(window, rJS, RSVP, JSON));
+}(window, rJS, RSVP, JSON, Object, Blob));
