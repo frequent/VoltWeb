@@ -42,8 +42,8 @@
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "map",
-      "__debug": "https://softinst103163.host.vifib.net/site/map/debug.json"
+      "path": "map"
+      //"__debug": "https://softinst103163.host.vifib.net/site/map/debug.json"
     };
   }
 

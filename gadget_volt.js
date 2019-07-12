@@ -24,6 +24,7 @@
   var SETTINGS = "settings";
   var TEN_MINUTES = 600000;
   var DOCUMENT = window.document;
+  var LOCATION = document.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
   var FALLBACK_LANGUAGE = "fr";
 
@@ -47,9 +48,21 @@
     return {
       "type": "github_storage",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language,
-      "__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language
+      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
+  }
+
+
+  function getPointer(my_dict, my_path) {
+    var pointer = Object.entries(my_dict).find(function (key) {
+      if (key[1] === my_path) {
+        return key;
+      }
+    });
+    if (pointer) {
+      return pointer[0]; 
+    }
   }
 
   function up(my_string) {
@@ -58,10 +71,6 @@
 
   function getTimeStamp() {
     return new window.Date().getTime();
-  }
-
-  function getLang(nav) {
-    return (nav.languages ? nav.languages[0] : (nav.language || nav.userLanguage));
   }
 
   function mergeDict(my_return_dict, my_new_dict) {
@@ -85,13 +94,19 @@
     // state
     /////////////////////////////
     .setState({
-      "locale": getLang(window.navigator).substring(0, 2) || FALLBACK_LANGUAGE,
+      "locale": null,
     })
 
     /////////////////////////////
     // ready
     /////////////////////////////
     .ready(function (gadget) {
+      var fwd = new URLSearchParams(window.location.search).get("fwd");
+
+      // if we're here from a language change, leave right away
+      if (fwd) {
+        document.location.replace(JSON.parse(fwd));        
+      }
 
       // shabby. We should use content-storage for that, replicate with github
       // and repair should convert from github format into the format we require
@@ -101,9 +116,9 @@
         "content_wrapper": getElem(gadget.element, ".volt-layout")
       };
       return RSVP.all([
-        gadget.declareGadget("gadget_jio.html", {"scope": "content"}),
-        gadget.declareGadget("gadget_jio.html", {"scope": "translation"}),
-        gadget.declareGadget("gadget_jio.html", {"scope": "settings"})
+        gadget.declareGadget("../../gadget_jio.html", {"scope": "content"}),
+        gadget.declareGadget("../../gadget_jio.html", {"scope": "translation"}),
+        gadget.declareGadget("../../gadget_jio.html", {"scope": "settings"})
       ]);
     })
 
@@ -120,27 +135,31 @@
       var select = my_event[0].target;
       var dict = gadget.property_dict;
       var lang = select.options[select.selectedIndex].value;
+      var locale = gadget.state.locale;
+      var pointer = getPointer(dict.ui_dict, LOCATION.href.split("/").slice(-1)[0]);
 
       // mdl-events still bound multiple times, stateChange is too slow to trap
       if (dict.stop) {
         return;
       }
       dict.stop = true;
-      if (gadget.state.locale === lang) {
+      if (locale === lang) {
         return;
       }
+        
       return new RSVP.Queue()
         .push(function () {
           return RSVP.all([
-            gadget.updateStorage(lang),
-            gadget.setSetting("lang", lang)
+            gadget.setSetting("lang", lang),
+            gadget.updateStorage(lang)
           ]);
         })
         .push(function () {
           return gadget.buildContentLookupDict(true);
         })
         .push(function () {
-          dict.stop = null;
+          var path = "index.html" + (pointer ? "?fwd=" + JSON.stringify(dict.ui_dict[pointer]) : "");
+          document.location.assign("../" + lang + "/" + path);
           return;
         });
     })
@@ -293,18 +312,15 @@
         .push(function () {
           return gadget.getSetting("lang");
         })
-        .push(function (my_stored_language) {
-          if (my_stored_language === undefined) {
-            return RSVP.all([
-              gadget.setSetting("lang", locale),
-              gadget.github_create(getConfigDict(locale))
-            ]);
-          }
-          dict.country_id = my_stored_language;
+        .push(function (my_language) {
+          var lang = dict.country_id = my_language || FALLBACK_LANGUAGE
           return RSVP.all([
-            gadget.stateChange({"locale": my_stored_language}),
-            gadget.github_create(getConfigDict(my_stored_language))
+            gadget.stateChange({"locale": lang}),
+            gadget.setSetting("lang", lang)
           ]);
+        })
+        .push(function () {
+          return gadget.github_create(getConfigDict(gadget.state.locale));
         })
         .push(function () {
           return gadget.buildContentLookupDict();
@@ -323,7 +339,7 @@
         })
         .push(function () {
           window.componentHandler.upgradeDom();
-          return;
+          return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         });
     })
 
@@ -460,15 +476,13 @@
 
         // getRemoteData or the previous call return a merged dict
         .push(function (data_dict) {
-          var dict = gadget.property_dict;
-          dict.ui_dict = data_dict;
-          return gadget.translateDom([data_dict, dict.content_wrapper]);
+          gadget.property_dict.ui_dict = data_dict;
+          return;
         });
     })
 
     // wipe indexeddb
     .declareMethod("resetStorage", function (my_purge) {
-      console.log("PURGING")
       var gadget = this;
       return new RSVP.Queue()
         .push(function () {
