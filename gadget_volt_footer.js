@@ -52,7 +52,7 @@
 
     // -------------------.--- Render ------------------------------------------
     .declareMethod("render", function (my_option_dict) {
-      this.property_dict.language_select.value = my_option_dict.country_id;
+      this.property_dict.language_select.value = my_option_dict.locale;
       return this.remoteTranslate(my_option_dict.ui_dict, this.element);
     })
 

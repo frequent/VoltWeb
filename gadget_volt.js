@@ -9,7 +9,7 @@
 
   // let this be a site configuration dictionary (obviously missing a lot still)
   var OPTION_DICT = {
-    "country_id": "fr"
+    "scope": "fr"
   };
 
   var DICT = {};
@@ -19,14 +19,17 @@
   var RB = "]";
   var HREF = "href";
   var STR = "";
+  var MAIN = "volt-layout__content";
   var TRANSLATION = "translation";
   var CONTENT ="content";
   var SETTINGS = "settings";
-  var TEN_MINUTES = 600000;
+  var IDLE_TIME = 600000;
   var DOCUMENT = window.document;
   var LOCATION = document.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
   var FALLBACK_LANGUAGE = "fr";
+  var ESC = "Esc";
+  var ESCAPE = "Escape";
 
   /////////////////////////////
   // methods
@@ -53,8 +56,17 @@
     };
   }
 
+  function getParent(my_element, my_class) {
+    if (my_element && my_element.classList.contains(my_class)) {
+      return my_element;
+    }
+    if (my_element.parentElement) {
+      return getParent(my_element.parentElement, my_class);
+    }
+    return null;
+  }
 
-  function getPointer(my_dict, my_path) {
+  function getTarget(my_dict, my_path) {
     var pointer = Object.entries(my_dict).find(function (key) {
       if (key[1] === my_path) {
         return key;
@@ -94,6 +106,7 @@
     // state
     /////////////////////////////
     .setState({
+      "scope": null,
       "locale": null,
     })
 
@@ -101,17 +114,7 @@
     // ready
     /////////////////////////////
     .ready(function (gadget) {
-      var fwd = new URLSearchParams(window.location.search).get("fwd");
-
-      // if we're here from a language change, leave right away
-      if (fwd) {
-        document.location.replace(JSON.parse(fwd));        
-      }
-
-      // shabby. We should use content-storage for that, replicate with github
-      // and repair should convert from github format into the format we require
       gadget.property_dict = {
-        "content_dict": {},
         "ui_dict": {},
         "content_wrapper": getElem(gadget.element, ".volt-layout")
       };
@@ -131,42 +134,63 @@
     })
 
     .allowPublicAcquisition("changeLanguage", function (my_event) {
-      var gadget = this;
-      var select = my_event[0].target;
-      var dict = gadget.property_dict;
-      var lang = select.options[select.selectedIndex].value;
-      var locale = gadget.state.locale;
-      var pointer = getPointer(dict.ui_dict, LOCATION.href.split("/").slice(-1)[0]);
+      return this.updateLanguage(my_event);
+    })
 
-      // mdl-events still bound multiple times, stateChange is too slow to trap
+    /////////////////////////////
+    // declared methods
+    /////////////////////////////
+    .declareMethod("updateLanguage", function (my_payload) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var select;
+      var locale;
+      var language;
+      var page;
+      var target;
+
+      // mdl-events still fire multiple times, stateChange is too slow to trap
       if (dict.stop) {
         return;
       }
       dict.stop = true;
-      if (locale === lang) {
+
+      if (my_payload) {
+        select = my_payload[0].target;
+        language = select.options[select.selectedIndex].value;
+      } else {
+        language = gadget.state.scope;
+      }
+      locale = gadget.state.locale;
+      if (locale === language) {
         return;
       }
-        
+
+      // we need to fetch the page and pointer/target now
+      page = LOCATION.href.split("/").slice(-1)[0];
+      target = page ? getTarget(dict.ui_dict, page) : undefined; 
+      
+      // update storages with new language data, then load target/index page
       return new RSVP.Queue()
         .push(function () {
+          return gadget.resetStorage();
+        })
+        .push(function () {
           return RSVP.all([
-            gadget.setSetting("lang", lang),
-            gadget.updateStorage(lang)
+            gadget.setSetting("locale", language),
+            gadget.updateStorage(language)
           ]);
         })
         .push(function () {
           return gadget.buildContentLookupDict(true);
         })
         .push(function () {
-          var path = "index.html" + (pointer ? "?fwd=" + JSON.stringify(dict.ui_dict[pointer]) : "");
-          document.location.assign("../" + lang + "/" + path);
-          return;
+          return document.location.assign(
+            "../" + language + "/" + (target ? dict.ui_dict[target] : STR)
+          );
         });
     })
-
-    /////////////////////////////
-    // declared methods
-    /////////////////////////////
+    
     .declareMethod("translateDom", function (my_payload) {
       var dictionary = my_payload[0];
       var dom = my_payload[1];
@@ -194,13 +218,16 @@
       return gadget.setting_getAttachment("/", my_setting, {format: "text"})
         .push(function (response) {
           var payload = JSON.parse(response);
-          if (getTimeStamp() - payload.timestamp > TEN_MINUTES) {
+          if (getTimeStamp() - payload.timestamp > IDLE_TIME) {
             return new RSVP.Queue()
               .push(function () {
                 return gadget.resetStorage(true);
               })
               .push(function () {
                 return gadget.setting_removeAttachment("/", "token");
+              })
+              .push(function () {
+                return gadget.updateLanguage();
               });
           }
           return payload[my_setting];
@@ -305,18 +332,25 @@
       return new RSVP.Queue()
         .push(function () {
           return RSVP.all([
+            gadget.stateChange({"scope": dict.scope}),
             gadget.setting_create({"type": "local", "sessiononly": false}),
             gadget.content_create({"type": "indexeddb", "database": "volt"})
           ]);
         })
         .push(function () {
-          return gadget.getSetting("lang");
+          return gadget.getSetting("locale");
         })
         .push(function (my_language) {
-          var lang = dict.country_id = my_language || FALLBACK_LANGUAGE
+          var language = my_language || FALLBACK_LANGUAGE;
+
+          // set those for all child gadgets
+          dict.scope = gadget.state.scope;
+          dict.locale = language;
+
+          // reset setting, so we don't purge unless IDLE_TIME passed
           return RSVP.all([
-            gadget.stateChange({"locale": lang}),
-            gadget.setSetting("lang", lang)
+            gadget.stateChange({"locale": language}),
+            gadget.setSetting("locale", language)
           ]);
         })
         .push(function () {
@@ -351,6 +385,9 @@
       if (delta.hasOwnProperty("locale")) {
         state.locale = delta.locale;
       }
+      if (delta.hasOwnProperty("scope")) {
+        state.scope = delta.scope;
+      }
       return;
     })
 
@@ -368,35 +405,37 @@
         .push(undefined, function (whatever) {
           return getFallbackDict(gadget.state.locale);
         })
-
-        // call passed but set language (eg XX) does not exist, use fallback
         .push(function (response) {
-          if (response.data.total_rows > 0) {
-            return response;
-          }
-          return gadget.updateStorage(FALLBACK_LANGUAGE)
-            .push(function () {
-              return RSVP.all([
-                gadget.github_allDocs()
-                  .push(function (document_dict) {
-                    return new RSVP.Queue()
-                      .push(function () {
-                        return RSVP.all(
-                          document_dict.data.rows.map(function (row) {
-                            return gadget.content_put(row.id, DICT);  
-                          })
-                        );
-                      })
-                      .push(function () {
-                        return document_dict;
-                      });
-                  }),
-                  gadget.setSetting("lang", FALLBACK_LANGUAGE),
+          
+          // call passed but set language (eg XX) does not exist, use fallback
+          if (response.data.total_rows === 0) {
+            return gadget.updateStorage(FALLBACK_LANGUAGE)
+              .push(function () {
+                return RSVP.all([
+                  gadget.github_allDocs(),
+                  gadget.setSetting("locale", FALLBACK_LANGUAGE),
                   gadget.stateChange({"locale": FALLBACK_LANGUAGE})
                 ]);
+              })
+              .push(function (response_list) {
+                return response_list[0];
+              });
+          }
+          return response;
+        })
+
+        // store records in indexeddb to avoid roundtrip to github
+        .push(function (response) {
+          return new RSVP.Queue()
+            .push(function () {
+              return RSVP.all(
+                response.data.rows.map(function (row) {
+                  return gadget.content_put(row.id, DICT);  
+                })
+              );
             })
-            .push(function (response_list) {
-              return response_list[0];
+            .push(function () {
+              return response;
             });
         });
     })
@@ -474,7 +513,7 @@
           return data;
         })
 
-        // getRemoteData or the previous call return a merged dict
+        // for now tack ui_dict on props so they can be passed to child gadgets
         .push(function (data_dict) {
           gadget.property_dict.ui_dict = data_dict;
           return;
@@ -482,7 +521,7 @@
     })
 
     // wipe indexeddb
-    .declareMethod("resetStorage", function (my_purge) {
+    .declareMethod("resetStorage", function () {
       var gadget = this;
       return new RSVP.Queue()
         .push(function () {
@@ -518,6 +557,13 @@
         })
         .push(function () {
           return gadget.github_create(getConfigDict(my_language));
+        });
+    })
+
+    .declareMethod("hideMenu", function () {
+      return this.getDeclaredGadget("header")
+        .push(function (my_header_gadget) {
+          return my_header_gadget.swapMenuClass();
         });
     })
     
@@ -556,6 +602,21 @@
           }
           body.appendChild(fragment);
         });
-    });
+    })
+
+    /////////////////////////////
+    // event bindings
+    /////////////////////////////
+    .onEvent("keydown", function (event) {
+      if (event.key === ESCAPE || event.key === ESC) {
+        return this.hideMenu();
+      }
+    }, false, false)
+
+    .onEvent("click", function (event) {
+      if (getParent(event.target, MAIN)) {
+        return this.hideMenu();
+      }
+    }, false, false);
 
 }(window, rJS, RSVP, JSON, Object, Blob));

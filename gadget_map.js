@@ -12,7 +12,7 @@
   var STR = "";
   var EU = "EU";
   var ICON_CONFIG = {
-    "iconUrl": "img/s-marker-icon.png",
+    "iconUrl": "../../img/s-marker-icon.png",
     "iconSize": [15,25],
     "iconAnchor": [7,23],
     "popupAnchor": [1,-15]
@@ -37,7 +37,7 @@
       "rows": [{"id": FALLBACK_PATH, "value": DICT}], "total_rows": 1}
     };
   }
-  
+
   function getConfigDict() {
     return {
       "type": "github_storage",
@@ -90,8 +90,10 @@
     // state
     /////////////////////////////
     .setState({
-      "country": null,
-      "country_dict": null
+      "scope": null,
+      "ui_dict": null,
+      "marker_dict": null,
+      "map_set": null
     })
 
     /////////////////////////////
@@ -147,17 +149,20 @@
     .declareMethod("render", function (my_option_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
-      //window.componentHandler.upgradeDom();
-
       mergeDict(dict, my_option_dict || {});
-      if (dict.map) {
+
+      if (gadget.state.map_set) {
         return;
       }
+
       return new RSVP.Queue()
         .push(function () {
           return RSVP.all([
             gadget.pins_create(getConfigDict()),
-            gadget.stateChange({"country": dict.id, "country_dict": dict.country_dict})
+            gadget.stateChange({
+              "scope": dict.scope, 
+              "ui_dict": dict.ui_dict
+            })
           ]);
         })
         .push(function () {
@@ -180,11 +185,17 @@
 
     .declareMethod("stateChange", function (delta) {
       var gadget = this;
-      if (delta.hasOwnProperty("country")) {
-        gadget.state.country = delta.country;
+      if (delta.hasOwnProperty("scope")) {
+        gadget.state.scope = delta.scope;
       }
-      if (delta.hasOwnProperty("country_dict")) {
-        gadget.state.country_dict = delta.country_dict;
+      if (delta.hasOwnProperty("ui_dict")) {
+        gadget.state.ui_dict = delta.ui_dict;
+      }
+      if (delta.hasOwnProperty("marker_dict")) {
+        gadget.state.marker_dict = delta.marker_dict;
+      }
+      if (delta.hasOwnProperty("map_set")) {
+        gadget.state.map_set = delta.map_set;
       }
       return;
     })
@@ -193,20 +204,21 @@
       var gadget = this;
       var dict = gadget.property_dict;
       var id;
-      if (my_id === gadget.state.country) {
+
+      if (my_id === gadget.state.scope) {
         return;
       }
       if (!dict.map) {
         dict.map = L.map("volt-map", {"zoomControl": false});
         L.control.zoom({"position": "bottomright"}).addTo(dict.map);
       }
-      id = my_id || gadget.state.country;
+      id = my_id || gadget.state.scope;
       return gadget.stateChange({
-        "country": id,
-        "country_dict": id === EU ? getAllCities(dict.marker_dict) : dict.marker_dict[id]
+        "map_set": true,
+        "marker_dict": id === EU ? getAllCities(dict.marker_dict) : dict.marker_dict[id]
       })
       .push(function () {
-        return gadget.updateSocialMediaTab(gadget.state.country_dict);
+        return gadget.updateSocialMediaTab(gadget.state.marker_dict);
       });
     })
 
@@ -214,20 +226,20 @@
       this.property_dict.map.invalidateSize();
     })
 
-    .declareMethod("renderMap", function (my_country_code) {
+    .declareMethod("renderMap", function (my_scope) {
       var gadget = this;
       var dict = gadget.property_dict;
       var queue = new RSVP.Queue();
 
-      if (my_country_code) {
+      if (my_scope) {
         queue.push(function () {
-          return gadget.initialiseMap(my_country_code);
+          return gadget.initialiseMap(my_scope);
         });
       }
 
       // wikimedia maps
       return queue.push(function () {
-        var data = gadget.state.country_dict;
+        var data = gadget.state.marker_dict;
         if (dict.markerLayer) {
           dict.map.removeLayer(dict.markerLayer);
         }
@@ -277,6 +289,7 @@
     //  if (event.target.classList.contains("volt-map")) {
     //    gadget.property_dict.map.scrollWheelZoom.disable();
     //  }
-    //}, false, false);
+    //}, false, false)
+    ;
 
 }(window, rJS, RSVP, L));

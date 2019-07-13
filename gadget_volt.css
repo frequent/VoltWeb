@@ -147,10 +147,11 @@
 */
 /* ============================= THEMEING =================================== */
 /* https://coolors.co/612095-ffffff-fcfcfc-191923-8a2fd2 */
-/*                                         6c6c73 */
+/*                    612095-ffffff-fcfcfc-6c6c73-8a2fd2*/
+/*                    612095-ffffff-fcfcfc-C0A9D7-000000 */
 .volt-body {
   height: 100%;
-  background-color: #612095;
+  background-color: #fff;
 }
 .volt-header {
   background-color: #612095;
@@ -183,6 +184,11 @@
   font-size: 1.5em;
   font-weight: bold;
   color: #ffffff;
+}
+@media screen and (max-width: 1024px) {
+  .mdl-layout__header {
+    min-height: 60px; 
+  }
 }
 @media screen and (max-width: 54px) {
 .mdl-layout__header {
@@ -435,6 +441,10 @@
   }
 }
 /* ============================= FOOTER ===================================== */
+.volt-footer {
+  border-top: 1px solid #C0A9D7;
+  margin-top: 3em;
+}
 .volt-footer__action {
   position: relative;
 }
@@ -713,18 +723,160 @@
 }
 /* =============================== Main ===================================== */
 .volt-layout__content {
+  font-family: 'Ubuntu';
   width: 100%;
+  margin-top: 56px;
+  width: 100%;
+  padding: 0 15% 0 15%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.volt-layout__content:not(.volt-content__fullscreen) {
+  column-count: 2;
+  column-gap: 3em;  
+}
+
+.volt-layout__content h1,
+.volt-layout__content h2,
+.volt-layout__content h3 {
+  font-family: 'Ubuntu';
+  color: #612095;
+}
+.volt-layout__content a,
+.volt-layout__content b {
+  color: #612095;
+}
+.volt-layout__content figcaption {
+  text-align: center;
+  margin-top: -1.5em;
+  font-style: italic;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+.volt-layout__content h1 {
+  font-size: 2.5em; 
+  font-weight: bold;
+  margin-top: 2em;
+  column-span: all;
+}
+.volt-layout__content h1 + h2 {
+  column-span: all;
+}
+.volt-layout__content h2 {
+  font-size: 1.75em;
+  margin: .75em 0 .75em 0;
+  padding: 0;
+  line-height: 1.25em;
+}
+.volt-layout__content h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+}
+.volt-layout__content h3:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(192, 169, 215, .5);
+  width: 50%;
+  height: 5em;
+  top: -1em;
+  left: 25%;
+  right: 25%;
+  -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  -webkit-transform: rotate(-21deg);
+  -moz-transform: rotate(-21deg);
+  -ms-transform: rotate(-21deg);
+  -o-transform: rotate(-21deg);
+  transform: rotate(-21deg);
+  z-index: -1;
+}
+.volt-layout__content h3:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(192, 169, 215, .5);
+  width: 50%;
+  height: 5em;
+  top: -2.5em;
+  left: 25%;
+  right: 25%;
+  -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  -webkit-transform: rotate(-21deg);
+  -moz-transform: rotate(-21deg);
+  -ms-transform: rotate(-21deg);
+  -o-transform: rotate(-21deg);
+  transform: rotate(-21deg);
+  z-index: -1;
+}
+
+
+.volt-layout__content p {
+  font-size: 1.15em;
+  text-align: justify;
+}
+.volt-layout__content hr {
+  color: #C0A9D7;
+  column-span: all;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.volt-layout__content img {
+  padding: 0 0 2em 0;
+  max-width: -moz-available;
+  max-width: -webkit-fill-available;
+  max-width: fill-available;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media (max-width: 54em) {
+  .volt-layout__content {
+    margin-top: 56px;
+    padding: 0 2em 0;
+    column-count: unset;
+    column-gap: unset;
+  }
+  .volt-layout__content p {
+    font-size: 1.25em;
+  }
+  .volt-layout__content img {
+    width: 100%;
+    padding: 1em 0;
+  }
 }
 @media (max-width: 32em) {
   .volt-layout__content {
     margin-top: 112px;
   }
-}
-@media (max-width: 54em) {
-  .volt-layout__content {
-    margin-top: 56px;
+  .volt-layout__content h1 {
+    margin-top: 1em;
   }
 }
+
+/* ========================= Custom Content ================================  */
+.volt-layout__content .volt-content__banner {
+  float: none;
+  padding: 0;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: auto;
+  margin-left: -25%;
+  margin-right: -25%;
+  max-width: 150%;
+}
+@media (max-width: 32em) {
+  .volt-layout__content .volt-content__banner {
+    margin-top: -1em;
+  }
+}
+
 /* ============================= Slider ===================================== */
 .volt-slider {
   position: relative;

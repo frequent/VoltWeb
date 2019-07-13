@@ -82,10 +82,18 @@
     });
   }
 
-  function updateSelect(my_dialog, my_json, my_country, my_dict) {
+  function mapLanguageToCountry(my_country) {
+    if (my_country === "en") {
+      return "uk";
+    }
+    return my_country;
+  }
+
+  function updateSelect(my_dialog, my_json, my_scope, my_dict) {
     var response = "";
     var clean_list = [];
     var key;
+
     for (key in my_json) {
       if (my_json.hasOwnProperty(key)) {
         clean_list.push({
@@ -100,7 +108,7 @@
         "id": entry.id,
         "country_i18n": entry.i18n,
         "country_name": entry.name,
-        "selected": my_country === entry.id ? "selected": STR
+        "selected": my_scope === entry.id ? "selected": STR
       });
     });
     setDom(getElem(my_dialog, ".volt-dialog__select-wrapper"), getTemplate(
@@ -158,31 +166,33 @@
     /////////////////////////////
     // published methods
     /////////////////////////////
-    .allowPublicAcquisition("updateSocialMediaTab", function (my_dict) {
+
+    // bäh...
+    .allowPublicAcquisition("updateSocialMediaTab", function (my_url_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
-      var country_dict = my_dict[0] || my_dict;
+      var url_dict = my_url_dict[0] || my_url_dict;
       var link_list = dict.scm_container.querySelectorAll(".volt-link");
       var fb_link = link_list[0];
       var tw_link = link_list[1];
       var web_link = link_list[2];
 
-      if (!!country_dict.facebook_url) {
-        fb_link.setAttribute("href", country_dict.facebook_url);
+      if (!!url_dict.facebook_url) {
+        fb_link.setAttribute("href", url_dict.facebook_url);
         fb_link.classList.remove(LINK_DISABLED);
       } else {
         fb_link.setAttribute("href", STR);
         fb_link.classList.add(LINK_DISABLED);
       }
-      if (!!country_dict.twitter_url) {
-        tw_link.setAttribute("href", country_dict.twitter_url);
+      if (!!url_dict.twitter_url) {
+        tw_link.setAttribute("href", url_dict.twitter_url);
         tw_link.classList.remove(LINK_DISABLED);
       } else {
         tw_link.setAttribute("href", STR);
         tw_link.classList.add(LINK_DISABLED);
       }
-      if (!!country_dict.web_url) {
-        web_link.setAttribute("href", country_dict.web_url);
+      if (!!url_dict.web_url) {
+        web_link.setAttribute("href", url_dict.web_url);
         web_link.classList.remove(LINK_DISABLED);
       } else {
         web_link.setAttribute("href", STR);
@@ -278,7 +288,7 @@
           dict.map_gadget = my_gadget;
           return RSVP.all([
             dict.map_gadget.render({
-              "id": dict.country_id,
+              "scope": dict.scope,
               "ui_dict": dict.ui_dict
             }),
             gadget.swapMenuClass()
@@ -289,7 +299,7 @@
           return dict.map_gadget.renderMap();
         })
         .push(function(marker_dict) {
-          updateSelect(dialog, marker_dict, dict.country_id, dict.ui_dict);
+          updateSelect(dialog, marker_dict, dict.scope, dict.ui_dict);
           window.componentHandler.upgradeElements(dialog);
         });
     })
@@ -303,7 +313,7 @@
     /////////////////////////////
     .onEvent("keydown", function (event) {
       if (event.key === ESCAPE || event.key === ESC) {
-        return this.closeDialog(event);
+        this.closeDialog(event);
       }
     }, false, false)
 
