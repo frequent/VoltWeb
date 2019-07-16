@@ -753,6 +753,7 @@
   font-style: italic;
   margin-bottom: 1em;
   font-size: 1em;
+  height: 2em;
 }
 .volt-layout__content h1 {
   font-size: 2.5em; 
@@ -769,6 +770,31 @@
   padding: 0;
   line-height: 1.25em;
 }
+.volt-layout__content h2 span {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.volt-layout__content h2 img {
+    width: 5em;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -1em;
+}
+.volt-layout__content a {
+  background-color: #612095;
+  color: #fff;
+  padding: .5em;
+  border: 0 none;
+  text-decoration: none;
+  font-size: 1.25em;
+  border-radius: .25em;
+}
+.volt-layout__content a[href=""] {
+  background-color: rgba(0,0,0, 0.26);
+  pointer-events: none;
+}
+
 .volt-layout__content h3 {
   font-size: 1.5em;
   font-weight: bold;
@@ -835,11 +861,11 @@
   box-sizing: border-box;
 }
 @media (max-width: 54em) {
-  .volt-layout__content {
+  .volt-body .volt-layout__content {
     margin-top: 56px;
     padding: 0 2em 0;
-    column-count: unset;
-    column-gap: unset;
+    column-count: auto;
+    column-gap: normal;
   }
   .volt-layout__content p {
     font-size: 1.25em;
@@ -854,7 +880,7 @@
     margin-top: 112px;
   }
   .volt-layout__content h1 {
-    margin-top: 1em;
+    margin-top: 2em;
   }
 }
 
@@ -876,7 +902,52 @@
     margin-top: -1em;
   }
 }
-
+/* ============================= Panini ===================================== */
+.volt-team__banner,
+.volt-team__section {
+  column-span: all;
+  text-align: center;
+}
+.volt-team__section .volt-team__list {
+  list-style: none;
+  width: 100%;
+}
+.volt-team__section .volt-team__portrait-item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 32%;
+}
+.volt-team__section .volt-team__section-header {
+  position: static;
+}
+.volt-team__section .volt-team__section-header:before,
+.volt-team__section .volt-team__section-header:after {
+  content: none;
+}
+@media (max-width: 54em) {
+  .volt-team__section .volt-team__portrait-item {
+    width: 49%;
+  }
+}
+@media (max-width: 32em) {
+  .volt-team__section .volt-team__portrait-item {
+    width: 100%;
+  }
+}
+.volt-team__banner .volt-team__banner-logo {
+  max-height: 13em;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 2em;
+}
+.volt-team__banner .volt-team__banner-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 3em;
+}
 /* ============================= Slider ===================================== */
 .volt-slider {
   position: relative;

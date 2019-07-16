@@ -260,7 +260,7 @@
           return L.marker(city.position, {"icon": dict.icon})
             .bindPopup(content)
             .on('popupopen', function (event) {
-              return gadget.remoteTranslate(dict.ui_dict, event.popup._source._popup._contentNode);
+              return gadget.remoteTranslate(event.popup._source._popup._contentNode);
             });
         })).addTo(dict.map);
           

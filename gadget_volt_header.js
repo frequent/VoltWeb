@@ -238,7 +238,7 @@
       var dict = gadget.property_dict;
       mergeDict(dict, my_option_dict);
 
-      return gadget.remoteTranslate(my_option_dict.ui_dict, gadget.element);
+      return gadget.remoteTranslate(dict.ui_dict, gadget.element);
     })
 
     .declareMethod("swapMenuClass", function (my_list) {

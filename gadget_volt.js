@@ -23,7 +23,7 @@
   var TRANSLATION = "translation";
   var CONTENT ="content";
   var SETTINGS = "settings";
-  var IDLE_TIME = 600000;
+  var IDLE_TIME = 60000/*0*/;
   var DOCUMENT = window.document;
   var LOCATION = document.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
@@ -67,13 +67,11 @@
   }
 
   function getTarget(my_dict, my_path) {
-    var pointer = Object.entries(my_dict).find(function (key) {
-      if (key[1] === my_path) {
+    var key;
+    for (key in my_dict) {
+      if (my_dict[key] === my_path) {
         return key;
       }
-    });
-    if (pointer) {
-      return pointer[0]; 
     }
   }
 
@@ -146,15 +144,13 @@
       var select;
       var locale;
       var language;
-      var page;
-      var target;
 
       // mdl-events still fire multiple times, stateChange is too slow to trap
       if (dict.stop) {
         return;
       }
       dict.stop = true;
-
+      // if language was selected, use it, else fallback to default scope
       if (my_payload) {
         select = my_payload[0].target;
         language = select.options[select.selectedIndex].value;
@@ -165,11 +161,6 @@
       if (locale === language) {
         return;
       }
-
-      // we need to fetch the page and pointer/target now
-      page = LOCATION.href.split("/").slice(-1)[0];
-      target = page ? getTarget(dict.ui_dict, page) : undefined; 
-      
       // update storages with new language data, then load target/index page
       return new RSVP.Queue()
         .push(function () {
@@ -182,9 +173,13 @@
           ]);
         })
         .push(function () {
-          return gadget.buildContentLookupDict(true);
+          return RSVP.all([
+            gadget.getSetting("pointer"),
+            gadget.buildContentLookupDict(true)
+          ]);
         })
-        .push(function () {
+        .push(function (response_list) {
+          var target = response_list[0];
           return document.location.assign(
             "../" + language + "/" + (target ? dict.ui_dict[target] : STR)
           );
@@ -220,9 +215,6 @@
           var payload = JSON.parse(response);
           if (getTimeStamp() - payload.timestamp > IDLE_TIME) {
             return new RSVP.Queue()
-              .push(function () {
-                return gadget.resetStorage(true);
-              })
               .push(function () {
                 return gadget.setting_removeAttachment("/", "token");
               })
@@ -342,7 +334,6 @@
         })
         .push(function (my_language) {
           var language = my_language || FALLBACK_LANGUAGE;
-
           // set those for all child gadgets
           dict.scope = gadget.state.scope;
           dict.locale = language;
@@ -362,18 +353,30 @@
         .push(function () {
           return RSVP.all([
             gadget.getDeclaredGadget("header"),
-            gadget.getDeclaredGadget("footer")
+            gadget.getDeclaredGadget("footer"),
+            gadget.getDeclaredGadget("content")
           ]);
         })
         .push(function (gadget_list) {
-          return RSVP.all([
-            gadget_list[0].render(dict),
-            gadget_list[1].render(dict)
-          ]);
+          var list = [gadget_list[0].render(dict), gadget_list[1].render(dict)];
+          var content = gadget_list[2];
+
+          // if there is a content gadget, render it, too (only at this point
+          // translations are available)
+          if (typeof content !== 'undefined' && typeof content === 'function') {
+            list.push(content.render(dict));
+          }
+          return RSVP.all(list);
         })
         .push(function () {
           window.componentHandler.upgradeDom();
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
+        })
+        .push(function () {
+          return gadget.setSetting(
+            "pointer",
+            getTarget(dict.ui_dict, LOCATION.href.split("/").pop())
+          );
         });
     })
 
@@ -381,7 +384,6 @@
     .declareMethod("stateChange", function (delta) {
       var gadget = this;
       var state = gadget.state;
-  
       if (delta.hasOwnProperty("locale")) {
         state.locale = delta.locale;
       }
