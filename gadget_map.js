@@ -41,6 +41,7 @@
   function getConfigDict() {
     return {
       "type": "github_storage",
+      "user": "VoltEuropa",
       "repo": "VoltWeb",
       "path": "map"
       //"__debug": "https://softinst103163.host.vifib.net/site/map/debug.json"

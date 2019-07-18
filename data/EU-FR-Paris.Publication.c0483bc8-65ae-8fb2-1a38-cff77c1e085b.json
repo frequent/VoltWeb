@@ -1,0 +1,18 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Paris",
+  "id": "8fc7fd88-8643-4dec-4613-22f43f4d0f3b",
+  "file_name": "EU-FR-Lille.Publication.8fc7fd88-8643-4dec-4613-22f43f4d0f3b.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Mobilite.2019-07-01",
+  "title": "Lille Municipales 2020 - Propositions Mobilité",
+  "img_url": "", 
+  "description": "",
+  "start_date": "2019-07-01 19:00:00 CET",
+  "stop_date": "",
+  "text_content": "",
+  "location": {},
+  "scope": "EU/FR/Paris",
+  "attachment_dict": {}
+}

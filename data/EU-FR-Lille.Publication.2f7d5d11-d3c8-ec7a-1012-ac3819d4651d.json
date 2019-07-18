@@ -1,0 +1,20 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "2f7d5d11-d3c8-ec7a-1012-ac3819d4651d",
+  "file_name": "EU-FR-Lille.Publication.2f7d5d11-d3c8-ec7a-1012-ac3819d4651d.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Logements.2019-07-01",
+  "title": "Lille Municipales 2020 - Propositions.Logements",
+  "img_url": "", 
+  "description": "",
+  "start_date": "2019-07-01 19:00:00 CET",
+  "stop_date": "",
+  "text_content": "",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "doc_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Logements.pdf"
+  }
+}

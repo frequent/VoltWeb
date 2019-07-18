@@ -9,7 +9,8 @@
 
   // let this be a site configuration dictionary (obviously missing a lot still)
   var OPTION_DICT = {
-    "scope": "fr"
+    "scope": "fr",
+    "localiser": "EU/FR/Lille"
   };
 
   var DICT = {};
@@ -20,7 +21,7 @@
   var HREF = "href";
   var STR = "";
   var MAIN = "volt-layout__content";
-  var TRANSLATION = "translation";
+  var GITHUB = "github";
   var CONTENT ="content";
   var SETTINGS = "settings";
   var IDLE_TIME = 60000/*0*/;
@@ -50,6 +51,7 @@
   function getConfigDict(my_language) {
     return {
       "type": "github_storage",
+      "user": "VoltEuropa",
       "repo": "VoltWeb",
       "path": "lang/" + my_language
       //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
@@ -74,6 +76,12 @@
       }
     }
   }
+
+  /*
+  function setQuery(my_key, my_val) {
+    return new SimpleQuery({"key": my_key, "value": my_val, "type": "simple"});
+  }
+  */
 
   function up(my_string) {
     return my_string.toUpperCase();
@@ -116,9 +124,10 @@
         "ui_dict": {},
         "content_wrapper": getElem(gadget.element, ".volt-layout")
       };
+
       return RSVP.all([
         gadget.declareGadget("../../gadget_jio.html", {"scope": "content"}),
-        gadget.declareGadget("../../gadget_jio.html", {"scope": "translation"}),
+        gadget.declareGadget("../../gadget_jio_githubstorage.html", {"scope": "github"}),
         gadget.declareGadget("../../gadget_jio.html", {"scope": "settings"})
       ]);
     })
@@ -264,13 +273,13 @@
     })
 
     .declareMethod("github_create", function (my_option_dict) {
-      return this.route(TRANSLATION, "createJIO", my_option_dict);
+      return this.route(GITHUB, "createJIO", my_option_dict);
     })
     .declareMethod("github_get", function (my_id) {
-      return this.route(TRANSLATION, "get", my_id);
+      return this.route(GITHUB, "get", my_id);
     })
-    .declareMethod("github_allDocs", function () {
-      return this.route(TRANSLATION, "allDocs");
+    .declareMethod("github_allDocs", function (my_options) {
+      return this.route(GITHUB, "allDocs", my_options);
     })
 
     .declareMethod("content_create", function (my_option_dict) {
@@ -334,6 +343,7 @@
         })
         .push(function (my_language) {
           var language = my_language || FALLBACK_LANGUAGE;
+
           // set those for all child gadgets
           dict.scope = gadget.state.scope;
           dict.locale = language;
@@ -366,9 +376,11 @@
           if (typeof content !== 'undefined' && typeof content === 'function') {
             list.push(content.render(dict));
           }
+          list.push(gadget.github_allDocs({"query": "Volt"}));
           return RSVP.all(list);
         })
-        .push(function () {
+        .push(function (x) {
+          //console.log(x)
           window.componentHandler.upgradeDom();
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         })
@@ -408,9 +420,9 @@
           return getFallbackDict(gadget.state.locale);
         })
         .push(function (response) {
-          
+
           // call passed but set language (eg XX) does not exist, use fallback
-          if (response.data.total_rows === 0) {
+          if (response.total_rows === 0) {
             return gadget.updateStorage(FALLBACK_LANGUAGE)
               .push(function () {
                 return RSVP.all([
@@ -431,7 +443,7 @@
           return new RSVP.Queue()
             .push(function () {
               return RSVP.all(
-                response.data.rows.map(function (row) {
+                response.rows.map(function (row) {
                   return gadget.content_put(row.id, DICT);  
                 })
               );
@@ -484,7 +496,7 @@
 
       return queue
         .push(function (response) {
-          if (response && response.data.total_rows > 0) {
+          if (response && response.total_rows > 0) {
             return response;
           }
           return gadget.getRemoteDataUrlIndex();
@@ -492,7 +504,7 @@
 
         //this response will not be empty (from indexeddb or github or fallback)
         .push(function (document_dict) {
-          url_list = document_dict.data.rows.filter(function (x) {
+          url_list = document_dict.rows.filter(function (x) {
             return x.id.indexOf("debug") === -1;
           });
           return RSVP.all(url_list.map(function (row) {
