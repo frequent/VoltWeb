@@ -24,7 +24,7 @@
   var GITHUB = "github";
   var CONTENT ="content";
   var SETTINGS = "settings";
-  var IDLE_TIME = 60000/*0*/;
+  var IDLE_TIME = 600000;
   var DOCUMENT = window.document;
   var LOCATION = document.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/lang/";
@@ -376,11 +376,11 @@
           if (typeof content !== 'undefined' && typeof content === 'function') {
             list.push(content.render(dict));
           }
-          list.push(gadget.github_allDocs({"query": "Volt"}));
+          list.push(gadget.github_allDocs({"query": "EU/FR/Lille+Publication"}));
           return RSVP.all(list);
         })
         .push(function (x) {
-          //console.log(x)
+          console.log(x)
           window.componentHandler.upgradeDom();
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         })

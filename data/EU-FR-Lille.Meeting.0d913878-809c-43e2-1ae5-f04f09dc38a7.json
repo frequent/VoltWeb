@@ -1,0 +1,24 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0d913878-809c-43e2-1ae5-f04f09dc38a7",
+  "file_name": "EU-FR-Lille.Meeting0d913878-809c-43e2-1ae5-f04f09dc38a7.json",
+  "reference": "EU-FR-Lille.Meeting.Assemble.Generale.Volt.France.2019-09-06",
+  "title": "Assemblée Générale Volt France",
+  "img_url": "../../img/FR-Graphic.Lille.Banner.Assemble.Generale.2019-09-06.png", 
+  "description": "",
+  "start_date": "2019-09-06 19:00:00 CET",
+  "stop_date": "2019-09-08 15:00:00 CET",
+  "location": {
+    "coordinates": [50.624734, 3.057240],
+    "title": "Moulin de Wazemmes",
+    "physical_adress": "30 rue des Meuniers",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {}
+}

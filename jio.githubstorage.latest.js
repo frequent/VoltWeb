@@ -42,9 +42,9 @@
       return parsed_query.value;
     }
     if ((parsed_query instanceof ComplexQuery) && (parsed_query.operator === 'AND')) {
-      return parsed_query.query_list.reduce(function (acc, query) {
-        return acc + "+" + query.value;
-      }, "");
+      return parsed_query.query_list.map(function (query) {
+        return query.value;
+      }).join("+");
     }
   }
 
