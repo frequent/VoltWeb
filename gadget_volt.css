@@ -669,10 +669,64 @@
 .volt-action__banner-calendar {
   position: absolute;
   width: 24em;
-  right: 0;
+  right: -1.5em;
   bottom: 0;
   pointer-events: none;
 }
+.volt-action__text {
+  font-family: Ubuntu;
+}
+.volt-footer__action .volt-action__banner-message {
+  position: absolute;
+  color: #ffffff;
+  transform: rotate(-21deg);
+  font-weight: bold;
+  right: 3em;
+  bottom: 8.25em;
+  font-size: 1.75em;
+}
+.volt-footer__action .volt-action__banner-date {
+    position: absolute;
+    transform: rotate(-21deg);
+    width: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #612095;
+    right: 3.5em;
+    bottom: 2.5em;
+    font-size: 2em;
+    line-height: 1em;
+}
+@media (max-width: 54em) {
+  .volt-action__banner-calendar {
+    right: -3.5em;
+  }
+  .volt-footer__action .volt-action__banner-message {
+    right: 1em;
+    bottom: 8em;
+    font-size: 1.5em;
+  }
+  .volt-footer__action .volt-action__banner-date {
+    bottom: 2em;
+    right: 1.7em;
+  }
+}
+@media (max-width: 32em) {
+  .volt-action__banner-calendar {
+    right: -2.5em;
+  }
+  .volt-footer__action .volt-action__banner-message {
+    right: 1.5em;
+    bottom: 8.25em;
+    font-size: 1em;
+  }
+  .volt-footer__action .volt-action__banner-date {
+    font-size: 1.25em;
+    right: 1.75em;
+    bottom: 2.25em;
+  }
+}
+
 /* overrides for the calendar-banner */
 @media (max-width: 54em) {
   .volt-footer__floater {
@@ -900,6 +954,54 @@
 @media (max-width: 32em) {
   .volt-layout__content .volt-content__banner {
     margin-top: -1em;
+  }
+}
+.volt-landing__image-container {
+  position: relative;
+}
+.volt-landing__image-container .volt-content__banner-puzzle {
+  position: absolute;
+  height: 300px;
+  width: auto;
+  bottom: 0;
+  right: 12em;
+}
+.volt-landing__image-container .volt-puzzle__message-container {
+  position: absolute;
+  bottom: 2.5em;
+  font-size: 2em;
+  font-weight: bold;
+  right: -1.5em;
+  color: #ffffff;
+}
+@media (max-width: 54em) {
+  .volt-landing__image-container .volt-content__banner-puzzle {
+    right: 20em;
+  }
+  .volt-landing__image-container .volt-puzzle__message-container {
+    right: 2.5em;
+    bottom: 2em;
+  }
+}
+/* need to switch earlier */
+@media (max-width: 40em) {
+  .volt-landing__image-container .volt-content__banner-puzzle {
+    height: 250px;
+  }
+  .volt-landing__image-container .volt-puzzle__message-container {
+    right: 2.5em;
+    bottom: 5.5em;
+  }
+}
+@media (max-width: 40em) {
+  .volt-landing__image-container .volt-content__banner-puzzle {
+    height: 150px;
+    right: 10em;
+  }
+  .volt-landing__image-container .volt-puzzle__message-container {
+    bottom: 2em;
+    font-size: 1em;
+    right: 2.25em;
   }
 }
 /* ============================= Panini ===================================== */
