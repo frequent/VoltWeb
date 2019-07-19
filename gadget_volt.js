@@ -361,21 +361,36 @@
           return gadget.buildContentLookupDict();
         })
         .push(function () {
-          return RSVP.all([
-            gadget.getDeclaredGadget("header"),
-            gadget.getDeclaredGadget("footer"),
-            gadget.getDeclaredGadget("content")
-          ]);
-        })
-        .push(function (gadget_list) {
-          var list = [gadget_list[0].render(dict), gadget_list[1].render(dict)];
-          var content = gadget_list[2];
+          var gadget_list;
 
-          // if there is a content gadget, render it, too (only at this point
-          // translations are available)
-          if (typeof content !== 'undefined' && typeof content === 'function') {
-            list.push(content.render(dict));
-          }
+          // bäh
+          return RSVP.Queue()
+            .push(function () {
+              return RSVP.all([
+                gadget.getDeclaredGadget("header"),
+                gadget.getDeclaredGadget("footer"),
+              ]);
+            })
+            .push(function (response_list) {
+              gadget_list = response_list;
+              return gadget.getDeclaredGadget("main")
+                .push(function (response) {
+                  gadget_list.push(response);
+                  return gadget_list;
+                })
+                .push(undefined, function (error) {
+                  if (error.name === "scopeerror") {
+                    return gadget_list;
+                  }
+                  throw error;
+                });
+            });
+        })
+
+        .push(function (gadget_list) {
+          var list = gadget_list.map(function (gadget) {
+            return gadget.render(dict);
+          })
           list.push(gadget.github_allDocs({"query": "EU/FR/Lille+Publication"}));
           return RSVP.all(list);
         })

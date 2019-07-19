@@ -35,7 +35,7 @@
 
     // -------------------.--- Render ------------------------------------------
     .declareMethod("render", function (my_option_dict) {
-
+      return this.remoteTranslate(my_option_dict.ui_dict, this.element);
     })
 
     /////////////////////////////
