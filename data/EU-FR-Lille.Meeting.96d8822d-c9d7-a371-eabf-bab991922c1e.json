@@ -8,14 +8,14 @@
   "file_name": "EU-FR-Lille.Meeting.96d8822d-c9d7-a371-eabf-bab991922c1e.json",
   "reference": "EU-FR-Lille.Meeting.Braderie.2019-07-31",
   "title": "Volt à la Bradérie d'Lille",
-  "img_url": "../../img/FR-Graphics.Lille.Banner.Braderie.2019-08-31", 
+  "img_url": "../../img/FR-Graphics.Lille.Banner.Braderie.2019-08-31.png", 
   "description": "",
   "start_date": "2019-08-31 08:00:00 CET",
   "stop_date": "2019-09-01 15:00:00 CET",
   "location": {
     "coordinates": [50.629933, 3.068850],
     "title": "Arc de Triomphe",
-    "physical_adress": "Place Simon Vollant",
+    "physical_address": "Place Simon Vollant",
     "city": "Lille",
     "zip": "59800",
     "country": "France"

@@ -7,7 +7,7 @@
   // parameters
   /////////////////////////////
 
-  // let this be a site configuration dictionary (obviously missing a lot still)
+  // site configuration (obviously still lacking)
   var OPTION_DICT = {
     "scope": "fr",
     "localiser": "EU/FR/Lille"
@@ -54,7 +54,6 @@
       "user": "VoltEuropa",
       "repo": "VoltWeb",
       "path": "lang/" + my_language
-      //"__debug": "https://softinst103163.host.vifib.net/site/lang/" + my_language + "/debug.json"
     };
   }
 
@@ -76,12 +75,6 @@
       }
     }
   }
-
-  /*
-  function setQuery(my_key, my_val) {
-    return new SimpleQuery({"key": my_key, "value": my_val, "type": "simple"});
-  }
-  */
 
   function up(my_string) {
     return my_string.toUpperCase();
@@ -114,6 +107,7 @@
     .setState({
       "scope": null,
       "locale": null,
+      "localiser": null
     })
 
     /////////////////////////////
@@ -142,6 +136,63 @@
 
     .allowPublicAcquisition("changeLanguage", function (my_event) {
       return this.updateLanguage(my_event);
+    })
+
+    .allowPublicAcquisition("buildDataLookupDict", function (my_query) {
+      var gadget = this;
+      var query = my_query ? "+" + my_query : STR;
+      var localiser = gadget.state.localiser.replace(/\//g, "-");
+      var reply = {"data": {"rows": [], "total_rows": undefined}};
+
+      // since we can't search file contents on indexeddb, we always hit Github
+      // which can search file content - rate limit = 10 searches/minute
+      return new RSVP.Queue()
+        .push(function () {
+          return gadget.github_allDocs({"query": gadget.state.localiser + query});
+        })
+        .push(function (response) {
+          return RSVP.all(response.data.rows
+            .filter(function (dict) {
+              if (dict.id.indexOf(localiser) > -1) {
+                return dict;
+              }
+            }).map(function (dict) {
+              var portal_type = dict.id.split(localiser)[1].split(".")[1];
+              return new RSVP.Queue()
+                .push(function () {
+                  return new RSVP.Queue()
+                    .push(function () {
+                      return gadget.content_get(portal_type);
+                    })
+                    .push(undefined, function (error) {
+                      console.log("No object..., make it", portal_type)
+                      return gadget.handleError(error, {"404": gadget.content_put(portal_type)});
+                    });
+                })
+                .push(function () {
+                  return gadget.content_getAttachment(portal_type, dict.id, {"format": "json"});
+                })
+                .push(undefined, function (error) {
+                  console.log(error)
+                  console.log("attachemnt missing")
+                  return gadget.handleError(error, {"404": gadget.github_get(dict.id)});
+                })
+                .push(function (file) {
+                  reply.data.rows.push(file);
+                  return gadget.content_putAttachment(
+                    portal_type,
+                    dict.id,
+                    new Blob([JSON.stringify(file)], {type: "application/json"})
+                  );
+                });
+            })
+          );
+        })
+        .push(function () {
+          console.log("done", reply)
+          reply.data.total_rows = reply.data.rows.length;
+          return reply;
+        });
     })
 
     /////////////////////////////
@@ -196,8 +247,15 @@
     })
     
     .declareMethod("translateDom", function (my_payload) {
-      var dictionary = my_payload[0];
-      var dom = my_payload[1];
+      var state = this.state;
+      var dictionary;
+      var dom;
+
+      if (state.locale === state.scope) {
+        return;
+      }
+      dictionary = my_payload[0];
+      dom = my_payload[1];
       if (dom && !isString(dom)) {
 
         // translate texts
@@ -333,7 +391,10 @@
       return new RSVP.Queue()
         .push(function () {
           return RSVP.all([
-            gadget.stateChange({"scope": dict.scope}),
+            gadget.stateChange({
+              "scope": dict.scope,
+              "localiser": my_option_dict.localiser
+            }),
             gadget.setting_create({"type": "local", "sessiononly": false}),
             gadget.content_create({"type": "indexeddb", "database": "volt"})
           ]);
@@ -357,13 +418,16 @@
         .push(function () {
           return gadget.github_create(getConfigDict(gadget.state.locale));
         })
+
+        // get translations and data lookup dicts
         .push(function () {
           return gadget.buildContentLookupDict();
         })
+
         .push(function () {
           var gadget_list;
 
-          // bäh
+          // bäh, but some pages are plain content, some have a content gadget
           return RSVP.Queue()
             .push(function () {
               return RSVP.all([
@@ -388,14 +452,11 @@
         })
 
         .push(function (gadget_list) {
-          var list = gadget_list.map(function (gadget) {
+          return RSVP.all(gadget_list.map(function (gadget) {
             return gadget.render(dict);
-          })
-          list.push(gadget.github_allDocs({"query": "EU/FR/Lille+Publication"}));
-          return RSVP.all(list);
+          }));
         })
-        .push(function (x) {
-          console.log(x)
+        .push(function () {
           window.componentHandler.upgradeDom();
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         })
@@ -416,6 +477,9 @@
       }
       if (delta.hasOwnProperty("scope")) {
         state.scope = delta.scope;
+      }
+      if (delta.hasOwnProperty("localiser")) {
+        state.localiser = delta.localiser;
       }
       return;
     })
@@ -494,7 +558,6 @@
           return mergeDict(response_list[0], response_list[1]);
         });
     })
-
 
     .declareMethod("buildContentLookupDict", function (my_purge) {
       var gadget = this;

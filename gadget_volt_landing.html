@@ -7,6 +7,42 @@
     <script src="rsvp.latest.min.js"></script>
     <script src="renderjs.latest.min.js"></script>
     <script src="gadget_volt_landing.js"></script>
+
+    <script id="event_card_template" type="text/x-supplant">
+      <div class="volt-event__card mdl-cell  mdl-cell--3-col mdl-cell--6-col-phone mdl-shadow--2dp">
+        <div class="mdl-card">
+          <form name="volt-event__action">
+            <button type="submit" class="volt-event__action-button">
+              <figure class="mdl-card__media material-icons">
+                <img class="" src="{img_url}" data-src="{img_url}" alt="{title}">
+              </figure>
+            </button>
+          </form>
+          <div class="mdl-card__title">
+            <form name="volt-event__action">
+              <button type="submit" class="volt-event__action">
+                <h3 class="mdl-card__title-text">{title}</h3>
+              </button>
+            </form>
+          </div>
+          <div class="mdl-card__supporting-text">
+          The Sky Tower is an observation and telecommunications tower located in Auckland,
+          New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+          in the Southern Hemisphere.
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+             <form name="volt-event__action">
+              <button type="submit" class="mdl-button mdl-button--icon mdl-js-button" title="RSVP/Read">
+                <i class="material-icons frube-icon">play_arrow</i>
+              </button>
+            </form>
+            <div class="mdl-layout-spacer"></div>
+            <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
+          </div>
+        </div>
+      </div>
+    </script>
+
   </head>
   <body>
     <div class="volt-landing__image-container">
@@ -26,5 +62,8 @@
         <span class="volt-action__text volt-puzzle__message" data-i18n="landing-are part of the puzzle.">en faites parti.</span>
       </span>
     </div>
+    <h1>MAIN HEADLINE</h1>
+    <h2>Latest News</h2>
+    <div class="mdl-grid volt-item__container"></div>
   </body>
 </html>

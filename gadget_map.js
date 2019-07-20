@@ -44,7 +44,6 @@
       "user": "VoltEuropa",
       "repo": "VoltWeb",
       "path": "map"
-      //"__debug": "https://softinst103163.host.vifib.net/site/map/debug.json"
     };
   }
 
@@ -101,9 +100,8 @@
     // ready
     /////////////////////////////
     .ready(function (gadget) {
-      var el = gadget.element;
       gadget.property_dict = {
-        "map_container": getElem(el, ".volt-map")
+        "map_container": getElem(gadget.element, ".volt-map")
       };
       return gadget.declareGadget("gadget_jio.html", {"scope": PINS});
     })

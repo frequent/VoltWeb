@@ -5,8 +5,10 @@
  * 
  **/
 /*jslint indent: 2, nomen: true, maxlen: 120*/
-/*global jIO, RSVP, JSON, UriTemplate, Query, SimpleQuery, ComplexQuery, Arrray*/
-(function (jIO, RSVP, JSON, UriTemplate, Query, SimpleQuery, ComplexQuery, Array) {
+/*global jIO, RSVP, JSON, UriTemplate, Query, SimpleQuery, ComplexQuery,
+Arrray, Math*/
+(function (jIO, RSVP, JSON, UriTemplate, Query, SimpleQuery, ComplexQuery,
+Array, Math) {
   "use strict";
 
   // requires CSP setting:
@@ -27,16 +29,17 @@
 
   // raw content (used for get requests)
   // https://raw.githubusercontent.com/{user}/{repo}/{ref}/{path_to_file}
-  var GITHUB_API = 'https://api.github.com/',
+  var FIRSTPAGE = "&per_page=20&page=1",
+    GITHUB_API = 'https://api.github.com/',
     GITHUB_RAW_URL = 'https://raw.githubusercontent.com/',
     SEARCH_URL = GITHUB_API + 'search/code?q={query}+in:file+language:json' + 
-      '+repo:{user}/{repo}',
+      '+repo:{user}/{repo}&per_page={per_page}&page{page}&sort=indexed',
     search_template = UriTemplate.parse(SEARCH_URL),
     CONTENT_URL = GITHUB_API + 'repos/{user}/{repo}/contents/{path}/' +
       '?ref=gh-pages',
     content_template = UriTemplate.parse(CONTENT_URL);
 
-  // simple for now
+  // keeping it simple for now, total of five of AND OR NOT possible
   function setQuery(parsed_query) {
     if (parsed_query instanceof SimpleQuery) {
       return parsed_query.value;
@@ -71,24 +74,36 @@
                           "which contains more than one character.");
     }
 
-    this.__debug = spec.__debug;
     this._repo = spec.repo;
     this._path = spec.path;
     this._user = spec.user;
   }
 
   GithubStorage.prototype.buildQuery = function (options) {
-    var url = this.__debug || content_template.expand({
+    var opts = options || {};
+    var url = content_template.expand({
       "repo": this._repo,
       "path": this._path,
       "user": this._user
     });
+    var per_page;
+    var page;
+    var query;
 
-    if (options && options.query) {
+    if (Object.entries(opts).length > 0 && opts.constructor === Object) {
+      if (opts.query) {
+        query = setQuery(jIO.QueryFactory.create(opts.query));
+      }
+      if (opts.limit) {
+        per_page = Math.ceil((opts.limit[1] - opts.limit[0])/ 10) * 10;
+        page = opts.limit[1]/per_page;
+      }
       url = search_template.expand({
         "repo": this._repo,
         "user": this._user,
-        "query": setQuery(jIO.QueryFactory.create(options.query))
+        "query": query,
+        "per_page": per_page || 24,
+        "page": page || 1
       });
     }
 
@@ -127,7 +142,7 @@
   };
 
   GithubStorage.prototype.hasCapacity = function (name) {
-    return (name === "list") || (name === "query");
+    return (name === "list") || (name === "query") || name === "limit";
   };
 
   GithubStorage.prototype.get = function (id) {
@@ -151,4 +166,4 @@
 
   jIO.addStorage('github_storage', GithubStorage);
 
-}(jIO, RSVP, JSON, UriTemplate, Query, SimpleQuery, ComplexQuery, Array));
+}(jIO, RSVP, JSON, UriTemplate, Query, SimpleQuery, ComplexQuery, Array, Math));
