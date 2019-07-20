@@ -69,9 +69,11 @@
 
   function getTarget(my_dict, my_path) {
     var key;
-    for (key in my_dict) {
-      if (my_dict[key] === my_path) {
-        return key;
+    if (my_path) {
+      for (key in my_dict) {
+        if (my_dict[key] === my_path) {
+          return key;
+        }
       }
     }
   }
@@ -129,6 +131,7 @@
     /////////////////////////////
     // published methods
     /////////////////////////////
+
     // poor man's i18n translations
     .allowPublicAcquisition("remoteTranslate", function (my_payload) {
       return this.translateDom(my_payload);
@@ -165,7 +168,6 @@
                       return gadget.content_get(portal_type);
                     })
                     .push(undefined, function (error) {
-                      console.log("No object..., make it", portal_type)
                       return gadget.handleError(error, {"404": gadget.content_put(portal_type)});
                     });
                 })
@@ -173,8 +175,6 @@
                   return gadget.content_getAttachment(portal_type, dict.id, {"format": "json"});
                 })
                 .push(undefined, function (error) {
-                  console.log(error)
-                  console.log("attachemnt missing")
                   return gadget.handleError(error, {"404": gadget.github_get(dict.id)});
                 })
                 .push(function (file) {
@@ -189,7 +189,6 @@
           );
         })
         .push(function () {
-          console.log("done", reply)
           reply.data.total_rows = reply.data.rows.length;
           return reply;
         });
@@ -210,6 +209,7 @@
         return;
       }
       dict.stop = true;
+
       // if language was selected, use it, else fallback to default scope
       if (my_payload) {
         select = my_payload[0].target;
@@ -221,9 +221,14 @@
       if (locale === language) {
         return;
       }
+      console.log("ACTION", locale, language)
       // update storages with new language data, then load target/index page
       return new RSVP.Queue()
         .push(function () {
+          return gadget.getSetting("pointer")
+        })
+        .push(function (x) {
+          console.log(x)
           return gadget.resetStorage();
         })
         .push(function () {
@@ -239,6 +244,7 @@
           ]);
         })
         .push(function (response_list) {
+          console.log(response_list)
           var target = response_list[0];
           return document.location.assign(
             "../" + language + "/" + (target ? dict.ui_dict[target] : STR)
@@ -274,6 +280,20 @@
       }
     })
 
+    .declareMethod("handleError", function (my_err, my_err_dict) {
+      var code;
+      var err = my_err.target ? JSON.parse(my_err.target.response).error : my_err;
+
+      for (code in my_err_dict) {
+        if (my_err_dict.hasOwnProperty(code)) {
+          if ((err.status_code + STR) === code) {
+            return my_err_dict[code];
+          }
+        }
+      }
+      throw err;
+    })
+
     // ------------------------- Settings --------------------------------------
     .declareMethod("getSetting", function (my_setting) {
       var gadget = this;
@@ -302,20 +322,6 @@
       return this.setting_putAttachment("/", my_setting, new Blob([
         JSON.stringify(payload)
       ], {type: "text/plain"}));
-    })
-
-    .declareMethod("handleError", function (my_err, my_err_dict) {
-      var code;
-      var err = my_err.target ? JSON.parse(my_err.target.response).error : my_err;
-
-      for (code in my_err_dict) {
-        if (my_err_dict.hasOwnProperty(code)) {
-          if ((err.status_code + STR) === code) {
-            return my_err_dict[code];
-          }
-        }
-      }
-      throw err;
     })
 
     // ---------------------- JIO bridge ---------------------------------------
@@ -461,6 +467,7 @@
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         })
         .push(function () {
+          console.log("setting pointer to", getTarget(dict.ui_dict, LOCATION.href.split("/").pop()))
           return gadget.setSetting(
             "pointer",
             getTarget(dict.ui_dict, LOCATION.href.split("/").pop())

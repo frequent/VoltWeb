@@ -11,23 +11,23 @@
   var DICT = {};
   var STR = "";
   var EU = "EU";
+  var MAP_URL = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png';
+  var MARKERS = [];
+  var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/map/markers.json";
+  var LINK_DISABLED = "volt-link__disabled";
+  var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
+  var KLASS = rJS(window);
+    var MAP_CONFIG = {
+    "attribution": '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+    "minZoom": 1,
+    "maxZoom": 18
+  };
   var ICON_CONFIG = {
     "iconUrl": "../../img/s-marker-icon.png",
     "iconSize": [15,25],
     "iconAnchor": [7,23],
     "popupAnchor": [1,-15]
   };
-  var MAP_URL = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png';
-  var MAP_CONFIG = {
-    "attribution": '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    "minZoom": 1,
-    "maxZoom": 18
-  };
-  var MARKERS = [];
-  var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/map/markers.json";
-  var LINK_DISABLED = "volt-link__disabled";
-  var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
-  var KLASS = rJS(window);
 
   /////////////////////////////
   // methods
@@ -84,6 +84,10 @@
     };
   }
 
+  /////////////////////////////
+  // start
+  /////////////////////////////
+  // rJS(window)
   KLASS
 
     /////////////////////////////
