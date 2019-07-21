@@ -9,9 +9,18 @@
   "reference": "EU-FR-Lille.Meeting.Braderie.2019-07-31",
   "title": "Volt à la Bradérie d'Lille",
   "img_url": "../../img/FR-Graphics.Lille.Banner.Braderie.2019-08-31.png", 
-  "description": "",
-  "start_date": "2019-08-31 08:00:00 CET",
-  "stop_date": "2019-09-01 15:00:00 CET",
+  "content_dict": {
+    "en": {
+      "title": "Volt is at the Braderie",
+      "description": ""
+    },
+    "fr": {
+      "title": "Volt à la Bradérie d'Lille",
+      "description": ""
+    }
+  },
+  "start_date": "2019-08-31 08:00:00 GMT+2",
+  "stop_date": "2019-09-01 15:00:00 GMT+2",
   "location": {
     "coordinates": [50.629933, 3.068850],
     "title": "Arc de Triomphe",
@@ -21,5 +30,11 @@
     "country": "France"
   },
   "scope": "EU/FR/Lille",
-  "attachment_dict": {}
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "",
+      "meetup_url": "",
+      "evensi_url": ""
+    }
+  }
 }

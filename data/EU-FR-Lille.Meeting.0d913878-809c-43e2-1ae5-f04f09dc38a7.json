@@ -8,9 +8,18 @@
   "reference": "EU-FR-Lille.Meeting.Assemble.Generale.Volt.France.2019-09-06",
   "title": "Assemblée Générale Volt France",
   "img_url": "../../img/FR-Graphic.Lille.Banner.Assemble.Generale.2019-09-06.png", 
-  "description": "",
-  "start_date": "2019-09-06 19:00:00 CET",
-  "stop_date": "2019-09-08 15:00:00 CET",
+  "content_dict": {
+    "en": {
+      "title": "Volt France General Assembly",
+      "description": ""
+    },
+    "fr": {
+      "title": "Assemblée Générale Volt France",
+      "description": ""
+    }
+  },
+  "start_date": "2019-09-06 19:00:00 GMT+2",
+  "stop_date": "2019-09-08 15:00:00 GMT+2",
   "location": {
     "coordinates": [50.624734, 3.057240],
     "title": "Moulin de Wazemmes",
@@ -20,5 +29,11 @@
     "country": "France"
   },
   "scope": "EU/FR/Lille",
-  "attachment_dict": {}
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "",
+      "meetup_url": "",
+      "evensi_url": ""
+    }
+  }
 }

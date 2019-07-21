@@ -8,19 +8,25 @@
     <script src="renderjs.latest.min.js"></script>
     <script src="gadget_volt_landing.js"></script>
 
+    <script id="event_card_template_fallback" type="text/x-supplant">
+      <i class="material-icons">description</i>
+    </script>
+    <script id="event_card_template_image" type="text/x-supplant">
+      <img class="" src="{img_url}" data-src="{img_url}" alt="{title}">
+    </script>
     <script id="event_card_template" type="text/x-supplant">
-      <div class="volt-event__card mdl-cell  mdl-cell--3-col mdl-cell--6-col-phone mdl-shadow--2dp">
+      <div class="volt-event__card mdl-cell  mdl-cell--4-col mdl-cell--4-col-phone mdl-shadow--2dp">
         <div class="mdl-card">
           <form name="volt-event__action">
             <button type="submit" class="volt-event__action-button">
               <figure class="mdl-card__media material-icons">
-                <img class="" src="{img_url}" data-src="{img_url}" alt="{title}">
+                {image}
               </figure>
             </button>
           </form>
           <div class="mdl-card__title">
             <form name="volt-event__action">
-              <button type="submit" class="volt-event__action">
+              <button type="submit" class="volt-event__action-button">
                 <h3 class="mdl-card__title-text">{title}</h3>
               </button>
             </form>
@@ -62,8 +68,8 @@
         <span class="volt-action__text volt-puzzle__message" data-i18n="landing-are part of the puzzle.">en faites parti.</span>
       </span>
     </div>
-    <h1>MAIN HEADLINE</h1>
-    <h2>Latest News</h2>
+    <h1 class="volt-page__title"><span data-i18n="landing-Welcome to Volt">Bienvenue sur Volt !</span><br/><span data-i18n="landing-Politics made by citizens">La politique faites par les citoyens. Pour les citoyens.</span></h1>
+    <h2 data-i81n="landing-Latest News" class="volt-page__subtitle">Dernières nouvelles</h2>
     <div class="mdl-grid volt-item__container"></div>
   </body>
 </html>

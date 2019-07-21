@@ -8,8 +8,17 @@
   "reference": "EU-FR-Paris.Publication.Campagne.Municipales.2020.Propositions.Mobilite.2019-07-01",
   "title": "Paris Municipales 2020 - Propositions Mobilité",
   "img_url": "", 
-  "description": "",
-  "start_date": "2019-05-15 17:23:00 CET",
+  "content_dict": {
+    "en": {
+      "title": "Paris Municipal Elections 2020 - Proposals Mobility",
+      "description": ""
+    },
+    "fr": {
+      "title": "Paris Municipales 2020 - Propositions Mobilité",
+      "description": ""
+    }
+  },
+  "start_date": "2019-05-15 17:23:00 GMT+2",
   "stop_date": "",
   "text_content": "",
   "location": {},

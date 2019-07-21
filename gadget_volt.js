@@ -107,9 +107,9 @@
     // state
     /////////////////////////////
     .setState({
-      "scope": null,
-      "locale": null,
-      "localiser": null
+      "scope": null, // the default language, which should be named like this...
+      "locale": null, // the language the user picked
+      "localiser": null // the path where this site is
     })
 
     /////////////////////////////

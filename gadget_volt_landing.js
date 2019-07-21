@@ -12,6 +12,8 @@
   var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
   var DOCUMENT = window.document;
   var EVENT = "event_card_template";
+  var IMG = "event_card_template_image";
+  var IMG_FALLBACK = "event_card_template_fallback";
 
   /////////////////////////////
   // methods
@@ -88,10 +90,17 @@
           setDom(
             gadget.property_dict.item_container,
             response.data.rows.map(function (item) {
+              var title = item.content_dict[my_option_dict.locale].title;
+              var image = getTemplate(KLASS, item.img_url ? IMG : IMG_FALLBACK)
+                .supplant({
+                  "title": title,
+                  "img_url": item.img_url
+                });
+
               return getTemplate(KLASS, EVENT).supplant({
-                title: item.title,
-                type: item.event_type,
-                img_url: item.img_url
+                "title": title,
+                "type": item.event_type,
+                "image": image
               });
             })
           );

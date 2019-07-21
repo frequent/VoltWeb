@@ -8,8 +8,17 @@
   "reference": "EU-FR-Lille.Publication.Enquetes.Publiques.Avis.Mel.Plu2.2019-02-27",
   "title": "Enquêtes Publiques - Avis Volt France PLU2",
   "img_url": "", 
-  "description": "",
-  "start_date": "2019-02-27 12:00:00 CET",
+  "content_dict": {
+    "en": {
+      "title": "Public Inquiries - Opinion PLU2 Volt France",
+      "description": ""
+    },
+    "fr": {
+      "title": "Enquêtes Publiques - Avis Volt France PLU2",
+      "description": ""
+    }
+  },
+  "start_date": "2019-02-27 12:00:00 GMT+2",
   "stop_date": "",
   "text_content": "",
   "location": {},

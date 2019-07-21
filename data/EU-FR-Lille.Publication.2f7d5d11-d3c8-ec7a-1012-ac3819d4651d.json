@@ -8,8 +8,17 @@
   "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Logements.2019-07-01",
   "title": "Lille Municipales 2020 - Propositions.Logements",
   "img_url": "", 
-  "description": "",
-  "start_date": "2019-07-01 19:00:00 CET",
+  "content_dict": {
+    "en": {
+      "title": "Lille Municpial Elections 2020 - Proposals Housing",
+      "description": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Propositions.Logements",
+      "description": ""
+    }
+  },
+  "start_date": "2019-07-01 19:00:00 GMT+2",
   "stop_date": "",
   "text_content": "",
   "location": {},
