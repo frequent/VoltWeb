@@ -11,11 +11,13 @@
   "content_dict": {
     "en": {
       "title": "Lille Municipal Elections 2020 - Proposals Green Spaces",
-      "description": ""
+      "description": "Proposals for Lille to one day actually qualify for being a green capital.",
+      "text_content": ""
     },
     "fr": {
       "title": "Lille Municipales 2020 - Propositions Espaces Verts",
-      "description": ""
+      "description": "Propositions pour Lille de devenir une vraie capital verte à l'avenir",
+      "text_content": ""
     }
   },
   "start_date": "2019-07-02 19:00:00 GMT+2",
@@ -24,7 +26,16 @@
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
-    "doc_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Espaces.Verts.pdf"
+    "document_dict": {
+      "fr": {
+        "document_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Espaces.Verts.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "",
+        "mime-type": "application/pdf"
+      }
+    }
   }
 }
 

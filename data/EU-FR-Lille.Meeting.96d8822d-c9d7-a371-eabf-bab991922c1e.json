@@ -12,11 +12,13 @@
   "content_dict": {
     "en": {
       "title": "Volt is at the Braderie",
-      "description": ""
+      "description": "Presentation of our Campaign for the Municipal Elections",
+      "text_content": "Visit our team on this year's Braderie to learn more about our campaign for the municipal elections 2020, our goal of creating or helping to create a citizen list for Lille and the MEL communes and our way of building our citizen agenda."
     },
     "fr": {
       "title": "Volt à la Bradérie d'Lille",
-      "description": ""
+      "description": "La présentation de notre campagne pour les élections municipales",
+      "text_content": "Venez visiter notre équipe dans la Braderie pour découvrir l'idée de notre campagne à Lille pour les élections municipales, notre enjeu de créer ou assister de créer une liste de citoyens pour Lille et la MEL et notre façon de développer notre agenda citoyens."
     }
   },
   "start_date": "2019-08-31 08:00:00 GMT+2",

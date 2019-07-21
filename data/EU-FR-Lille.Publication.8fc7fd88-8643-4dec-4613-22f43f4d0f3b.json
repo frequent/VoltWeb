@@ -11,11 +11,13 @@
   "content_dict": {
     "en": {
       "title": "Lille Municipal Elections 2020 - Proposals Mobility",
-      "description": ""
+      "description": "Ideas for a less car dependent and more citizen-centric transportation system.",
+      "text_content": ""
     },
     "fr": {
       "title": "Lille Municipales 2020 - Propositions Mobilité",
-      "description": ""
+      "description": "Les idées pour un système de transport plus axé sur les citoyens et moins dépendant dans les voitures.",
+      "text_content": ""
     }
   },
   "start_date": "2019-07-01 19:00:00 GMT+2",
@@ -24,6 +26,15 @@
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
-    "doc_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Mobilite.pdf"
+    "document_dict": {
+      "fr": {
+        "document_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Mobilite.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "",
+        "mime-type": "application/pdf"
+      }
+    }
   }
 }

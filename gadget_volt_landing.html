@@ -6,7 +6,7 @@
 
     <script src="rsvp.latest.min.js"></script>
     <script src="renderjs.latest.min.js"></script>
-    <script src="gadget_volt_landing.js"></script>
+    <script src="gadget_volt_card_grid.js"></script>
 
     <script id="event_card_template_fallback" type="text/x-supplant">
       <i class="material-icons">description</i>
@@ -31,11 +31,7 @@
               </button>
             </form>
           </div>
-          <div class="mdl-card__supporting-text">
-          The Sky Tower is an observation and telecommunications tower located in Auckland,
-          New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-          in the Southern Hemisphere.
-          </div>
+          <div class="mdl-card__supporting-text">{description}</div>
           <div class="mdl-card__actions mdl-card--border">
              <form name="volt-event__action">
               <button type="submit" class="mdl-button mdl-button--icon mdl-js-button" title="RSVP/Read">

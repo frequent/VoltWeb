@@ -11,11 +11,13 @@
   "content_dict": {
     "en": {
       "title": "Volt France General Assembly",
-      "description": ""
+      "description": "The annual convention of Volt France is coming to Lille.",
+      "text_content": "This year our annual getogether to discuss the future of Volt France will be held in Lille. We'll be welcoming members from our French chapter and throughout Europe for a late-summer university and preparation for our municipal campaign. Join us on one of our public workshops to learn more about Volt and our ideas for a more solidary, evironmentally friendly and democratic society."
     },
     "fr": {
       "title": "Assemblée Générale Volt France",
-      "description": ""
+      "description": "La congrès annuelle de Volt France débarque à Lille.",
+      "text_content": "Cette année, notre assemblée générale pour discuter du futur de Volt France sera organisée à Lille. Nous accueillerons les membres de Volt France et de tout en Europe pour notre l'université de fin d'été et la préparation de la campagne pour les élections municipales. Rejoignez-nous dans un des nos ateliers ouverts pour découvrir plus sur Volt et nos idées d'une société plus solidaire, écologique et démocratique."
     }
   },
   "start_date": "2019-09-06 19:00:00 GMT+2",

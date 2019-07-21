@@ -11,11 +11,13 @@
   "content_dict": {
     "en": {
       "title": "Volt Lille - Public Meet & Greet",
-      "description": ""
+      "description": "Sneak Preview of our campagin for the Municipal Elections",
+      "text_content": "Join us for the last meetup before launching our municipal campaign to get an inside-scoop and be able to add to our ideas."
     },
     "fr": {
       "title": "Volt Lille - Réunion Publique",
-      "description": ""
+      "description": "L'aperçu de notre campagne pour les élections municipales",
+      "text_content": "Rejoignez-nous pour le dernier rencontre avant le début de notre campagne municipale pour jeter un coup d'oeil exclusif et contribuer dans nos idées et propositions."
     }
   },
   "start_date": "2019-08-22 19:00:00 GMT+2",

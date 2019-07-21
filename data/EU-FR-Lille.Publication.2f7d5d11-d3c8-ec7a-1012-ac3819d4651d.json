@@ -11,11 +11,13 @@
   "content_dict": {
     "en": {
       "title": "Lille Municpial Elections 2020 - Proposals Housing",
-      "description": ""
+      "description": "Summary of our proposals for a more ecologic, social and holistic housing policy.",
+      "text_content": ""
     },
     "fr": {
       "title": "Lille Municipales 2020 - Propositions.Logements",
-      "description": ""
+      "description": "Résumé des nos propositions pour une politique de logements plus sociale, plus écologique et plus holistique.",
+      "text_content": ""
     }
   },
   "start_date": "2019-07-01 19:00:00 GMT+2",
@@ -24,6 +26,15 @@
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
-    "doc_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Logements.pdf"
+    "document_dict": {
+      "fr": {
+        "document_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Proposition.Logements.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "",
+        "mime-type": "application/pdf"
+      }
+    }
   }
 }

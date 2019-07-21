@@ -11,11 +11,13 @@
   "content_dict": {
     "en": {
       "title": "Lille Municipal Elections 2020 - Proposals Waste Management",
-      "description": ""
+      "description": "Our collection of ideas how to make Lille a cleaner city and work towards reducing our overall waste.",
+      "text_content": ""
     },
     "fr": {
       "title": "Lille Municipales 2020 - Propositions Gestion Déchets",
-      "description": ""
+      "description": "Notre collection de propositions comment nettoyer Lille et travailler vers la réduction des déchets et générale.",
+      "text_content": ""
     }
   },
   "start_date": "2019-07-01 19:00:00 GMT+2",
@@ -24,6 +26,15 @@
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
-    "doc_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf"
+    "document_dict": {
+      "fr": {
+        "document_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "",
+        "mime-type": "application/pdf"
+      }
+    }
   }
 }
