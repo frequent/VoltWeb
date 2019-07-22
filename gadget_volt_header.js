@@ -152,7 +152,7 @@
         "scm_container": getElem(el, ".volt-dialog__floater"),
         "select": getElem(el, ".volt-select__country")
       };
-      return gadget.declareGadget("gadget_map.html", {
+      return gadget.declareGadget("gadget_map_localiser.html", {
         "scope": "map",
         "element": gadget.property_dict.map_wrapper
       });

@@ -221,14 +221,13 @@
       if (locale === language) {
         return;
       }
-      console.log("ACTION", locale, language)
+
       // update storages with new language data, then load target/index page
       return new RSVP.Queue()
         .push(function () {
           return gadget.getSetting("pointer")
         })
-        .push(function (x) {
-          console.log(x)
+        .push(function () {
           return gadget.resetStorage();
         })
         .push(function () {
@@ -244,7 +243,6 @@
           ]);
         })
         .push(function (response_list) {
-          console.log(response_list)
           var target = response_list[0];
           return document.location.assign(
             "../" + language + "/" + (target ? dict.ui_dict[target] : STR)
@@ -467,7 +465,6 @@
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         })
         .push(function () {
-          console.log("setting pointer to", getTarget(dict.ui_dict, LOCATION.href.split("/").pop()))
           return gadget.setSetting(
             "pointer",
             getTarget(dict.ui_dict, LOCATION.href.split("/").pop())

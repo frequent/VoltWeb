@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Map Localiser Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="lib/leaflet.css" />
+
+    <script src="rsvp.latest.min.js"></script>
+    <script src="renderjs.latest.min.js"></script>
+    <script src="jio.latest.js"></script>
+    <script src="jio.githubstorage.latest.js"></script>
+    <script src="lib/leaflet.js"></script>
+
+    <script src="gadget_map_localiser.js"></script>
+
+    <script id="marker_link_template" type="text/x-supplant">
+      <strong>{city_name}</strong>
+      <br/>
+      <div class="volt-marker__floater">
+        <a class="volt-link volt-dialog__social-media-link {facebook_disabled}" target="_blank" href="{facebook_url}"><i class="fab fa fa-facebook"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {twitter_disabled}" target="_blank" href="{twitter_url}"><i class="fab fa fa-twitter"></i></a>
+        <a class="volt-link volt-dialog__button {web_disabled}" target="_blank" href="{web_url}" data-i18n="dialog-Website">Site Web</a>
+      </div>
+    </script>
+        
+  </head>
+  <body>
+    <div id="volt-map" class="volt-map"></div>
+  </body>
+</html>

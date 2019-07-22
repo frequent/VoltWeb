@@ -443,7 +443,18 @@
     right: 0;
   }
 }
-/* ============================= CARDS ====================================== */
+/* =========================== CARDS/GRID =================================== */
+/*.volt-item__container {
+  margin-left: -10%;
+  margin-right: -10%;
+}
+*/
+@media (max-width: 54em) {
+  .volt-item__container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .volt-event__card .mdl-card__media > img {
   height: auto;
   cursor: pointer;
@@ -452,6 +463,7 @@
 .volt-event__card figure {
   margin: 0 auto;
   background: transparent;
+  min-height: 175px;
 }
 .volt-event__card figure img[alt]:after {
   position: absolute;
@@ -506,13 +518,42 @@
   padding-top: 0;
   text-align: justify;
 }
+.mdl-card__supporting-intro {
+  font-style: italic;
+  padding-right: .5em;
+}
 .volt-event__action-button {
   margin: 0;
   padding: 0;
   border: 0 none;
   background: #fff;
+  width: 100%;
 }
-
+.volt-dialog-action-form {
+    max-width: 3.5em;
+}
+.volt-dialog-action-form .material-icons,
+.volt-dialog-action-form .fab {
+  color: #612095;
+}
+.mdl-card__actions .volt-dialog__link {
+    font-size: 1.1em;
+}
+.volt-dialog-action-form .volt-dialog__link:hover {
+  opacity: 1;
+  color: #6c6c73;
+  color: rgba(97, 32, 149, .3)
+}
+.volt-dialog-action-form .mdl-button {
+  font-size: 1.5em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.volt-card__media .material-icons {
+  color: rgba(97, 32, 149, .3);
+  font-size: 4.5em;
+  padding-top: .25em;
+}
 /* ============================= FOOTER ===================================== */
 .volt-footer {
   border-top: 1px solid #C0A9D7;
@@ -661,9 +702,13 @@
   top: -.1em;
 }
 .volt-footer__social-media-link:hover {
-  opacity: 1;
   color: #6c6c73;
   color: rgba(97, 32, 149, .3);
+}
+.volt-dialog__action-share {
+  max-width: 25%;
+  font-size: .8em;
+  color: #612095;
 }
 .volt-footer__social-media-link .material-icons {
   line-height: 21px;
@@ -1003,11 +1048,15 @@
   }
 }
 @media (max-width: 32em) {
-  .volt-layout__content {
+  .volt-body .volt-layout__content {
     margin-top: 112px;
+    padding: 0 .5em 0;
   }
   .volt-layout__content h1 {
     margin-top: 2em;
+  }
+  .volt-page__subtitle {
+    text-align: center;
   }
 }
 
@@ -1023,7 +1072,7 @@
   margin-left: -25%;
   margin-right: -25%;
   max-width: 150%;
-  margin-top: -15em;
+  margin-top: -25em;
 }
 @media (max-width: 32em) {
   .volt-layout__content .volt-content__banner {
