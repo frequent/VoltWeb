@@ -915,6 +915,25 @@
   font-family: 'Ubuntu';
   color: #612095;
 }
+.volt-layout__content section {
+  background-color: #FCFCFC;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  column-span: all;
+  padding: 4em;
+}
+@media (max-width: 54em) {
+  .volt-layout__content section {
+    padding: 2em;
+  }
+}
+@media (max-width: 32em) {
+  .volt-layout__content section {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+  }
+}
 .volt-layout__content a,
 .volt-layout__content b {
   color: #612095;
@@ -933,7 +952,22 @@
   margin-top: 2em;
   column-span: all;
 }
-.volt-layout__content h1 + h2 {
+.volt-layout__content div {
+  margin: .5em 0;
+}
+.volt-layout__content ul,
+.volt-layout__content div span {
+  font-size: 1.15em;
+}
+.volt-layout__content ol {
+  column-span: all;
+  font-size: 1.15em;
+}
+.volt-layout__content li {
+  padding: .5em;
+}
+.volt-layout__content h1 + h2,
+.volt-layout__content hr + h2 {
   column-span: all;
 }
 .volt-layout__content h2 {
@@ -953,7 +987,7 @@
     margin: 0 auto;
     margin-bottom: -1em;
 }
-.volt-layout__content a {
+.volt-layout__content > a {
   background-color: #612095;
   color: #fff;
   padding: .5em;
@@ -961,6 +995,9 @@
   text-decoration: none;
   font-size: 1.25em;
   border-radius: .25em;
+}
+.volt-layout__content p a {
+  color: #612095;
 }
 .volt-layout__content a[href=""] {
   background-color: rgba(0,0,0, 0.26);
@@ -1050,7 +1087,7 @@
 @media (max-width: 32em) {
   .volt-body .volt-layout__content {
     margin-top: 112px;
-    padding: 0 .5em 0;
+    padding: 0 2em 0;
   }
   .volt-layout__content h1 {
     margin-top: 2em;

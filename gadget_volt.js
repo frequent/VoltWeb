@@ -7,7 +7,24 @@
   // parameters
   /////////////////////////////
 
-  // site configuration (obviously still lacking)
+  // page acquisition would be great but it would mean, pages need to be fetched
+  // by renderjs and we will have a page renderer, can we do this
+  // if we are on campagin, we try to find fr/lille campaign and if it doesn't exist
+  // we pick fr campaign ? this would allow to have city specific pages with city meta
+  // tags. Ok,
+  // so pages structure should be ... ? en/Lille, fr/Lille/index.html, 
+  // so we stay in
+  // | page
+  // | - en
+  // | --- Lille
+  // | - fr
+  // | --- Lille
+  // | --- Armentieres
+  // this means we could also have a french page if we go to page/fr/
+  // ok, do this and then
+  // - fix map gadget
+  // - fix settings gadget (race condition and when to reload)
+
   var OPTION_DICT = {
     "scope": "fr",
     "localiser": "EU/FR/Lille"
@@ -328,6 +345,7 @@
     // other backend, implementing the same methods below
     .declareMethod("route", function (my_scope, my_call, my_p1, my_p2, my_p3) {
       var gadget = this;
+      console.log(my_scope)
       return gadget.getDeclaredGadget(my_scope)
       .push(function (my_gadget) {
         return my_gadget[my_call](my_p1, my_p2, my_p3);
