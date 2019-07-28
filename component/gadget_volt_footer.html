@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Footer Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- templates -->
+    <!-- language selector entry -->
+    <script id="country_option_template" type="text/x-supplant">
+      <option class="volt-select__language-option" value="{language}" data-i18n="{language_i18n}"></option>
+    </script>
+    
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/renderjs.latest.min.js"></script>
+    <script src="gadget_volt_footer.js"></script>
+  </head>
+  <body>
+    <div class="volt-footer__top">
+      <h4 class="volt-footer__header" data-i18n="footer-About Volt">Apropos Volt</h4>
+      <div class="volt-footer__content">
+        <div class="volt-footer__content-menu">
+          <div class="volt-navbar">
+            <h5 class="volt-navbar__header" data-i18n="menu-Who we are?">L'Idée</h5>
+            <ul class="volt-navbar__list">
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-about" href="volt-apropos.html" class="volt-navbar__link" data-i18n="menu-Volt">Volt</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-vision" href="volt-vision.html" class="volt-navbar__link" data-i18n="menu-Vision and Values">Vision et Valeurs</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-team" href="volt-equipe.html" class="volt-navbar__link" data-i18n="menu-Team">L'Équipe</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-challenges" href="volt-enjeux.html" class="volt-navbar__link" data-i18n="menu-Challenges">Nos enjeux</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-statutes" href="volt-statuts.html" class="volt-navbar__link" data-i18n="menu-Statutes">Statuts</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="volt-footer__content-menu">
+          <div class="volt-navbar">
+            <h5 class="volt-navbar__header" data-i18n="menu-Elections">Élections</h5>
+            <ul class="volt-navbar__list">
+              <li class="volt-navbar__item"><a data-attr="href:url-elections-approach" href="elections-demarche.html" class="volt-navbar__link" data-i18n="menu-Approach">Démarche</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-elections-programme" href="elections-programme.html" class="volt-navbar__link" data-i18n="menu-Programme">Programme</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-elections-candidates" href="elections-candidats.html" class="volt-navbar__link" data-i18n="menu-Candidates">Candidats</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-elections-donate" href="elections-faire-un-don.html" class="volt-navbar__link" data-i18n="menu-Donate">Faire un Don</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-elections-shop" href="elections-boutique.html" class="volt-navbar__link" data-i18n="menu-Campaign Shop">Boutique Électorale</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-elections-press-kit" href="elections-dossier-de-presse.html" class="volt-navbar__link" data-i18n="menu-Press Kit">Dossier de Presse</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="volt-footer__content-menu">
+          <div class="volt-navbar">
+            <h5 class="volt-navbar__header" data-i18n="menu-Participate">Participer</h5>
+            <ul class="volt-navbar__list">
+              <li class="volt-navbar__item"><a data-attr="href:url-participate-events" href="participer-evenements.html" class="volt-navbar__link" data-i18n="menu-Events">Événements</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-participate-membership" href="participer-devenir-membre.html" class="volt-navbar__link" data-i18n="menu-Become Member">Devenir Membre</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-participate-volunteer" href="participer-soit-benevolt.html" class="volt-navbar__link" data-i18n="menu-Become Volunteer">Soit Bénévolt</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-participate-candidate" href="participer-etre-candidate.html" class="volt-navbar__link" data-i18n="menu-Become Candidate">Etre Candidat</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-participcate-contribute" href="participer-contribuer.html" class="volt-navbar__link" data-i18n="menu-Contribute">Contribuer</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-participate-start-a-team" href="participer-lancer-un-equipe.html" class="volt-navbar__link" data-i18n="menu-Start a Team">Lancer une Équipe</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-participate-donate" href="participer-faire-un-don.html" class="volt-navbar__link" data-i18n="menu-Donate">Faire un don</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="volt-footer__content-menu">
+          <div class="volt-navbar">
+            <h5 class="volt-navbar__header" data-i18n="menu-Stay Informed">À la Pointe</h5>
+            <ul class="volt-navbar__list">
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-publications" href="volt-publications.html" class="volt-navbar__link" data-i18n="menu-Publications">Publications</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-newsletter" href="volt-bulletin.html" class="volt-navbar__link" data-i18n="menu-Newsletter">Bulletin</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-eu-news" href="volt-actualites-europeennes.html" class="volt-navbar__link" data-i18n="menu-Euronews">Actualités d'UE</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-blog" href="volt-blog.html" class="volt-navbar__link" data-i18n="menu-Blog">Blog</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-volt-faq" href="volt-faq.html" class="volt-navbar__link" data-i18n="menu-Faq">Faq</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="volt-footer__content-menu">
+          <div class="volt-navbar">
+            <h5 class="volt-navbar__header" data-i18n="menu-Legalese">Legalese</h5>
+            <ul class="volt-navbar__list">
+              <li class="volt-navbar__item"><a data-attr="href:url-site-data-privacy" href="site-confidentialite-des-donnees.html" class="volt-navbar__link" data-i18n="menu-Data Privacy">Confidentialité des Données</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-site-transparency" href="site-transparence.html" class="volt-navbar__link" data-i18n="menu-Transparency">Transparence</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-site-legal-mention" href="site-mention-legale.html" class="volt-navbar__link" data-i18n="menu-Legal Notice">Mention Légale</a></li>
+              <li class="volt-navbar__item"><a data-attr="href:url-site-contact" href="site-contact.html" class="volt-navbar__link" data-i18n="menu-Contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <h4 class="volt-footer__header" data-i18n="footer-Follow Us">Suivez-nous</h4>
+      <div class="volt-footer__floater">
+        <!--a class="volt-footer__social-media-link" data-attr="href:" href=""><i class="material-icons">rss_feed</i></a-->
+        <a class="volt-footer__social-media-link" data-attr="href:url-site-facebook" href=""><i class="fab fa fa-facebook"></i></a>
+        <a class="volt-footer__social-media-link" data-attr="href:url-site-twitter" href=""><i class="fab fa fa-twitter"></i></a>
+        <a class="volt-footer__social-media-link" data-attr="href:url-site-instagram" href=""><i class="fab fa fa-instagram"></i></a>
+        <a class="volt-footer__social-media-link" data-attr="href:url-site-linkedin" href=""><i class="fab fa fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="volt-footer__bottom">
+      <p class="volt-footer__bottom_content">© 2019 - Volt France</p>&nbsp;<span class="volt-pipe">|</span>&nbsp;
+      <form class="volt-footer__language_select" name="volt_language">
+        <select class="volt-select__language" name="volt_language__select"></select>
+      </form>
+    </div>
+    <div class="volt-footer__action">
+      <img class="volt-action__banner-calendar" src="../../../../img/FR-Graphics.Save.The.Date.Blank.png" data-i19n="src,footer-calendar-banner" alt="Save the Date" />
+      <span class="volt-action__text volt-action__banner-message" data-i18n="footer-Save the Date">Date à retenir</span>
+      <span class="volt-action__text volt-action__banner-date" data-i18n="footer-Date">Mars 2020</span>
+    </div>
+  </body>
+</html>

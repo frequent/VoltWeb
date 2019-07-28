@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "version": "1.0.0",
+  "name": "Volt Lille | Vous en faites parti.",
+  "short_name": "Volt Lille",
+  "description": "Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales",
+  "default_locale": "fr",
+  "icons": [
+        {
+            "src": "../../../app/volt_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "../../../app/volt_256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#612095",
+  "theme_color": "#612095"
+}
