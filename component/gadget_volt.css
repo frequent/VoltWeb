@@ -1347,6 +1347,14 @@
   .volt-dialog__select-wrapper {
     width: 100%; 
   }
+  .volt-dialog__text-responsive {
+    position: absolute !important;
+  	height: 1px;
+  	width: 1px;
+  	overflow: hidden;
+  	clip: rect(1px,1px,1px,1px);
+    visibility: hidden;
+  }
 }
 .volt-dialog .mdl-selectfield__select {
   font-size: 1.125em;

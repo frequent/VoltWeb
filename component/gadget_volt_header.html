@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="../lib/rsvp.latest.min.js"></script>
-    <script src="../lib/renderjs.latest.min.js"></script>
+    <script src="../lib/renderjs.latest.js"></script>
     <script src="../lib/polyfill.dialog.js"></script>
     <script src="gadget_volt_header.js"></script>
 
@@ -28,7 +28,7 @@
     </script>
 
     <!-- map marker popup template -->
-    <script id="marker_link_template" type="text/x-supplant">
+    <script id="marker_template" type="text/x-supplant">
       <strong>{city_name}</strong>
       <br/>
       <div class="volt-marker__floater">
@@ -143,13 +143,19 @@
         <form name="volt-fullscreen" class="volt-dialog__action-form volt-dialog__action-full">
           <button type="submit" class="volt-dialog__button mdl-button">
             <i class="material-icons">fullscreen</i>
-            <span data-i18n="dialog-Fullscreen">Plein Écran</span>
+            <span data-i18n="dialog-Fullscreen" class="volt-dialog__text-responsive">Plein Écran</span>
           </button>
         </form>
         <form name="volt-minimize" class="volt-dialog__action-form volt-dialog__action-exit volt-hidden">
           <button type="submit" class="volt-dialog__button mdl-button">
             <i class="material-icons">fullscreen_exit</i>
-            <span data-i18n="dialog-Minimize">Minimiser</span>
+            <span data-i18n="dialog-Minimize" class="volt-dialog__text-responsive">Minimiser</span>
+          </button>
+        </form>
+        <form name="volt-localise" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog__action-localise volt-link__disabled">
+            <i class="material-icons">person_pin</i>
+            <span data-i18n="dialog-Localiser" class="volt-dialog__text-responsive">Localisateur</span>
           </button>
         </form>
         <form name="volt-dialog-close" class="volt-dialog__action-form">

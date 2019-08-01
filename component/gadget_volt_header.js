@@ -1,6 +1,6 @@
 /*jslint maxlen: 80, indent: 2 */
-/*global window, rJS, RSVP */
-(function (window, rJS, RSVP) {
+/*global window, rJS, RSVP, navigator */
+(function (window, rJS, RSVP, navigator) {
   "use strict";
 
   /////////////////////////////
@@ -15,9 +15,11 @@
   var CLICK = "click";
   var ACTION = "data-action";
   var DOT = ".";
+  var EU = "eu";
   var DOCUMENT = window.document;
   var LINK_DISABLED = "volt-link__disabled";
   var NAME = "name";
+  var LOCALISE = ".volt-dialog__action-localise";
   var DIALOG = ".volt-dialog-";
   var DIALOG_POLYFILL = window.dialogPolyfill;
   var LIST = "volt-navbar-list";
@@ -41,6 +43,34 @@
       return getParent(my_element.parentElement, my_class);
     }
     return null;
+  }
+
+  function setMapParameterDict(my_key, my_dict) {
+    var key = mapCountry(my_key);
+    var country_dict = my_dict[key];
+    if (key === EU) {
+      country_dict.city_list = getAllCities(my_dict);
+    }     
+    return country_dict;  
+  }
+
+  function getAllCities(my_data) {
+    var city_list = [];
+    var obj;
+    for (obj in my_data) {
+      if (my_data.hasOwnProperty(obj)) {
+        city_list = city_list.concat(my_data[obj].city_list);
+      }
+    }
+    return city_list;
+  }
+
+  // meh
+  function mapCountry(my_country) {
+    if (my_country === "en") {
+      return "uk";
+    }
+    return my_country;
   }
 
   function mergeDict(my_return_dict, my_new_dict) {
@@ -163,11 +193,37 @@
     // published methods
     /////////////////////////////
 
-    // bäh...
-    .allowPublicAcquisition("updateSocialMediaTab", function (my_url_dict) {
+    // to keep map gadget generic, content specific parameters are set here
+    .allowPublicAcquisition("setMarkerContent", function (my_payload) {
       var gadget = this;
       var dict = gadget.property_dict;
-      var url_dict = my_url_dict[0] || my_url_dict;
+      var url_dict = setMapParameterDict(my_payload[1], dict.marker_dict);
+      var response = {};
+
+      response.zoom = url_dict.zoom;
+      response.position = url_dict.position;
+      response.entry_list = url_dict.city_list.map(function (city) { 
+        return {
+          "content": getTemplate(KLASS, my_payload[0]).supplant({
+            "city_name": dict.ui_dict[city.i18n],
+            "facebook_url": city.facebook_url || STR,
+            "facebook_disabled": city.facebook_url === undefined ? LINK_DISABLED : STR,
+            "twitter_url": city.twitter_url || STR,
+            "twitter_disabled": city.twitter_url === undefined ? LINK_DISABLED : STR,
+            "web_url": city.web_url || STR,
+            "web_disabled": city.web_url === undefined ? LINK_DISABLED : STR
+          }),
+          "position": city.position
+        };
+      });
+      return response;
+    })
+
+    // bäh...
+    .allowPublicAcquisition("updateMapState", function (my_payload) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var url_dict = setMapParameterDict(my_payload[0], dict.marker_dict);
       var link_list = dict.scm_container.querySelectorAll(".volt-link");
       var fb_link = link_list[0];
       var tw_link = link_list[1];
@@ -226,13 +282,32 @@
           return my_declared_gadget.redrawMap();
         });
     })
+
+    .declareMethod("localiseUser", function (my_event) {
+      var gadget = this;
+      var getPosition = function () {
+        return new RSVP.Promise(function (resolve, reject) {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });  
+      };
+      return new RSVP.Queue()
+        .push(function () {
+          return RSVP.all([
+            getPosition(),
+            gadget.getDeclaredGadget("map")
+          ]);
+        })
+        .push(function (response_list) {
+          var pos = response_list[0];
+          return response_list[1].localiseUser([pos.coords.latitude, pos.coords.longitude]);
+        });
+    })
     
     // -------------------.--- Render ------------------------------------------
     .declareMethod("render", function (my_option_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
       mergeDict(dict, my_option_dict);
-
       return gadget.remoteTranslate(dict.ui_dict, gadget.element);
     })
 
@@ -266,12 +341,18 @@
       var dict = gadget.property_dict;
       var dialog = dict.dialog;
       var active_element = DOCUMENT.activeElement;
+      if (navigator.geolocation) {
+        getElem(dialog, LOCALISE).classList.remove(LINK_DISABLED);
+      }
       if (gadget.state.dialog_pending) {
         return;
       }
       return new RSVP.Queue()
         .push(function () {
-          return gadget.stateChange({"dialog_pending": true});
+          return RSVP.all([
+            gadget.stateChange({"dialog_pending": true}),
+            gadget.remoteTranslate(dict.ui_dict, dialog)
+          ]);
         })
         .push(function () {
           if (!dialog.showModal) {
@@ -281,22 +362,18 @@
         })
         .push(function (my_gadget) {
           dict.map_gadget = my_gadget;
-          MAP_CONFIG.selected_language = dict.selected_language;
+          MAP_CONFIG.key = mapCountry(dict.default_language);
           return RSVP.all([
-            dict.map_gadget.render({
-              "config": MAP_CONFIG,
-              "ui_dict": dict.ui_dict,
-              "marker_dict": dict.marker_dict
-            }),
+            dict.map_gadget.render({"config": MAP_CONFIG}),
             gadget.swapMenuClass()
           ]);
         })
         .push(function () {
           dialog.showModal();
-          return dict.map_gadget.renderMap();
+          return dict.map_gadget.renderMap(dict.default_language);
         })
-        .push(function(marker_dict) {
-          updateSelect(dialog, marker_dict, dict.selected_language, dict.ui_dict);
+        .push(function() {
+          updateSelect(dialog, dict.marker_dict, dict.default_language, dict.ui_dict);
           window.componentHandler.upgradeElements(dialog);
         });
     })
@@ -338,8 +415,10 @@
           return this.expandDialog(event, true);
         case "volt-minimize":
           return this.expandDialog(event);
+        case "volt-localise":
+          return this.localiseUser(event);
       }
     }, false, true);
 
 
-}(window, rJS, RSVP));
+}(window, rJS, RSVP, navigator));

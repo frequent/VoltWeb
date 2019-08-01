@@ -16,6 +16,14 @@
   /////////////////////////////
   // methods
   /////////////////////////////
+  function mergeDict(my_return_dict, my_new_dict) {
+    return Object.keys(my_new_dict).reduce(function (pass_dict, key) {
+      pass_dict[key] = my_new_dict[key];
+      return pass_dict;
+    }, my_return_dict);
+  }
+
+
   function getElem(my_element, my_selector) {
     return my_element.querySelector(my_selector);
   }
@@ -80,16 +88,17 @@
     .declareMethod("render", function (my_option_dict) {
       var gadget = this;
       var dict = gadget.property_dict;
-
+      mergeDict(dict, my_option_dict);
       setDom(dict.language_select, dict.available_language_list
         .map(function (lang) {
           return getTemplate(KLASS, "language_select_template").supplant({
             "language": lang.id,
-            "language_i18n": "footer-" + lang.i18n
+            "language_i18n": "footer-" + lang.i18n,
+            "default_text": lang.text
           });
         }).join(""), true
       );
-      dict.language_select.value = my_option_dict.selected_language;
+      dict.language_select.value = dict.selected_language;
       return gadget.remoteTranslate(dict.ui_dict, gadget.element);
     })
 

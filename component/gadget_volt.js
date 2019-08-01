@@ -119,7 +119,7 @@
     .ready(function (gadget) {
       gadget.property_dict = {
         "ui_dict": {},
-        "content_wrapper": getElem(gadget.element, ".volt-layout")
+        "content_wrapper": getElem(gadget.element, ".volt-layout__content")
       };
 
       return RSVP.all([
@@ -219,6 +219,7 @@
         language = gadget.state.default_language;
       }
       selected_language = gadget.state.selected_language;
+      console.log("dumping and reloading if... these are same", selected_language, language)
       if (selected_language === language) {
         return;
       }
@@ -252,7 +253,6 @@
       var state = this.state;
       var dictionary;
       var dom;
-
       if (state.selected_language === state.default_language) {
         return;
       }
@@ -301,7 +301,7 @@
           if (my_key === EXPIRE_DB && getTimeStamp() - data.timestamp > IDLE_TIME) {
             return new RSVP.Queue()
               .push(function () {
-                return gadget.allAttachments(DOC);
+                return gadget.setting_allAttachments(DOC);
               })
               .push(function (attachment_dict) {
                 return RSVP.all(Object.keys(attachment_dict)
@@ -340,7 +340,6 @@
     // other backend, implementing the same methods below
     .declareMethod("route", function (my_scope, my_call, my_p1, my_p2, my_p3) {
       var gadget = this;
-      console.log(my_scope)
       return gadget.getDeclaredGadget(my_scope)
       .push(function (my_gadget) {
         return my_gadget[my_call](my_p1, my_p2, my_p3);
@@ -461,7 +460,7 @@
               ]);
             })
             .push(function (response_list) {
-              var content_gadget_list = DOCUMENT.querySelectorAll(GADGET_ATTR);
+              var content_gadget_list = dict.content_wrapper.querySelectorAll(GADGET_ATTR);
 
               // load all gadgets in the main section (if any)
               return new RSVP.Queue()
@@ -470,11 +469,11 @@
                     [].slice.call(content_gadget_list).map(function (el) {
                       return gadget.getDeclaredGadget(el.getAttribute(SCOPE));
                     })
-                  )
-                  .push(function (gadget_list) {
-                    return response_list.concat(gadget_list);
-                  });
-              });
+                  );
+                })
+                .push(function (gadget_list) {
+                  return response_list.concat(gadget_list);
+                });
             });
         })
 
@@ -570,7 +569,7 @@
             new Blob([JSON.stringify(data)], {type: "application/json"})
           )
           .push(function () {
-            return {"id": row.id, "data": data};
+            return {"id": my_id, "data": data};
           });
         });
     })
@@ -605,7 +604,7 @@
                   })
                   .push(function (response) {
                     if (response) {
-                      return {"id": row.id, "dict": response};
+                      return {"id": row.id, "data": response};
                     }
                     return gadget.getRemoteData(row.id);
                   });
