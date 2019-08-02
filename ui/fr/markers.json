@@ -295,7 +295,7 @@
           "i18n": "Amberg, Germany"
       },
       {
-          "position": [51.4073, 8.0528],
+          "position": [49.3004, 10.5719],
           "i18n": "Ansbach, Germany"
       },
       {
@@ -1026,11 +1026,11 @@
       },
       {
           "position": [36.7212737,-4.4213988],
-          "i18n": "MÃ¡laga, Spain"
+          "i18n": "Málaga, Spain"
       },
       {
           "position": [38.9394272,-6.365157],
-          "i18n": "MÃ©rida, Spain"
+          "i18n": "Mérida, Spain"
       },
       {
           "position": [39.4699075,-0.3762881],
@@ -1038,7 +1038,7 @@
       },
       {
           "position": [43.3623436,-8.4115401],
-          "i18n": "A CoruÃ±a, Spain"
+          "i18n": "La Coruña, Spain"
       },
       {
           "position": [41.3850639,2.1734035],
@@ -1083,87 +1083,87 @@
     "web_url": "https://www.voltfrance.org",
     "city_list": [
       {
-        "position": [43.5528, 7.0174],
+        "position": [43.553172, 7.016921],
         "i18n": "Cannes, France"
       },
       {
-        "position": [43.7102, 7.2620],
+        "position": [43.710836, 7.262784],
         "i18n": "Nice, France"
       },
       {
-        "position": [47.2184, 1.5536],
+        "position": [47.217080, -1.554935],
         "i18n": "Nantes, France"
       },
       {
-        "position": [43.6108, 3.8767],
+        "position": [43.610975, 3.872102],
         "i18n": "Montpellier, France"
       },
       {
-        "position": [43.6207, 3.5092],
+        "position": [43.620569, 3.509613],
         "i18n": "Pouzols, France"
       },
       {
-        "position": [43.6653, 4.1790],
+        "position": [43.665077, 4.176558],
         "i18n": "Marsillargues, France"
       },
       {
-        "position": [43.6047, 1.4442],
+        "position": [43.604875, 1.446238],
         "i18n": "Toulouse, France"
       },
       {
-        "position": [43.5286, 1.3995],
+        "position": [43.527614, 1.396589],
         "i18n": "Portet-sur-Garonne, France"
       },
       {
-        "position": [43.5519, 1.5339],
+        "position": [43.551806, 1.534872],
         "i18n": "Saint Orens de Gameville, France"
       },
       {
-        "position": [43.6491, 1.3263],
+        "position": [43.648904, 1.325695],
         "i18n": "Cornebarrieu, France"
       },
       {
-        "position": [45.7640, 4.8357],
+        "position": [45.762701, 4.839247],
         "i18n": "Lyon, France"
       },
       {
-        "position": [43.2965, 5.3698],
+        "position": [43.295214, 5.382590],
         "i18n": "Marseille, France"
       },
       {
-        "position": [43.5647, 1.2949],
+        "position": [43.564829, 1.295986],
         "i18n": "Plaisance-du-Touch, France"
       },
       {
-        "position": [43.4814, 1.5147],
+        "position": [43.481021, -1.512415],
         "i18n": "Anglet, France"
       },
       {
-        "position": [44.8378, 0.5792],
+        "position": [44.837887, -0.582397],
         "i18n": "Bordeaux, France"
       },
       {
-        "position": [48.6176, 0.5374],
+        "position": [48.617649, 0.536646],
         "i18n": "Soligny-la-trappe, France"
       },
       {
-        "position": [49.0510, 2.1006],
+        "position": [49.051361, 2.098940],
         "i18n": "Pontoise, France"
       },
       {
-        "position": [48.6298, 2.4418],
+        "position": [48.629530, 2.443146],
         "i18n": "Evry, France"
       },
       {
-        "position": [48.8014, 2.1301],
+        "position": [48.801592, 2.131193],
         "i18n": "Versailles, France"
       },
       {
-        "position": [48.5421, 2.6554],
+        "position": [48.542514, 2.655231],
         "i18n": "Melun, France"
       },
       {
-        "position": [48.9854, 2.6192],
+        "position": [48.985357, 2.617922],
         "i18n": "Mitry Mori, France"
       },
       {
@@ -1188,51 +1188,51 @@
         "i18n": "Fleurbaix, France"
       },
       {
-        "position": [48.5734, 7.7521],
+        "position": [48.573949, 7.755925],
         "i18n": "Strasbourg, France"
       },
       {
-        "position": [48.9335, 7.6676],
+        "position": [48.933353, 7.670163],
         "i18n": "Reichshoffen, France"
       },
       {
-        "position": [49.1193, 6.1757],
+        "position": [49.119431, 6.176850],
         "i18n": "Metz, France"
       },
       {
-        "position": [48.6921, 6.1844],
+        "position": [48.691806, 6.185457],
         "i18n": "Nancy, France"
       },
       {
-        "position": [49.2583, 4.0317],
+        "position": [49.258449, 4.036553],
         "i18n": "Reims, France"
       },
       {
-        "position": [47.2321, 2.4884],
+        "position": [47.231198, 2.493891],
         "i18n": "Menetou-Salon, France"
       },
       {
-        "position": [47.3941, 0.6848],
+        "position": [47.394695, 0.684983],
         "i18n": "Tours, France"
       },
       {
-        "position": [48.3904, 4.4861],
+        "position": [48.389432, -4.487324],
         "i18n": "Brest, France"
       },
       {
-        "position": [48.1173, 1.6778],
+        "position": [48.117013, -1.679526],
         "i18n": "Rennes, France"
       },
       {
-        "position": [48.5142, 2.7658],
+        "position": [48.513958, -2.764344],
         "i18n": "Saint-Brieuc, France"
       },
       {
-        "position": [48.6493, 2.0257],
+        "position": [48.6493, -2.0257],
         "i18n": "Saint-Malo, France"
       },
       {
-        "position": [47.6582, 2.7608],
+        "position": [47.6582, -2.7608],
         "i18n": "Vannes, France"
       },
       {
@@ -1379,7 +1379,7 @@
       },
       {
           "position": [44.2227398,12.0407312],
-          "i18n": "ForlÃ¬, Italy"
+          "i18n": "Forlì, Italy"
       },
       {
           "position": [43.2984268,13.4534767],
