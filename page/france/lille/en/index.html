@@ -84,7 +84,7 @@
     <script src="../../../../lib/renderjs.latest.js"></script>
     <script src="../../../../component/gadget_volt.js"></script>
   </head>
-  <body class="volt-xxxsplash volt-body">
+  <body class="volt-xsplash volt-body">
 
     <div class="volt-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
       
@@ -97,28 +97,39 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
-        <!--div class="volt-landing__image-container">
-          <img class="volt-content__banner" srcset="../../img/jules-d-1418887-unsplash.400w.jpg 320w,
-                   ../../img/jules-d-1418887-unsplash.800w.jpg 800w"
-                   ../../img/jules-d-1418887-unsplash.1200w.jpg 1200w",
-                   ../../img/jules-d-1418887-unsplash.1920w.jpg 1820w"
-           sizes="(max-width: 320px) 320px,
-                  (max-width: 640px) 800px,
-                  (max-width: 1180px) 1180px,
-                  (max-width: 1920px) 1920px,
-                  1180px"
-           src="img/jules-d-1418887-unsplash.1200w.jpg 1200w" alt="Volt Lille 2020">
-          <img src="../../img/FR-Graphics.Lille.Puzzle.White.Transparent.Blank.png" alt="Vous en faites parti" class="volt-content__banner-puzzle" />
-          <span class="volt-puzzle__message-container">
-            <span class="volt-action__text volt-puzzle__message" data-i18n="landing-You">Vous</span> 
-            <span class="volt-action__text volt-puzzle__message" data-i18n="landing-are part of the puzzle.">en faites parti.</span>
-          </span>
+        <div class="volt-newsreel volt-layout__override">
+          <h4 class="volt-footer__header volt-newsreel__header" data-i18n="landing-In the Media">Dans les médias</h4>
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" checked id="slide-1" />
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-2" />
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-3" />
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-4" />
+          <div class="volt-newsreel__content">
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="http://www.lefigaro.fr/politique/2019/04/03/01002-20190403ARTFIG00039-transnational-reformateur-volt-le-nouveau-parti-des-jeunes-pour-les-europeennes.php">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Figaro.svg" alt="Figaro">
+              </a>
+            </div>
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="https://www.euractiv.com/section/eu-elections-2019/news/volt-the-transnational-party-that-aims-to-take-over-europe/">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Euractiv.svg" alt="Euractiv" />
+              </a>
+            </div>
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="https://www.economist.com/europe/2018/11/01/volt-wants-to-become-the-first-pan-eu-political-party">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Economist.svg" alt="The Economist" />
+              </a>
+            </div>
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="https://www.courrierinternational.com/article/europeennes-2019-volt-un-parti-neuf-de-jeunes-federalistes">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Courrier.International.svg" alt="Courrier Internationale" />
+              </a>
+            </div>
+          </div>
+          <label class="volt-newsreel__pointer" for="slide-1"></label>
+          <label class="volt-newsreel__pointer" for="slide-2"></label>
+          <label class="volt-newsreel__pointer" for="slide-3"></label>
+          <label class="volt-newsreel__pointer" for="slide-4"></label>
         </div>
-        <h1 class="volt-page__title"><span data-i18n="landing-Welcome to Volt">Bienvenue sur Volt !</span><br/><span data-i18n="landing-Politics made by citizens">La politique faites par les citoyens. Pour les citoyens.</span></h1>
-
-        <div data-gadget-url="../../../../component/gadget_volt_landing.html" data-gadget-scope="main">
-          
-        </div-->
 
       </main>
       <footer class="volt-footer" data-gadget-url="../../../../component/gadget_volt_footer.html"

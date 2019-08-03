@@ -952,7 +952,7 @@
   margin-top: 2em;
   column-span: all;
 }
-.volt-layout__content div {
+.volt-layout__content > div:not(.volt-layout__override) {
   margin: .5em 0;
 }
 .volt-layout__content ul,
@@ -1507,12 +1507,10 @@ button.volt-dialog__button {
 .volt-newsreel {
   position: relative;
   z-index: 1;
-  padding: 2em 15% 2em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #ffffff;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,.12), 0 1px 5px -2px rgba(0,0,0,.12), 0 0 4px 0 rgba(0,0,0,.12);
   transition-duration: .2s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-property: max-height,box-shadow;
@@ -1520,9 +1518,13 @@ button.volt-dialog__button {
   text-align: center;
   overflow: hidden;
 }
+.volt-newsreel .volt-newsreel__header {
+  font-family: Ubuntu;
+  text-align: left;
+}
+
 @media (min-width: 54em) {
   .volt-newsreel {
-    padding: 2em 15% 2em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1560,26 +1562,22 @@ button.volt-dialog__button {
   }
 }
 @media (max-width: 54em) {
+  .volt-newsreel {
+    margin-top: 3em;
+  }
   .volt-newsreel__content {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-points-x: repeat(100%);
     scroll-snap-type: mandatory;
+    position: relative;
   }
   .volt-newsreel__content::-webkit-scrollbar {
     width: .6em;
     height: .6em;
   }
-  /*
-  .volt-newsreel__content::-webkit-scrollbar-thumb {
-    background: rgba(97, 32, 149, .1);
-  }
-  .volt-newsreel__content::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  */
   .volt-newsreel__content > .volt-newsreel__item {
     flex-shrink: 0;
     width: 100%;
@@ -1589,7 +1587,6 @@ button.volt-dialog__button {
     transform: scale(1);
     transition: transform 0.5s;
     position: relative;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1615,18 +1612,45 @@ button.volt-dialog__button {
     margin: 0 .25rem 0.5rem;
     position: relative;
   }
+  
+  .volt-newsreel .volt-newsreel__content .volt-newsreel__item {
+    -moz-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
+    -ms-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
+    -o-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
+    -webkit-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
+    transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
+  }
+  .volt-newsreel .volt-newsreel__activator#slide-1:checked ~ .volt-newsreel__content .volt-newsreel__item {
+    left: 0;
+  }
+  .volt-newsreel .volt-newsreel__activator#slide-2:checked ~ .volt-newsreel__content .volt-newsreel__item {
+    left: -100%;
+  }
+  .volt-newsreel .volt-newsreel__activator#slide-3:checked ~ .volt-newsreel__content .volt-newsreel__item {
+    left: -200%;
+  }
+  .volt-newsreel .volt-newsreel__activator#slide-4:checked ~ .volt-newsreel__content .volt-newsreel__item {
+    left: -300%;
+  }
+  .volt-newsreel > .volt-newsreel__pointer:hover {
+    background: #fcfcfc;
+  }
   .volt-newsreel > .volt-newsreel__pointer:active {
-    top: 1px;
     background: #612095;
   }
-  .volt-newsreel > .volt-newsreel__pointer:focus {
-    background: #612095;
-  }
+
 }
 @media (max-width: 32em) {
+  .volt-newsreel__content .volt-newsreel__image {
+    width: 100%;
+    object-fit: contain;
+  }
   .volt-newsreel {
     padding-left: 0;
     padding-right: 0;
+    margin-right: -2em;
+    margin-left: -2em;
+    width: auto;
   }
   .volt-newsreel__content > .volt-newsreel__item {
     width: 100%;

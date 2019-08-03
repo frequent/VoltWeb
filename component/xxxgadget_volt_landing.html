@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Landing Page Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/ics.min.js"></script>
+    <script src="../lib/polyfill.dialog.js"></script>
+    <script src="gadget_global.js"></script>
+    <script src="../lib/renderjs.latest.min.js"></script>
+
+    <script src="gadget_volt_card_grid.js"></script>
+
+    <script id="event_card_template_fallback" type="text/x-supplant">
+      <i class="material-icons">description</i>
+    </script>
+
+    <script id="event_card_template_image" type="text/x-supplant">
+      <img class="" src="{thumb_url}" data-src="{img_url}" alt="{title}">
+    </script>
+
+    <script id="event_card_template_meeting_action" type="text/x-supplant">
+      <span data-i18n="card-Add to Calendar" class="volt-dialog__action-share">Ajouter au calendrier</span>
+      <form name="volt-share-calendar" class="volt-dialog-action-form">
+        <input type="hidden" name="calendar_reference" value="{reference}" />
+        <input type="hidden" name="calendar_subject" value="{subject}" />
+        <input type="hidden" name="calendar_description" value="{description}" />
+        <input type="hidden" name="calendar_begin" value="{start_date}" />
+        <input type="hidden" name="calendar_end" value="{stop_date}" />
+        <input type="hidden" name="calendar_location" value="{location}" />
+        <button type="submit" class="mdl-button volt-dialog-share-calendar">
+          <i class="material-icons">event</i>
+        </button>
+      </form>
+    </script>
+
+    <script id="event_card_template_publication_action" type="text/x-supplant">
+      <span data-i18n="card-Share" class="volt-dialog__action-share">Partager</span>
+      <form name="volt-share-facebook" class="volt-dialog-action-form">
+        <input type="hidden" name="share_description" value="{description}" />
+        <input type="hidden" name="share_url" value="{url}" />
+        <button type="submit" class="mdl-button volt-dialog-share-fb">
+          <i class="fab fa-facebook"></i>
+        </button>
+      </form>
+      <form name="volt-share-twitter" class="volt-dialog-action-form">
+        <input type="hidden" name="share_description" value="{description}" />
+        <input type="hidden" name="share_url" value="{url}" />
+        <button type="submit" class="mdl-button volt-dialog-share-tw">
+          <i class="fab fa-twitter"></i>
+        </button>
+      </form>
+    </script>
+
+    <script id="event_card_template_publication_url" type="text/x-supplant">
+      <a href="{document_url}" class="volt-dialog__link" target="_blank" data-i18n="card-Open">Ouvrez PDF</a>
+    </script>
+
+    <script id="event_card_template_meeting_url" type="text/x-supplant">
+      <form name="volt-dialog" data-action="event">
+        <input type="hidden" value="{reference}" name="event_reference" />
+        <button type="submit" class="mdl-button volt-dialog__button" data-i18n="card-Details">Voir les Détails</button>
+      </form>
+    </script>
+
+    <script id="event_card_template" type="text/x-supplant">
+      <div class="volt-event__card mdl-cell  mdl-cell--4-col mdl-cell--4-col-phone mdl-shadow--2dp">
+        <div class="mdl-card">
+          <form name="volt-event__action">
+            <button type="submit" class="volt-event__action-button">
+              <figure class="mdl-card__media volt-card__media material-icons">
+                {image}
+              </figure>
+            </button>
+          </form>
+          <div class="mdl-card__title">
+            <form name="volt-event__action">
+              <button type="submit" class="volt-event__action-button">
+                <h3 class="mdl-card__title-text">{start_date}&nbsp;-&nbsp;{title}</h3>
+              </button>
+            </form>
+          </div>
+          <div class="mdl-card__supporting-text">{description}</div>
+          <div class="mdl-card__actions mdl-card--border">
+            {event_action_list}
+            <div class="mdl-layout-spacer"></div>
+            {call_to_action}
+          </div>
+        </div>
+      </div>
+    </script>
+
+  </head>
+  <body>
+    <h2 data-i81n="landing-Latest News" class="volt-page__subtitle">Dernières nouvelles</h2>
+    <div class="mdl-grid volt-item__container"></div>
+    <dialog class="mdl-dialog volt-dialog volt-dialog-event">Hello
+      <div class="volt-dialog-map-wrapper"></div>
+    </dialog>
+  </body>
+</html>

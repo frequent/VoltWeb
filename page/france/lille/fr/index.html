@@ -84,7 +84,7 @@
     <script src="../../../../lib/renderjs.latest.js"></script>
     <script src="../../../../component/gadget_volt.js"></script>
   </head>
-  <body class="volt-splashxxx volt-body">
+  <body class="volt-xsplash volt-body">
     <div class="volt-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <header class="volt-header mdl-layout__header" data-gadget-url="../../../../component/gadget_volt_header.html"
@@ -96,7 +96,51 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
-        <!--div class="volt-landing__image-container">
+        <div class="volt-newsreel volt-layout__override">
+          <h4 class="volt-footer__header volt-newsreel__header" data-i18n="landing-In the Media">Dans les médias</h4>
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" checked id="slide-1" />
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-2" />
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-3" />
+          <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-4" />
+          <div class="volt-newsreel__content">
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="http://www.lefigaro.fr/politique/2019/04/03/01002-20190403ARTFIG00039-transnational-reformateur-volt-le-nouveau-parti-des-jeunes-pour-les-europeennes.php">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Figaro.svg" alt="Figaro">
+              </a>
+            </div>
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="https://www.euractiv.com/section/eu-elections-2019/news/volt-the-transnational-party-that-aims-to-take-over-europe/">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Euractiv.svg" alt="Euractiv" />
+              </a>
+            </div>
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="https://www.economist.com/europe/2018/11/01/volt-wants-to-become-the-first-pan-eu-political-party">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Economist.svg" alt="The Economist" />
+              </a>
+            </div>
+            <div class="volt-newsreel__item">
+              <a class="volt-newsreel__link" target="_blank" href="https://www.courrierinternational.com/article/europeennes-2019-volt-un-parti-neuf-de-jeunes-federalistes">
+                <img class="volt-newsreel__image" src="../../../../img/FR-Graphics.Newsreel.Logo.Courrier.International.svg" alt="Courrier Internationale" />
+              </a>
+            </div>
+          </div>
+          <label class="volt-newsreel__pointer" for="slide-1"></label>
+          <label class="volt-newsreel__pointer" for="slide-2"></label>
+          <label class="volt-newsreel__pointer" for="slide-3"></label>
+          <label class="volt-newsreel__pointer" for="slide-4"></label>
+        </div>        
+
+
+        
+
+        <!--
+        <div data-gadget-url="" data-gadget-scope="" data-gadget-sandbox="public">
+         
+        </div>
+        <div data-gadget-url="" data-gadget-scope="" data-gadget-sandbox="public">
+          
+        </div>
+        <div class="volt-landing__image-container">
           <img class="volt-content__banner" srcset="../../img/jules-d-1418887-unsplash.400w.jpg 320w,
                    ../../img/jules-d-1418887-unsplash.800w.jpg 800w"
                    ../../img/jules-d-1418887-unsplash.1200w.jpg 1200w",
