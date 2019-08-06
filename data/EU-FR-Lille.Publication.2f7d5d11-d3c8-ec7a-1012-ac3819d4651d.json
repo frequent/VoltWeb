@@ -15,7 +15,7 @@
       "text_content": ""
     },
     "fr": {
-      "title": "Lille Municipales 2020 - Propositions.Logements",
+      "title": "Lille Municipales 2020 - Propositions Logements",
       "description": "Résumé des nos propositions pour une politique de logements plus sociale, plus écologique et plus holistique.",
       "text_content": ""
     }
@@ -29,7 +29,7 @@
   "attachment_dict": {
     "document_dict": {
       "fr": {
-        "document_url": "../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Logements.pdf",
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Logements.pdf",
         "mime-type": "application/pdf"
       },
       "en": {

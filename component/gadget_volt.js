@@ -7,6 +7,7 @@
   // parameters
   /////////////////////////////
   var DICT = {};
+  var ARR = [];
   var ATTR = "data-attr";
   var I18N = "data-i18n";
   var LB = "[";
@@ -14,14 +15,14 @@
   var HREF = "href";
   var STR = "";
   var MAIN = "volt-layout__content";
-  var GITHUB = "github";
-  var CONTENT ="content";
+  var DATA = "data";
+  var LOCAL ="local";
+  var UI = "ui";
   var SETTINGS = "settings";
   var IDLE_TIME = 600000;
   var DOCUMENT = window.document;
   var LOCATION = document.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/ui/";
-  var UI = "ui/";
   var DOC = "/";
   var ESC = "Esc";
   var ESCAPE = "Escape";
@@ -36,23 +37,23 @@
 
   // ios OS9 doesn't support github api v3 redirects, create response by hand
   function getFallbackDict (my_language) {
-    return {
+    return {"data": {
       "rows": [
         {"id": FALLBACK_PATH + my_language + "/names.json", "value": DICT},
         {"id": FALLBACK_PATH + my_language + "/ui.json", "value": DICT},
         {"id": FALLBACK_PATH + my_language + "/markers.json", "value": DICT}
       ],
       "total_rows": 3
-    };
+    }};
   }
 
   // this could be passed in CONFIG to connect to the actual endpoint
-  function getConfigDict(my_language) {
+  function getConfigDict(my_path) {
     return {
       "type": "github_storage",
       "user": "VoltEuropa",
       "repo": "VoltWeb",
-      "path": "lang/" + my_language
+      "path": my_path
     };
   }
 
@@ -123,9 +124,10 @@
       };
 
       return RSVP.all([
-        gadget.declareGadget("../../../../component/gadget_jio.html", {"scope": "content"}),
-        gadget.declareGadget("../../../../component/gadget_jio_githubstorage.html", {"scope": "github"}),
-        gadget.declareGadget("../../../../component/gadget_jio.html", {"scope": "settings"})
+        gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "local"}),
+        gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "ui"}),
+        gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "data"}),
+        gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "settings"})
       ]);
     })
 
@@ -142,55 +144,57 @@
       return this.resetApplication(my_event);
     })
 
-    .allowPublicAcquisition("buildDataLookupDict", function (my_query) {
+    .allowPublicAcquisition("buildDataLookupDict", function (my_option_dict) {
       var gadget = this;
-      var query = my_query ? "+" + my_query : STR;
       var scope = gadget.state.scope.replace(/\//g, "-");
       var reply = {"data": {"rows": [], "total_rows": undefined}};
+      var config = my_option_dict ? my_option_dict[0] : {};
+      var opts = {};
+
+      opts.limit = config.limit || ARR;
+      opts.query = gadget.state.scope + (config.query ? "+" + config.query : STR);
 
       // since we can't search file contents on indexeddb, we always hit Github
       // which can search file content (rate limit = 10 searches/minute/IP)
       return new RSVP.Queue()
         .push(function () {
-          return gadget.github_allDocs({"query": gadget.state.scope + query});
+          return gadget.data_allDocs(opts);
         })
         .push(function (response) {
-          return RSVP.all(response.data.rows
-            .filter(function (dict) {
-              if (dict.id.indexOf(scope) > -1) {
-                return dict;
-              }
-            }).map(function (dict) {
-              var portal_type = dict.id.split(scope)[1].split(".")[1];
-              return new RSVP.Queue()
-                .push(function () {
-                  return new RSVP.Queue()
-                    .push(function () {
-                      return gadget.content_get(portal_type);
-                    })
-                    .push(undefined, function (error) {
-                      return gadget.handleError(error, {"404": gadget.content_put(portal_type)});
-                    });
-                })
-                .push(function () {
-                  return gadget.content_getAttachment(portal_type, dict.id, {"format": "json"});
-                })
-                .push(undefined, function (error) {
-                  return gadget.handleError(error, {"404": gadget.github_get(dict.id)});
-                })
-                .push(function (file) {
-                  reply.data.rows.push(file);
-                  return gadget.content_putAttachment(
-                    portal_type,
-                    dict.id,
-                    new Blob([JSON.stringify(file)], {type: "application/json"})
-                  );
-                });
+          reply.data.total_count = response.data.rows.total_count;
+          reply.data.total_rows = response.data.total_rows;
+
+          return RSVP.all(response.data.rows.map(function (dict) {
+            var id = dict.id.toLowerCase();
+            var portal_type = id.split(scope)[1].split(".")[1];
+            return new RSVP.Queue()
+              .push(function () {
+                return new RSVP.Queue()
+                  .push(function () {
+                    return gadget.local_get(portal_type);
+                  })
+                  .push(undefined, function (error) {
+                    return gadget.handleError(error, {"404": gadget.local_put(portal_type)});
+                  });
+              })
+              .push(function () {
+                return gadget.local_getAttachment(portal_type, dict.id, {"format": "json"});
+              })
+              .push(undefined, function (error) {
+                return gadget.handleError(error, {"404": gadget.data_get(dict.id)});
+              })
+              .push(function (file) {
+                reply.data.rows.push(file);
+                return gadget.local_putAttachment(
+                  portal_type,
+                  dict.id,
+                  new Blob([JSON.stringify(file)], {type: "application/json"})
+                );
+              });
             })
           );
         })
         .push(function () {
-          reply.data.total_rows = reply.data.rows.length;
           return reply;
         });
     })
@@ -219,7 +223,6 @@
         language = gadget.state.default_language;
       }
       selected_language = gadget.state.selected_language;
-      console.log("dumping and reloading if... these are same", selected_language, language)
       if (selected_language === language) {
         return;
       }
@@ -232,13 +235,13 @@
         .push(function () {
           return RSVP.all([
             gadget.setSetting("volt:selected_language", language),
-            gadget.updateGithubStorage(language)
+            gadget.updateUiStorage(language)
           ]);
         })
         .push(function () {
           return RSVP.all([
             gadget.getSetting("volt:current_page"),
-            gadget.buildContentLookupDict(true)
+            gadget.buildUiLookupDict(true)
           ]);
         })
         .push(function (response_list) {
@@ -346,42 +349,52 @@
       });
     })
 
-    .declareMethod("github_create", function (my_option_dict) {
-      return this.route(GITHUB, "createJIO", my_option_dict);
+    .declareMethod("data_create", function (my_option_dict) {
+      return this.route(DATA, "createJIO", my_option_dict);
     })
-    .declareMethod("github_get", function (my_id) {
-      return this.route(GITHUB, "get", my_id);
+    .declareMethod("data_get", function (my_id) {
+      return this.route(DATA, "get", my_id);
     })
-    .declareMethod("github_allDocs", function (my_options) {
-      return this.route(GITHUB, "allDocs", my_options);
+    .declareMethod("data_allDocs", function (my_options) {
+      return this.route(DATA, "allDocs", my_options);
     })
 
-    .declareMethod("content_create", function (my_option_dict) {
-      return this.route(CONTENT, "createJIO", my_option_dict);
+    .declareMethod("ui_create", function (my_option_dict) {
+      return this.route(UI, "createJIO", my_option_dict);
     })
-    .declareMethod("content_get", function (my_id) {
-      return this.route(CONTENT, "get", my_id);
+    .declareMethod("ui_get", function (my_id) {
+      return this.route(UI, "get", my_id);
     })
-    .declareMethod("content_put", function (my_id, my_meta_data) {
-      return this.route(CONTENT, "put", my_id, my_meta_data);
+    .declareMethod("ui_allDocs", function (my_options) {
+      return this.route(UI, "allDocs", my_options);
     })
-    .declareMethod("content_remove", function (my_id) {
-      return this.route(CONTENT, "remove", my_id);
+
+    .declareMethod("local_create", function (my_option_dict) {
+      return this.route(LOCAL, "createJIO", my_option_dict);
     })
-    .declareMethod("content_putAttachment", function (my_id, my_name, my_blob) {
-      return this.route(CONTENT, "putAttachment", my_id, my_name, my_blob);
+    .declareMethod("local_get", function (my_id) {
+      return this.route(LOCAL, "get", my_id);
     })
-    .declareMethod("content_getAttachment", function (my_id, my_name, my_dict) {
-      return this.route(CONTENT, "getAttachment", my_id, my_name, my_dict);
+    .declareMethod("local_put", function (my_id, my_meta_data) {
+      return this.route(LOCAL, "put", my_id, my_meta_data);
     })
-    .declareMethod("content_removeAttachment", function (my_id, my_name) {
-      return this.route(CONTENT, "removeAttachment", my_id, my_name);
+    .declareMethod("local_remove", function (my_id) {
+      return this.route(LOCAL, "remove", my_id);
     })
-    .declareMethod("content_allAttachments", function (my_id) {
-      return this.route(CONTENT, "allAttachments", my_id);
+    .declareMethod("local_putAttachment", function (my_id, my_name, my_blob) {
+      return this.route(LOCAL, "putAttachment", my_id, my_name, my_blob);
     })
-    .declareMethod("content_allDocs", function (my_option_dict) {
-      return this.route(CONTENT, "allDocs", my_option_dict);
+    .declareMethod("local_getAttachment", function (my_id, my_name, my_dict) {
+      return this.route(LOCAL, "getAttachment", my_id, my_name, my_dict);
+    })
+    .declareMethod("local_removeAttachment", function (my_id, my_name) {
+      return this.route(LOCAL, "removeAttachment", my_id, my_name);
+    })
+    .declareMethod("local_allAttachments", function (my_id) {
+      return this.route(LOCAL, "allAttachments", my_id);
+    })
+    .declareMethod("local_allDocs", function (my_option_dict) {
+      return this.route(LOCAL, "allDocs", my_option_dict);
     })
 
     .declareMethod("setting_create", function (my_option_dict) {
@@ -415,7 +428,8 @@
               "scope": my_option_dict.scope
             }),
             gadget.setting_create({"type": "local", "sessiononly": false}),
-            gadget.content_create({"type": "indexeddb", "database": "volt"})
+            gadget.local_create({"type": "indexeddb", "database": "volt"}),
+            gadget.data_create(getConfigDict("data"))
           ]);
         })
 
@@ -439,16 +453,14 @@
           return RSVP.all([
             gadget.stateChange({"selected_language": language}),
             gadget.setSetting("volt:selected_language", language),
-            gadget.setSetting("volt:expire_db", "I could be a version number")
+            gadget.setSetting("volt:expire_db", "I could be a version number"),
+            gadget.ui_create(getConfigDict("ui/" + language))
           ]);
-        })
-        .push(function () {
-          return gadget.github_create(getConfigDict(gadget.state.selected_language));
         })
 
         // get translations and data lookup dicts
         .push(function () {
-          return gadget.buildContentLookupDict();
+          return gadget.buildUiLookupDict();
         })
 
         .push(function () {
@@ -517,7 +529,7 @@
       var gadget = this;
       return new RSVP.Queue()
         .push(function () {
-          return gadget.github_allDocs();
+          return gadget.ui_allDocs();
         })
 
         // we only need language to build the dict, so in case of errors on
@@ -530,10 +542,10 @@
 
           // call passed but set language (eg XX) does not exist, use default
           if (response.total_rows === 0) {
-            return gadget.updateGithubStorage(dict.default_language)
+            return gadget.updateUiStorage(dict.default_language)
               .push(function () {
                 return RSVP.all([
-                  gadget.github_allDocs(),
+                  gadget.ui_allDocs(),
                   gadget.setSetting("volt:selected_language", dict.default_language),
                   gadget.stateChange({"selected_language": dict.default_language})
                 ]);
@@ -550,8 +562,8 @@
           return new RSVP.Queue()
             .push(function () {
               return RSVP.all(
-                response.rows.map(function (row) {
-                  return gadget.content_put(row.id, DICT);  
+                response.data.rows.map(function (row) {
+                  return gadget.local_put(row.id, DICT);  
                 })
               );
             })
@@ -563,9 +575,9 @@
 
     .declareMethod("getRemoteData", function (my_id) {
       var gadget = this;
-      return gadget.github_get(my_id)
+      return gadget.ui_get(my_id)
         .push(function (data) {
-          return gadget.content_putAttachment(my_id, "data",
+          return gadget.local_putAttachment(my_id, "data",
             new Blob([JSON.stringify(data)], {type: "application/json"})
           )
           .push(function () {
@@ -574,14 +586,14 @@
         });
     })
 
-    .declareMethod("buildContentLookupDict", function (my_purge) {
+    .declareMethod("buildUiLookupDict", function (my_purge) {
       var gadget = this;
       var queue = new RSVP.Queue();
 
       // indexeddb first, if not available/change language = purge), ask remote
       if (my_purge === undefined) {
         queue.push(function () {
-          return gadget.content_allDocs();
+          return gadget.local_allDocs();
         });
       }
 
@@ -597,8 +609,8 @@
         .push(function (document_dict) {
           return new RSVP.Queue()
             .push(function () {
-              return RSVP.all(document_dict.rows.map(function (row) {
-                return gadget.content_getAttachment(row.id, "data", {"format": "json"})
+              return RSVP.all(document_dict.data.rows.map(function (row) {
+                return gadget.local_getAttachment(row.id, "data", {"format": "json"})
                   .push(undefined, function (my_error) {
                     return gadget.handleError(my_error, {"404": undefined});
                   })
@@ -632,28 +644,28 @@
       var gadget = this;
       return new RSVP.Queue()
         .push(function () {
-          return gadget.content_allDocs();
+          return gadget.local_allDocs();
         })
         .push(function (document_list) {
           return RSVP.all(
             document_list.data.rows.map(function (row) {
-              return gadget.content_allAttachments(row.id)
+              return gadget.local_allAttachments(row.id)
                 .push(function (attachment_dict) {
                   return RSVP.all(
                     Object.keys(attachment_dict).map(function (key) {
-                      return gadget.content_removeAttachment(row.id, key);
+                      return gadget.local_removeAttachment(row.id, key);
                     })
                   );
                 })
                 .push(function () {
-                  return gadget.content_remove(row.id);
+                  return gadget.local_remove(row.id);
                 });
             })
           );
         });
     })
 
-    .declareMethod("updateGithubStorage", function (my_language) {
+    .declareMethod("updateUiStorage", function (my_language) {
       var gadget = this;
       if (my_language === gadget.state.selected_language) {
         return;
@@ -663,7 +675,7 @@
           return gadget.stateChange({"selected_language": my_language});
         })
         .push(function () {
-          return gadget.github_create(getConfigDict(my_language));
+          return gadget.ui_create(getConfigDict("ui/" + my_language));
         });
     })
 

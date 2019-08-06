@@ -443,7 +443,7 @@
     right: 0;
   }
 }
-/* =========================== CARDS/GRID =================================== */
+/* =========================== CARD / GRID ================================== */
 /*.volt-item__container {
   margin-left: -10%;
   margin-right: -10%;
@@ -453,6 +453,10 @@
   .volt-item__container {
     margin-left: 0;
     margin-right: 0;
+  }
+  .volt-layout__content .volt-item__container {
+    margin-left: -2em;
+    margin-right: -2em;
   }
 }
 .volt-event__card .mdl-card__media > img {
@@ -495,6 +499,17 @@
   box-sizing:border-box;
   align-items: center;
 }
+.volt-event__card .mdl-card__title-text:before,
+.volt-event__card .mdl-card__title-text:after {
+  content: none;
+}
+.volt-event__card .mdl-card__title-text {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.volt-event__card .volt-event__publication .volt-event__action-button {
+  pointer-events: none;
+}
 .volt-event__card .mdl-card__actions > .mdl-button--icon {
   margin-right: 3px;
   margin-left: 3px;
@@ -517,6 +532,10 @@
 .volt-event__card .mdl-card__supporting-text {
   padding-top: 0;
   text-align: justify;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: borderbox;
+  box-sizing: border-box;
+  width: 100%;
 }
 .mdl-card__supporting-intro {
   font-style: italic;
@@ -529,6 +548,15 @@
   background: #fff;
   width: 100%;
 }
+@media (max-width: 72em) {
+  .volt-event__card .volt-dialog__link,
+  .volt-event__card .volt-dialog__button {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 6em;
+  }
+}
 .volt-dialog-action-form {
     max-width: 3.5em;
 }
@@ -537,7 +565,16 @@
   color: #612095;
 }
 .mdl-card__actions .volt-dialog__link {
-    font-size: 1.1em;
+  font-size: 1.1em;
+  font-family: Ubuntu;
+  text-decoration: none;
+  text-transform: none;
+  vertical-align: middle;
+  padding: .5em;
+  background-color: #612095;
+  color: #fff;
+  border: 0 none;
+  border-radius: .25em;
 }
 .volt-dialog-action-form .volt-dialog__link:hover {
   opacity: 1;
@@ -546,13 +583,50 @@
 }
 .volt-dialog-action-form .mdl-button {
   font-size: 1.5em;
+  min-width: unset;
+  max-width: 2.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: .25em;
   padding-left: 0;
+  margin-right: .25em;
   padding-right: 0;
 }
 .volt-card__media .material-icons {
-  color: rgba(97, 32, 149, .3);
-  font-size: 4.5em;
+  /*color: rgba(97, 32, 149, .3);*/
+  color: #612095;
+  font-size: 3.5em;
   padding-top: .25em;
+  opacity: .2;
+}
+.volt-layout__content .volt-lazy {
+  max-width: 50%;
+  margin-top: 25%;
+  opacity: .2;
+}
+@media (max-width: 32em) {
+  .volt-layout__content .volt-lazy {
+    max-width: 35%;
+    margin-top: 10%;
+  }
+  .volt-event__card figure {
+    min-height: 125px;
+  }
+}
+.volt-search__action-button {
+  border: rgba(0,0,0, 0.26);
+  border-radius: .25em;
+  font-family: Ubuntu;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.25em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+  margin-top: 1em;
+  color: rgba(0,0,0, 0.26);
 }
 /* ============================= FOOTER ===================================== */
 .volt-footer {
@@ -705,7 +779,8 @@
   color: #6c6c73;
   color: rgba(97, 32, 149, .3);
 }
-.volt-dialog__action-share {
+.volt-dialog__action-share,
+.volt-layout__content .volt-dialog__action-share {
   max-width: 25%;
   font-size: .8em;
   color: #612095;
@@ -863,9 +938,11 @@
   .volt-footer__floater {
     float: none;
     margin-top: 0;
+    /*
     text-align: left;
     padding-left: .5em;
     padding-right: 0;
+    */
   }
   .volt-footer__header {
     text-align: left;
@@ -951,6 +1028,7 @@
   font-weight: bold;
   margin-top: 2em;
   column-span: all;
+  text-align: center;
 }
 .volt-layout__content > div:not(.volt-layout__override) {
   margin: .5em 0;
@@ -1462,7 +1540,7 @@ button.volt-dialog__button {
   line-height: 21px;
   vertical-align: text-bottom;
 }
-/* kudos: jQuery Mobile */
+/* thx: jQuery Mobile */
 .volt-hidden {
   position: absolute !important;
 	height: 1px;
@@ -1470,6 +1548,10 @@ button.volt-dialog__button {
 	overflow: hidden;
 	clip: rect(1px,1px,1px,1px);
   visibility: hidden;
+}
+.volt-link__disabled {
+  background-color: rgba(0,0,0, 0.26);
+  pointer-events: none;
 }
 
 /* ============================ Map ====================================== */
@@ -1612,7 +1694,6 @@ button.volt-dialog__button {
     margin: 0 .25rem 0.5rem;
     position: relative;
   }
-  
   .volt-newsreel .volt-newsreel__content .volt-newsreel__item {
     -moz-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
     -ms-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
@@ -1638,7 +1719,6 @@ button.volt-dialog__button {
   .volt-newsreel > .volt-newsreel__pointer:active {
     background: #612095;
   }
-
 }
 @media (max-width: 32em) {
   .volt-newsreel__content .volt-newsreel__image {
@@ -1662,5 +1742,61 @@ button.volt-dialog__button {
     display: none;
   }
 }
+/* =========================== Loader =======================================*/
+/* thx https://github.com/nzbin/three-dots */
+/**
+ * ==============================================
+ * Dot Flashing
+ * ==============================================
+ */
+.dot-flashing {
+  margin: 2em auto 0;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fcfcfc;
+  color: #fcfcfc;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
 
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -2.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fcfcfc;
+  color: #fcfcfc;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 2.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fcfcfc;
+  color: #fcfcfc;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #fcfcfc;
+  }
+  50%,
+  100% {
+    background-color: rgba(97, 32, 149, .1);
+  }
+}
 

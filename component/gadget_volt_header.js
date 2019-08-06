@@ -302,39 +302,6 @@
           return response_list[1].localiseUser([pos.coords.latitude, pos.coords.longitude]);
         });
     })
-    
-    // -------------------.--- Render ------------------------------------------
-    .declareMethod("render", function (my_option_dict) {
-      var gadget = this;
-      var dict = gadget.property_dict;
-      mergeDict(dict, my_option_dict);
-      return gadget.remoteTranslate(dict.ui_dict, gadget.element);
-    })
-
-    .declareMethod("swapMenuClass", function (my_list) {
-      var dict = this.property_dict;
-      if (my_list && my_list.classList.contains(RESPONSIVE_CLASS)) {
-        my_list.classList.remove(RESPONSIVE_CLASS);
-        return;
-      }
-      ARR.slice.call(dict.navbar_list).filter(function (el) {
-        el.classList.remove(RESPONSIVE_CLASS);
-      });
-      if (my_list) {
-        my_list.classList.add(RESPONSIVE_CLASS);
-      }
-    })
-
-    /////////////////////////////
-    // declared jobs
-    /////////////////////////////
-    .declareJob("closeDialog", function (my_event) {
-      var gadget = this;
-      var dict = gadget.property_dict;
-      var dialog = dict.dialog;
-      dialog.close();
-      return gadget.stateChange({"dialog_pending": null});
-    })
 
     .declareMethod("openDialog", function (my_event) {
       var gadget = this;
@@ -376,6 +343,40 @@
           updateSelect(dialog, dict.marker_dict, dict.default_language, dict.ui_dict);
           window.componentHandler.upgradeElements(dialog);
         });
+    })
+
+    
+    // -------------------.--- Render ------------------------------------------
+    .declareMethod("render", function (my_option_dict) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      mergeDict(dict, my_option_dict);
+      return gadget.remoteTranslate(dict.ui_dict, gadget.element);
+    })
+
+    .declareMethod("swapMenuClass", function (my_list) {
+      var dict = this.property_dict;
+      if (my_list && my_list.classList.contains(RESPONSIVE_CLASS)) {
+        my_list.classList.remove(RESPONSIVE_CLASS);
+        return;
+      }
+      ARR.slice.call(dict.navbar_list).filter(function (el) {
+        el.classList.remove(RESPONSIVE_CLASS);
+      });
+      if (my_list) {
+        my_list.classList.add(RESPONSIVE_CLASS);
+      }
+    })
+
+    /////////////////////////////
+    // declared jobs
+    /////////////////////////////
+    .declareJob("closeDialog", function (my_event) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var dialog = dict.dialog;
+      dialog.close();
+      return gadget.stateChange({"dialog_pending": null});
     })
 
     /////////////////////////////
