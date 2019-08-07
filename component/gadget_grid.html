@@ -18,7 +18,7 @@
 
     <!-- event card template -->
     <script id="event_card_template_image" type="text/x-supplant">
-      <img class="volt-card-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}">
+      <img class="volt-card-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}" />
     </script>
 
     <!-- event card meeting -->
@@ -97,6 +97,48 @@
       </div>
     </script>
 
+    <script id="event_dialog_template" type="text/x-supplant">
+      <div class="volt-event__dialog-image-wrapper">
+        <img class="volt-card-image volt-lazy" src="{img_url}" alt="{title}" />
+      </div>
+      <h2 class="volt-event__dialog-title">{title}</h2>
+      <div class="volt-marker__floater">
+        <a class="volt-link volt-dialog__social-media-link {facebook_disabled}" target="_blank" href="{facebook_url}"><i class="fab fa fa-facebook"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {meetup_disabled}" target="_blank" href="{meetup_url}"><i class="fab fa fa-meetup"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {evensi_disabled}" target="_blank" href="{evensi_url}"><i class="pf pf-evensi"></i></a>
+      </div>
+      <div class="volt-event__dialog-details-wrapper">
+        <p class="volt-event__dialog-description"><i class="material-icons">info</i><span class="volt-event__dialog-text">{description}</span></p>
+        <p class="volt-event__dialog-time"><i class="material-icons">access_time</i><span class="volt-event__dialog-text">{datetime}</span></p>
+        <div class="volt-event__dialog-ics">{add_to_calendar}</div>
+        <p class="volt-event__dialog-location"><i class="material-icons">location_on</i><span class="volt-event__dialog-text">{location}</span></p>
+      </div>
+      <div class="volt-venue__wrapper"></div>
+      <div class="mdl-card__actions mdl-card--border volt-dialog__actions">
+        <form name="volt-fullscreen" class="volt-dialog__action-form volt-dialog__action-full">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen</i>
+            <span data-i18n="dialog-Fullscreen" class="volt-dialog__text-responsive">Plein Écran</span>
+          </button>
+        </form>
+        <form name="volt-minimize" class="volt-dialog__action-form volt-dialog__action-exit volt-hidden">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen_exit</i>
+            <span data-i18n="dialog-Minimize" class="volt-dialog__text-responsive">Minimiser</span>
+          </button>
+        </form>
+        <form name="volt-localise" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog__action-localise volt-link__disabled">
+            <i class="material-icons">person_pin</i>
+            <span data-i18n="dialog-Localiser" class="volt-dialog__text-responsive">Localisateur</span>
+          </button>
+        </form>
+        <form name="volt-dialog-close" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
+        </form>
+      </div>
+    </script>
+
   </head>
   <body>
     <div class="mdl-grid volt-item__container"></div>
@@ -106,8 +148,6 @@
         <button type="submit" class="mdl-button volt-search__action-button" data-i18n="card-Load More">Plus de résultats</button>
       </form>
     </div>
-    <dialog class="mdl-dialog volt-dialog volt-dialog-event">Hello
-      <div class="volt-dialog-map-wrapper"></div>
-    </dialog>
+    <dialog class="mdl-dialog volt-dialog volt-dialog-event"></dialog>
   </body>
 </html>

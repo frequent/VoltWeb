@@ -7,6 +7,7 @@
   // parameters
   /////////////////////////////
   var DICT = {};
+  var STR = "";
   var MAP_URL = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png';
   var MAP_CONFIG = {
     "attribution": '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
@@ -134,15 +135,27 @@
       this.property_dict.map.invalidateSize();
     })
 
-    .declareMethod("localiseUser", function (my_coordinates) {
+    .declareMethod("localiseUser", function () {
       var gadget = this;
       var dict = gadget.property_dict;
-      dict.map.setView(my_coordinates, dict.config.zoom || DEFAULT_ZOOM);
-      dict.user = L.icon(LOCALISE_CONFIG);
-      dict.user_layer = L.layerGroup([
-        L.marker(my_coordinates, {"icon": dict.user})
-      ]);
-      dict.map.addLayer(dict.user_layer);
+      var getPosition = function () {
+        return new RSVP.Promise(function (resolve, reject) {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });  
+      };
+      return new RSVP.Queue()
+        .push(function () {
+          return getPosition();
+        })
+        .push(function (pos) {
+          var coordinates = [pos.coords.latitude, pos.coords.longitude]; 
+          dict.map.setView(coordinates, dict.config.zoom || DEFAULT_ZOOM);
+          dict.user = L.icon(LOCALISE_CONFIG);
+          dict.user_layer = L.layerGroup([
+            L.marker(coordinates, {"icon": dict.user})
+          ]);
+          dict.map.addLayer(dict.user_layer);
+        });
     })
 
     .declareMethod("renderMap", function (my_key) {
@@ -167,8 +180,12 @@
           dict.map.setView(my_marker_content_dict.position, dict.config.zoom || DEFAULT_ZOOM);
           dict.icon = L.icon(ICON_CONFIG);
           dict.tileLayer = L.tileLayer(MAP_URL, MAP_CONFIG).addTo(dict.map);
+
           if (my_marker_content_dict) {
             dict.marker_layer = L.layerGroup(my_marker_content_dict.entry_list.map(function (entry) {
+              if (entry.content === STR) {
+                return L.marker(entry.position, {"icon": dict.icon});
+              }
               return L.marker(entry.position, {"icon": dict.icon})
                 .bindPopup(entry.content)
                 .on('popupopen', function (event) {
@@ -178,7 +195,7 @@
             dict.map.addLayer(dict.marker_layer);
           }
 
-          // pass back marker dict to update/init select element
+          // pass back marker dict in case needed
           return dict.marker_dict;
         });
     })

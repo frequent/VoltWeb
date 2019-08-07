@@ -285,21 +285,9 @@
 
     .declareMethod("localiseUser", function (my_event) {
       var gadget = this;
-      var getPosition = function () {
-        return new RSVP.Promise(function (resolve, reject) {
-          navigator.geolocation.getCurrentPosition(resolve, reject);
-        });  
-      };
-      return new RSVP.Queue()
-        .push(function () {
-          return RSVP.all([
-            getPosition(),
-            gadget.getDeclaredGadget("map")
-          ]);
-        })
-        .push(function (response_list) {
-          var pos = response_list[0];
-          return response_list[1].localiseUser([pos.coords.latitude, pos.coords.longitude]);
+      return gadget.getDeclaredGadget("map")
+        .push(function (my_gadget) {
+          return my_gadget.localiseUser();
         });
     })
 
