@@ -1173,7 +1173,10 @@
       {
         "position": [50.6292, 3.0573],
         "i18n": "Lille, France",
-        "web_url": "https://www.voltlille.fr/"
+        "web_url": "https://www.voltlille.fr/",
+        "facebook_url": "",
+        "twitter_url": "",
+        "instagram_url": ""
       },
       {
         "position": [51.0344, 2.3768],

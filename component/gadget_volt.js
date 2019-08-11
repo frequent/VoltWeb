@@ -19,7 +19,6 @@
   var LOCAL ="local";
   var UI = "ui";
   var SETTINGS = "settings";
-  var IDLE_TIME = 600000;
   var DOCUMENT = window.document;
   var LOCATION = document.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/ui/";
@@ -34,6 +33,17 @@
   /////////////////////////////
   // methods
   /////////////////////////////
+
+  function setCookie (name, value, days) {
+    var d = new Date();
+    d.setTime(d.getTime() + 24*60*60*1000*days);
+    DOCUMENT.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+  }
+
+  function getCookie(name) {
+    var v = DOCUMENT.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+  }
 
   // ios OS9 doesn't support github api v3 redirects, create response by hand
   function getFallbackDict (my_language) {
@@ -122,7 +132,6 @@
         "ui_dict": {},
         "content_wrapper": getElem(gadget.element, ".volt-layout__content")
       };
-
       return RSVP.all([
         gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "local"}),
         gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "ui"}),
@@ -300,8 +309,8 @@
         .push(function (response) {
           var data = JSON.parse(response);
 
-          // poor man's update = purge DB and reload after IDLE_TIME passed
-          if (my_key === EXPIRE_DB && getTimeStamp() - data.timestamp > IDLE_TIME) {
+          // switch to version
+          if (my_key === EXPIRE_DB && data[my_key] !== gadget.property_dict.version) {
             return new RSVP.Queue()
               .push(function () {
                 return gadget.setting_allAttachments(DOC);
@@ -449,11 +458,10 @@
           dict.default_language = gadget.state.default_language;
           dict.selected_language = language;
 
-          // reset setting, so we don't purge unless IDLE_TIME passed
           return RSVP.all([
             gadget.stateChange({"selected_language": language}),
             gadget.setSetting("volt:selected_language", language),
-            gadget.setSetting("volt:expire_db", "I could be a version number"),
+            gadget.setSetting("volt:expire_db", dict.version),
             gadget.ui_create(getConfigDict("ui/" + language))
           ]);
         })
@@ -497,6 +505,7 @@
           }));
         })
         .push(function () {
+          DOCUMENT.body.classList.remove("volt-splash");
           window.componentHandler.upgradeDom();
           return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
         })
@@ -693,6 +702,10 @@
     // start/entry point, initial render call and global error handler
     .declareService(function () {
       var gadget = this;
+
+      if (getCookie("init") === null) {
+        setCookie("init", 1, 1);
+      }
 
       return new RSVP.Queue()
         .push(function () {

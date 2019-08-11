@@ -391,6 +391,7 @@
           setDom(dict.dialog, getTemplate(KLASS, MEETING_DIALOG).supplant({
             "title": content.title,
             "img_url": meetup.img_url,
+            "fallback_url": FALLBACK_IMG_URL,
             "description": content.text_content,
             "datetime": setBound([meetup.start_date, meetup.stop_date], true),
             "location": venue ? getAddress(venue, ", ") : STR,
@@ -403,6 +404,7 @@
             "add_to_calendar": setActionList(meetup, lang)
           }), true);
           dialog.showModal();
+          observeImage(dict, dialog.querySelectorAll(".volt-lazy"));
           window.componentHandler.upgradeElements(dialog);
           if (navigator.geolocation) {
             getElem(dialog, LOCALISE).classList.remove(LINK_DISABLED);

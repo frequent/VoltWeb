@@ -99,7 +99,7 @@
 
     <script id="event_dialog_template" type="text/x-supplant">
       <div class="volt-event__dialog-image-wrapper">
-        <img class="volt-card-image volt-lazy" src="{img_url}" alt="{title}" />
+        <img class="volt-card-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}" />
       </div>
       <h2 class="volt-event__dialog-title">{title}</h2>
       <div class="volt-marker__floater">

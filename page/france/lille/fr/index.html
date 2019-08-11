@@ -17,7 +17,7 @@
     <meta property="og:description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
     <meta property="og:url" content="https://www.voltlille.fr/">
     <meta property="og:locale" content="fr_fr">
-    <meta property="og:image" content="../../../../img/FR-Lille.Image.Elections.Municipales.Vous.En.Faites.Parti.png" />
+    <meta property="og:image" content="../../../../img/FR-Lille.Image.Elections.Municipales.VousFaites.Parti.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
 
@@ -32,10 +32,29 @@
     <link rel="icon" href="../../../../favicon.png">
     <!--link rel="manifest" href="../../../../manifest.json" /-->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="../../../../sitemap.xml" />    
-      
+
+    <script type="text/javascript">
+      var CONFIG = {
+        "version": "0.1",
+        "default_language": "fr",
+        "scope": "eu/fr/lille",
+        "available_language_list": [
+          {"id": "en", "i18n": "English", "text": "Anglais"},
+          {"id": "fr", "i18n": "French", "text": "Français"}
+        ],
+        "grid_config": {"query": "", "limit": [0, 2]}
+      };
+      if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
+        window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
+      }
+    </script>
+
     <style type="text/css">
       .volt-seo-content * {
         text-color: #fff;
+      }
+      .volt-override-splash .volt-splash:before {
+        content: none !important;
       }
       .volt-splash:before {
         width: 100%;
@@ -60,32 +79,12 @@
     <link rel="stylesheet" href="../../../../lib/material_design_lite.1.3.0.min.css" />
     <link rel="stylesheet" href="../../../../component/gadget_volt.css" />
 
-    <script type="text/javascript">
-      var CONFIG = {
-        "default_language": "fr",
-        "scope": "eu/fr/lille",
-        "available_language_list": [{
-          "id": "en", "i18n": "English", "text": "Anglais"
-        }, {
-          "id": "fr", "i18n": "French", "text": "Français"
-        }],
-        "content_gadget_option_dict": {
-          "slider_config": [{
-            "img_path": "../../../../img/jules-d-1418887-unsplash.1200w.jpg",
-            "url_path": "",
-            "url_i18n": ""
-          }]
-        },
-        "grid_config": {"query": "", "limit": [0, 2]}
-      };
-    </script>
-
     <script src="../../../../lib/material_design_lite.1.3.0.min.js"></script>
     <script src="../../../../lib/rsvp.latest.min.js"></script>
     <script src="../../../../lib/renderjs.latest.js"></script>
     <script src="../../../../component/gadget_volt.js"></script>
   </head>
-  <body class="volt-xsplash volt-body">
+  <body class="volt-splash volt-body">
     <div class="volt-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <header class="volt-header mdl-layout__header" data-gadget-url="../../../../component/gadget_volt_header.html"
@@ -97,6 +96,16 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
+        <div class="volt-landing__image-container volt-layout__override">
+          <img class="volt-content__banner" srcset="../../../../img/FR-Graphics.Volt.Lille.2020.fr.800w.min.png 800w,
+                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.fr.1200w.min.png 1200w,
+                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.fr.1920w.min.png 1920w"
+           sizes="(max-width: 32em) 800px,
+                  (max-width: 64em) 1200px,
+                  1920px"
+           src="img/FR-Graphics.Volt.Lille.2020.fr.1920.min.png" alt="Volt Lille 2020">
+        </div>
+        
         <h1>Bienvenue sur Volt. <br/>La politique faite par les citoyens. Pour les citoyens.</h1>
         <p>Volt est un mouvement de citoyens née il y a deux ans qui aujourd'hui s'organise avec les équipes dans toutes les pays Européennes qui partagent les mêmes valeurs et idées de faire de la politique d'une façon <b>plus démocratique, plus écologique et plus solidaire</b>. Nous essayons d'établir <b>les listes des citoyens afin de participer aux élections - du niveau européen au niveau local</b> - car nous croyons, qu'une démocratie signifie non seulement à voter mais d'étant activement engagés dans une communauté et que les plus grands défis nous devons faire face aujourd'hui exigent de coopération et de collaboration - dans et entre les villes, entre les régions et les pays.</p>
         <p>Notre équipe à Lille n'est toujours pas nombreux, mais nous aimerions participer aux élections municipales in 2020 ! Il y a beaucoup d'enjeux pour nous : Lille peut être un vrai métropole européen ? Une ville, qui ne prétend pas seulement d'être verte, mais qui travaille activement à atténuer les effets du changement climatique ? Une ville, qui n'étouffe pas ses citoyens dans le trafic imprévu et de la construction effréné ? Une ville, qui accroît sa portée au lieu de laisse pour compte des communautés et la région ? Une ville, qui est solidaire sans préjudice ? Une ville, qui est sécurisé pour chacun et chacune ? Une ville, qu'encourageant l'éducation au-delà des frontières et qu'attirer les entreprises internationales ? Une ville, qui se soucie pour les besoins de leurs citoyens ? <b>Une ville, où l'on se sent chez nous et dont nous puissions être fiers ?</b></p>
@@ -142,40 +151,6 @@
           <label class="volt-newsreel__pointer" for="slide-3"></label>
           <label class="volt-newsreel__pointer" for="slide-4"></label>
         </div>        
-
-
-        
-
-        <!--
-        <div data-gadget-url="" data-gadget-scope="" data-gadget-sandbox="public">
-         
-        </div>
-        <div data-gadget-url="" data-gadget-scope="" data-gadget-sandbox="public">
-          
-        </div>
-        <div class="volt-landing__image-container">
-          <img class="volt-content__banner" srcset="../../img/jules-d-1418887-unsplash.400w.jpg 320w,
-                   ../../img/jules-d-1418887-unsplash.800w.jpg 800w"
-                   ../../img/jules-d-1418887-unsplash.1200w.jpg 1200w",
-                   ../../img/jules-d-1418887-unsplash.1920w.jpg 1820w"
-           sizes="(max-width: 320px) 320px,
-                  (max-width: 640px) 800px,
-                  (max-width: 1180px) 1180px,
-                  (max-width: 1920px) 1920px,
-                  1180px"
-           src="img/jules-d-1418887-unsplash.1200w.jpg 1200w" alt="Volt Lille 2020">
-          <img src="../../img/FR-Graphics.Lille.Puzzle.White.Transparent.Blank.png" alt="Vous en faites parti" class="volt-content__banner-puzzle" />
-          <span class="volt-puzzle__message-container">
-            <span class="volt-action__text volt-puzzle__message" data-i18n="landing-You">Vous</span> 
-            <span class="volt-action__text volt-puzzle__message" data-i18n="landing-are part of the puzzle.">en faites parti.</span>
-          </span>
-        </div>
-        <h1 class="volt-page__title"><span data-i18n="landing-Welcome to Volt">Bienvenue sur Volt !</span><br/><span data-i18n="landing-Politics made by citizens">La politique faites par les citoyens. Pour les citoyens.</span></h1>
-
-        <div data-gadget-url="../../../../component/gadget_volt_landing.html" data-gadget-scope="main">
-          
-        </div-->
-
       </main>
 
       <footer class="volt-footer" data-gadget-url="../../../../component/gadget_volt_footer.html"

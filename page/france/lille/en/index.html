@@ -6,7 +6,7 @@
     <title>Volt Lille | You're part of it</title>
 
     <meta name="application-name" content="Volt Lille">
-    <meta name="description" content="Ready to help citizens reclaim politics ? Join Volt Europa and become a candidate for the upcoming municipal elections.">
+    <meta name="description" content="Ready to help citizens reclaim politics? Join Volt Europa and become a candidate for the upcoming municipal elections.">
     <meta name="url" content="https://www.voltlille.fr/">
     <meta name="keywords" content="municipal elections, citizens, politics, local politics, candidate, citizen empowerment" />
     <meta name="theme-color" content="#612095">
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Volt Lille">
     <meta property="og:site_name" content="Volt Lille">
-    <meta property="og:description" content="Ready to help citizens reclaim politics ? Join Volt Europa and become a candidate for the upcoming municipal elections.">
+    <meta property="og:description" content="Ready to help citizens reclaim politics? Join Volt Europa and become a candidate for the upcoming municipal elections.">
     <meta property="og:url" content="https://www.voltlille.fr/">
     <meta property="og:locale" content="en_en">
     <meta property="og:image" content="../../../../img/FR-Lille.Image.Municipal.Elections.You.Are.Part.Of.It.png" />
@@ -23,7 +23,7 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="Volt Lille">
-    <meta name="twitter:description" content="Ready to help citizens reclaim politics ? Join Volt Europa and become a candidate for the upcoming municipal elections.">
+    <meta name="twitter:description" content="Ready to help citizens reclaim politics? Join Volt Europa and become a candidate for the upcoming municipal elections.">
     <meta name="twitter:url" content="https://www.voltlille.fr/">
     <meta name="twitter:creator" content="@voltlille">
     <meta name="twitter:image" content="../../../../img/FR-Lille.Image.Municipal.Elections.You.Are.Part.Of.It.png" />
@@ -33,9 +33,28 @@
     <!--link rel="manifest" href="../../../../manifest.json" /-->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="../../../../sitemap.xml" />
 
+    <script type="text/javascript">
+      var CONFIG = {
+        "version": "0.1",
+        "default_language": "fr",
+        "scope": "eu/fr/lille",
+        "available_language_list": [
+          {"id": "en", "i18n": "English", "text": "English"},
+          {"id": "fr", "i18n": "French", "text": "French"}
+        ],
+        "grid_config": {"query": "", "limit": [0,2]}
+      };
+      if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
+        window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
+      }
+    </script>
+
     <style type="text/css">
       .volt-seo-content * {
         text-color: #fff;
+      }
+      .volt-override-splash .volt-splash:before {
+        content: none !important;
       }
       .volt-splash:before {
         width: 100%;
@@ -60,31 +79,12 @@
     <link rel="stylesheet" href="../../../../lib/material_design_lite.1.3.0.min.css" />
     <link rel="stylesheet" href="../../../../component/gadget_volt.css" />
 
-    <script type="text/javascript">
-      var CONFIG = {
-        "default_language": "fr",
-        "scope": "eu/fr/lille",
-        "available_language_list": [
-          {"id": "en", "i18n": "English", "text": "English"},
-          {"id": "fr", "i18n": "French", "text": "French"}
-        ],
-        "content_gadget_option_dict": {
-          "slider_config": [{
-            "img_path": "../../../../img/jules-d-1418887-unsplash.1200w.jpg",
-            "url_path": "",
-            "url_i18n": ""
-          }]
-        },
-        "grid_config": {"query": "", "limit": [0,2]}
-      };
-    </script>
-
     <script src="../../../../lib/material_design_lite.1.3.0.min.js"></script>
     <script src="../../../../lib/rsvp.latest.min.js"></script>
     <script src="../../../../lib/renderjs.latest.js"></script>
     <script src="../../../../component/gadget_volt.js"></script>
   </head>
-  <body class="volt-xsplash volt-body">
+  <body class="volt-splash volt-body">
 
     <div class="volt-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
       
@@ -97,9 +97,21 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
+        <div class="volt-landing__image-container volt-layout__override">
+          <img class="volt-content__banner" srcset="../../../../img/FR-Graphics.Volt.Lille.2020.en.800w.min.png 800w,
+                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.en.1200w.min.png 1200w,
+                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.en.1920w.min.png 1920w"
+           sizes="(max-width: 32em) 800px,
+                  (max-width: 64em) 1200px,
+                  1920px"
+           src="img/FR-Graphics.Volt.Lille.2020.en.1920.min.png" alt="Volt Lille 2020">
+        </div>
+        
+        
+        
         <h1>Welcome to Volt. <br/>Politics made by citizens. For citizens</h1>
         <p>Volt is a citizen movement that was started two years ago and today has teams of volunteers across all European countries sharing the same values and ideas for <b>a more democratic, ecologic and solidary way of doing politics</b>. We try to <b>establish citizen lists and participate in elections from european to national and local levels</b>, because we believe that democracy is not only voting but having active communities and that the challenges facing us today require cooperation and collaboration - within and across cities, regions and countries.</p>
-        <p>Our Lille team is still small, but we would like to participate in the 2020 municipal elections! There are too many questions for us: Can Lille be a real european metropole ? A city that not only pretends to be green but actively works to mitigate the effects of climate change ? A city that doesn't suffocate citizens in unplanned traffic and rampant construction ? A city, that extends its reach rather than leaving communes and the region behind ? A city that is solidary without prejudice ? A city that is secure for each and everyone ? A city that educates with a perspective beyond borders and attracts international business ? A city who cares for the needs of its citizens ? <b>A city we can call home and be proud of ?</b></p>
+        <p>Our Lille team is still small, but we would like to participate in the 2020 municipal elections! There are too many questions for us: Can Lille be a real european metropole? A city that not only pretends to be green but actively works to mitigate the effects of climate change? A city that doesn't suffocate citizens in unplanned traffic and rampant construction? A city, that extends its reach rather than leaving communes and the region behind? A city that is solidary without prejudice? A city that is secure for each and everyone? A city that educates with a perspective beyond borders and attracts international business? A city who cares for the needs of its citizens? <b>A city we can call home and be proud of?</b></p>
         <p>We are all part of Lille. And we are all a part of the answers to the questions above. This is our motto for Lille 2020: <b>You are part of the puzzle!</b> Join or help us changing the face of politics in Lille.</p>
 
         <h4 class="volt-footer__header volt-newsreel__header" data-i81n="landing-Latest News">Dernières nouvelles</h4>

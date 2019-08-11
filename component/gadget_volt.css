@@ -476,18 +476,13 @@
 }
 /* =========================== CARD / GRID ================================== */
 .volt-item__container {
-  margin-left: -10%;
-  margin-right: -10%;
+  margin-left: -1em;
+  margin-right: -1em;
 }
-
 @media (max-width: 54em) {
   .volt-item__container {
     margin-left: 0;
     margin-right: 0;
-  }
-  .volt-layout__content .volt-item__container {
-    margin-left: -2em;
-    margin-right: -2em;
   }
 }
 .volt-event__card .mdl-card__media > img {
@@ -499,7 +494,7 @@
 .volt-event__card figure {
   margin: 0 auto;
   background: transparent;
-  min-height: 9em;
+  min-height: 8em;
   width: 100%;
 }
 @media (max-width: 72em) {
@@ -674,6 +669,7 @@
 }
 .volt-dialog .volt-event__dialog-image-wrapper .volt-card-image {
   padding: 0;
+  max-width: 100%;
 }
 .volt-dialog .volt-event__dialog-title {
   font-size: 1.5em;
@@ -928,7 +924,7 @@
   }
   .volt-footer__content-menu .volt-navbar__item:last-child:before {
     border-bottom: 1px solid #191923;
-    height: 39px;
+    height: 45px;
   }
   .volt-footer__top .volt-navbar__item:hover,
   .volt-footer__top .volt-navbar__item:focus {
@@ -1062,7 +1058,6 @@
   column-count: 2;
   column-gap: 3em;  
 }
-
 .volt-layout__content h1,
 .volt-layout__content h2,
 .volt-layout__content h3 {
@@ -1245,7 +1240,8 @@
     padding: 0 2em 0;
   }
   .volt-layout__content h1 {
-    margin-top: 2em;
+    margin-top: 1em;
+    font-size: 2em;
   }
   .volt-page__subtitle {
     text-align: center;
@@ -1253,82 +1249,116 @@
 }
 
 /* ========================= Custom Content ================================  */
+.volt-layout__content > div.volt-landing__image-container {
+  margin-left: -25%;
+  margin-right: -25%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-property: max-height,box-shadow;
+  overflow: hidden;
+}
 .volt-layout__content .volt-content__banner {
   float: none;
   padding: 0;
-  margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: auto;
-  margin-left: -25%;
-  margin-right: -25%;
-  max-width: 150%;
-  margin-top: -25em;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 54em) {
+  .volt-layout__content > div.volt-landing__image-container {
+    margin-left: -22%;
+    margin-right: -22%;
+  }
 }
 @media (max-width: 32em) {
-  .volt-layout__content .volt-content__banner {
+  .volt-layout__content > div.volt-landing__image-container {
+    margin-left: -7%;
+    margin-right: -7%;
     margin-top: -1em;
   }
 }
-.volt-landing__image-container {
-  position: relative;
-}
-.volt-landing__image-container .volt-content__banner-puzzle {
-  position: absolute;
-  height: 300px;
-  width: auto;
-  bottom: 0;
-  right: 12em;
-}
-.volt-landing__image-container .volt-puzzle__message-container {
-  position: absolute;
-  bottom: 2.5em;
-  font-size: 2em;
+/* ============================ Accordeon =================================== */
+/* thx: https://alligator.io/css/collapsible/ */
+.volt-accordeon .volt-accordeon__header {
   font-weight: bold;
-  right: -1.5em;
-  color: #ffffff;
 }
-.volt-landing__image-container + .volt-page__title {
-  text-align: center;
-  margin-top: 1em;
+.volt-toggle__input {
+  display: none;
 }
-.volt-page__title + .volt-page__subtitle {
 
+.volt-toggle__label {
+  display: block;
+  font-size: 1.2em;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
 }
-@media (max-width: 54em) {
-  .volt-landing__image-container + .volt-page__title {
-    font-size: 2em;
+.volt-collapsible .volt-collapsible__header {
+  margin: 0;
+  text-align: left;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+.volt-collapsible .volt-collapsible__header:before,
+.volt-collapsible .volt-collapsible__header:after {
+  content: none;
+}
+.volt-collapsible__content .volt-content__inner {
+  background: #FCFCFC;
+  border-bottom: 1px solid #612095;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  padding: 1em;
+  margin-top: .5em;
+}
+.volt-toggle__label:hover {
+  color: #7C5A0B;
+}
+
+.volt-toggle__label::before {
+  float: left;
+  margin-top: .7em;
+  font-family: 'Material Icons';
+  content: "chevron_right";
+  -webkit-font-feature-settings: 'liga' 1;
+  -moz-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga' 1;
+  margin-right: .5em;
+  transform: translateY(-2px);
+  transition: transform .2s ease-out;
+}
+
+.volt-toggle__input:checked + .volt-toggle__label::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.volt-collapsible__content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+}
+
+.volt-toggle__input:checked + .volt-toggle__label + .volt-collapsible__content {
+  max-height: 350px;
+}
+
+.volt-toggle__input:checked + .volt-toggle__label {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+@media (max-width: 32em) {
+  .volt-accordeon .volt-accordeon__header {
+    font-size: 1.25em;
   }
-  .volt-landing__image-container .volt-content__banner-puzzle {
-    right: 20em;
-  }
-  .volt-landing__image-container .volt-puzzle__message-container {
-    right: 2.5em;
-    bottom: 2em;
+  .volt-collapsible .volt-collapsible__header {
+    font-size: 1.1em;
   }
 }
-/* need to switch earlier */
-@media (max-width: 40em) {
-  .volt-landing__image-container .volt-content__banner-puzzle {
-    height: 250px;
-  }
-  .volt-landing__image-container .volt-puzzle__message-container {
-    right: 2.5em;
-    bottom: 5.5em;
-  }
-}
-@media (max-width: 40em) {
-  .volt-landing__image-container .volt-content__banner-puzzle {
-    height: 150px;
-    right: 10em;
-  }
-  .volt-landing__image-container .volt-puzzle__message-container {
-    bottom: 2em;
-    font-size: 1em;
-    right: 2.25em;
-  }
-}
+
+
 /* ============================= Panini ===================================== */
 .volt-team__banner,
 .volt-team__section {
@@ -1375,81 +1405,7 @@
   font-weight: bold;
   font-size: 3em;
 }
-/* ============================= Slider ===================================== */
-.volt-slider {
-  position: relative;
-}
-.volt-slider__control-left {
-  position: absolute;
-  top: 69%;
-  z-index: 1;
-  left: 10%;
-}
-.volt-slider__control-right {
-  position: absolute;
-  top: 69%;
-  z-index: 1;
-  right: 10%;
-}
-.volt-slider__card {
-  background: orange;
-}
-.volt-slider__cart-title {
-  
-}
-/* background 
-.volt-slider__card-title:after {
-  content: "";
-  position: absolute;
-  background-color: rgba(255, 255, 255, .7);
-  width: 100%;
-  height: 100%;
-  top: -1em;
-  left: 0;
-  -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
-  clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
-  -webkit-transform: rotate(-21deg);
-  -moz-transform: rotate(-21deg);
-  -ms-transform: rotate(-21deg);
-  -o-transform: rotate(-21deg);
-  transform: rotate(-21deg);
-  z-index: -1;
-}
-.volt-slider__card-title:before {
-  content: "";
-  position: absolute;
-  background-color: rgba(255, 255, 255, .7);
-  width: 100%;
-  height: 100%;
-  top: 1em;
-  left: 0;
-  -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
-  clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
-  -webkit-transform: rotate(-21deg);
-  -moz-transform: rotate(-21deg);
-  -ms-transform: rotate(-21deg);
-  -o-transform: rotate(-21deg);
-  transform: rotate(-21deg);
-  z-index: -1;
-}
-*/
-.volt-slider__control-right .next,
-.volt-slider__control-left .prev {
-  background-color: #26404c;
-}
-.volt-slider__control-right .next:hover,
-.volt-slider__control-left .prev:hover {
-  color: #eff1f3;
-}
-.volt-slider__card-image {
-  max-width: 100%;
-}
-@media (max-width: 54em) {
-  .volt-slider__card-image {
-    -webkit-clip-path: polygon(20% 0, 80% 0%, 80% 100%, 20% 100%);
-    clip-path: polygon(20% 0, 80% 0%, 80% 100%, 20% 100%);
-  }
-}
+
 /* ============================ Dialog ====================================== */
 .volt-dialog,
 .volt-dialog .volt-lang,
@@ -1841,11 +1797,6 @@ button.volt-dialog__button {
 }
 /* =========================== Loader =======================================*/
 /* thx https://github.com/nzbin/three-dots */
-/**
- * ==============================================
- * Dot Flashing
- * ==============================================
- */
 .dot-flashing {
   margin: 2em auto 0;
   position: relative;
