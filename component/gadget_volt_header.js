@@ -208,6 +208,16 @@
             "city_name": dict.ui_dict[city.i18n],
             "facebook_url": city.facebook_url || STR,
             "facebook_disabled": city.facebook_url === undefined ? LINK_DISABLED : STR,
+            "facebook_group": city.facebook_group_url ? getTemplate(KLASS, "facebook_group_template").supplant({
+              "facebook_group_url": city.facebook_group_url,
+              "facebook_group_disabled": city.facebook_group_url ? LINK_DISABLED : STR
+            }) : STR,
+            "city_mail": city.city_mail ? getTemplate(KLASS, "city_mail_template").supplant({
+              "city_mail": city.city_mail
+            }) : STR,
+            "lead_mail": city.lead_mail ? getTemplate(KLASS, "lead_mail_template").supplant({
+              "lead_mail": city.lead_mail
+            }) : STR,
             "twitter_url": city.twitter_url || STR,
             "twitter_disabled": city.twitter_url === undefined ? LINK_DISABLED : STR,
             "web_url": city.web_url || STR,

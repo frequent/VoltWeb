@@ -27,13 +27,31 @@
       <option value="{id}" {selected}><i class="volt-lang volt-lang__{id}"></i><span data-i18n="{country_i18n}">{country_name}</span></option>
     </script>
 
+    <!-- facebook-group -->
+    <script id="facebook_group_template" type="text/x-supplant">
+      <a class="volt-link volt-dialog__social-media-link {facebook_group_disabled}" target="_blank" href="{facebook_group_url}"><i class="fab fa fa-facebook-f"></i></a>
+    </script>
+    
+    <!-- city-mail -->
+    <script id="city_mail_template" type="text/x-supplant">
+      <a class="volt-link volt-dialog__social-media-link" href="{city_mail}"><i class="material-icons">business</i></a>
+    </script>
+
+    <!-- event-mail -->
+    <script id="lead_mail_template" type="text/x-supplant">
+      <a class="volt-link volt-dialog__social-media-link" href="{lead_mail}"><i class="material-icons">account_box</i></a>
+    </script>
+
     <!-- map marker popup template -->
     <script id="marker_template" type="text/x-supplant">
       <strong>{city_name}</strong>
       <br/>
       <div class="volt-marker__floater">
         <a class="volt-link volt-dialog__social-media-link {facebook_disabled}" target="_blank" href="{facebook_url}"><i class="fab fa fa-facebook"></i></a>
+        {facebook_group}
         <a class="volt-link volt-dialog__social-media-link {twitter_disabled}" target="_blank" href="{twitter_url}"><i class="fab fa fa-twitter"></i></a>
+        {city_mail}
+        {lead_mail}
         <a class="volt-link volt-dialog__button {web_disabled}" target="_blank" href="{web_url}" data-i18n="dialog-Website">Site Web</a>
       </div>
     </script>
