@@ -1551,6 +1551,7 @@ button.volt-dialog__button {
 .volt-dialog__action-form .mdl-button .material-icons {
   margin-top: -.2em;
 }
+.volt-dialog__link.volt-link__disabled,
 .volt-dialog__button.volt-link__disabled {
   background-color: rgba(0,0,0, 0.26);
   pointer-events: none;

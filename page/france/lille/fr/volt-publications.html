@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Volt Lille | Contact</title>
+    <title>Volt Lille | Publications</title>
 
     <meta name="application-name" content="Volt Lille">
     <meta name="description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
@@ -12,8 +12,8 @@
     <meta name="theme-color" content="#612095">
 
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Volt Lille | Contact">
-    <meta property="og:site_name" content="Volt Lille | Contact">
+    <meta property="og:title" content="Volt Lille | Publications">
+    <meta property="og:site_name" content="Volt Lille | Publications">
     <meta property="og:description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
     <meta property="og:url" content="https://www.voltlille.fr/">
     <meta property="og:locale" content="fr_fr">
@@ -22,7 +22,7 @@
     <meta property="og:image:height" content="512" />
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Volt Lille | Contact">
+    <meta name="twitter:title" content="Volt Lille | Publications">
     <meta name="twitter:description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
     <meta name="twitter:url" content="https://www.voltlille.fr/">
     <meta name="twitter:creator" content="@voltlille">
@@ -41,7 +41,8 @@
         "available_language_list": [
           {"id": "en", "i18n": "English", "text": "Anglais"},
           {"id": "fr", "i18n": "French", "text": "Français"}
-        ]
+        ],
+        "grid_config": {"query": "Publication", "limit": [0,2]}
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
@@ -95,7 +96,14 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
-        <h1>Contact</h1>
+
+        <h1>Publications</h1>
+        <div data-gadget-url="../../../../component/gadget_grid.html"
+          data-gadget-scope="grid"
+          data-gadget-sandbox="public">
+          <!--seo-content-->
+        </div>
+        
       </main>
 
       <footer class="volt-footer" data-gadget-url="../../../../component/gadget_volt_footer.html"
@@ -107,5 +115,8 @@
      </footer>
 
     </div>
+    <script type="text/javascript">
+      
+    </script>
   </body>
 </html>

@@ -3,35 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Volt Lille | Contact</title>
+    <title>Volt Lille | Events</title>
 
     <meta name="application-name" content="Volt Lille">
-    <meta name="description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
+    <meta name="description" content="Ready to help citizens reclaim politics? Join Volt Europa and become a candidate for the upcoming municipal elections.">
     <meta name="url" content="https://www.voltlille.fr/">
-    <meta name="keywords" content="élections municipales, citoyen, politique, politique locale, candidats, candidature, responsabilité des citoyen" />
+    <meta name="keywords" content="municipal elections, citizens, politics, local politics, candidate, citizen empowerment" />
     <meta name="theme-color" content="#612095">
 
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Volt Lille | Contact">
-    <meta property="og:site_name" content="Volt Lille | Contact">
-    <meta property="og:description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
+    <meta property="og:title" content="Volt Lille | Events">
+    <meta property="og:site_name" content="Volt Lille | Events">
+    <meta property="og:description" content="Ready to help citizens reclaim politics? Join Volt Europa and become a candidate for the upcoming municipal elections.">
     <meta property="og:url" content="https://www.voltlille.fr/">
-    <meta property="og:locale" content="fr_fr">
-    <meta property="og:image" content="../../../../img/FR-Lille.Image.Elections.Municipales.VousFaites.Parti.png" />
+    <meta property="og:locale" content="en_en">
+    <meta property="og:image" content="../../../../img/FR-Lille.Image.Municipal.Elections.You.Are.Part.Of.It.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Volt Lille | Contact">
-    <meta name="twitter:description" content="Prêts à reconquérir la politique comme responsabilité des citoyens ? Rejoignez Volt et être candidate dans les élections municipales !">
+    <meta name="twitter:title" content="Volt Lille | Events">
+    <meta name="twitter:description" content="Ready to help citizens reclaim politics? Join Volt Europa and become a candidate for the upcoming municipal elections.">
     <meta name="twitter:url" content="https://www.voltlille.fr/">
     <meta name="twitter:creator" content="@voltlille">
-    <meta name="twitter:image" content="../../../../img/FR-Lille.Image.Elections.Municipales.Vous.En.Faites.Parti.png" />
+    <meta name="twitter:image" content="../../../../img/FR-Lille.Image.Municipal.Elections.You.Are.Part.Of.It.png" />
 
     <link rel="canonical" href="https://www.voltlille.fr/index.html" />
     <link rel="icon" href="../../../../favicon.png">
     <link rel="manifest" href="../../../../manifest.json" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="../../../../sitemap.xml" />    
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="../../../../sitemap.xml" />
 
     <script type="text/javascript">
       var CONFIG = {
@@ -39,9 +39,10 @@
         "default_language": "fr",
         "scope": "eu/fr/lille",
         "available_language_list": [
-          {"id": "en", "i18n": "English", "text": "Anglais"},
-          {"id": "fr", "i18n": "French", "text": "Français"}
-        ]
+          {"id": "en", "i18n": "English", "text": "English"},
+          {"id": "fr", "i18n": "French", "text": "French"}
+        ],
+        "grid_config": {"query": "Meeting", "limit": [0,2]}
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
@@ -84,8 +85,9 @@
     <script src="../../../../component/gadget_volt.js"></script>
   </head>
   <body class="volt-splash volt-body">
-    <div class="volt-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
+    <div class="volt-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      
       <header class="volt-header mdl-layout__header" data-gadget-url="../../../../component/gadget_volt_header.html"
         data-gadget-scope="header"
         data-gadget-sandbox="public">
@@ -95,9 +97,15 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
-        <h1>Contact</h1>
-      </main>
 
+        <h1>Events</h1>
+        <div data-gadget-url="../../../../component/gadget_grid.html"
+          data-gadget-scope="grid"
+          data-gadget-sandbox="public">
+          <!--seo-content-->
+        </div>
+
+      </main>
       <footer class="volt-footer" data-gadget-url="../../../../component/gadget_volt_footer.html"
         data-gadget-scope="footer"
         data-gadget-sandbox="public">
@@ -105,7 +113,9 @@
           <!--seo-content-->
         </div>      
      </footer>
-
     </div>
+    
+    
+
   </body>
 </html>

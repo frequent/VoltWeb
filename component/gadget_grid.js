@@ -111,13 +111,16 @@
   }
 
   function setCallToAction(my_item, my_language) {
+    var url;
     if (my_item.event_type === MEETING) {
       return getTemplate(KLASS, MEETING_URL).supplant({
         "reference": my_item.reference
       });
     }
+    url = my_item.attachment_dict.document_dict[my_language].document_url;
     return getTemplate(KLASS, PUBLICATION_URL).supplant({
-      "document_url": my_item.attachment_dict.document_dict[my_language].document_url
+      "document_url": url || STR,
+      "disabled": url ? STR : LINK_DISABLED
     });
   }
 
