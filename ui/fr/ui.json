@@ -97,5 +97,16 @@
   "card-Details": "Détails",
   "card-Share": "Partager",
   "card-Add to Calendar": "Ajouter au calendrier.",
-  "card-Load more": "Plus de résultats"
+  "card-Load more": "Plus de résultats",
+    "contact-First Name": "Prénom",
+  "contact-Last Name": "Nom",
+  "contact-Zip Code": "Code Postal",
+  "contact-City": "Ville",
+  "contact-Subject": "Sujet",
+  "contact-Your Message": "Message",
+  "contact-Subscribe to our Newsletter": "Inscrivez-vous à notre bulletin",
+  "contact-I have read and approved": "J'ai lu et approuvé la",
+  "contact-Data Privacy Notice": "déclaration de la confidentialité des données",
+  "contact-Send": "Envoyer !",
+  "contact-(opens your email editor)": "(ouvre votre editor de courriel)"
 }

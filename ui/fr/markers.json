@@ -9,22 +9,14 @@
     "youtube_url": "https://www.youtube.com/c/VoltEuropa",
     "linkedin_url": "https://www.linkedin.com/company/11067656/",
     "reddit_url": "https://www.reddit.com/r/VoltEuropa/",
-    "whatsapp_url": "",
     "web_url": "https://www.volteuropa.org",
+    "contact_url": "mailto:info@volteuropa.org",
     "city_list": []
   },
   "al": {
     "position": [41.1533, 20.1683],
     "zoom": 5,
     "i18n": "Albania",
-    "facebook_url": "",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
         "position": [41.3275459,19.8186982],
@@ -38,11 +30,6 @@
     "i18n": "Austria",
     "facebook_url": "https://www.facebook.com/VoltOesterreich/",
     "twitter_url": "https://twitter.com/volteuropa",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltoesterreich.org/",
     "city_list": [
       {
@@ -70,11 +57,6 @@
     "facebook_url": "https://www.facebook.com/VoltBelgie/",
     "twitter_url": "https://twitter.com/VoltBelgium",
     "web_url": "https://www.voltbelgie.org/",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "city_list": [
       {
           "position": [50.643909,5.571560],
@@ -114,11 +96,6 @@
     "facebook_url": "https://www.facebook.com/VoltBulgaria/",
     "twitter_url": "https://twitter.com/volteuropa",
     "web_url": "https://www.voltbulgaria.org/",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "city_list": [
       {
         "position": [42.6977082,23.3218675],
@@ -174,14 +151,6 @@
     "position": [46.8182, 8.2275],
     "zoom": 5,
     "i18n": "Switzerland",
-    "facebook_url": "",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [    
       {
           "position": [46.2043907,6.1431577],
@@ -194,13 +163,6 @@
     "zoom": 5,
     "i18n": "Cyprus",
     "facebook_url": "https://www.facebook.com/VoltCyprus/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url":"",
     "city_list": [
       {
           "position": [34.7071301,33.0226174],
@@ -219,11 +181,7 @@
     "facebook_url": "https://www.facebook.com/VoltCzechia",
     "twitter_url": "https://www.voltczechia.org/",
     "instagram_url": "https://www.instagram.com/voltczechia",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
     "web_url": "https://www.voltczechia.org/",
-    "whatsapp_url": "",
     "city_list": [
       {
         "position": [50.0755381,14.4378005],
@@ -238,10 +196,7 @@
     "facebook_url": "https://www.facebook.com/VoltDanmark/",
     "twitter_url": "https://twitter.com/voltdanmark?lang=en",
     "instagram_url": "https://www.instagram.com/Voltdanmark/",
-    "youtube_url": "",
     "linkedin_url": "https://www.linkedin.com/company/volt-danmark/",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltdanmark.org/",
     "city_list": [
       {
@@ -270,10 +225,6 @@
     "facebook_url": "https://www.facebook.com/VoltDeutschland/",
     "twitter_url": "https://twitter.com/deutschlandvolt",
     "instagram_url": "https://www.instagram.com/voltdeutschland/",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltdeutschland.org/",
     "city_list": [   
       {
@@ -993,13 +944,6 @@
     "zoom": 5,
     "i18n": "Estonia",
     "facebook_url": "https://www.facebook.com/VoltEstonia/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [59.43696079999999,24.7535747],
@@ -1014,10 +958,6 @@
     "facebook_url": "https://www.facebook.com/VoltEspana/",
     "twitter_url": "https://twitter.com/voltespana",
     "instagram_url": "https://instagram.com/voltesp/",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltespana.org/",
     "city_list": [
       {
@@ -1055,13 +995,6 @@
     "zoom": 5,
     "i18n": "Finland",
     "facebook_url": "https://www.facebook.com/VoltFinland/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [60.16985569999999,24.9383791],
@@ -1076,10 +1009,8 @@
     "facebook_url": "https://www.voltfrance.org/",
     "twitter_url": "https://twitter.com/volt_france",
     "instagram_url": "https://www.instagram.com/volt_france/",
-    "youtube_url": "",
     "linkedin_url": "https://www.linkedin.com/company/voltfrance",
-    "reddit_url": "",
-    "whatsapp_url": "",
+    "contact_url": "mailto:info@voltfrance.org",
     "web_url": "https://www.voltfrance.org",
     "city_list": [
       {
@@ -1117,11 +1048,11 @@
       {
         "position": [50.6292, 3.0573],
         "i18n": "Lille, France",
-        "facebook_url": "",
+        "facebook_url": "https://www.facebook.com/voltlille/",
         "facebook_group_url": "https://www.facebook.com/groups/volt.europe.fr.lille/",
-        "lead_mail": "sven.franck@volteuropa.org",
-        "twitter_url": "",
-        "instagram_url": "",
+        "lead_url": "mailto:sven.franck@volteuropa.org",
+        "twitter_url": "http://twitter.com/voltlille",
+        "instagram_url": "https://www.instagram.com/voltlille/",
         "web_url": "https://www.voltlille.fr/"
       },
       {
@@ -1162,15 +1093,15 @@
       },
       {
         "position": [45.7772, 3.0870],
-        "i18n": "Clermont-Ferrand"
+        "i18n": "Clermont-Ferrand, France"
       },
       { 
         "position": [43.94834, 4.80892],
-        "i18n": "Avignon"
+        "i18n": "Avignon, France"
       },
       {
         "position": [43.11667, 5.93333],
-        "i18n": "Toulon"
+        "i18n": "Toulon, France"
       }
     ]
   },
@@ -1179,13 +1110,6 @@
     "zoom": 5,
     "i18n": "Greece",
     "facebook_url": "https://www.facebook.com/VoltGreece/",
-    "twitter": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [40.6400629,22.9444191],
@@ -1198,13 +1122,6 @@
     "zoom": 5,
     "i18n": "Hungary",
     "facebook_url":"https://www.facebook.com/VoltHungary/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
         "position": [47.497912,19.040235],
@@ -1217,13 +1134,6 @@
     "zoom": 5,
     "i18n": "Croatia",
     "facebook_url": "https://www.facebook.com/VoltCroatia/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [45.8150108,15.9819189],
@@ -1236,13 +1146,6 @@
     "zoom": 5,
     "i18n": "Ireland",
     "facebook_url": "https://www.facebook.com/VoltIreland/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [53.3498053,-6.2603097],
@@ -1256,31 +1159,27 @@
     "facebook_url": "https://it-it.facebook.com/VoltITA/",
     "twitter_url": "https://twitter.com/voltitalia",
     "instagram_url": "https://www.instagram.com/voltitalia/",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltitalia.org/",
     "city_list": [
       {
-          "city_mail": "",
-          "lead_mail": "mailto:daniele.latella@volteuropa.org",
+          "contact_url": "",
+          "lead_url": "mailto:daniele.latella@volteuropa.org",
           "facebook_url": "https://www.facebook.com/voltalessandria/",
           "facebook_group_url": "",
           "position": [44.9129225,8.615321],
           "i18n": "Alessandria, Italy"
       },
       {
-          "city_mail": "mailto:avellino@voltitalia.org",
-          "lead_mail": "mailto:michele.manfredonia@volteuropa.org", 
+          "contact_url": "mailto:avellino@voltitalia.org",
+          "lead_url": "mailto:michele.manfredonia@volteuropa.org", 
           "facebook_url": "https://www.facebook.com/groups/voltavellino/",
           "facebook_group_url": "https://www.facebook.com/Volt-Avellino-307327260132010/",
           "position": [40.9141958,14.7888764],
           "i18n": "Avellino, Italy"
       },
       {
-          "city_lead_mail": "mailto:michele.cagnini@volteuropa.org",
-          "city_mail": "",
+          "city_lead_url": "mailto:michele.cagnini@volteuropa.org",
+          "contact_url": "",
           "position": [43.4640246, 11.8604618783394],
           "i18n": "Arezzo, Italy"
       },
@@ -1289,83 +1188,83 @@
           "i18n": "Asti, Italy"
       },
       {
-          "city_mail": "mailto:ravenna@voltitalia.org",
-          "lead_mail": "mailto:federico.ferraro@volteuropa.org",
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
           "facebook_group_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
           "facebook_url": "https://www.facebook.com/groups/voltravenna/",
           "position": [44.4161484,11.9765495],
           "i18n": "Bagnacavallo, Italy"
       },
       {
-          "city_mail": "mailto:ravenna@voltitalia.org",
-          "lead_mail": "mailto:federico.ferraro@volteuropa.org",
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
           "facebook_group_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
           "facebook_url": "https://www.facebook.com/groups/voltravenna/",
           "position": [44.3891687, 11.8264514],
           "i18n": "Bagnara di Romagna, Italy"
       },
       {
-          "city_mail": "mailto:bari@voltitalia.org",
+          "contact_url": "mailto:bari@voltitalia.org",
           "position": [41.1257843, 16.8620293],
           "i18n": "Bari, Italy"
       },
       {
-          "city_mail": "benevento@voltitalia.org",
-          "lead_mail": "mailto:michele.manfredonia@volteuropa.org",
+          "contact_url": "benevento@voltitalia.org",
+          "lead_url": "mailto:michele.manfredonia@volteuropa.org",
           "facebook_url": "https://www.facebook.com/groups/voltbenevento/",
           "facebook_group_url": "https://www.facebook.com/Volt-Benevento-285569712139823/",
           "position": [41.1295587, 14.7824639],
           "i18n": "Benevento, Italy"
       },
       {
-          "city_mail": "mailto:bergamo@voltitalia.org",
-          "lead_mail": "mailto:umberto.bertonelli@volteuropa.org",
+          "contact_url": "mailto:bergamo@voltitalia.org",
+          "lead_url": "mailto:umberto.bertonelli@volteuropa.org",
           "facebook_url": "https://www.facebook.com/groups/voltbergamo/",
           "position": [45.6944947, 9.6698727],
           "i18n": "Bergamo, Italy"
       },
       {
-          "city_mail": "bologna@voltitalia.org/",
-          "lead_mail": "mailto:vito.fodera@volteuropa.org",
+          "contact_url": "bologna@voltitalia.org/",
+          "lead_url": "mailto:vito.fodera@volteuropa.org",
           "facebook_url": "https://www.facebook.com/VoltBologna/",
           "position": [44.4936714,11.3430347],
           "i18n": "Bologna, Italy"
       },
       {
-          "city_mail": "mailto:bolzano@voltitalia.org",
-          "lead_mail": "mailto:andreagerards@yahoo.de",
+          "contact_url": "mailto:bolzano@voltitalia.org",
+          "lead_url": "mailto:andreagerards@yahoo.de",
           "facebook_url": "https://www.facebook.com/VoltBolzano/",
           "position": [46.4981125,11.3547801],
           "i18n": "Bolzano, Italy"
       },
       {
-          "lead_mail": "mailto:diego.gozzoli@volteuropa.org",
+          "lead_url": "mailto:diego.gozzoli@volteuropa.org",
           "position": [45.5398022,10.2200214],
           "i18n": "Brescia, Italy"
       },
       {
-          "lead_mail": "mailto:alessio.zuddas@volteuropa.org",
+          "lead_url": "mailto:alessio.zuddas@volteuropa.org",
           "position": [39.2169525, 9.1128513],
           "i18n": "Cagliari, Italy"
       },
       {
-          "city_mail": "mailto:caserta@voltitalia.org",
-          "lead_mail": "mailto:michele.manfredonia@volteuropa.org",
+          "contact_url": "mailto:caserta@voltitalia.org",
+          "lead_url": "mailto:michele.manfredonia@volteuropa.org",
           "facebook_group_url": "https://www.facebook.com/groups/voltcaserta/",
           "facebook_url": "https://www.facebook.com/voltcaserta/",
           "position": [41.0820827,14.334708],
           "i18n": "Caserta, Italy"
       },
       {
-          "city_mail": "mailto:catania@voltitalia.org",
-          "lead_mail": "mailto:luigi.coccimiglio@volteuropa.org,flavio.fuca@volteuropa.org",
+          "contact_url": "mailto:catania@voltitalia.org",
+          "lead_url": "mailto:luigi.coccimiglio@volteuropa.org,flavio.fuca@volteuropa.org",
           "facebook_group_url": "https://www.facebook.com/groups/voltcatania/",
           "position": [37.5022355,15.08738],
           "i18n": "Catania, Italy"
       },
       {
-          "city_mail": "mailto:chieri@voltitalia.org",
-          "lead_mail": "mailto:edoardo.vassallo@volteuropa.org",
+          "contact_url": "mailto:chieri@voltitalia.org",
+          "lead_url": "mailto:edoardo.vassallo@volteuropa.org",
           "position": [45.0138842, 7.8223544],
           "i18n": "Chieri, Italy"
       },
@@ -1378,40 +1277,40 @@
           "i18n": "Cuneo, Italy"
       },
       {
-          "city_mail": "mailto:ravenna@voltitalia.org",
-          "lead_mail": "mailto:federico.ferraro@volteuropa.org",
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
           "facebook_group_url": "https://www.facebook.com/groups/voltravenna/",
           "position": [44.2855555,11.8832055],
           "i18n": "Faenza, Italy"
       },
       {
-          "city_mail": "mailto:firenze@voltitalia.org",
+          "contact_url": "mailto:firenze@voltitalia.org",
           "facebook_group_url": "https://www.facebook.com/groups/voltfirenze",
           "position": [43.7698712,11.2555757],
           "i18n": "Firenze, Italy"
       },
       {
-          "lead_mail": "mailto:francesco.marino@volteuropa.org, gianluca.damico@volteuropa.org",
+          "lead_url": "mailto:francesco.marino@volteuropa.org, gianluca.damico@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Volt-Forl%C3%AC-368868783692846/",
           "facebook_group_url": "https://www.facebook.com/groups/voltforli/",
           "position": [44.2226017, 12.0409384],
           "i18n": "Forlì, Italy"
       },
       {
-          "city_mail": "mailto:genova@voltitalia.org",
+          "contact_url": "mailto:genova@voltitalia.org",
           "facebook_url": "https://www.facebook.com/voltgenova/",
           "facebook_group_url": "https://www.facebook.com/groups/voltgenovagroup/",
           "position": [44.40726, 8.9338624],
           "i18n": "Genova, Italy"
       },
       {
-          "lead_mail": "mailto:tommaso.ventimiglia@volteuropa.org",
+          "lead_url": "mailto:tommaso.ventimiglia@volteuropa.org",
           "position": [43.8862958,8.0267106],
           "i18n": "Imperia, Italy"
       },
       {
-          "lead_mail": "mailto:tommaso.ventimiglia@volteuropa.org",
+          "lead_url": "mailto:tommaso.ventimiglia@volteuropa.org",
           "position": [44.107033,9.8282255],
           "i18n": "La Spezia, Italy"
       },
@@ -1420,13 +1319,13 @@
           "i18n": "Lecce, Italy"
       },
       {
-          "lead_mail": "mailto:michele.barsanti@volteuropa.org,giuseppe.fusco@volteuropa.org",
+          "lead_url": "mailto:michele.barsanti@volteuropa.org,giuseppe.fusco@volteuropa.org",
           "position": [43.8428381,10.502876],
           "i18n": "Lucca, Italy"
       },
       {
-          "city_mail": "mailto:ravenna@voltitalia.org",
-          "lead_mail": "mailto:federico.ferraro@volteuropa.org",
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
           "facebook_group_url": "https://www.facebook.com/groups/voltravenna/",
           "position": [44.4188782,11.9082311],
@@ -1437,17 +1336,17 @@
           "i18n": "Massa e Cozzile, Italy"
       },
       {
-          "lead_mail": "mailto:messina@voltitalia.org, alfredo.mangano@volteuropa.org",
+          "lead_url": "mailto:messina@voltitalia.org, alfredo.mangano@volteuropa.org",
           "position": [38.1937571,15.5542082],
           "i18n": "Messina, Italy"
       },
       {
-          "city_mail": "mailto:milano@voltitalia.org",
+          "contact_url": "mailto:milano@voltitalia.org",
           "position": [45.4667971,9.1904984],
           "i18n": "Milano, Italy"
       },
       {
-          "city_mail": "modena@voltitalia.org, alessandro.lima@volteuropa.org",
+          "contact_url": "modena@voltitalia.org, alessandro.lima@volteuropa.org",
           "facebook_url": "https://www.facebook.com/VoltModena/",
           "facebook_group_url": "https://www.facebook.com/groups/voltmodena/",
           "position": [44.6458885,10.9255707],
@@ -1458,8 +1357,8 @@
           "i18n": "Montecatini Terme, Italy"
       },
       {
-          "city_mail": "mailto:napoli@voltitalia.org",
-          "lead_mail": "mailto:serena.mottola@volteuropa.org",
+          "contact_url": "mailto:napoli@voltitalia.org",
+          "lead_url": "mailto:serena.mottola@volteuropa.org",
           "facebook_group_url": "https://www.facebook.com/groups/voltnapoli/",
           "facebook_url": "https://www.facebook.com/Volt-Napoli-342825233217641/",
           "position": [40.8359336,14.2487826],
@@ -1470,13 +1369,13 @@
           "i18n": "Noci, Italy"
       },
       {
-          "city_mail": "mailto:noviligure@voltitalia.org",
+          "contact_url": "mailto:noviligure@voltitalia.org",
           "position": [44.76085,8.789551],
           "i18n": "Novi Ligure, Italy"
       },
       {
-          "city_mail": "mailto:padova@voltitalia.org",
-          "lead_mail": "mailto:alessandro.pace@volteuropa.org",
+          "contact_url": "mailto:padova@voltitalia.org",
+          "lead_url": "mailto:alessandro.pace@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Voltpadova/",
           "facebook_group_url": "https://www.facebook.com/groups/voltpadova/",
           "position": [45.4077172,11.8734455],
@@ -1487,80 +1386,80 @@
           "i18n": "Palermo, Italy"
       },
       {
-          "lead_mail": "mailto:matteo.panizzi@volteuropa.org,giorgio.ippolito@volteuropa.org",
+          "lead_url": "mailto:matteo.panizzi@volteuropa.org,giorgio.ippolito@volteuropa.org",
           "facebook_url": "https://www.facebook.com/VoltParma/",
           "position": [44.8013678,10.3280833],
           "i18n": "Parma, Italy"
       },
       {
-          "city_mail": "mailto:pisa@voltitalia.org",
-          "lead_mail": "mailto:milene.calvetti@volteuropa.org, clio.gakis@volteuropa.org",
+          "contact_url": "mailto:pisa@voltitalia.org",
+          "lead_url": "mailto:milene.calvetti@volteuropa.org, clio.gakis@volteuropa.org",
           "facebook_url": "https://www.facebook.com/VoltPisa/",
           "position": [43.7159395,10.4018624],
           "i18n": "Pisa, Italy"
       },
       {
-          "city_mail": "mailto:potenza@voltitalia.org",
+          "contact_url": "mailto:potenza@voltitalia.org",
           "position": [40.6384046,15.8022077],
           "i18n": "Potenza, Italy"
       },
       {
-          "city_mail": "mailto:firenze@voltitalia.org",
+          "contact_url": "mailto:firenze@voltitalia.org",
           "position": [43.880598,11.0969262],
           "i18n": "Prato, Italy"
       },
       {
-          "city_mail": "mailto:ravenna@voltitalia.org",
-          "lead_mail": "mailto:federico.ferraro@volteuropa.org",
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
           "facebook_group_url": "https://www.facebook.com/groups/voltravenna/",
           "position": [44.4161414,12.2017617],
           "i18n": "Ravenna, Italy"
       },
       {
-          "lead_mail": "mailto:irene.amoroso@volteuropa.org",
+          "lead_url": "mailto:irene.amoroso@volteuropa.org",
           "facebook_url": "https://www.facebook.com/voltreggiocalabria/",
           "position": [38.1035389,15.6397556],
           "i18n": "Reggio Calabria, Italy"
       },
       {
-          "lead_mail": "mailto:cinzia.tegoni@volteuropa.org",
+          "lead_url": "mailto:cinzia.tegoni@volteuropa.org",
           "position": [44.6978446,10.6304958],
           "i18n": "Reggio Emilia, Italy"
       },
       {
-          "city_mail": "roma@voltitalia.org",
-          "lead_mail": "mailto:guido.silvestri@volteuropa.org, francesco.tombesi@volteuropa.org",
+          "contact_url": "roma@voltitalia.org",
+          "lead_url": "mailto:guido.silvestri@volteuropa.org, francesco.tombesi@volteuropa.org",
           "facebook_group_url":"https://www.facebook.com/groups/voltroma/",
           "facebook_url": "https://www.facebook.com/Volt-Roma-1481705691966848/",
           "position": [41.894802,12.4853384],
           "i18n": "Roma, Italy"
       },
       {
-          "city_mail": "mailto:salerno@voltitalia.org",
-          "lead_mail": "mailto:antonio.buonadonna@volteuropa.org",
+          "contact_url": "mailto:salerno@voltitalia.org",
+          "lead_url": "mailto:antonio.buonadonna@volteuropa.org",
           "facebook_group_url": "https://www.facebook.com/groups/voltsalerno/",
           "facebook_url": "https://www.facebook.com/voltsalerno/",
           "position": [40.6801561,14.7596754],
           "i18n": "Salerno, Italy"
       },
       {
-          "city_mail": "mailto:firenze@voltitalia.org",
+          "contact_url": "mailto:firenze@voltitalia.org",
           "position": [43.6569596,11.1856679],
           "i18n": "San Casciano in Val di Pesa, Italy"
       },
       {
-          "lead_mai.": "mailto:tommaso.ventimiglia@volteuropa.org",
+          "lead_url.": "mailto:tommaso.ventimiglia@volteuropa.org",
           "position": [43.8198253,7.7748827],
           "i18n": "Sanremo, Italy"
       },
       {
-          "city_mail": "mailto:firenze@voltitalia.org",
+          "contact_url": "mailto:firenze@voltitalia.org",
           "position": [43.7567104,11.1847619],
           "i18n": "Scandicci (FI), Italy"
       },
       {
-          "city_mail": "mailto:firenze@voltitalia.org",
+          "contact_url": "mailto:firenze@voltitalia.org",
           "position": [43.831721,11.1992239],
           "i18n": "Sesto Fiorentino, Italy"
       },
@@ -1569,7 +1468,7 @@
           "i18n": "Siena, Italy"
       },
       {
-          "lead_mail": "mailto:sarah.decaro@volteuropa.org",
+          "lead_url": "mailto:sarah.decaro@volteuropa.org",
           "position": [37.0646139,15.2907196],
           "i18n": "Siracusa, Italy"
       },
@@ -1578,13 +1477,13 @@
           "i18n": "Taranto, Italy"
       },
       {
-          "city_mail": "mailto:torino@voltitalia.org",
+          "contact_url": "mailto:torino@voltitalia.org",
           "position": [45.0677551,7.6824892],
           "i18n": "Torino, Italy"
       },
       {
-          "city_mail": "mailto:trento@voltitalia.org",
-          "lead_mail": "mailto:mattia.simone@volteuropa.org",
+          "contact_url": "mailto:trento@voltitalia.org",
+          "lead_url": "mailto:mattia.simone@volteuropa.org",
           "facebook_url": "https://www.facebook.com/VoltTrento/",
           "position": [46.0664228,11.1257601],
           "i18n": "Trento, Italy"
@@ -1595,13 +1494,13 @@
           "i18n": "Treviso, Italy"
       },
       {
-          "lead_mail": "mailto:felice.dipaolo@volteuropa.org",
+          "lead_url": "mailto:felice.dipaolo@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Voltudine/",
           "position": [46.0634632,13.2358377],
           "i18n": "Udine, Italy"
       },
       {
-          "lead_mail": "mailto:emiliano.leone@volteuropa.org",
+          "lead_url": "mailto:emiliano.leone@volteuropa.org",
           "facebook_url": "https://www.facebook.com/VoltVarese/",
           "facebook_group_url": "https://www.facebook.com/groups/voltvarese/",
           "position": [45.8175359,8.8263438],
@@ -1623,7 +1522,7 @@
           "i18n": "Vicenza, Italy"
       },
       {
-          "lead_mail": "mailto:chiara.pietrucci@volteuropa.org",
+          "lead_url": "mailto:chiara.pietrucci@volteuropa.org",
           "position": [43.7148603,13.217754],
           "i18n": "Senigallia, Italy"
       },
@@ -1648,12 +1547,12 @@
           "i18n": "Ascoli Piceno, Italy"
       },
       {
-          "lead_mail": "mailto:mauro.mazzieri@volteuropa.org",
+          "lead_url": "mailto:mauro.mazzieri@volteuropa.org",
           "position": [43.5219801,13.2443764],
           "i18n": "Jesi, Italy"
       },
       {
-          "lead_mail": "mailto:mauro.mazzieri@volteuropa.org",
+          "lead_url": "mailto:mauro.mazzieri@volteuropa.org",
           "position": [43.602662,13.324571],
           "i18n": "Chiaravalle (AN), Italy"
       },
@@ -1662,98 +1561,98 @@
           "i18n": "Pistoia, Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.752172,11.3199949],
           "i18n": "Bagno a Ripoli (FI), Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.6853454,11.2546637],
           "i18n": "Impruneta (FI), Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.5824597,11.3168731],
           "i18n": "Greve in Chianti (FI), Italy"
       },
       {
-          "lead_mail": "mailto:martino.traxler@volteuropa.org",
+          "lead_url": "mailto:martino.traxler@volteuropa.org",
           "position": [43.5507411,10.3091456],
           "i18n": "Livorno, Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.8391003,10.7193421],
           "i18n": "Chiesina Uzzanese (PT), Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.8409347,10.7475475],
           "i18n": "Ponte Buggianese (PT), Italy"
       },
       {
-          "lead_mail": "mailto:anxhelo.qeveri@volteuropa.org",
+          "lead_url": "mailto:anxhelo.qeveri@volteuropa.org",
           "position": [45.8553764,9.389605],
           "i18n": "Lecco, Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.8150413,10.6743961],
           "i18n": "Altopascio (LU), Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.8216342,11.1366776],
           "i18n": "Campi Bisenzio (FI), Italy"
       },
       {
-          "lead_mail": "mailto:ludovica.perazzotti@volteuropa.org",
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
           "position": [43.4754178,10.7282838],
           "i18n": "Lajatico (PI), Italy"
       },
       {
-          "lead_mail": "mailto:daniele.latella@volteuropa.org",
+          "lead_url": "mailto:daniele.latella@volteuropa.org",
           "position": [44.89666,8.8641282],
           "i18n": "Tortona, Italy"
       },
       {
-          "lead_mail": "mailto:daniele.latella@volteuropa.org",
+          "lead_url": "mailto:daniele.latella@volteuropa.org",
           "position": [45.0140247,8.6458214],
           "i18n": "Valenza, Italy"
       },
       {
-          "lead_mail": "mailto:matteo.pastore@volteuropa.org",
+          "lead_url": "mailto:matteo.pastore@volteuropa.org",
           "facebook_url": "https://www.facebook.com/voltTrieste",
           "facebook_group_url": "https://www.facebook.com/groups/volttrieste/",
           "position": [45.6500335,13.7706559],
           "i18n": "Trieste, Italy"
       },
       {
-          "lead_mail": "mailto:salvatore.trotta@volteuropa.org",
+          "lead_url": "mailto:salvatore.trotta@volteuropa.org",
           "facebook_group_url":"https://www.facebook.com/groups/voltpavia/",
           "position": [45.1860043,9.1546375],
           "i18n": "Pavia, Italy"
       },
       {
-          "lead_mail": "mailto:simone.corbani@volteuropa.org",
+          "lead_url": "mailto:simone.corbani@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Voltmassacarrara/",
           "position": [44.0359323,10.1395519],
           "i18n": "Massa, Italy"
       },
       {
-          "lead_mail": "mailto:simone.corbani@volteuropa.org",
+          "lead_url": "mailto:simone.corbani@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Voltmassacarrara/",
           "position": [44.0791804,10.1023532],
           "i18n": "Carrara, Italy"
       },
       {
-          "lead_mail": "mailto:simone.corbani@volteuropa.org",
+          "lead_url": "mailto:simone.corbani@volteuropa.org",
           "facebook_url": "https://www.facebook.com/Voltmassacarrara/",
           "position": [44.214548,9.967787],
           "i18n": "Aulla, Italy"
       },
       {
-          "lead_mail": "mailto:michele.eleodori@volteuropa.org",
+          "lead_url": "mailto:michele.eleodori@volteuropa.org",
           "facebook_url": "https://m.facebook.com/VoltPg",
           "position": [43.1119613,12.3890104],
           "i18n": "Perugia, Italy"
@@ -1764,14 +1663,6 @@
     "position": [56.8796, 24.6032],
     "zoom": 5,
     "i18n": "Latvia",
-    "facebook_url": "",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [56.9496,24.1052],
@@ -1784,13 +1675,6 @@
     "zoom": 5,
     "i18n": "Lithuania",
     "facebook_url": "https://www.facebook.com/VoltLatvia/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [54.6871555,25.2796514],
@@ -1805,10 +1689,6 @@
     "facebook_url": "https://www.facebook.com/VoltLuxembourg",
     "twitter_url": "https://twitter.com/voltluxembourg",
     "instagram_url": "https://www.instagram.com/voltluxembourg",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltluxembourg.org/",
     "city_list": [
       {
@@ -1822,13 +1702,6 @@
     "zoom": 5,
     "i18n": "Malta",
     "facebook_url": "https://www.facebook.com/VoltMalta/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [35.8957,14.4534],
@@ -1844,8 +1717,6 @@
     "twitter_url": "https://twitter.com/VoltNederland/",
     "instagram_url": "https://www.instagram.com/voltnederland",
     "youtube_url": "https://www.youtube.com/channel/UCyczP3mO2CDr9k9JbBEB8vA?view_as=subscriber",
-    "linkedin_url": "",
-    "reddit_url": "",
     "whatsapp_url": "https://wa.me/31683415616",
     "web_url": "https://www.voltnederland.org/",
     "city_list": [
@@ -1940,14 +1811,6 @@
     "position": [60.4720, 8.4689],
     "zoom": 5,
     "i18n": "Norway",
-    "facebook_url": "",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [59.913868,10.752245],
@@ -1960,13 +1823,6 @@
     "zoom": 5,
     "i18n": "Poland",
     "facebook_url": "https://www.facebook.com/Volt-Poland/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [    
       {
           "position": [50.06465009999999,19.9449799],
@@ -1983,13 +1839,6 @@
     "zoom": 5,
     "i18n": "Portugal",
     "facebook_url": "https://www.facebook.com/VoltPortugal/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [38.7222524,-9.1393366],
@@ -2002,13 +1851,6 @@
     "zoom": 5,
     "i18n": "Romania",
     "facebook_url": "https://www.facebook.com/VoltRomania/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [
       {
           "position": [44.4267674,26.1025384],
@@ -2025,13 +1867,6 @@
     "zoom": 5,
     "i18n": "Slovakia",
     "facebook_url": "https://www.facebook.com/VoltSlovakia/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": []
   },
   "si": {
@@ -2039,13 +1874,6 @@
     "zoom": 5,
     "i18n": "Slovenia",
     "facebook_url": "https://www.facebook.com/VoltSlovenia/",
-    "twitter_url": "",
-    "instagram_url": "",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
-    "web_url": "",
     "city_list": [    
       {
           "position": [46.0569465,14.5057515],
@@ -2060,10 +1888,6 @@
     "facebook_url": "https://www.facebook.com/VoltSweden/",
     "twitter_url": "https://www.twitter.com/voltsverige",
     "instagram_url": "https://www.instagram.com/voltsverige",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltsverige.org/",
     "city_list": [
       {
@@ -2083,10 +1907,6 @@
     "facebook_url": "https://www.facebook.com/VoltUKingdom/",
     "twitter_url": "https://twitter.com/UkVolt?lang=en-gb",
     "instagram_url": "https://www.instagram.com/voltukofficial/",
-    "youtube_url": "",
-    "linkedin_url": "",
-    "reddit_url": "",
-    "whatsapp_url": "",
     "web_url": "https://www.voltuk.org/",
     "city_list": [
       {
@@ -2128,3 +1948,4 @@
     ]
   }
 }
+
