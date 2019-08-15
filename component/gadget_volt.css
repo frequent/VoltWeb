@@ -921,6 +921,7 @@
     right: 0;
     margin-top: -2px;
     opacity: .1;
+    pointer-events: none;
   }
   .volt-footer__content-menu .volt-navbar__item:last-child:before {
     border-bottom: 1px solid #191923;
@@ -1064,7 +1065,7 @@
   font-family: 'Ubuntu';
   color: #612095;
 }
-.volt-layout__content section {
+.volt-layout__content > section:not(.volt-layout__override) {
   background-color: #FCFCFC;
   margin-top: 5em;
   margin-bottom: 5em;
@@ -1281,6 +1282,170 @@
     margin-top: -1em;
   }
 }
+
+/* ============================ Forms ====================================== */
+.volt-form {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.volt-form:before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 30em;
+  background-color: rgba(97, 32, 149, .05);
+  -webkit-transform: rotate(-21deg);
+  -moz-transform: rotate(-21deg);
+  -ms-transform: rotate(-21deg);
+  -o-transform: rotate(-21deg);
+  transform: rotate(-21deg);
+  pointer-events: none;
+  left: 0;
+  right: 0;
+}
+.volt-form .volt-form__section {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  padding: 0;
+}
+.volt-form .volt-form__section-fullscreen {
+  display: block;
+  width: 100%;
+}
+@media (max-width: 54em) {
+  .volt-form .volt-form__section {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .volt-form .volt-form__section .mdl-textfield {
+    vertical-align: top;
+  }
+}
+/* default all gray */
+.volt-form .mdl-textfield__label {
+  color: rgba(0,0,0,.26);
+}
+.volt-form .mdl-textfield.is-invalid .mdl-textfield__input:required,
+.volt-form .mdl-textfield.is-invalid .mdl-textfield__input {
+  border-color: rgba(0,0,0,.26);
+}
+.volt-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__input:required + .mdl-textfield__label,
+.volt-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__input + .mdl-textfield__label,
+.volt-form .mdl-textfield--floating-label.is-focused .mdl.textfield__input + .mdl-textfield__label {
+  color: rgba(0,0,0,.26);
+}
+
+/* focus border animation color */
+.volt-form .mdl-textfield__input .mdl-textfield__label:after,
+.volt-form .mdl-textfield.is-invalid .mdl-textfield__label:after,
+.volt-form .mdl-textfield--floating-label.is-focused  .mdl-textfield__label:after{
+  background-color: #612095 !important;
+  overflow: hidden;
+}
+.volt-form .mdl-textfield--floating-label.is-focused  .mdl-textfield__label, 
+.volt-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, 
+.volt-form .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+  color: #612095;
+}
+
+.volt-form__text .mdl-checkbox__label volt-form-link {
+  font-size: 1.25em;
+}
+.volt-form__text .mdl-checkbox__label {
+  font-size: 1.25em;
+}
+.volt-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__input:required + .mdl-textfield__label {
+  padding-left: .75em;
+}
+.volt-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__input:required + .mdl-textfield__label:before {
+  content: "*";
+  font-family: Ubuntu;
+  font-size: 1.2em;
+  position: absolute;
+  width: 10px;
+  height: 1.1em;
+  color: currentColor;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  background: 0 none !important
+}
+.volt-form .mdl-checkbox {
+  text-align: left;
+}
+.volt-form .mdl-checkbox .volt-form__text,
+.volt-form .mdl-checkbox .volt-form__link {
+  color: rgba(0,0,0,.26);
+  font-size: 1.25em;
+}
+.volt-form .mdl-checkbox.is-checked .volt-form__text,
+.volt-form .mdl-checkbox.is-checked .volt-form__link {
+  color: #612095;
+}
+.volt-form .mdl-checkbox.is-checked .volt-form__text + .volt-form__link {
+  padding: 0 .5em;
+}
+/* ripple effect */
+.volt-form .mdl-checkbox__ripple-container .mdl-ripple {
+  background: #612095;
+}
+/* outline */
+.volt-form .mdl-checkbox .mdl-checkbox__box-outline {
+  border: 2px solid rgba(0,0,0,.26);
+}
+/* checkbox border */
+.volt-form .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+  border: 2px solid #612095;
+}
+/* checked checkbox background, note check is white base64 svg, can't change */
+.volt-form .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
+  background-color: #612095;
+}
+
+.volt-form .mdl-textfield__input,
+.volt-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+  color: #612095;
+}
+.volt-form .mdl-textfield--floating-label .mdl-textfield__input + .mdl-textfield__label {
+  font-size: 1.15em;
+}
+.mdl-checkbox.is-upgraded .mdl-checkbox__input {
+  -webkit-appearance: checkbox !important;
+  width: auto;
+  height: auto;
+  left: 2px;
+  top: 5px;
+}
+.volt-form__contact .volt-form__submit-button {
+  text-decoration: none;
+  margin-top: 3em;
+  text-transform: none;
+  height: 4em;
+  line-height: 1.5em;
+  padding: 0 4em;
+  font-family: Ubuntu;
+  color: #612095;
+}
+.volt-form__contact .volt-form__submit-button .volt-submit__action {
+  font-weight: bold;
+  font-size: 1.25em;
+  display: block;
+}
+.volt-form__contact .volt-form__submit-button .volt-submit__hint {
+  font-size: .9em;
+}
+@media only screen and (max-width: 32em) {
+  .volt-checkbox-expander-l {
+    height: 4em;
+  }
+  .volt-checkbox-expander-xl {
+    height: 6em;
+  }
+}
+
 /* ============================ Accordeon =================================== */
 /* thx: https://alligator.io/css/collapsible/ */
 .volt-accordeon .volt-accordeon__header {

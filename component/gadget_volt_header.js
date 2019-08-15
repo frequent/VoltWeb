@@ -212,11 +212,11 @@
               "facebook_group_url": city.facebook_group_url,
               "facebook_group_disabled": city.facebook_group_url ? LINK_DISABLED : STR
             }) : STR,
-            "city_mail": city.city_mail ? getTemplate(KLASS, "city_mail_template").supplant({
-              "city_mail": city.city_mail
+            "contact_url": city.contact_url ? getTemplate(KLASS, "city_mail_template").supplant({
+              "contact_url": city.contact_url
             }) : STR,
-            "lead_mail": city.lead_mail ? getTemplate(KLASS, "lead_mail_template").supplant({
-              "lead_mail": city.lead_mail
+            "lead_url": city.lead_url ? getTemplate(KLASS, "lead_mail_template").supplant({
+              "lead_url": city.lead_url
             }) : STR,
             "twitter_url": city.twitter_url || STR,
             "twitter_disabled": city.twitter_url === undefined ? LINK_DISABLED : STR,

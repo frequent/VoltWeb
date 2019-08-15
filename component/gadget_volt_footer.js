@@ -1,6 +1,6 @@
 /*jslint maxlen: 80, indent: 2 */
-/*global window, rJS, RSVP */
-(function (window, rJS, RSVP) {
+/*global window, rJS, RSVP, Object */
+(function (window, rJS, RSVP, Object) {
   "use strict";
 
   /////////////////////////////
@@ -12,6 +12,9 @@
   var NAME ="name";
   var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
   var KLASS = rJS(window);
+  var HREF = "href";
+  var URL = "_url";
+  var STR = "";
 
   /////////////////////////////
   // methods
@@ -65,8 +68,14 @@
     // ready
     /////////////////////////////
     .ready(function (gadget) {
+      var el = gadget.element;
       gadget.property_dict = {
-        "language_select": getElem(gadget.element, ".volt-select__language")
+        "language_select": getElem(el, ".volt-select__language"),
+        "scm_dict": {
+          "facebook": getElem(el, ".volt-scm__facebook"),
+          "twitter": getElem(el, ".volt-scm__twitter"),
+          "instagram": getElem(el, ".volt-scm__instagram")
+        }
       };
     })
 
@@ -75,6 +84,7 @@
     /////////////////////////////
     .declareAcquiredMethod("remoteTranslate", "remoteTranslate")
     .declareAcquiredMethod("changeLanguage", "changeLanguage")
+    .declareAcquiredMethod("getSocialMediaSource", "getSocialMediaSource")
 
     /////////////////////////////
     // published methods
@@ -89,17 +99,35 @@
       var gadget = this;
       var dict = gadget.property_dict;
       mergeDict(dict, my_option_dict);
-      setDom(dict.language_select, dict.available_language_list
-        .map(function (lang) {
-          return getTemplate(KLASS, "language_select_template").supplant({
-            "language": lang.id,
-            "language_i18n": "footer-" + lang.i18n,
-            "default_text": lang.text
+      return gadget.getDestinationDict(dict.scope)
+        .push(function (my_dict) {
+          var social_media_element_dict = dict.scm_dict;
+          Object.keys(social_media_element_dict).map(function (key) {
+            social_media_element_dict[key].setAttribute(HREF, my_dict[key+URL] || STR);
           });
-        }).join(""), true
-      );
-      dict.language_select.value = dict.selected_language;
-      return gadget.remoteTranslate(dict.ui_dict, gadget.element);
+          setDom(dict.language_select, dict.available_language_list
+            .map(function (lang) {
+              return getTemplate(KLASS, "language_select_template").supplant({
+                "language": lang.id,
+                "language_i18n": "footer-" + lang.i18n,
+                "default_text": lang.text
+              });
+            }).join(""), true
+          );
+          dict.language_select.value = dict.selected_language;
+          return gadget.remoteTranslate(dict.ui_dict, gadget.element);
+        });
+    })
+
+    .declareMethod("getDestinationDict", function (my_scope) {
+      var gadget = this;
+      return gadget.getSocialMediaSource(my_scope)
+        .push(function (my_dict) {
+          if (my_dict === undefined) {
+            return gadget.getDestinationDict(crop(my_scope));
+          }
+          return my_dict;
+        });
     })
 
     /////////////////////////////
@@ -121,4 +149,4 @@
     }, false, true);
 
 
-}(window, rJS, RSVP));
+}(window, rJS, RSVP, Object));

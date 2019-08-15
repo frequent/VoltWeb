@@ -20,7 +20,7 @@
   var UI = "ui";
   var SETTINGS = "settings";
   var DOCUMENT = window.document;
-  var LOCATION = document.location;
+  var LOCATION = DOCUMENT.location;
   var FALLBACK_PATH = "https://raw.githubusercontent.com/VoltEuropa/VoltWeb/master/ui/";
   var DOC = "/";
   var ESC = "Esc";
@@ -149,6 +149,23 @@
       return this.translateDom(my_payload);
     })
 
+    .allowPublicAcquisition("getSocialMediaSource", function () {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var scope_list = dict.scope.split("/");
+      var city_list;
+      switch (scope_list.length) {
+        case 1:
+          return dict.marker_dict[scope_list[0]];
+        case 2:
+          return dict.marker_dict[scope_list[1]];
+        case 3:
+          return dict.marker_dict[scope_list[1]].city_list.filter(function (city) {
+            return city.i18n.toLowerCase().indexOf(scope_list[2]) === 0; 
+          })[0];
+      }
+    })
+
     .allowPublicAcquisition("changeLanguage", function (my_event) {
       return this.resetApplication(my_event);
     })
@@ -255,7 +272,7 @@
         })
         .push(function (response_list) {
           var target = response_list[0];
-          return document.location.assign(
+          return LOCATION.assign(
             "../" + language + "/" + (target ? dict.ui_dict[target] : STR)
           );
         });
