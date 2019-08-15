@@ -97,6 +97,7 @@
   "card-Share": "Share",
   "card-Add to Calendar": "Add to Calendar",
   "card-Load more": "Load more",
+  "contact-Contact": "Contact",
   "contact-First Name": "First Name",
   "contact-Last Name": "Last Name",
   "contact-Zip Code": "Zip Code",
@@ -107,5 +108,8 @@
   "contact-I have read and approved": "I have read and approved the",
   "contact-Data Privacy Notice": "Data Privacy Notice",
   "contact-Send": "Send !",
-  "contact-(opens your email editor)": "(opens your email editor)"
+  "contact-(opens your email editor)": "(opens your email editor)",
+  "contact-Colon": ": ",
+  "contact-Yes": "Yes",
+  "contact-No": "No"
 }
