@@ -1073,15 +1073,15 @@
   padding: 4em;
 }
 @media (max-width: 54em) {
-  .volt-layout__content section {
+  .volt-layout__content > section:not(.volt-layout__override) {
     padding: 2em;
   }
 }
 @media (max-width: 32em) {
-  .volt-layout__content section {
+  .volt-layout__content > section:not(.volt-layout__override) {
     margin-top: 2em;
     margin-bottom: 2em;
-    padding: 1em;
+    padding: 1em 0;
   }
 }
 .volt-layout__content a,
@@ -1108,11 +1108,11 @@
 }
 .volt-layout__content ul,
 .volt-layout__content div span {
-  font-size: 1.15em;
+  font-size: 1.25em;
 }
 .volt-layout__content ol {
   column-span: all;
-  font-size: 1.15em;
+  font-size: 1.25em;
 }
 .volt-layout__content li {
   padding: .5em;

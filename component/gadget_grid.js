@@ -322,7 +322,7 @@
           setDom(
             dict.item_container,
             response.data.rows.sort(function (a, b) {
-              return new Date(b.publication_date) - new Date(a.publication_date); 
+              return new Date(b.release_date) - new Date(a.release_date); 
             }).map(function (item) {
               var portal_type = item.event_type.toLowerCase();
               var title = item.content_dict[lang].title;
@@ -339,8 +339,7 @@
                 "event_handler": "volt-event__" + portal_type, 
                 "image": image,
                 "description": item.content_dict[lang][DESCRIPTION],
-                "start_date": setDate(new Date(item.start_date || item.publication_date)),
-                "publication_date": setDate(new Date(item.publication_date)),
+                "start_date": setDate(new Date(item.start_date || item.release_date)),
                 "event_action_list": setActionList(item, lang),
                 "call_to_action": setCallToAction(item, lang)
               });
