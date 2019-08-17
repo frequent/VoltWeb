@@ -23,7 +23,6 @@
   "start_date": "",
   "stop_date": "",
   "release_date": "2019-02-27 12:00:00 GMT+2",
-  "text_content": "",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
@@ -33,7 +32,7 @@
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "",
+        "document_url": "../../../../doc/FR-Lille.Publication.Avis.Mel.Plu2.pdf",
         "mime-type": "application/pdf"
       }
     }

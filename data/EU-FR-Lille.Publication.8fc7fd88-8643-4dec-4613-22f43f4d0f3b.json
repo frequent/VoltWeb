@@ -1,3 +1,4 @@
+
 {
   "type": "event",
   "event_type": "Publication",
@@ -23,7 +24,6 @@
   "start_date": "",
   "stop_date": "",
   "release_date": "2019-07-01 19:00:00 GMT+2",
-  "text_content": "",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
@@ -33,7 +33,7 @@
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "",
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Mobilite.pdf",
         "mime-type": "application/pdf"
       }
     }

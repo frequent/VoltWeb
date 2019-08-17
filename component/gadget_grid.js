@@ -104,6 +104,8 @@
         "location": getAddress(my_item["location"])
       });
     }
+
+    // this covers all other types of document
     return getTemplate(KLASS, PUBLICATION_ACTION).supplant({
       "description": my_item.content_dict[my_language].description,
       "url": getAbsolutePath(my_item.attachment_dict.document_dict[my_language].document_url)
@@ -252,7 +254,6 @@
         "position": gadget.state.current_position,
         "content": ""
       }];
-      console.log(response)
       return response;
     })
 

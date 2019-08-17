@@ -959,8 +959,8 @@
     font-weight: bold;
     text-align: center;
     color: #612095;
-    right: 3.5em;
-    bottom: 2.5em;
+    right: 3.25em;
+    bottom: 2em;
     font-size: 2em;
     line-height: 1em;
 }
@@ -1117,10 +1117,6 @@
 .volt-layout__content li {
   padding: .5em;
 }
-.volt-layout__content h1 + h2,
-.volt-layout__content hr + h2 {
-  column-span: all;
-}
 .volt-layout__content h2 {
   font-size: 1.75em;
   margin: .75em 0 .75em 0;
@@ -1136,7 +1132,6 @@
     width: 5em;
     display: block;
     margin: 0 auto;
-    margin-bottom: -1em;
 }
 .volt-layout__content > a {
   background-color: #612095;
@@ -1448,9 +1443,6 @@
 
 /* ============================ Accordeon =================================== */
 /* thx: https://alligator.io/css/collapsible/ */
-.volt-accordeon .volt-accordeon__header {
-  font-weight: bold;
-}
 .volt-toggle__input {
   display: none;
 }
@@ -1538,7 +1530,10 @@
   list-style: none;
   display: inline-block;
   vertical-align: bottom;
-  width: 32%;
+  width: 30%;
+}
+.volt-team__portrait-image {
+  width: 100%;
 }
 .volt-team__section .volt-team__section-header {
   position: static;
