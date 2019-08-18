@@ -647,6 +647,7 @@
     min-height: 125px;
   }
 }
+.volt-grid__no-records,
 .volt-search__action-button {
   border: rgba(0,0,0, 0.26);
   border-radius: .25em;

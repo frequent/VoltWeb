@@ -35,9 +35,9 @@
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {
-      "facebook": "",
-      "meetup": "",
-      "evensi": ""
+      "facebook": "https://www.facebook.com/events/364106297839795/",
+      "meetup": "https://www.meetup.com/politique-volt-europe-france-lille/events/264114370/",
+      "evensi": "https://www.evensi.fr/volt-lille-reunion-rentree-lecart/330481275"
     }
   }
 }

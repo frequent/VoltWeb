@@ -227,6 +227,7 @@
         "paginate": getElem(el, ".volt-search-more"),
         "dialog_full": getElem(el, ".volt-dialog__action-full"),
         "dialog_exit": getElem(el, ".volt-dialog__action-exit"),
+        "nill": getElem(el, ".volt-grid__no-records"),
 
         // lazy, fetch from indexeddb
         "event_dict": {}
@@ -350,6 +351,11 @@
             dict.paginate.classList.add(HIDDEN);
           } else {
             dict.paginate.classList.remove(HIDDEN);
+          }
+          if (response.data.total_rows === 0) {
+            dict.nill.classList.remove(HIDDEN);
+          } else {
+            dict.nill.classList.add(HIDDEN);
           }
           observeImage(dict, dict.item_container.querySelectorAll("img"));
           return RSVP.all([
