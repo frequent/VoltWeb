@@ -98,5 +98,16 @@
   "contact-(opens your email editor)": "(ouvre votre editor de courriel)",
   "contact-colon": " : ",
   "contact-Yes": "Oui",
-  "contact-No": "Non"
+  "contact-No": "Non",
+  "candidate-First Name": "Prénom",
+  "candidate-Last Name": "Nom",
+  "candidate-Zip Code": "Code Postal",
+  "candidate-Age": "Age",
+  "candidate-I wish to become a candidate": "Je souhaite être candidat à une position éligible.",
+  "candidate-I declare by my honor": "Je certifie sur l'honneur que l'ensemble des informations fournies sont exactes et être légalement à même d'être candidat aux municipales",
+  "candidate-Send": "Envoyer !",
+  "candidate-(opens your email editor)": "(ouvre votre editor de courriel)",
+  "candidate-Yes": "Oui",
+  "candidate-No": "Non",
+  "candidate-Colon": " : "
 }

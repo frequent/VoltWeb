@@ -98,5 +98,16 @@
   "contact-(opens your email editor)": "(opens your email editor)",
   "contact-Colon": ": ",
   "contact-Yes": "Yes",
-  "contact-No": "No"
+  "contact-No": "No",
+  "candidate-First Name": "First Name",
+  "candidate-Last Name": "Last Name",
+  "candidate-Zip Code": "Zip Code",
+  "candidate-Age": "Age",
+  "candidate-I wish to become a candidate": "I wish to become a candidate.",
+  "candidate-I declare by my honor": "I confirm by my honour that the provided informations are correct and that I'm eligible to stand as a candidate in the municipal elections.",
+  "candidate-Send": "Send !",
+  "candidate-(opens your email editor)": "(opens email editor)",
+  "candidate-Yes": "Yes",
+  "candidate-No": "No",
+  "candidate-Colon": ": "
 }
