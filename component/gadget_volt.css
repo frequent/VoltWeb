@@ -597,6 +597,7 @@
 .volt-dialog-action-form .fab {
   color: #612095;
 }
+.volt-content__button,
 .mdl-card__actions .volt-dialog__link {
   font-size: 1.1em;
   font-family: Ubuntu;
@@ -609,6 +610,16 @@
   border: 0 none;
   border-radius: .25em;
 }
+.volt-content__button {
+  margin-top: 0.5em;
+  margin-bottom: .25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 9em;
+}
+.volt-content__button,
 .volt-dialog-action-form .volt-dialog__link:hover {
   opacity: 1;
   color: #6c6c73;
@@ -1104,8 +1115,15 @@
   column-span: all;
   text-align: center;
 }
+div[data-gadget-url] {
+  column-span: all;
+}
 .volt-layout__content > div:not(.volt-layout__override) {
   margin: .5em 0;
+}
+.volt-layout__content ul {
+  margin-top: 0;
+  margin-bottom: .5em;
 }
 .volt-layout__content ul,
 .volt-layout__content div span {
@@ -1279,7 +1297,46 @@
   }
 }
 
-/* ============================ Forms ====================================== */
+/* ============================ Forms ======================================= */
+.volt-form__wrapper {
+  column-span: all;
+}
+.volt-form__wrapper .volt-content__button {
+  color: #fff;
+}
+.volt-form__wrapper h3:after,
+.volt-form__wrapper h3:before {
+  content: none;
+}
+.volt-form__field-sidebyside {
+  display: inline-block;
+  vertical-align: middle;
+}
+.volt-form__field-sidebyside:nth-child(1):nth-last-child(1) {
+  width: 100%;
+}
+.volt-form__field-sidebyside:first-child:nth-last-child(2),
+.volt-form__field-sidebyside:first-child:nth-last-child(2) ~  .volt-form__field-sidebyside{
+  width: 27.9%;
+}
+.volt-form__field-sidebyside:first-child:nth-last-child(3),
+.volt-form__field-sidebyside:first-child:nth-last-child(3) ~  .volt-form__field-sidebyside {
+  width: 18.5%;
+}
+.volt-form__field-sidebyside .volt-form___field-image {
+  width: 100%;
+}
+@media (max-width: 32em) {
+  .volt-form__field-sidebyside {
+    width: 100% !important;
+    display: block;
+  }
+  .volt-form__field-sidebyside .volt-form___field-image {
+      width: 50%;
+      margin-top: -1em;
+      margin-bottom: -1em;
+  }
+}
 .volt-form {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -1298,25 +1355,29 @@
   pointer-events: none;
   left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
-.volt-form .volt-form__section {
+.volt-form__section {
   display: inline-block;
   width: 49%;
   vertical-align: top;
   padding: 0;
 }
-.volt-form .volt-form__section-fullscreen {
+.volt-form__section-fullscreen {
   display: block;
   width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 @media (max-width: 54em) {
-  .volt-form .volt-form__section {
+  .volt-form__section {
     display: block;
     width: 100%;
     text-align: center;
     margin: 0 auto;
   }
-  .volt-form .volt-form__section .mdl-textfield {
+  .volt-form__section .mdl-textfield {
     vertical-align: top;
   }
 }
@@ -1415,7 +1476,7 @@
   left: 2px;
   top: 5px;
 }
-.volt-form__contact .volt-form__submit-button {
+.volt-form .volt-form__submit-button {
   text-decoration: none;
   margin-top: 3em;
   text-transform: none;
@@ -1425,12 +1486,12 @@
   font-family: Ubuntu;
   color: #612095;
 }
-.volt-form__contact .volt-form__submit-button .volt-submit__action {
+.volt-form .volt-form__submit-button .volt-submit__action {
   font-weight: bold;
   font-size: 1.25em;
   display: block;
 }
-.volt-form__contact .volt-form__submit-button .volt-submit__hint {
+.volt-form .volt-form__submit-button .volt-submit__hint {
   font-size: .9em;
 }
 @media only screen and (max-width: 32em) {

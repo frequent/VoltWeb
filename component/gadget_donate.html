@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Contact Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/renderjs.latest.js"></script>
+
+    <script src="gadget_donate.js"></script>
+
+  </head>
+  <body>
+    <div class="volt-donate__wrapper">
+
+      <form name="volt-form__contact" class="volt-form volt-form__contact">
+        <section class="volt-form__section volt-form__section-fullscreen">
+        
+        </section>
+        <section class="volt-form__section">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_email" type="text" id="donate-email" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-email" data-i18n="donate-Email">Adresse Email</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_first_name" type="text" id="donate-first-name" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-first-name" data-i18n="donate-First Name">Prénom</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_last_name" type="text" id="donate-last-name" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-last-name" data-i18n="donate-Last Name">Nom</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_address_1" type="text" id="donate-address-1" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-address-1" data-i18n="donate-Address-1">Adresse 1</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_address_2" type="text" id="donate-address-2" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-address-2" data-i18n="donate-Address-2">Adresse 2</label>
+          </div>
+          <div class="volt-form__wrapper-sidebyside">
+            <div class="volt-form__field-sidebyside mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input required class="mdl-textfield__input" name="donate_zip_code" type="text" id="donate-zip-code" />
+              <label class="volt-form__label mdl-textfield__label" for="donate-zip-code" data-i18n="donate-Zip Code">Code Postal</label>
+            </div>
+            <div class="volt-form__field-sidebyside mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input required class="mdl-textfield__input" name="donate_city" type="text" id="donate-city" />
+              <label class="volt-form__label mdl-textfield__label" for="donate-city" data-i18n="donate-City">Ville</label>
+            </div>
+          </div>
+          <div class="volt-dialog__select mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+            <select required class="mdl-selectfield__select volt-select__country" id="donate-country" name="donate_country">
+              <option value=""></option>
+            </select>
+            <label class="mdl-selectfield__label volt-country__label" for="donate-country" data-i18n="donate-Choose Country">Choisir un pays</label>
+          </div>
+        </section>
+
+        <section class="volt-form__section">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_cardnumber" type="number" id="donate-cardnumber" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-cardnumber" data-i18n="donate-Credit Card Number">Numéro de carte de credit</label>
+          </div>
+          <div class="volt-form__wrapper-sidebyside">
+            <div class="volt-dialog__select volt-form__field-sidebyside mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+              <select required class="mdl-selectfield__select volt-select__country" id="donate-Expiry Month" name="donate_expiry_month">
+                <option value=""></option>
+              </select>
+              <label class="mdl-selectfield__label volt-country__label" for="donate-expiry-month" data-i18n="donate-Expiry Month">--</label>
+            </div>
+            <div class="volt-dialog__select volt-form__field-sidebyside mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+              <select required class="mdl-selectfield__select volt-select__country" id="donate-Expiry Year" name="donate_expiry_year">
+                <option value=""></option>
+              </select>
+              <label class="mdl-selectfield__label volt-country__label" for="donate-expiry-month" data-i18n="donate-Expiry Year">--</label>
+            </div>
+            <div class="volt-form__field-sidebyside volt-form__payment-providers">
+              <img class="volt-form___field-image" src="../../../../img/cc.min.png" alt="" />
+            </div>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="donate_cvcnumber" type="number" id="donate-cvcnumber" />
+            <label class="volt-form__label mdl-textfield__label" for="donate-cvcnumber" data-i18n="donate-Security Number">Code de sécurité</label>
+          </div>
+        </section>
+
+        <section class="volt-form__section volt-form__section-fullscreen">
+          <button type="submit" class="volt-form__submit-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <span class="volt-text volt-submit__action" data-i18n="donate-Donate">Faisez votre don !</span>
+          </button>
+        </section>       
+      </form>
+      
+    </div>
+  </body>
+</html>

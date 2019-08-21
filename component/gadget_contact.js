@@ -22,7 +22,7 @@
   /////////////////////////////
   function getBody(my_dict, my_target) {
     var ui_dict = my_dict.ui_dict;
-    var dot = ui_dict["contact-colon"];
+    var dot = ui_dict["contact-Colon"];
     var yes = ui_dict["contact-Yes"];
     var no = ui_dict["contact-No"];
 

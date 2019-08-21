@@ -22,27 +22,29 @@
   /////////////////////////////
   function getBody(my_dict, my_target) {
     var ui_dict = my_dict.ui_dict;
-    var dot = ui_dict["contact-colon"];
-    var yes = ui_dict["contact-Yes"];
-    var no = ui_dict["contact-No"];
+    var dot = ui_dict["candidate-Colon"];
+    var yes = ui_dict["candidate-Yes"];
+    var no = ui_dict["candidate-No"];
 
-    // mh
+    // mh, not so ... generic
     return window.encodeURIComponent(
       ui_dict["candidate-Last Name"] + dot + my_target.candidate_last_name.value.toUpperCase() + BREAK +
       ui_dict["candidate-First Name"] + dot + my_target.candidate_first_name.value + BREAK +
-      ui_dict["candidate-Age"] + dot + my_target.candidate_age + BREAK +
-      ui_dict["candidate-Zip Code"] + dot + my_target.candidate_zip_code + BREAK +
-      ui_dict["candidate-Validity"] + dot + my_target.candidate_validity + BREAK +
-      ui_dict["candidate-Declaration"] + dot + my_target.candidate_declaration + BREAK
+      ui_dict["candidate-Age"] + dot + my_target.candidate_age.value + BREAK +
+      ui_dict["candidate-Zip Code"] + dot + my_target.candidate_zip_code.value + BREAK +
+      ui_dict["candidate-Validity"] + dot + (my_target.candidate_validity === ON ? yes : no) + BREAK +
+      ui_dict["candidate-Declaration"] + dot + (my_target.candidate_declaration === ON ? yes : no) + BREAK
     );
   }
 
   function getSubject(my_dict, my_target) {
     var ui_dict = my_dict.ui_dict;
+
+    // mh, not so ... generic
     return window.encodeURIComponent(
       "[" + my_dict.scope + "]" + ui_dict["candidate-Candidate"] + " : " + 
-        my_target.contact_first_name.value + SPACE +
-          my_target.contact_last_name.value.toUpperCase()
+        my_target.candidate_first_name.value + SPACE +
+          my_target.candidate_last_name.value.toUpperCase()
     );
   }
 
@@ -130,7 +132,7 @@
 
       return queue
         .push(function (my_source) {
-          window.open(action || my_source + "?subject=" + getSubject(dict, my_target) +
+          window.open((action || my_source) + "?subject=" + getSubject(dict, my_target) +
             "&body=" + getBody(dict, my_target), "_blank"
           );
           return LOCATION.assign("../" + dict.selected_language + "/" + dict.ui_dict[THX]);
@@ -146,7 +148,7 @@
     /////////////////////////////
     .onEvent("submit", function (event) {
       switch (event.target.getAttribute(NAME)) {
-        case "volt-form__condidate":
+        case "volt-form__candidate":
           return this.submitContactForm(event.target);
       }
     });
