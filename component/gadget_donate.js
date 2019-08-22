@@ -60,6 +60,8 @@
       mergeDict(dict, my_option_dict || {});
       window.componentHandler.upgradeElements(dict.form_container);
       gadget.remoteTranslate(dict.ui_dict, dict.form_container);
+
+      // yeah, yeah, nothing happens here, I'm just a good-looking placeholder !
     })
 
     /////////////////////////////

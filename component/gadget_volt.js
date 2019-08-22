@@ -524,7 +524,7 @@
         .push(function () {
           DOCUMENT.body.classList.remove("volt-splash");
           window.componentHandler.upgradeDom();
-          return gadget.translateDom(dict.ui_dict, dict.content_wrapper);
+          return gadget.translateDom([dict.ui_dict, dict.content_wrapper]);
         })
         .push(function () {
           return gadget.setSetting(
