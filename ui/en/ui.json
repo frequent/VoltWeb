@@ -125,13 +125,18 @@
   "donate-Expiry Year": "--",
   "donate-Security Number": "Security Number",
   "donate-Donate": "Donate now !",
+  "contribute-Contribution": "Contribution",
+  "contribute-Email": "Email",
   "contribute-First Name": "First Name",
   "contribute-Last Name": "Last Name",
   "contribute-Zip Code": "Zip Code",
   "contribute-City": "City",
   "contribute-Subject": "Message",
+  "contribute-Publishable": "Confirm to publish",
+  "contribute-Anonymized": "Dépersonnalisé",
   "contribute-Your Idea": "Contribute your idea",
   "contribute-Send": "Send !",
   "contribute-I allow this contribution": "I permit the use of my contribution on the website(s) of Volt",
+  "contribute-In anonymized format": "In anonymized form",
   "contribute-(opens your email editor)": "(opens email editor)"
 }

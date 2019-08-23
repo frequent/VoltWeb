@@ -22,18 +22,22 @@
   /////////////////////////////
   function getBody(my_dict, my_target) {
     var ui_dict = my_dict.ui_dict;
-    var dot = ui_dict["candidate-Colon"];
     var yes = ui_dict["candidate-Yes"];
     var no = ui_dict["candidate-No"];
 
+    function wrap(my_text) {
+      var dot = ui_dict["contact-Colon"];
+      return dot + my_text + BREAK;
+    }
+
     // mh, not so ... generic
     return window.encodeURIComponent(
-      ui_dict["candidate-Last Name"] + dot + my_target.candidate_last_name.value.toUpperCase() + BREAK +
-      ui_dict["candidate-First Name"] + dot + my_target.candidate_first_name.value + BREAK +
-      ui_dict["candidate-Age"] + dot + my_target.candidate_age.value + BREAK +
-      ui_dict["candidate-Zip Code"] + dot + my_target.candidate_zip_code.value + BREAK +
-      ui_dict["candidate-Validity"] + dot + (my_target.candidate_validity === ON ? yes : no) + BREAK +
-      ui_dict["candidate-Declaration"] + dot + (my_target.candidate_declaration === ON ? yes : no) + BREAK
+      ui_dict["candidate-Last Name"] + wrap(my_target.candidate_last_name.value.toUpperCase()) +
+      ui_dict["candidate-First Name"] + wrap(my_target.candidate_first_name.value) +
+      ui_dict["candidate-Age"] + wrap(my_target.candidate_age.value) +
+      ui_dict["candidate-Zip Code"] + wrap(my_target.candidate_zip_code.value) +
+      ui_dict["candidate-Validity"] + wrap(my_target.candidate_validity.checked ? yes : no) +
+      ui_dict["candidate-Declaration"] + wrap(my_target.candidate_declaration.checked ? yes : no)
     );
   }
 
@@ -117,7 +121,7 @@
         });
     })
 
-    .declareMethod("submitContactForm", function (my_target) {
+    .declareMethod("submitCandidateForm", function (my_target) {
       var gadget = this;
       var dict = gadget.property_dict;
       var config = dict.form_dict;
@@ -149,7 +153,7 @@
     .onEvent("submit", function (event) {
       switch (event.target.getAttribute(NAME)) {
         case "volt-form__candidate":
-          return this.submitContactForm(event.target);
+          return this.submitCandidateForm(event.target);
       }
     });
 

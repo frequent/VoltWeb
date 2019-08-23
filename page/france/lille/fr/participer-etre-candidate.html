@@ -41,7 +41,12 @@
           {"id": "en", "i18n": "English", "text": "Anglais"},
           {"id": "fr", "i18n": "French", "text": "Français"}
         ],
-        "grid_config": {"query": "Meeting", "limit": [0,2]}
+        "grid_config": {"query": "Meeting", "limit": [0,2]},
+        "form_dict": {
+          "volt-form__candidate": {
+            "action": "mailto:candidature@voltlille.fr"
+          }
+        }
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");

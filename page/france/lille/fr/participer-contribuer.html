@@ -41,7 +41,11 @@
           {"id": "en", "i18n": "English", "text": "Anglais"},
           {"id": "fr", "i18n": "French", "text": "Français"}
         ],
-        "grid_config": {"query": "Meeting", "limit": [0,2]}
+        "form_dict": {
+          "volt-form__candidate": {
+            "action": "mailto:contribution@voltlille.fr"
+          }
+        }
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
@@ -115,6 +119,7 @@
         contributions et les publierons entièrement ou partiellement afin d'améliorer 
         notre collection de propositions existantes.
         </p>
+        <hr/>
         <h2>Votre idée</h2>
         <div data-gadget-url="../../../../component/gadget_contribute.html"
           data-gadget-scope="contact"

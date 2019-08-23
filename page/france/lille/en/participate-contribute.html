@@ -41,7 +41,13 @@
         "available_language_list": [
           {"id": "en", "i18n": "English", "text": "English"},
           {"id": "fr", "i18n": "French", "text": "French"}
-        ]
+        ],
+        "form_dict": {
+          "volt-form__contribute": {
+            "action": "mailto:contribution@voltlille.fr"
+          }
+        }
+
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
@@ -97,7 +103,7 @@
 
       <main class="volt-layout__content mdl-content__container">
 
-        <h1>Contribuer an idea</h1>
+        <h1>Contribute an idea</h1>
         <p>
         You have a proposal for someting to improve in your community ? Please let us know. 
         We would like to collect all ideas and suggestions, both big and small, to evaluate and better 
@@ -112,6 +118,7 @@
         editor, where you can also add attachments if you like. We will review all submissions and publish them 
         fully or partially to improve our collection of existing proposals.
         </p>
+        <hr/>
         <h2>Your idea</h2>
         <div data-gadget-url="../../../../component/gadget_contribute.html"
           data-gadget-scope="contact"

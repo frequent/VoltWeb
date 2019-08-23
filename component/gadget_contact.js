@@ -22,20 +22,22 @@
   /////////////////////////////
   function getBody(my_dict, my_target) {
     var ui_dict = my_dict.ui_dict;
-    var dot = ui_dict["contact-Colon"];
     var yes = ui_dict["contact-Yes"];
     var no = ui_dict["contact-No"];
 
+    function wrap(my_text) {
+      var dot = ui_dict["contact-Colon"];
+      return dot + my_text + BREAK;
+    }
+
     // mh
     return window.encodeURIComponent(
-      ui_dict["contact-Last Name"] + dot + my_target.contact_last_name.value.toUpperCase() + BREAK +
-      ui_dict["contact-First Name"] + dot + my_target.contact_first_name.value + BREAK +
-      ui_dict["contact-City"] + dot + (my_target.contact_city ? my_target.contact_city.value : STR) + BREAK +
-      ui_dict["contact-Zip Code"] + dot + (my_target.contact_zip_code ? my_target.contact_zip_code.value : STR) + BREAK +
-      ui_dict["contact-Subscribe to our Newsletter"] + dot + (my_target.contact_newsletter === ON ? yes : no) + BREAK +
-      ui_dict["contact-Data Privacy Notice"] + dot + (my_target.contact_privacy === ON ? yes : no) + BREAK,
-      ui_dict["contact-Subject"] + dot + my_target.contact_subject + BREAK +
-      ui_dict["contact-Your Message"] + dot +  my_target.contact_message
+      ui_dict["contact-Last Name"] + wrap(my_target.contact_last_name.value.toUpperCase()) +
+      ui_dict["contact-First Name"] + wrap(my_target.contact_first_name.value) +
+      ui_dict["contact-City"] + wrap(my_target.contact_city.value ? my_target.contact_city.value : STR) +
+      ui_dict["contact-Zip Code"] + wrap(my_target.contact_zip_code ? my_target.contact_zip_code.value : STR) +
+      ui_dict["contact-Subject"] + wrap(my_target.contact_subject.value) +
+      ui_dict["contact-Your Message"] + wrap(my_target.contact_message.value)
     );
   }
 
@@ -121,22 +123,22 @@
     .declareMethod("submitContactForm", function (my_target) {
       var gadget = this;
       var dict = gadget.property_dict;
-      var scope = dict.scope;
-      var language = dict.selected_language;
+      var config = dict.form_dict;
+      var action = config ? config[my_target.getAttribute(NAME)].action : undefined;
       var queue = new RSVP.Queue();
 
-      if (dict.destination === undefined) {
+      if (action === undefined) {
         queue.push(function () {
-          return gadget.getDestinationDict(scope);
+          return gadget.getDestination(dict.scope);
         });
       }
+
       return queue
         .push(function (my_source) {
-          window.open(my_source || dict.destination + "?subject=" +
-            getSubject(dict, my_target) + "&body=" +
-              getBody(dict, my_target), "_blank"
+          window.open((action || my_source) + "?subject=" + getSubject(dict, my_target) +
+            "&body=" + getBody(dict, my_target), "_blank"
           );
-          return LOCATION.assign("../" + language + "/" + dict.ui_dict[THX]);
+          return LOCATION.assign("../" + dict.selected_language + "/" + dict.ui_dict[THX]);
         });
     })
 

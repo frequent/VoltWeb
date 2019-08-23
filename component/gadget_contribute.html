@@ -15,7 +15,7 @@
       <form name="volt-form__contribute" class="volt-form volt-form__contribute">
         <section class="volt-form__section">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input required class="mdl-textfield__input" name="contribute_email" type="text" id="contribute-email" />
+            <input required class="mdl-textfield__input" name="contribute_email" type="email" id="contribute-email" />
             <label class="volt-form__label mdl-textfield__label" for="contribute-email" data-i18n="contribute-Email">Adresse Email</label>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -28,7 +28,7 @@
           </div>
           <div class="volt-form__wrapper-sidebyside">
             <div class="volt-form__field-sidebyside mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input required class="mdl-textfield__input" name="contribute_zip_code" type="text" id="contribute-zip-code" />
+              <input required class="mdl-textfield__input" name="contribute_zip_code" type="number" id="contribute-zip-code" />
               <label class="volt-form__label mdl-textfield__label" for="donate-zip-code" data-i18n="contribute-Zip Code">Code Postal</label>
             </div>
             <div class="volt-form__field-sidebyside mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -38,23 +38,24 @@
           </div>
         </section>
         <section class="volt-form__section">
-          <section class="volt-form__section">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input required class="mdl-textfield__input" name="contribute_subject" type="text" id="contribute-subject" />
-              <label class="volt-form__label mdl-textfield__label" for="contribute_subject" data-i18n="contribute-Subject">Sujet</label>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <textarea required class="mdl-textfield__input" type="text" rows= "12" name="contribute_message" id="contribute_message"></textarea>
-              <label class="volt-form__label mdl-textfield__label" for="contribute_message" data-i18n="contribute-Your Idea">Votre idée/proposition</label>
-            </div>
-          </section>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="contribute_subject" type="text" id="contribute-subject" />
+            <label class="volt-form__label mdl-textfield__label" for="contribute_subject" data-i18n="contribute-Subject">Sujet</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <textarea required class="mdl-textfield__input" type="text" rows= "12" name="contribute_message" id="contribute_message"></textarea>
+            <label class="volt-form__label mdl-textfield__label" for="contribute_message" data-i18n="contribute-Your Idea">Votre idée/proposition</label>
+          </div>
         </section>
         <section class="volt-form__section volt-form__section-fullscreen">
             <label class="volt-checkbox-expander-l volt-form__label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="contribute-publishable">
-              <input required type="checkbox" id="contribute-publishable" name="contribute_publishable" class="mdl-checkbox__input" />
+              <input checked type="checkbox" id="contribute-publishable" name="contribute_publishable" class="mdl-checkbox__input" />
               <span class="volt-form__text mdl-checkbox__label" data-i18n="contribute-I allow this contribution">Je autorise l'utilisation de mon contribution soumis dans le site web du Volt.</span>
             </label>
-
+            <label class="volt-checkbox-expander-l volt-form__label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="contribute-anonymized">
+              <input type="checkbox" id="contribute-anonymized" name="contribute_anonymized" class="mdl-checkbox__input" />
+              <span class="volt-form__text mdl-checkbox__label" data-i18n="contribute-In anonymized format">En format dépersonalisé.</span>
+            </label>
             <button type="submit" class="volt-form__submit-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
               <span class="volt-text volt-submit__action" data-i18n="contribute-Send">Envoyer !</span>
               <span class="volt-text volt-submit__hint" data-i18n="contribute-(opens your email editor)">(ouvre votre editor de courriel)</span>  
