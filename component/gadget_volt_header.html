@@ -136,13 +136,18 @@
           </li>
         </ul>
       </div>
-
-      <button class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button-donate">
-        <i class="material-icons">euro_symbol</i><h4 class="volt-navbar-link-title" data-i18n="header-Donate">Faire un don</h4>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button-join">
-        <i class="material-icons">person_add</i><h4 class="volt-navbar-link-title" data-i18n="header-Join Volt">Rejoindre Volt</h4>
-      </button>
+      <form name="volt-donate">
+        <input type="hidden" name="volt_target" value="url-participate-donate" />
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button-donate">
+          <i class="material-icons">euro_symbol</i><h4 class="volt-navbar-link-title" data-i18n="header-Donate">Faire un don</h4>
+        </button>
+      </form>
+      <form name="volt-join">
+        <input type="hidden" name="volt_target" value="url-participate-membership" />
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--icon volt-header__button volt-header__button-join">
+          <i class="material-icons">person_add</i><h4 class="volt-navbar-link-title" data-i18n="header-Join Volt">Rejoindre Volt</h4>
+        </button>
+      </form>
     </div>
 
     <dialog class="mdl-dialog volt-dialog volt-dialog-scope">

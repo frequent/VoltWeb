@@ -9,8 +9,9 @@
   "title": "Volt Lille - Réunion Publique",
   "img_url": "../../../../img/FR-Graphics.Lille.Banner.Meetup.2019-08-22.min.png",
   "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Meetup.2019-08-22.360w.min.png",
-  "category_list": "",
-  "keyword_list": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
   "content_dict": {
     "en": {
       "title": "Volt Lille - Public Meet & Greet",
@@ -41,5 +42,7 @@
       "meetup": "https://www.meetup.com/politique-volt-europe-france-lille/events/264114370/",
       "evensi": "https://www.evensi.fr/volt-lille-reunion-rentree-lecart/330481275"
     }
-  }
+  },
+  "document_dict": {},
+  "reference_list": []
 }

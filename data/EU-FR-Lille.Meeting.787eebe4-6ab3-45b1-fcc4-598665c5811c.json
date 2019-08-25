@@ -1,0 +1,48 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "787eebe4-6ab3-45b1-fcc4-598665c5811c",
+  "file_name": "EU-FR-Lille.Meeting.787eebe4-6ab3-45b1-fcc4-598665c5811c.json",
+  "reference": "EU-FR-Lille.Meeting.Reunion.Publique.2019-09-14",
+  "title": "Volt Lille - Réunion Publique",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Balade.Europeenne.A.Lille.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Balade.Europeenne.A.Lille.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Balade Européenne",
+      "description": "Discover the European corners in Lille",
+      "text_content": "Do you know the European places in Lille? If not, we will be re-walking a tour created by the association Interphaz as it will be our General Assembly and we would like to present Lille to the participants. The walk is open to the public, but it's for early birds - we'll start at 9:00 am (and finish at 11:00 at Cafe Citoyens). Join us if you are interested - it will be a European walk with a European group. <br/> RDVZ: Lille Europe metro ticket machine <br/> ATTENTION: we take the metro so you need a ticket <br /> > REGISTRATION (free) on: <a href='https://docs.google.com/forms/d/e/1FAIpQLScI5egPOcIPuER-ANhHBCx6mWlnDrZZaBnc_VqfP9d7K_MOxw/viewform?usp=sf_link'> here </a>"
+    },
+    "fr": {
+      "title": "Balade Européenne",
+      "description": "Découvrir les lieux Européen à Lille",
+      "text_content": "Connaissez-vous les lieux Européen à Lille ? Sinon, nous serons re-balade cette balade créer par l'association Interphaz à cause de notre Assemblée Générale à Lille. La balade est ouverte à tout le monde, mais c'est pour les lève-tôts - nous commencerons à 9:00 du matin (et finissons vers 11:00 à Cafe Citoyens). Rejoignez-nous si vous êtes intéresses - ce sera une balade Européen avec une équipe Européen.<br/>RDVZ : dans les distributeurs de billets<br/>ATTENTION : nous prenons le métro donc vous avez besoin d'un billet <br/>INSCRIPTION (gratuit) sur : <a href='https://docs.google.com/forms/d/e/1FAIpQLScI5egPOcIPuER-ANhHBCx6mWlnDrZZaBnc_VqfP9d7K_MOxw/viewform?usp=sf_link'>ici</a>"
+    }
+  },
+  "start_date": "2019-09-14 09:00:00 GMT+2",
+  "stop_date": "2019-09-14 11:00:00 GMT+2",
+  "release_date": "2019-07-25 21:37 GMT+2",
+  "location": {
+    "coordinates": [50.639558, 3.076358],
+    "title": "Station Métro Lille Europe",
+    "physical_address": "117, Boulevard de Turin",
+    "city": "Lille",
+    "zip": "59800",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook": "https://www.facebook.com/events/470381433541491/",
+      "meetup": "https://www.meetup.com/politique-volt-europe-france-lille/events/264295417/",
+      "evensi": "https://www.evensi.fr/balade-europeenne-a-lille-etro-europe-distributeur-billets/333574921"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

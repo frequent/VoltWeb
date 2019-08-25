@@ -9,8 +9,9 @@
   "title": "Enquêtes Publiques - Avis Volt France PLU2",
   "img_url": "",
   "thumb_url": "",
-  "category_list": "",
-  "keyword_list": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
   "content_dict": {
     "en": {
       "title": "Public Inquiries - Opinion PLU2 Volt France",
@@ -29,6 +30,7 @@
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
+    "social_media_url_dict": {},
     "document_dict": {
       "fr": {
         "document_url": "../../../../doc/FR-Lille.Publication.Avis.Mel.Plu2.pdf",
@@ -39,5 +41,6 @@
         "mime-type": "application/pdf"
       }
     }
-  }
+  },
+  "reference_list": []
 }

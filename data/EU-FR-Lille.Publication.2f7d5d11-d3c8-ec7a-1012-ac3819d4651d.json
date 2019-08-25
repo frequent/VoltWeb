@@ -6,11 +6,11 @@
   "id": "2f7d5d11-d3c8-ec7a-1012-ac3819d4651d",
   "file_name": "EU-FR-Lille.Publication.2f7d5d11-d3c8-ec7a-1012-ac3819d4651d.json",
   "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Logements.2019-07-01",
-  "title": "Lille Municipales 2020 - Propositions.Logements",
   "img_url": "",
   "thumb_url": "",
-  "category_list": "",
-  "keyword_list": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
   "content_dict": {
     "en": {
       "title": "Lille Municpial Elections 2020 - Proposals Housing",
@@ -29,6 +29,7 @@
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
+    "social_media_url_dict": {},
     "document_dict": {
       "fr": {
         "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Logements.pdf",
@@ -39,5 +40,6 @@
         "mime-type": "application/pdf"
       }
     }
-  }
+  },
+  "reference_list": []
 }

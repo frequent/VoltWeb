@@ -20,6 +20,7 @@
   var LINK_DISABLED = "volt-link__disabled";
   var NAME = "name";
   var LOCALISE = ".volt-dialog__action-localise";
+  var LOCATION = window.document.location;
   var DIALOG = ".volt-dialog-";
   var DIALOG_POLYFILL = window.dialogPolyfill;
   var LIST = "volt-navbar-list";
@@ -265,6 +266,14 @@
     /////////////////////////////
     // declared methods
     /////////////////////////////
+    .declareMethod("navigatePage", function (my_event) {
+      var dict = this.property_dict;
+      return LOCATION.assign(
+        "../" + dict.selected_language + "/" +
+          dict.ui_dict[my_event.target.volt_target.value]
+      );
+    })
+
     // ---------------------- StateChange --------------------------------------
     .declareMethod("stateChange", function (delta) {
       var state = this.state;
@@ -416,6 +425,9 @@
           return this.expandDialog(event);
         case "volt-localise":
           return this.localiseUser(event);
+        case "volt-donate":
+        case "volt-join":
+          return this.navigatePage(event);
       }
     }, false, true);
 

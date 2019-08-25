@@ -1,0 +1,48 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "72cb4ec8-33fb-c7fd-3d50-d82006d01242",
+  "file_name": "EU-FR-Lille.Meeting.72cb4ec8-33fb-c7fd-3d50-d82006d01242.json",
+  "reference": "EU-FR-Lille.Meeting.Reunion.Publique.2019-08-29",
+  "title": "Volt Lille - Réunion Publique",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Meetup.2019-08-29.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Meetup.2019-08-29.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Réunion Publique",
+      "description": "The aworld is on fire - what do we do here ?",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille - Réunion Publique",
+      "description": "Le monde est en feu - qu'est-ce qu'on fait ici ?",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-08-29 19:30:00 GMT+2",
+  "stop_date": "2019-08-29 22:00:00 GMT+2",
+  "release_date": "2019-07-25 20:53 GMT+2",
+  "location": {
+    "coordinates": [50.627659, 3.064498],
+    "title": "L'Ecart",
+    "physical_address": "36, Rue Jean Bart",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook": "",
+      "meetup": "",
+      "evensi": ""
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

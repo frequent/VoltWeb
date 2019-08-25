@@ -9,8 +9,9 @@
   "title": "Assemblée Générale Volt France",
   "img_url": "../../../../img/FR-Graphics.Lille.Banner.Assemble.Generale.2019-09-14.min.png", 
   "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Assemble.Generale.2019-09-14.360w.min.png",
-  "category_list": "",
-  "keyword_list": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
   "content_dict": {
     "en": {
       "title": "Volt France General Assembly",
@@ -37,9 +38,11 @@
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {
-      "facebook_url": "",
-      "meetup_url": "",
+      "facebook_url": "https://www.facebook.com/events/2374744409462070/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264290330/",
       "evensi_url": ""
     }
-  }
+  },
+  "document_dict": {},
+  "reference_list": []
 }
