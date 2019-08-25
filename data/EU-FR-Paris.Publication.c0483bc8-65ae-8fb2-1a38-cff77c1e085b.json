@@ -9,8 +9,9 @@
   "title": "Paris Municipales 2020 - Propositions Mobilité",
   "img_url": "",
   "thumb_url": "",
-  "category_list": "",
-  "keyword_list": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
   "content_dict": {
     "en": {
       "title": "Paris Municipal Elections 2020 - Proposals Mobility",
@@ -29,6 +30,7 @@
   "location": {},
   "scope": "EU/FR/Paris",
   "attachment_dict": {
+    "social_media_url_dict": {},
     "document_dict": {
       "fr": {
         "document_url": "",
@@ -39,5 +41,6 @@
         "mime-type": "application/pdf"
       }
     }
-  }
+  },
+  "reference_list": []
 }
