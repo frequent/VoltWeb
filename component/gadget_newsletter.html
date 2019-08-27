@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Newsletter Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/renderjs.latest.js"></script>
+
+    <script src="gadget_newsletter.js"></script>
+
+  </head>
+  <body>
+    <div class="volt-newsletter__wrapper">
+      
+        <section class="volt-form__section">
+          <form name="volt-form__newsletter" class="volt-form volt-form__newsletter">
+            <input type="hidden" name="newsletter_subscription" value="activate" />
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label class="volt-checkbox-expander-xl volt-form__label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="newsletter-privacy">
+              <input required type="checkbox" id="newsletter-privacy" name="newsletter_privacy" class="mdl-checkbox__input" />
+              <span class="volt-form__text mdl-checkbox__label" data-i18n="newsletter-I have read and approved">J'ai lu et approuvé la</span>
+              <a tabindex="-1" class="volt-form__link" href="" data-i18n="newsletter-Data Privacy Notice">déclaration de la confidentialité des données</a>
+            </label>
+            <button type="submit" class="volt-form__submit-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <span class="volt-text volt-submit__action" data-i18n="newsletter-Activate">Inscrivez-vous !</span>
+              <span class="volt-text volt-submit__hint" data-i18n="newsletter-(opens your email editor)">(ouvre votre editor de courriel)</span>  
+            </button>
+          </form>
+        </section>
+
+        <section class="volt-form__section">
+          <form name="volt-form__newsletter" class="volt-form volt-form-newsletter">
+            <input type="hidden" name="newsletter_subscription" value="terminate" />
+            <button type="submit" class="volt-form__submit-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <span class="volt-text volt-submit__action" data-i18n="newsletter-Disactivate">Termine l'inscription !</span>
+              <span class="volt-text volt-submit__hint" data-i18n="newsletter-(opens your email editor)">(ouvre votre editor de courriel)</span>  
+            </button>
+          </form>
+        </section>
+    </div>
+  </body>
+</html>

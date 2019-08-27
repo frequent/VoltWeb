@@ -138,5 +138,11 @@
   "contribute-Send": "Send !",
   "contribute-I allow this contribution": "I permit the use of my contribution on the website(s) of Volt",
   "contribute-In anonymized format": "In anonymized form",
-  "contribute-(opens your email editor)": "(opens email editor)"
+  "contribute-(opens your email editor)": "(opens email editor)",
+  "newsletter-Newsletter": "Newsletter",
+  "newsletter-I have read and approved": "I have read and approved the",
+  "newsletter-Data Privacy Notice": "Data Privacy Notice",
+  "newsletter-Activate": "Subscribe !",
+  "newsletter-(opens your email editor)": "(opens email editor)",
+  "newsletter-Disactivate": "Terminate inscription !"
 }

@@ -29,7 +29,7 @@
     <meta name="twitter:image" content="../../../../img/FR-Lille.Image.Municipal.Elections.You.Are.Part.Of.It.png" />
 
     <link rel="canonical" href="https://www.voltlille.fr/fr/volt-bulletin.html" />
-    <link rel="icon" href="../../../../favicon.png">
+    <link rel="icon" href="../../../../favicon.ico">
     <link rel="manifest" href="../../../../manifest.json" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="../../../../sitemap.xml" />
 
@@ -42,7 +42,12 @@
           {"id": "en", "i18n": "English", "text": "English"},
           {"id": "fr", "i18n": "French", "text": "French"}
         ],
-        "grid_config": {"query": "Newsletter", "limit": [0,2]}
+        "grid_config": {"query": "Newsletter", "limit": [0,2]},
+        "form_dict": {
+          "volt-form__newsletter": {
+            "action": "mailto:newsletter@voltlille.fr"
+          }
+        }
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
@@ -101,6 +106,11 @@
 
         <h1>Newsletter</h1>
         <p>Our (hopefully always) weekly newsletter with latest info on what is happening in Volt Lille and on national/european level, plus all the events you could and should be interested in when it comes to citizen engagement.</p>
+        <p>Ici nous lançons ce qui, du moins nous l'espérons, deviendra une rubrique régulière: notre bulletin hebdomadaire avec les dernières nouvelles - que se passe à Volt Lille et au niveau national/européen ainsi que tous les événements vous devriez être et vous pourriez être intéresses concernant l'engagement de citoyens.</p>
+        <div data-gadget-url="../../../../component/gadget_newsletter.html"
+          data-gadget-scope="newsletter"
+          data-gadget-sandbox="public">
+        </div>
         <div data-gadget-url="../../../../component/gadget_grid.html"
           data-gadget-scope="grid"
           data-gadget-sandbox="public">
