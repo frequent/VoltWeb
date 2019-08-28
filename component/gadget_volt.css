@@ -1519,6 +1519,10 @@ body .volt-layout__content > .volt-content__spacer {
     height: 6em;
   }
 }
+/* meh */
+.volt-form .volt-form__submit-button.volt-form__newsletter-spacer {
+  margin-top: 7.75em;
+}
 
 /* ============================ Accordeon =================================== */
 /* thx: https://alligator.io/css/collapsible/ */
@@ -1644,7 +1648,23 @@ body .volt-layout__content > .volt-content__spacer {
   font-weight: bold;
   font-size: 3em;
 }
-
+.volt-team__panini-list {
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  
+}
+.volt-team__panini-item {
+  width: 16%;
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+.volt-team__panini-item figcaption {
+  margin-top: -.5em;
+  text-decoration: none;
+}
 /* ============================ Dialog ====================================== */
 .volt-dialog,
 .volt-dialog .volt-lang,

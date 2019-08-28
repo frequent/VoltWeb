@@ -81,7 +81,7 @@
   "card-Details": "Détails",
   "card-Share": "Partager",
   "card-Add to Calendar": "Ajouter au calendrier.",
-  "card-No records found": "Pas de résultats trouvés.",
+  "card-No records found": "Pas de résultats trouvés",
   "card-Load more": "Plus de résultats",
   "contact-Contact": "Contact",
   "contact-First Name": "Prénom",
@@ -142,7 +142,9 @@
   "newsletter-Newsletter": "Newsletter",
   "newsletter-I have read and approved": "J'ai lu et approuvé la",
   "newsletter-Data Privacy Notice": "déclaration de la confidentialité des données",
-  "newsletter-Activate": "Inscrivez-vous !",
+  "newsletter-Activate": "Abonnez !",
   "newsletter-(opens your email editor)": "(ouvre votre editor de courriel)",
-  "newsletter-Disactivate": "Termine l'inscription !"
+  "newsletter-Disactivate": "Termine l'inscription !",
+  "panini-You": "Vous ?",
+  "panini-No records found": "Pas de résultats trouvés"
 }

@@ -1,0 +1,55 @@
+{
+  "type": "event",
+  "event_type": "Person",
+  "event_nature": "Candidate",
+  "event_origin": "EU/FR/Lille",
+  "id": "bdb188c1-2cd9-ce0f-2dba-19028f6b47be",
+  "file_name": "EU-FR-Lille.Person.bdb188c1-2cd9-ce0f-2dba-19028f6b47be.json",
+  "reference": "EU-FR-Lille.Person.Candidate.Sven.Franck",
+  "img_url": "../../../../img/FR-Images.Lille.Sven.Franck.jpg",
+  "thumb_url": "../../../../img/FR-Images.Lille.Sven.Franck.jpg",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "role": "City Lead Lille",
+      "position": "",
+      "title": "Sven FRANCK",
+      "last_name": "Franck",
+      "first_name": "Sven",
+      "age": "42",
+      "political_party": "Volt France",
+      "description": "42yo, German, Free Software Developer",
+      "text_content": "",
+      "suburb": "Saint-Maurice",
+      "mandates": ""
+    },
+    "fr": {
+      "role": "Chef d'équipe Lille",
+      "position": "",
+      "title": "Sven FRANCK",
+      "last_name": "Franck",
+      "first_name": "Sven",
+      "age": "42",
+      "political_party": "Volt France",
+      "description": "42ans, Allemand, Développer de logicielle libre",
+      "text_content": "",
+      "suburb": "Saint-Maurice",
+      "mandates": ""    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-09-28 09:02 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/404912770212347/",
+      "twitter_url": "https://twitter.com/SvenFranck",
+      "instagram_url": "https://www.instagram.com/sven.franck/"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}
