@@ -1677,6 +1677,7 @@ body .volt-layout__content > .volt-content__spacer {
 .volt-team__panini-button {
   background: 0 none;
   border: 0 none;
+  cursor: pointer;
 }
 .volt-team__panini-image {
   max-width: 100%;
