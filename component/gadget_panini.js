@@ -16,6 +16,7 @@
   var PLACEHOLDER_TEMPLATE = "panini_placeholer_template";
   var PERSON_TEMPLATE = "panini_person_template";
   var LINK_DISABLED = "volt-link__disabled";
+  var PANINI_DIALOG = "panini_dialog_template";
   var IMG = "IMG";
   var HIDDEN = "volt-hidden";
   var FULLSCREEN = "volt-dialog-fullscreen";
@@ -162,7 +163,8 @@
       var config = my_config;
       var item_list;
       var len = config.limit[1];
-      var i = 0;
+      var max;
+      var i;
 
       dict.loader.classList.remove(HIDDEN);
       return gadget.buildDataLookupDict(config)
@@ -172,25 +174,25 @@
               return new Date(b.title) - new Date(a.title); 
             }).map(function (item) {
               var portal_type = item.event_type.toLowerCase();
-              var title = item.content_dict[lang].title;
-              var position = item.content_dict[lang].position;
+              var content = item.content_dict[lang];
+              var title = content.title;
+              var position = content.position;
               dict.event_dict[item.reference] = item;
               return getTemplate(KLASS, PERSON_TEMPLATE).supplant({
                 "portal_type": portal_type,
                 "event_handler": "volt-event__" + portal_type, 
                 "reference": item.reference,
                 "position": position ? (position + ", ") : STR,
-                "role": item.content_dict[lang].role,
-                "title": item.content_dict[lang].title,
+                "age": content.age,
+                "profession": content.profession,
+                "title": content.title,
                 "thumbnail_url": item.thumb_url
               });
             });
 
-          for (i; i < (len - item_list.length); i +=1) {
+          for (i = 0, max = item_list.length; i < (len - max); i += 1) {
             item_list.push(getTemplate(KLASS, PLACEHOLDER_TEMPLATE));
           }
-          console.log(dict.item_container)
-          console.log(item_list)
           setDom(
             dict.item_container,
             item_list,
@@ -214,7 +216,7 @@
       var gadget = this;
       var dict;
       var dialog;
-      var meetup;
+      var profile;
       var active_element;
       
       if (gadget.state.dialog_pending) {
@@ -234,11 +236,11 @@
         .push(function () {
           var lang = dict.selected_language;
           var content = profile.content_dict[lang];
-          var links = meetup.attachment_dict.social_media_url_dict || DICT;
+          var links = profile.attachment_dict.social_media_url_dict || DICT;
 
-          setDom(dict.dialog, getTemplate(KLASS, MEETING_DIALOG).supplant({
+          setDom(dict.dialog, getTemplate(KLASS, PANINI_DIALOG).supplant({
             "title": content.title,
-            "img_url": meetup.img_url,
+            "img_url": profile.img_url,
             "fallback_url": FALLBACK_IMG_URL,
             "description": content.text_content,
             "profession": content.profession,

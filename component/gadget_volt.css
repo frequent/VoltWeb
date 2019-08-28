@@ -196,6 +196,12 @@
 .volt-header .volt-navbar .volt-navbar-link {
   color: #fff;
 }
+.mdl-layout__container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
 /* ============================= HEADER ===================================== */
 .volt-body > div > .mdl-layout__container {
   z-index: 2;
@@ -1662,8 +1668,29 @@ body .volt-layout__content > .volt-content__spacer {
   vertical-align: top;
 }
 .volt-team__panini-item figcaption {
-  margin-top: -.5em;
+  margin-top: 1em;
   text-decoration: none;
+  font-size: 1em;
+  line-height: 1em;
+  height: 3em;
+}
+.volt-team__panini-button {
+  background: 0 none;
+  border: 0 none;
+}
+.volt-team__panini-image {
+  max-width: 100%;
+  clip-path: polygon(0% 43%, 86% 5%, 100% 59%, 16% 100%);
+}
+@media (max-width: 54em) {
+  .volt-team__panini-item {
+    width: 27%;
+  }
+}
+@media (max-width: 32em) {
+  .volt-team__panini-item {
+    width: 44%;
+  }
 }
 /* ============================ Dialog ====================================== */
 .volt-dialog,

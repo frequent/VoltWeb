@@ -19,9 +19,10 @@
       "last_name": "Franck",
       "first_name": "Sven",
       "age": "42",
+      "profession": "Free Software Developer",
       "political_party": "Volt France",
       "description": "42yo, German, Free Software Developer",
-      "text_content": "",
+      "text_content": "blabla",
       "suburb": "Saint-Maurice",
       "mandates": ""
     },
@@ -32,11 +33,13 @@
       "last_name": "Franck",
       "first_name": "Sven",
       "age": "42",
+      "profession": "Développer de logicielle libre",
       "political_party": "Volt France",
-      "description": "42ans, Allemand, Développer de logicielle libre",
-      "text_content": "",
+      "description": "42 ans, Allemand, Développer de logicielle libre",
+      "text_content": "blabla",
       "suburb": "Saint-Maurice",
-      "mandates": ""    }
+      "mandates": ""    
+    }
   },
   "start_date": "",
   "stop_date": "",

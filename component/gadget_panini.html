@@ -19,12 +19,12 @@
         <a class="volt-link volt-dialog__social-media-link {instagram_disabled}" target="_blank" href="{instagram_url}"><i class="fab fa fa-instagram"></i></a>
       </div>
       <div class="volt-event__dialog-details-wrapper">
-        <p class="volt-event__dialog-description"><i class="material-icons">info</i><span class="volt-event__dialog-text">{description}</span></p>
+        <p class="volt-event__dialog-text-content"><i class="material-icons">info</i><span class="volt-event__dialog-text">{text_content}</span></p>
         <p class="volt-event__dialog-age"><i class="material-icons">hourglass_empty</i><span class="volt-event__dialog-text">{age}</span>
         <p class="volt-event__dialog-nationality"><i class="material-icons">language</i><span class="volt-event__dialog-text">{nationality}</span>
         <p class="volt-event__dialog-profession"><i class="material-icons">work</i><span class="volt-event__dialog-text">{profession}</span>
         <p class="volt-event__dialog-party"><i class="material-icons">policy</i><span class="volt-event__dialog-text">{party}</span>
-        <p class="volt-event__dialog-location"><i class="material-icons">location_on</i><span class="volt-event__dialog-text">{suburb}</span></p>
+        <p class="volt-event__dialog-suburb"><i class="material-icons">location_on</i><span class="volt-event__dialog-text">{suburb}</span></p>
         <p class="volt-event__dialog-mandate"><i class="material-icons">account_balance</i><span class="volt-event__dialog-text">{mandates}</span></p>
       </div>
       <div class="volt-venue__wrapper"></div>
@@ -56,11 +56,11 @@
 
     <script id="panini_person_template" type="text/x-supplant">
      <li class="volt-team__panini-item">
-      <form name="volt-form__panini">
-        <input type="hidden" name="event_reference" value="{reference}" />
-        <button type="submit">
-          <img class="volt-team__portrait-image" src="{thumbnail_url}" alt="Outline" />
-          <figcaption>{position}{title}, {role}</figcaption>
+      <form name="volt-dialog" data-action="event">
+        <input type="hidden" value="{reference}" name="event_reference" />
+        <button type="submit" class="volt-team__panini-button">
+          <img class="volt-team__panini-image" src="{thumbnail_url}" alt="Outline" />
+          <figcaption>{position}{title}, {age}, {profession}</figcaption>
         </button>
       </form>
     </li>
