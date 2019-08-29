@@ -60,7 +60,6 @@
         width: 100%;
         position: absolute;
         background: url("../../../../img/FR-Lille.Image.Municipal.Elections.You.Are.Part.Of.It.png") no-repeat center center;
-        background-size: 70%;
         top: 0;
         bottom: 0;
         left: 0;
@@ -71,6 +70,11 @@
         z-index: 999999;
         background-color: #612095;
         content: "";
+      }
+      @media (max-width: 54em) {
+        .volt-splash:before {
+          background-size: 70%;  
+        }
       }
       .volt-seo-content * {
         color: #612095;

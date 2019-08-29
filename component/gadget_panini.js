@@ -237,18 +237,17 @@
           var lang = dict.selected_language;
           var content = profile.content_dict[lang];
           var links = profile.attachment_dict.social_media_url_dict || DICT;
-
           setDom(dict.dialog, getTemplate(KLASS, PANINI_DIALOG).supplant({
             "title": content.title,
             "img_url": profile.img_url,
             "fallback_url": FALLBACK_IMG_URL,
-            "description": content.text_content,
+            "text_content": content.text_content,
             "profession": content.profession,
             "nationality": content.nationality,
             "age": content.age,
-            "party": content.party,
+            "party": content.political_party,
             "suburb": content.suburb,
-            "mandate": content.mandate,
+            "mandate": content.mandate || STR,
             "facebook_url": links.facebook_url || STR,
             "facebook_disabled": links.facebook_url || LINK_DISABLED, 
             "twitter_url": links.twitter_url || STR,

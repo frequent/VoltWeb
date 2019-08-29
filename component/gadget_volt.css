@@ -596,6 +596,14 @@
     max-width: 6em;
   }
 }
+.volt-event__card-mini .mdl-card__media > img {
+  width: 50%;
+}
+.volt-event__card-mini .mdl-card__media {
+  min-height: 5em;
+}
+
+
 .volt-dialog-action-form {
     max-width: 3.5em;
 }
@@ -690,7 +698,7 @@
   max-width: 100%;
 }
 .volt-dialog .volt-event__dialog-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
 }
 .volt-dialog .volt-event__dialog-details-wrapper {
@@ -702,13 +710,28 @@
 .volt-dialog .volt-event__dialog-location .material-icons {
   float: left;
   padding-right: .5em;
+  color: #612095;
 }
 .volt-dialog .volt-event__dialog-text {
   font-size: 1em;
   line-height: 1em;
 }
+.volt-event__dialog-reference-header {
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #612094;
+  font-family: Ubuntu;
+  margin-bottom: 0;
+}
 .volt-dialog .volt-marker__floater {
   text-align: center;
+  margin-bottom: 1em;
+  padding: 0 .8em;
+}
+.volt-dialog .volt-marker__floater .volt-event__dialog-description {
+  font-weight: bold;
+  text-align: center;
+  color: #612985;
 }
 .volt-dialog .volt-marker__floater .fa,
 .volt-dialog .volt-marker__floater .pf {
@@ -1622,7 +1645,11 @@ body .volt-layout__content > .volt-content__spacer {
   width: 30%;
 }
 .volt-team__portrait-image {
+  clip-path: polygon(0% 43%, 86% 5%, 100% 59%, 16% 100%);  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
+  margin-bottom: 1em;
 }
 .volt-team__section .volt-team__section-header {
   position: static;
@@ -1691,6 +1718,22 @@ body .volt-layout__content > .volt-content__spacer {
 @media (max-width: 32em) {
   .volt-team__panini-item {
     width: 44%;
+  }
+}
+.volt-event__dialog-field .material-icons {
+  vertical-align: middle;
+  padding-right: .5em;
+  color: #612095;
+}
+.volt-event__dialog-field:not(.volt-event__dialog-text-content) {
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 49%;
+}
+@media (max-width: 32em) {
+  .volt-event__dialog-field {
+    display: block;
+    width: 100%;
   }
 }
 /* ============================ Dialog ====================================== */
@@ -1895,6 +1938,33 @@ button.volt-dialog__button {
     margin-top: unset;
   }
 }
+.volt-dialog .event_dialog__keyword-form-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  padding: .25em;
+}
+.volt-dialog .volt-dialog__reference_item {
+  padding: 0;
+  font-size: .9em;
+}
+.volt-dialog .volt-dialog__reference-link {
+  text-decoration: none;
+}
+.volt-dialog .volt-dialog__reference-link:hover {
+  text-decoration: underline;
+}
+.volt-dialog .event_dialog__keyword-form-wrapper .volt-dialog__button {
+  font-size: .9em;
+  background: 0 none;
+  border: 1px solid #612095;
+  color: #612095;
+  line-height: .9em;
+}
+.volt-dialog .event_dialog__keyword-form-wrapper .volt-dialog__button:hover {
+  background-color: rgba(158,158,158,.2);
+  color: rgba(97, 32, 149, .3);
+}
+
 /* ============================ Map ====================================== */
 .volt-venue__wrapper,
 .volt-map__wrapper {

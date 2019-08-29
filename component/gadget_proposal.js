@@ -332,15 +332,10 @@
       var dict = gadget.property_dict;
       var lang = dict.selected_language;
       var config = my_config || paginate(dict.grid_config);
-      var keyword_list;
 
       dict.loader.classList.remove(HIDDEN);
       return gadget.buildDataLookupDict(config)
         .push(function (response) {
-          var keyword_list = [].concat.apply([], response.data.rows.map(function (item) {
-            return item.keyword_dict[lang];
-          }));
-          console.log(keyword_list)
           dict.loader.classList.add(HIDDEN);
           setDom(
             dict.item_container,
