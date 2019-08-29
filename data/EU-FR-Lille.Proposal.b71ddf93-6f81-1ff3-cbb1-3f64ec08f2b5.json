@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Les.Rues.Silencieuses",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["reduction of noise_"],

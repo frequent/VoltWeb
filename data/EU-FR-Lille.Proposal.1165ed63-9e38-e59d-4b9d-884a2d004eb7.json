@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Verts.",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["prevent urban heat isles_", "green spaces_"],

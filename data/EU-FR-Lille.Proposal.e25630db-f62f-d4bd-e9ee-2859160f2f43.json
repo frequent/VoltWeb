@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Transport.En.Commun.Gratuit.Si.Utilisé",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["free public transport_", "refund based on rides made_"],

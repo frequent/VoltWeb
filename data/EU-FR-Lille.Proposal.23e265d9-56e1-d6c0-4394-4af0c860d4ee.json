@@ -8,8 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Dechets.Interdire.Les.Plastiques.Non.Réutilisables",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
-  "category_dict": {},
-  "contributor_list": {},
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
   "keyword_dict": {
     "en": ["ban single use plastics_", "clean city_", "waste reduction_"],
     "fr": ["interdire les plastiques non réutilisables_", "ville prope_", "réduction des déchets_"]

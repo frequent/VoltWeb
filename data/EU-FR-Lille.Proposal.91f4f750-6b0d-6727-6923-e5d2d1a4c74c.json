@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Péage.Urbain.Basé.Sur.Les.Sièges.Vacants",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["traffic_reduction_", "inner city toll_", "free public transport_"],

@@ -8,11 +8,18 @@
   "reference": "EU-FR-Lille.Proposal.Dechets.Appuyer.Les.Initiatives.Contre.Dechets.Alimentaires",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["food waste reduction_", "social enterprise_"],
-    "fr": ["réduction déchets alimentaire_", "commerce sociale_"]
+    "fr": ["réduction des déchets_", "commerce sociale_"]
   },
   "content_dict": {
     "en": {

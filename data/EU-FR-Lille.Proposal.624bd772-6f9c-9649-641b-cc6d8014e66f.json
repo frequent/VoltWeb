@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Plus.De.Transport.En.Commun.Fixe.Et.Flexible",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["public transport frequency_", "flexible lines by reservation_"],

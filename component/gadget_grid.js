@@ -339,7 +339,9 @@
         .push(function (response) {
           var keyword_list = [].concat.apply([], response.data.rows.map(function (item) {
             return item.keyword_dict[lang];
-          }));
+          })).filter(function(item, pos, self) {
+            return self.indexOf(item) == pos;
+          });
           console.log(keyword_list)
           dict.loader.classList.add(HIDDEN);
           setDom(

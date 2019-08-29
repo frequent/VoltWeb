@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Améliorer.L.Utilisation.Du.Parc.Des.Bâtiments",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["improve building utilisation_", "housing policy_"],

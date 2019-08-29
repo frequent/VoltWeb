@@ -8,7 +8,14 @@
   "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Agrandir.Le.Réseau.Train.Tram.Métro",
   "img_url": "", 
   "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
-  "category_dict": {},
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
   "contributor_list": {},
   "keyword_dict": {
     "en": ["expand public transport_", "railway infrastructure_"],
