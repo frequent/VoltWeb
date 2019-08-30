@@ -1305,7 +1305,7 @@ div[data-gadget-url] {
 }
 
 
-.volt-layout__content p {
+.volt-layout__content > p {
   font-size: 1.15em;
   text-align: justify;
 }
