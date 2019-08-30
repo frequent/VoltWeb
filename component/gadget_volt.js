@@ -26,6 +26,7 @@
   var ESC = "Esc";
   var ESCAPE = "Escape";
   var EXPIRE_DB = "volt:expire_db";
+  var HIDDEN = "volt-hidden";
   var VOLT_KEY = "volt:";
   var GADGET_ATTR = "[data-gadget-url]";
   var SCOPE = "data-gadget-scope";
@@ -128,9 +129,11 @@
     // ready
     /////////////////////////////
     .ready(function (gadget) {
+      var el = gadget.element;
       gadget.property_dict = {
         "ui_dict": {},
-        "content_wrapper": getElem(gadget.element, ".volt-layout__content")
+        "content_wrapper": getElem(el, ".volt-layout__content"),
+        "consent_wrapper": getElem(el,".volt-cookie__notice-wrapper")
       };
       return RSVP.all([
         gadget.declareGadget("../../../../component/gadget_volt_jio.html", {"scope": "local"}),
@@ -711,6 +714,12 @@
           return my_header_gadget.swapMenuClass();
         });
     })
+
+    .declareMethod("storeCoookieConsent", function (my_event) {
+      var gadget = this;
+      setCookie("consent", 1, 60);
+      gadget.property_dict.consent_wrapper.addClass(HIDDEN);
+    })
     
     /////////////////////////////
     // declared service
@@ -722,6 +731,9 @@
 
       if (getCookie("init") === null) {
         setCookie("init", 1, 1);
+      }
+      if (getCookie("consent") === null) {
+        gadget.property_dict.consent_wrapper.classList.remove(HIDDEN);
       }
 
       return new RSVP.Queue()
@@ -761,6 +773,13 @@
         return this.hideMenu();
       }
     }, false, false)
+
+    .onEvent("submit", function (event) {
+      switch (event.target.getAttribute(NAME)) {
+        case "volt-cookie__consent":
+          return this.storeCoookieConsent(event.target);
+      }
+    })
 
     .onEvent("click", function (event) {
       if (getParent(event.target, MAIN)) {
