@@ -146,6 +146,13 @@
   "newsletter-Activate": "Subscribe !",
   "newsletter-(opens your email editor)": "(opens email editor)",
   "newsletter-Disactivate": "Terminate inscription !",
+  "category-Waste Management": "Waste Management",
+  "category-Housing": "Housing",
+  "category-Green Spaces": "Green Spaces",
+  "category-Mobility": "Mobility",
+  "category-More soon": "(More soon)",
+  "category-All": "Show all",
+  "category-Filter by": "Filter by",
   "panini-You": "You ?",
   "panini-No records found": "No records found"
 }

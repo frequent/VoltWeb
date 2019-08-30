@@ -200,8 +200,59 @@
       </div>
     </script>
 
+    <!-- keyword search template -->
+    <script id="event_keyword_search_template" type="text/x-supplant">
+      <p class="volt-category__item-text volt-category__teaser" data-i18n="category-Filter by">Filtrer par</p>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="" />
+          <button type="submit" class="mdl-button">
+            <span data-i18n="category-All" class="volt-category__item-text">Affichez tous</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="logements_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png" alt="" />
+            <span data-i18n="category-Housing" class="volt-category__item-text">Logements</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="waste management_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png" alt="" />
+            <span data-i18n="category-Waste Management" class="volt-category__item-text">Gestion des déchets</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="espaces verts_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png" alt="" />
+            <span data-i18n="category-Green Spaces" class="volt-category__item-text">Espaces verts</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="mobilité_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png" alt="" />
+            <span data-i18n="category-Mobility" class="volt-category__item-text">Mobilité</span>
+          </button>
+        </form>
+      </div>
+      <p class="volt-category__item-text volt-category__teaser" data-i18n="category-More soon">(Plus à venir)</p>
+    </script>
   </head>
+  
   <body>
+    <div class="volt-category__container"></div>
     <div class="mdl-grid volt-item__container"></div>
     <div class="dot-flashing"></div>
     <div class="volt-search-more volt-hidden">

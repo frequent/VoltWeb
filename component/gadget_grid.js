@@ -32,6 +32,7 @@
   var PROPOSAL_DIALOG = "event_dialog_proposal_template";
   var REFERENCE_TEMPLATE = "event_dialog_reference_template";
   var KEYWORD_TEMPLATE = "event_dialog_keyword_template";
+  var CATEGORY_SEARCH_TEMPLATE = "event_keyword_search_template";
   var DESCRIPTION = "description";
   var LINE_BREAK = "\n";
   var LINK_DISABLED = "volt-link__disabled";
@@ -46,6 +47,7 @@
   var BLANK = "_blank";
   var POPPER = "width=600,height=480,resizable=yes,scrollbars=yes,status=yes";
   var STR = "";
+  var PLUS = "+";
   var ZERO = "0";
   var INTERSECTION_OBSERVER = window.IntersectionObserver;
   var FALLBACK_IMG_URL = "../../../../img/volt.purple.min.png";
@@ -239,6 +241,7 @@
     .ready(function (gadget) {
       var el = gadget.element;
       gadget.property_dict = {
+        "keyword_container": getElem(el, ".volt-category__container"),
         "item_container": getElem(el, ".volt-item__container"),
         "dialog": getElem(el, ".volt-dialog-event"),
         "loader": getElem(el, ".dot-flashing"),
@@ -327,7 +330,7 @@
       return cal.download(my_target.calendar_reference.value);
     })
 
-    .declareMethod("updateSearchResults", function (my_config) {
+    .declareMethod("updateSearchResults", function (my_config, my_purge) {
       var gadget = this;
       var dict = gadget.property_dict;
       var lang = dict.selected_language;
@@ -337,12 +340,6 @@
       dict.loader.classList.remove(HIDDEN);
       return gadget.buildDataLookupDict(config)
         .push(function (response) {
-          var keyword_list = [].concat.apply([], response.data.rows.map(function (item) {
-            return item.keyword_dict[lang];
-          })).filter(function(item, pos, self) {
-            return self.indexOf(item) == pos;
-          });
-          console.log(keyword_list)
           dict.loader.classList.add(HIDDEN);
           setDom(
             dict.item_container,
@@ -358,6 +355,13 @@
                   "img_url": item.thumb_url,
                   "fallback_url": FALLBACK_IMG_URL
                 });
+              if (portal_type === PROPOSAL.toLowerCase()) {
+                setDom(
+                  dict.keyword_container,
+                  getTemplate(KLASS, CATEGORY_SEARCH_TEMPLATE),
+                  true)
+                ;
+              }
               dict.event_dict[item.reference] = item;
               return getTemplate(KLASS, CARD_TEMPLATE).supplant({
                 "title": title,
@@ -371,7 +375,7 @@
                 "event_action_list": setActionList(item, lang),
                 "call_to_action": setCallToAction(item, lang)
               });
-            })
+            }), my_purge
           );
           if (config.limit[1] >= response.data.total_count) {
             dict.paginate.classList.add(HIDDEN);
@@ -513,6 +517,18 @@
         });
     })
 
+    .declareMethod("buildSearch", function (my_target) {
+      var gadget = this;
+      var dict = gadget.property_dict;
+      var search = my_target.category_reference.value;
+      dict.grid_config.query =  dict.grid_config.query.split(PLUS)[0] + (search ? (PLUS + search) : STR);
+      return RSVP.all([
+        gadget.updateSearchResults(dict.grid_config, true),
+        gadget.changeState({"grid": dict.grid_config})
+      ]);
+
+    })
+
     .declareMethod("expandDialog", function (my_event, my_fullscreen) {
       var gadget = this;
       var el = gadget.element;
@@ -621,6 +637,8 @@
           return this.localiseVenue(event);
         case "volt-event":
           return this.openDialog(event.target);
+        case "volt-search":
+          return this.buildSearch(event.target);
       }
     })
 
