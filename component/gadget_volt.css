@@ -602,6 +602,11 @@
 .volt-event__card-mini .mdl-card__media {
   min-height: 5em;
 }
+/*
+.volt-event__card-mini .mdl-card__title {
+  padding-top: 0;
+}
+*/
 
 
 .volt-dialog-action-form {
@@ -1188,6 +1193,12 @@
   margin-bottom: 1em;
   font-size: 1em;
   height: 2em;
+  color: #612095;
+}
+@media (max-width: 54em) {
+  .volt-layout__content figcaption {
+    margin-top: 0;
+  }
 }
 .volt-layout__content h1 {
   font-size: 2.5em; 
