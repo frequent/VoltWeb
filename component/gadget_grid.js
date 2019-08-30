@@ -336,6 +336,7 @@
       var lang = dict.selected_language;
       var config = my_config || paginate(dict.grid_config);
       var keyword_list;
+      var type_list = [];
 
       dict.loader.classList.remove(HIDDEN);
       return gadget.buildDataLookupDict(config)
@@ -355,12 +356,8 @@
                   "img_url": item.thumb_url,
                   "fallback_url": FALLBACK_IMG_URL
                 });
-              if (portal_type === PROPOSAL.toLowerCase()) {
-                setDom(
-                  dict.keyword_container,
-                  getTemplate(KLASS, CATEGORY_SEARCH_TEMPLATE),
-                  true)
-                ;
+              if (type_list.indexOf(portal_type) === -1) {
+                type_list.push(portal_type);
               }
               dict.event_dict[item.reference] = item;
               return getTemplate(KLASS, CARD_TEMPLATE).supplant({
@@ -377,6 +374,13 @@
               });
             }), my_purge
           );
+          if (type_list.length === 1 && type_list[0] === PROPOSAL.toLowerCase()) {
+            setDom(
+              dict.keyword_container,
+              getTemplate(KLASS, CATEGORY_SEARCH_TEMPLATE),
+              true
+            );
+          }
           if (config.limit[1] >= response.data.total_count) {
             dict.paginate.classList.add(HIDDEN);
           } else {
