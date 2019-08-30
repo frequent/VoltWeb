@@ -42,7 +42,7 @@
           {"id": "en", "i18n": "English", "text": "English"},
           {"id": "fr", "i18n": "French", "text": "French"}
         ],
-        "grid_config": {"query": "Newsletter", "limit": [0,2]},
+        "grid_config": {"query": "Newsletter", "limit": [0,12]},
         "form_dict": {
           "volt-form__newsletter": {
             "action": "mailto:newsletter@voltlille.fr"
@@ -130,8 +130,15 @@
         </div>      
      </footer>
     </div>
-    
-    
 
+    <!-- cookie consent -->
+    <div class="volt-cookie__notice-wrapper volt-hidden">
+      <span class="volt-cookie__notice-text">This website uses cookies to enhance your visit and for monitoring purposes. <a href="/site-data-privac.html" class="volt-cookie__notice-text">Read our privacy policy</a>. 
+      <form name="volt-cookie__consent" class="volt-cookie__content-form">
+        <button type="submit" class="volt-form__submit-button">
+          <span class="volt-cookie__notice-submit">Ok</span>
+        </button>
+      </form>
+    </div>
   </body>
 </html>

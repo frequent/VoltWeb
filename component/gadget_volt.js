@@ -10,6 +10,7 @@
   var ARR = [];
   var ATTR = "data-attr";
   var I18N = "data-i18n";
+  var NAME ="name";
   var LB = "[";
   var RB = "]";
   var HREF = "href";
@@ -718,7 +719,7 @@
     .declareMethod("storeCoookieConsent", function (my_event) {
       var gadget = this;
       setCookie("consent", 1, 60);
-      gadget.property_dict.consent_wrapper.addClass(HIDDEN);
+      gadget.property_dict.consent_wrapper.classList.add(HIDDEN);
     })
     
     /////////////////////////////
@@ -732,9 +733,9 @@
       if (getCookie("init") === null) {
         setCookie("init", 1, 1);
       }
-      //if (getCookie("consent") === null) {
-      //  gadget.property_dict.consent_wrapper.classList.remove(HIDDEN);
-      //}
+      if (getCookie("consent") === null) {
+        gadget.property_dict.consent_wrapper.classList.remove(HIDDEN);
+      }
 
       return new RSVP.Queue()
         .push(function () {

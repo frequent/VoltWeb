@@ -249,7 +249,7 @@
   }
 }
 /* since we brake the mdl-logic with the manual fixed header above */
-.mdl-layout__container + div {
+.mdl-layout__container + div:not(.volt-cookie__notice-wrapper) {
   padding-top: 6em;
 }
 
@@ -2305,4 +2305,34 @@ body .volt-landing__action-text {
     background-color: rgba(97, 32, 149, .1);
   }
 }
-
+/* ========================= Cookie Consent ==================================*/
+.volt-cookie__notice-wrapper {
+  color: white;
+  background: #a577d1;
+  opacity: .9;
+  font-size: 1.25em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 0.5em 1em;
+  z-index: 1000;
+  right: 0;
+  font-family: Ubuntu;
+}
+.volt-cookie__content-form {
+  display: inline-block;
+  padding-left: .5em;
+}
+.volt-cookie__notice-text {
+  color: #fff;
+}
+.volt-cookie__notice-wrapper .volt-form__submit-button {
+  color: #fff;
+  display: inline-block;
+  padding: .25em;
+  background: #621095;
+  font-family: Ubuntu;
+  font-size: 1em;
+  border: 0px solid #fff;
+  cursor: pointer;
+}
