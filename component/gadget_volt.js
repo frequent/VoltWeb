@@ -732,9 +732,9 @@
       if (getCookie("init") === null) {
         setCookie("init", 1, 1);
       }
-      if (getCookie("consent") === null) {
-        gadget.property_dict.consent_wrapper.classList.remove(HIDDEN);
-      }
+      //if (getCookie("consent") === null) {
+      //  gadget.property_dict.consent_wrapper.classList.remove(HIDDEN);
+      //}
 
       return new RSVP.Queue()
         .push(function () {
