@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "a48184c3-7442-1ba6-4a34-934beada90c0",
+  "file_name": "EU-FR-Lille.Newsletter.a48184c3-7442-1ba6-4a34-934beada90c0",
+  "reference": "EU-FR-Lille.Newsletter.2019-09-01",
+  "title": "Volt Lille Newsletter, Semaine #35",
+  "img_url": "../../../../img/volt_lille_hebdo_512x512.35.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x512.35.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #35 - La Braderie",
+      "description": "Lots of visiteurs, flyers distributed. A lot of feedback and wind - the Braderie went well for us.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #35 - La Braderie",
+      "description": "Beaucoup de visiteurs, d'affiches partagées. Beaucoup de feedback et de vent - la braderie est bien passée pour nous.",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-09-01 23:11:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-09-01 23:11:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-01.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-01.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}
