@@ -37,9 +37,9 @@
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {
-      "facebook": "https://www.facebook.com/events/1095081220690462/",
-      "meetup": "https://www.meetup.com/voltlille/events/264502670/",
-      "evensi": "https://www.evensi.fr/lessive-politique-wash-amp/336073956"
+      "facebook_url": "https://www.facebook.com/events/1095081220690462/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/264502670/",
+      "evensi_url": "https://www.evensi.fr/lessive-politique-wash-amp/336073956"
     }
   },
   "document_dict": {},

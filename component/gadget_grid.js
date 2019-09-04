@@ -76,7 +76,7 @@
   }
 
   function setDatetimeStamp(my_date, my_flag_add_time) {
-    return setDate(my_date) + (my_flag_add_time ? "," + setTime(my_date) : STR);
+    return setDate(my_date) + (my_flag_add_time ? ", " + setTime(my_date) : STR);
   }
 
   function valiDate(my_date, my_time) {
@@ -481,7 +481,7 @@
             "img_url": my_meetup.img_url,
             "fallback_url": FALLBACK_IMG_URL,
             "description": content.text_content,
-            "datetime": setBound([my_meetup.start_date, my_meetup.stop_date], true),
+            "datetime": setBound([my_meetup.start_date/*, my_meetup.stop_date*/], true),
             "location": venue ? getAddress(venue, ", ") : STR,
             "facebook_url": links.facebook_url || STR,
             "facebook_disabled": links.facebook_url || LINK_DISABLED, 

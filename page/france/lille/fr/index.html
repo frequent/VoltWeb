@@ -59,6 +59,7 @@
       .volt-splash:before {
         width: 100%;
         position: absolute;
+        background: url("../../../../img/FR-Lille.Image.Elections.Municipales.Vous.En.Faites.Parti.png") no-repeat center center;
         top: 0;
         bottom: 0;
         left: 0;
@@ -69,6 +70,11 @@
         z-index: 999999;
         background-color: #612095;
         content: "";
+      }
+      @media (max-width: 54em) {
+        .volt-splash:before {
+          background-size: 70%;  
+        }
       }
       .volt-seo-content * {
         color: #612095;
@@ -94,16 +100,14 @@
         </div>
       </header>
 
-      <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
-        <div class="volt-landing__image-container volt-layout__override">
-          <img class="volt-content__banner" srcset="../../../../img/FR-Graphics.Volt.Lille.2020.fr.800w.min.png 800w,
-                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.fr.1200w.min.png 1200w,
-                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.fr.1920w.min.png 1920w"
-           sizes="(max-width: 32em) 800px,
-                  (max-width: 64em) 1200px,
-                  1920px"
-           src="img/FR-Graphics.Volt.Lille.2020.fr.1920.min.png" alt="Volt Lille 2020">
-        </div>
+      <main class="volt-layout__content volt-layout__content-landing volt-content__fullscreen mdl-content__container">
+        <img class="volt-content__banner" srcset="../../../../img/FR-Graphics.Volt.Lille.2020.fr.800w.min.png 800w,
+                                                  ../../../../img/FR-Graphics.Volt.Lille.2020.fr.1200w.min.png 1200w,
+                                                  ../../../../img/FR-Graphics.Volt.Lille.2020.fr.1920w.min.png 1920w"
+         sizes="(max-width: 32em) 800px,
+                (max-width: 64em) 1200px,
+                1920px"
+         src="img/FR-Graphics.Volt.Lille.2020.fr.1920.min.png" alt="Volt Lille 2020">
         
         <h1>Bienvenue sur Volt. <br/>La politique faite par les citoyens. Pour les citoyens.</h1>
         <p>Volt est un mouvement de citoyens né il y a deux ans qui aujourd'hui s'organise avec des équipes dans tous les pays Européens. Nous partageons les  mêmes valeurs et l’idée de faire de la politique d'une façon <b>plus démocratique, plus écologique et plus solidaire</b>. Nous essayons <b>d'établir des listes de citoyens pour participer aux élections</b> - aux niveaux européen, national et local. En effet, nous croyons, qu'une démocratie, signifie non seulement voter, mais également être activement engagé dans une communauté car nous devons faire face aujourd'hui à de grands défis qui exigent des coopérations sincères dans les villes et ses périphéries, et enfin entre les régions et les Etats.</p>
@@ -115,16 +119,16 @@
         <div class="volt-landing__action-bar">
           <h2>Élections Municipales 2020</h2>
           <div class="volt-landing__action-bar-item">
-            <h3 class="volt-landing__action-header"><img class="volt-landing__action-image"  src="../../../../img/EU-Graphics.Municipal.Idea.min.png" alt="L'idée de Volt"><span class="volt-landing__action-text">En savoir plus sur nos idées</span></h3>
+            <h3 class="volt-landing__action-header"><img class="volt-landing__action-image"  src="../../../../img/EU-Graphics.Municipal.Idea.min.png" alt="L'idée de Volt"><span class="volt-landing__action-text">En savoir plus<br/> sur nos idées</span></h3>
             <p>Nous voulons instituer la politique comme une responsabilité de chaque citoyen - en apprendre plus sur notre <a class="volt-landing__action-link" href="volt-vision.html">vision</a>, notre <a class="volt-landing__action-link" href="elections-demarche">démarche</a> pour les élections et contribuer par <a class="volt-landing__action-link" href="participater-contribuer.html">vos idées</a>.
           </div>
           <div class="volt-landing__action-bar-item">
-            <h3 class="volt-landing__action-header"><img class="volt-landing__action-image"  src="../../../../img/EU-Graphics.Municipal.Programme.min.png" alt="Le programme du Volt"><span class="volt-landing__action-text">Découvrir nos propositions</h3>
+            <h3 class="volt-landing__action-header"><img class="volt-landing__action-image"  src="../../../../img/EU-Graphics.Municipal.Programme.min.png" alt="Le programme du Volt"><span class="volt-landing__action-text">Découvrir <br/>nos propositions</h3>
             <p>
             Nous voulons encourager et collecter les propositions faites par les citoyens pour notre programme et politiques éventuelles. En lire plus dans nos propositions pour <a class="volt-landing__action-link" href="elections-programm">les élections municipales</a>.</p>
           </div>
           <div class="volt-landing__action-bar-item">
-            <h3 class="volt-landing__action-header"><img class="volt-landing__action-image"  src="../../../../img/EU-Graphics.Municipal.Volunteer.min.png" alt="Logo Volt's Candidate"><span class="volt-landing__action-text">Être candidat.e pour nous</span></h3>
+            <h3 class="volt-landing__action-header"><img class="volt-landing__action-image"  src="../../../../img/EU-Graphics.Municipal.Volunteer.min.png" alt="Logo Volt's Candidate"><span class="volt-landing__action-text">Être candidat.e<br/>pour nous</span></h3>
             <p>
             Nous voulons participer aux élections avec des listes de citoyens. <a class="volt-landing__action-link" href="participate-membership">Rejoignez-nous</a> ou portez-vous volontaires comme <a class="volt-landing__action-link" href="participate-candidate">candidat.e pour les élections</a>.</p>
           </div>
@@ -142,7 +146,7 @@
         <div class="volt-content__spacer"></div>
         
         <h4 class="volt-footer__header volt-newsreel__header" data-i18n="landing-In the Media">Dans les médias</h4>
-        <div class="volt-newsreel volt-layout__override">
+        <div class="volt-newsreel">
           <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" checked id="slide-1" />
           <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-2" />
           <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-3" />
@@ -173,7 +177,7 @@
           <label class="volt-newsreel__pointer" for="slide-2"></label>
           <label class="volt-newsreel__pointer" for="slide-3"></label>
           <label class="volt-newsreel__pointer" for="slide-4"></label>
-        </div>        
+        </div>
       </main>
 
       <footer class="volt-footer" data-gadget-url="../../../../component/gadget_volt_footer.html"

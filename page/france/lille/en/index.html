@@ -59,6 +59,7 @@
       .volt-splash:before {
         width: 100%;
         position: absolute;
+        background: url("../../../../img/FR-Lille.Image.Elections.Municipales.Vous.En.Faites.Parti.png") no-repeat center center;
         top: 0;
         bottom: 0;
         left: 0;
@@ -69,6 +70,11 @@
         z-index: 999999;
         background-color: #612095;
         content: "";
+      }
+      @media (max-width: 54em) {
+        .volt-splash:before {
+          background-size: 70%;  
+        }
       }
       .volt-seo-content * {
         color: #612095;
@@ -96,18 +102,14 @@
       </header>
 
       <main class="volt-layout__content volt-content__fullscreen mdl-content__container">
-        <div class="volt-landing__image-container volt-layout__override">
-          <img class="volt-content__banner" srcset="../../../../img/FR-Graphics.Volt.Lille.2020.en.800w.min.png 800w,
-                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.en.1200w.min.png 1200w,
-                                                    ../../../../img/FR-Graphics.Volt.Lille.2020.en.1920w.min.png 1920w"
-           sizes="(max-width: 32em) 800px,
-                  (max-width: 64em) 1200px,
-                  1920px"
-           src="img/FR-Graphics.Volt.Lille.2020.en.1920.min.png" alt="Volt Lille 2020">
-        </div>
-        
-        
-        
+        <img class="volt-content__banner" srcset="../../../../img/FR-Graphics.Volt.Lille.2020.en.800w.min.png 800w,
+                                                  ../../../../img/FR-Graphics.Volt.Lille.2020.en.1200w.min.png 1200w,
+                                                  ../../../../img/FR-Graphics.Volt.Lille.2020.en.1920w.min.png 1920w"
+         sizes="(max-width: 32em) 800px,
+                (max-width: 64em) 1200px,
+                1920px"
+         src="img/FR-Graphics.Volt.Lille.2020.en.1920.min.png" alt="Volt Lille 2020">
+
         <h1>Welcome to Volt. <br/>Politics made by citizens. For citizens</h1>
         <p>Volt is a citizen movement that was started two years ago and today has teams of volunteers across all European countries sharing the same values and ideas for <b>a more democratic, ecologic and solidary way of doing politics</b>. We try to <b>establish citizen lists and participate in elections from european to national and local levels</b>, because we believe that democracy is not only voting but having active communities and that the challenges facing us today require cooperation and collaboration - within and across cities, regions and countries.</p>
         <p>Our Lille team is still small, but we would like to participate in the 2020 municipal elections! There are too many questions for us: Can Lille be a real european metropole? A city that not only pretends to be green but actively works to mitigate the effects of climate change? A city that doesn't suffocate citizens in unplanned traffic and rampant construction? A city, that extends its reach rather than leaving communes and the region behind? A city that is solidary without prejudice? A city that is secure for each and everyone? A city that educates with a perspective beyond borders and attracts international business? A city who cares for the needs of its citizens? <b>A city we can call home and be proud of?</b></p>
@@ -141,7 +143,7 @@
 
         <div class="volt-content__spacer"></div>
         <h4 class="volt-footer__header volt-newsreel__header" data-i18n="landing-In the Media">Dans les médias</h4>
-        <div class="volt-newsreel volt-layout__override">
+        <div class="volt-newsreel">
           <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" checked id="slide-1" />
           <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-2" />
           <input class="volt-newsreel__activator volt-hidden" type="radio" name="volt_activator" id="slide-3" />

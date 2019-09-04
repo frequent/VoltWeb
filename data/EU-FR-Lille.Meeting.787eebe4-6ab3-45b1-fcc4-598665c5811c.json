@@ -37,9 +37,9 @@
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {
-      "facebook": "https://www.facebook.com/events/470381433541491/",
-      "meetup": "https://www.meetup.com/politique-volt-europe-france-lille/events/264295417/",
-      "evensi": "https://www.evensi.fr/balade-europeenne-a-lille-etro-europe-distributeur-billets/333574921"
+      "facebook_url": "https://www.facebook.com/events/470381433541491/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264295417/",
+      "evensi_url": "https://www.evensi.fr/balade-europeenne-a-lille-etro-europe-distributeur-billets/333574921"
     }
   },
   "document_dict": {},

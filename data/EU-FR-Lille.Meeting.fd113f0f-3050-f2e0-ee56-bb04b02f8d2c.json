@@ -37,9 +37,9 @@
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {
-      "facebook": "https://www.facebook.com/events/440656569880546/",
-      "meetup": "https://www.meetup.com/voltlille/events/264506643/",
-      "evensi": "https://www.evensi.fr/carousel-candidat-gare-saint-sauveur/336092763"
+      "facebook_url": "https://www.facebook.com/events/440656569880546/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/264506643/",
+      "evensi_url": "https://www.evensi.fr/carousel-candidat-gare-saint-sauveur/336092763"
     }
   },
   "document_dict": {},
