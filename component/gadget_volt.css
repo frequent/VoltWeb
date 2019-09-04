@@ -1035,8 +1035,8 @@
     border-bottom: 1px solid #191923;
     height: 45px;
   }
-  .volt-footer__top .volt-navbar__item:hover,
-  .volt-footer__top .volt-navbar__item:focus {
+  .volt-footer__top .volt-navbar__item:hover/*,
+  .volt-footer__top .volt-navbar__item:focus*/ {
     background: #FCFCFC;
     background: rgba(97, 32, 149, .1);
   }

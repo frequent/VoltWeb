@@ -116,19 +116,25 @@
     .declareMethod("initialiseMap", function (my_id) {
       var gadget = this;
       var dict = gadget.property_dict;
+      var queue = new RSVP.Queue();
       var id;
       if (!dict.map) {
         dict.map = L.map(gadget.state.map_id, {"zoomControl": false});
         L.control.zoom({"position": "bottomright"}).addTo(dict.map);
-      }
-      if (my_id === gadget.state.key) {
-        return;
-      }
-      id = my_id || gadget.state.key;
-      return gadget.stateChange({"map_set": true})
-        .push(function () {
+        queue.push(function () {
           return gadget.updateMapState(my_id);
         });
+      }
+      if (my_id === gadget.state.key) {
+        return queue;
+      }
+      id = my_id || gadget.state.key;
+      return queue.push(function () {
+        return gadget.stateChange({"map_set": true});
+      })
+      .push(function () {
+        return gadget.updateMapState(my_id);
+      });
     })
 
     .declareMethod("redrawMap", function () {
