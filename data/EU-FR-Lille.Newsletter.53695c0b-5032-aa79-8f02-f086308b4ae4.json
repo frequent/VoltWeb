@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "53695c0b-5032-aa79-8f02-f086308b4ae4",
+  "file_name": "EU-FR-Lille-Newsletter.53695c0b-5032-aa79-8f02-f086308b4ae4.json",
+  "reference": "EU-FR-Lille.Newsletter.2019-09-08",
+  "title": "Volt Lille Newsletter, Semaine #36",
+  "img_url": "../../../../img/volt_lille_hebdo_512x512.36.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x512.36.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #36 - General Assembly",
+      "description": "End of the week our French general assembly will take place in Lille with election of a new board, statuts and open discussion to define our strategy for the next year",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #35 - L'Assemblée Générale",
+      "description": "À la fin de cette semaine, notre assemblée générale d'équipe Volt France aura lieu à Lille avec l'élection d'un nouveau bureau, les nouveaux statuts et la définition de notre stratégie ici en France pour l'an prochaine.",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-09-08 23:31:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-09-08 23:23:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-08.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-08.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}
