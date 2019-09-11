@@ -1168,7 +1168,9 @@
   padding: 0; 
 }
 .volt-layout__content-landing > *:not(.volt-content__banner) {
-  padding: 0 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: auto;
 }
 .volt-layout__content:not(.volt-content__fullscreen) {
   column-count: 2;
@@ -1189,7 +1191,8 @@
 }
 @media (max-width: 54em) {
   .volt-layout__content > *:not(.volt-content__banner) {
-    padding: 0 5%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .volt-layout__content > section {
     padding: 2em;
@@ -1197,7 +1200,8 @@
 }
 @media (max-width: 32em) {
   .volt-layout__content > *:not(.volt-content__banner) {
-    padding: 0 2em;
+    margin-left: 2em;
+    margin-right: 2em;
   }
   .volt-layout__content > section {
     margin-top: 2em;
@@ -1910,6 +1914,44 @@ div[data-gadget-url] {
   padding-right: 0;
   padding-left: 1.5vh;
   display: inline-block;
+}
+.volt-dialog__close-top {
+  display: block;
+  text-align: right;
+  width: 96%;
+}
+.volt-dialog__close-top .fab {
+  font-size: 2em;
+  color: #612095;
+}
+.volt-dialog__close-top .mdl-button {
+  height: 56px;
+}
+@media only screen and (max-width: 48em) {
+  .volt-dialog__close-top .mdl-button {
+    height: 36px;
+    width: 52px;
+    top: .3em;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 32em) {
+  .volt-dialog__close-top .mdl-button {
+    height: 36px;
+    width: 36px;
+    min-width: 36px;
+  }
+}
+@media only screen and (max-width: 32em) {
+  .volt-dialog__close-top {
+    margin-right: 0;  
+  }
+  .volt-dialog__close-top {
+    float: left;
+  }
+  .volt-dialog__close-top .mdl-button {
+    width: 52px;
+  }
 }
 @media (max-width: 54em) {
   .volt-dialog__floater {
