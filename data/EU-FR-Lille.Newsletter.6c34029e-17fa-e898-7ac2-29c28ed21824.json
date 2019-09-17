@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "6c34029e-17fa-e898-7ac2-29c28ed21824.json",
+  "file_name": "EU-FR-Lille.Newsletter.6c34029e-17fa-e898-7ac2-29c28ed21824.json",
+  "reference": "EU-FR-Lille.Newsletter.2019-09-09",
+  "title": "Volt Lille Newsletter, Semaine #37",
+  "img_url": "../../../../img/volt_lille_hebdo_512x256.37.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x256.37.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #37 - Reset",
+      "description": "The past weekend we hosted the general assembly, elected our new bureau and voted for an overdue update of our statuts. We're looking forward to giving Volt France a new positive spin in the months to come and start right off with the upcoming climate weekend.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #37 - Un nouveau départ",
+      "description": "Le week-end passé nous avons accueillie l'assemblée générale à Lille. Nous avons élus un nouveau bureau et votés pour une mise à jour de nos statuts. Nous nous réjouissons à donner un nouvel esprit à Volt France dans les mois à l'avenir en commençant avec la prochaine week-end et les événements autour le climat.",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-09-14 23:32:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-09-14 23:23:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-14.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-14.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}
