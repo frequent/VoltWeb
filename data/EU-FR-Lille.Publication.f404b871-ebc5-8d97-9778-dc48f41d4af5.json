@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "f404b871-ebc5-8d97-9778-dc48f41d4af5",
+  "file_name": "EU-FR-Lille.Publication.f404b871-ebc5-8d97-9778-dc48f41d4af5.json",
+  "reference": "EU-FR-Lille.Publication.Synthèse.Sraddet.Hauts.De.France.2019-10-01",
+  "title": "SRADDET Hauts-de-France - Synthèse",
+  "img_url": "../../../../img/FR-HDF.Sraddet.Banner.Dark.png", 
+  "thumb_url": "../../../../img/FR-HDF.Sraddet.Banner.Dark.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "SRADDET Hauts-de-France - Synthesis",
+      "description": "Scheme for the regional, sustainablie and coherent development of the territories in Hauts-de-France",
+      "text_content": "Summary of the diagnosis, vision, orientations, objectives and rules for the public hearing of the SRADDET."
+    },
+    "fr": {
+      "title": "SRADDET Hauts-de-France - Synthèse",
+      "description": "Schéma régional d'aménagement, de développement durable et d'égalité des territoires",
+      "text_content": "Synthèses du diagnoses, de la vision, un sommaire des orientations et objectifs aussi bien que les règles définis par les SRADDET."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-10-01 23:58:33 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}
