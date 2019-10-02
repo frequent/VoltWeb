@@ -7,12 +7,12 @@
   "default_locale": "en",
   "icons": [
         {
-            "src": "app/volt_192x192.png",
+            "src": "../../../../app/volt_192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "app/volt_256x256.png",
+            "src": "../../../../app/volt_256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         }
