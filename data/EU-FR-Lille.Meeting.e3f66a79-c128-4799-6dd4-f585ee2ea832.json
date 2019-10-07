@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "e3f66a79-c128-4799-6dd4-f585ee2ea832",
+  "file_name": "EU-FR-Lille.Meeting.e3f66a79-c128-4799-6dd4-f585ee2ea832.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Reunion.Politique.2019-09-22",
+  "img_url": "../../../../img/FR-Lille.Graphics.Reunion.Politique-2019-10-10.min.png",
+  "thumb_url": "../../../../img/FR-Lille.Graphics.Reunion.Politique-2019-10-10.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Political Meeting",
+      "description": "Giving a different spin to political discussions",
+      "text_content": "Political Meeting - we will speak about the upcoming local elections, how to construct our programme based on citizen ideas and how to create a list of citizen candidates. Join us if you're curious and want to learn more." 
+    },
+    "fr": {
+      "title": "Volt Lille - Réunion Politique",
+      "description": "Une nouvelle manière de discuter de la politique",
+      "text_content": "Réunion Politique - on parle des élections municipales, de la construction de notre programme basé sur les idées des citoyens et comment rassembler une liste de candidats citoyens. Rejoignez-nous pour se rencontrer et discuter."
+    }
+  },
+  "start_date": "2019-10-10 18:00:00 GMT+2",
+  "stop_date": "2019-10-10 20:00:00 GMT+2",
+  "release_date": "2019-10-06 23:39 GMT+2",
+  "location": {
+    "coordinates": [50.637719, 3.058248],
+    "title": "Le Comptoir de Cana",
+    "physical_address": "38 Rue des Bouchers",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/2588610664494661/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/265378151/",
+      "evensi_url": "https://www.evensi.fr/eunion-politique-comptoir-cana/344280638"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}
