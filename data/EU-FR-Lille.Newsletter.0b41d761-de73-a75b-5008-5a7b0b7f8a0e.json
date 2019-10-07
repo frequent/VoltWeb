@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "53695c0b-5032-aa79-8f02-f086308b4ae4",
+  "file_name": "EU-FR-Lille.Newsletter.53695c0b-5032-aa79-8f02-f086308b4ae4",
+  "reference": "EU-FR-Lille.Newsletter.2019-10-06",
+  "title": "Volt Lille Newsletter, Semaine #40",
+  "img_url": "../../../../img/volt_lille_hebdo_512x256.40.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x256.40.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #40 - Les Enquêtes",
+      "description": "The days are getting shorter and another week flew by - and we're finding ourselves in a city that declared the climate emergency while public hearings are on the way which to some part propose no concrete measures to adapt to climate change in the next 10 years (...)",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #36 - Les Enquêtes",
+      "description": "Les jours raccourcissent, encore une semaine passée vite - nous nous trouvons en état de l'urgence climatique depuis quelques jours tandis que les enquêtes publiques pour les schémas des collectivités passent, qui (en quelque part) ne prennent pas le changement climatique pour sérieux (...)",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-10-06 23:59:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-10-06 23:59:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-10-06.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-10-06.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}
