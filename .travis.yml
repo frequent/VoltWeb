@@ -1,13 +1,4 @@
-sudo: required
 language: node_js
-node_js: stable
-
-cache:
-  directories:
-    - node_modules
-
-before_deploy:
-  - "npm run build"
 
 deploy:
   provider: pages
