@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "f08929f9-f20f-acc6-361c-622d76cadb2d",
+  "file_name": "EU-FR-Lille.Publication.f08929f9-f20f-acc6-361c-622d76cadb2d.json",
+  "reference": "EU-FR-Lille.Communique.De.Presse.Avis.Sraddet.Hauts.De.France.2019-10-16",
+  "title": "Communiqué de Presse - SRADDET Hauts-de-France: Beaucoup à prouver, beaucoup à perdre",
+  "img_url": "",
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Press Release - SRADDET Hauts-de-France: a lot to prove with a lot at stake",
+      "description": "Our collection of ideas how to make Lille a cleaner city and work towards reducing our overall waste.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Communiqué de Presse - SRADDET Hauts-de-France : Beaucoup à prouver, beaucoup à perdre",
+      "description": "Avis de Volt Lille pour l'enquête publique du SRADDET de la région Hauts-de-France",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-10-17 08:03:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille-Communique.De.Presse.Avis.Sraddet.Hauts.De.France.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Lille-Communique.De.Presse.Avis.Sraddet.Hauts.De.France.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
