@@ -1,0 +1,32 @@
+{
+	"name": "voltweb",
+	"title": "VoltWeb",
+	"description": "Templating for static Volt (city) websites",
+	"version": "0.0.1",
+	"homepage": "https://voltweb.eu/",
+	"author": {
+		"name": "Sven Franck",
+		"url": "https://github.com/frequent"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VoltEuropa/VoltWeb"
+	},
+	"bugs": "https://github.com/VoltEuropa/VoltWeb/issues",
+  "license": "LGPL 3",
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-qunit": "~0.3.0",
+    "grunt-open": "~0.2.2"
+	},
+	"main": "Gruntfile.js",
+	"engines": {
+		"node": ">= 0.8.0"
+	},
+	"scripts": {
+		"test": "./node_modules/.bin/grunt test"
+	},
+	"keywords": []
+}
