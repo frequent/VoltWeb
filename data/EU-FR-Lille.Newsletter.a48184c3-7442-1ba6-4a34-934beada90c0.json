@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "a48184c3-7442-1ba6-4a34-934beada90c0",
+  "file_name": "EU-FR-Lille.Newsletter.a48184c3-7442-1ba6-4a34-934beada90c0",
+  "reference": "EU-FR-Lille.Newsletter.2019-08-18",
+  "title": "Volt Lille Newsletter, Semaine #33",
+  "img_url": "../../../../img/volt_lille_hebdo_512x512.33.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x512.33.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #33 - La Rentrée",
+      "description": "Volt Lille is back and ready to start preparing for next year's municipal elections.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #33 - La Rentrée",
+      "description": "Volt Lille a repris le travail et est prête à commencer avec les préparations pour les élections municipales.",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-08-18 20:00:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-08-18 20:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-HDF.Synthese.Sraddet.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-HDF.Synthese.Sraddet.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}

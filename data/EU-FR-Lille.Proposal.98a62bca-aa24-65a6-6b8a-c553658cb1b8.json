@@ -1,0 +1,60 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "98a62bca-aa24-65a6-6b8a-c553658cb1b8",
+  "file_name": "EU-FR-Lille.Proposal.98a62bca-aa24-65a6-6b8a-c553658cb1b8.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Garages.De.Stationnements.Pour.Les.Navettes.Et.Citoyens.A.Fives.Et.Port.De.Lille",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["traffic_reduction_", "long term car park_", "commuter parking_", "bike infrastructure_"],
+    "fr": ["réduction du trafic_", "parking désert long terme_", "parking navettes_", "infrastructure vélo_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Provide commuter and citizen car parks in Fives/Port of Lille",
+      "description": "Move cars out of the city to reduce pollution, noise and free much needed space.",
+      "text_content": "Remove the cars from traffic and the city by installing two large shuttle / long-term car parks in Fives Cail (North-South, A1 / A22) and Port of Lille (West-East, A25) with connection in the high-frequency city center ('People Mover' cable car) and bike facilities (tracks, storage, V'Lille) - possibility to build in a sustainable way for a period of 20 years to allow time to gradually stop cars in the city and then rearrange the land. During construction, offer free and secure parking in Champs de Mars for downtown residents."
+    },
+    "fr": {
+      "title": "Fournier les garages de stationnements pour les navettes/citoyens à Fives/Port de Lille",
+      "description": "Déménager les voitures du centre-ville afin de réduire la pollution, le bruit et afin de libèrer les espaces exiges",
+      "text_content": "Retirer les voitures de la circulation et de la ville par l'installation de deux grandes parkings navette/longue-terme à Fives Cail (Nord-Sud, A1/A22) et Port de Lille (Ouest-Est, A25) avec connexion dans le centre-ville en haute fréquence (téléphérique 'People Mover' ) et des infrastructures vélo (pistes, stockage, V’Lille) - possibilité de construire en façon soutenable pour une période de 20 ans pour laisser les temps à cesser progressivement les voitures dans la ville et réaménager le terrain ensuite. Pendant la construction, offrir parking gratuit et sécurisé dans champs de Mars pour les habitants de centre-ville."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "http://transporturbain.canalblog.com/archives/2019/06/14/37428120.html",
+    "title": "Lille annonce 5 nouvelles lignes de tramway sur 15 ans",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://fr.wikipedia.org/wiki/People-mover_de_Venise",
+    "title": "Wikipedia: People Mover",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://inhabitat.com/temporary-dutch-parking-garage-is-as-green-as-it-looks/",
+    "title": "Temporary Dutch Parking Garage Is as Green As It Looks",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}
+

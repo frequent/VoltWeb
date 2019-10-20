@@ -1,0 +1,60 @@
+{
+  "type": "event",
+  "event_type": "Person",
+  "event_nature": "Candidate",
+  "event_origin": "EU/FR/Lille",
+  "id": "bdb188c1-2cd9-ce0f-2dba-19028f6b47be",
+  "file_name": "EU-FR-Lille.Person.bdb188c1-2cd9-ce0f-2dba-19028f6b47be.json",
+  "reference": "EU-FR-Lille.Person.Candidate.Sven.Franck",
+  "img_url": "../../../../img/FR-Images.Lille.Sven.Franck.jpg",
+  "thumb_url": "../../../../img/FR-Images.Lille.Sven.Franck.jpg",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "role": "City Lead Lille",
+      "position": "",
+      "title": "Sven FRANCK",
+      "last_name": "Franck",
+      "first_name": "Sven",
+      "age": "42 years old",
+      "profession": "Free Software Developer",
+      "political_party": "Volt France",
+      "nationality": "German",
+      "description": "42yo, German, Free Software Developer",
+      "text_content": "I'm 42 year old German and live with my Slovenian wife-to-be in Lille. I have two business degrees and am a self-taught programmer working as a free software developer and project manager for Nexedi SA. Aside from work, I'm organising the Lille German and expat communities (on meetup.com). I used to tango and show Lille to the couchsurfers, but for more than a year now, I'm volunteering for Volt in my free time - the first time, I'm seriously diving into politics. When I arrived in France in 2012 I didn't speak a word of French (still learning) - yet I felt welcome in Lille from the very beginning. I feel like I've gotten the better end of the cliché that people in the north a warm at heart, because it's raining a lot. The people of Lille are one of a kind and climate change took care of the rain. This is also one reason I'm running as a candidate. Walking through Lille mostly on foot, you can see how the city is changing. For the better - we're much more international now - and for the worse - there is no more rain, the city is getting more and more polluted, solidarity seems to not be colorblind and I with all the protest and violence in the last year I wonder how we need to define democracy in todays time. Personally, I've come to my own conclusion, which is that only voting isn't enough - a functioning society requires more contributions in times when many things seem to be in a state of flux. I don't have any political experience, but I'm good at learning on the job. I will not make any promises. I will say what I believe in and propose what I would like to see changed from the perspective of a citizen of Lille - I will probably find out how hard it is to actually change something. But nothing seems easy today - we still have to try. Send us your ideas and proposals how to improve Lille, elected or not, every contribution is a piece towards a more active and engaged community - and that is what we need.",
+      "suburb": "Saint-Maurice",
+      "mandates": ""
+    },
+    "fr": {
+      "role": "Chef d'équipe Lille",
+      "position": "",
+      "title": "Sven FRANCK",
+      "last_name": "Franck",
+      "first_name": "Sven",
+      "age": "42ans",
+      "profession": "Développer de logicielle libre",
+      "political_party": "Volt France",
+      "nationality": "Allemand",
+      "description": "42 ans, Allemand, Développer de logicielle libre",
+      "text_content": "Je suis un allemand de 42 ans et j'habite avec ma partenaire slovène à Lille Saint-Maurice. J'ai deux diplômes de commerce et je suis un développé autodidacte en travaillent dans une petite entreprise de logiciel libre en tant que développer et gèrant des projets. À côté du boulot j'organise les communautés des Allemands et des expats à Lille (sur meetup.com). Je dansais le tango et montrais Lille à beaucoup de couchsurfers, mais depuis plus d'un an que je me porte volontaire pour Volt dans mon temps libre - la première fois, je suis sérieusement plongée au monde de politique. Quand je suis arrivé en France en 2012, je ne parlais pas un mot de français (encore dans l'apprentissage) - pourtant je me suis senti la bienvenue à Lille tout depuis le début. Je me aussi sens comme je profite de bonne cote du cliché au Nord - les Lillois.es sont réconfortants. Mais probablement grâce de changement climatique, il ne pleut pas plus - une des raisons auxquelles je m'engage comme candidat. Je balade à travers Lille à pied et c'est visible que la ville se change : pour les mieux - nous sommes une ville beaucoup plus internationale; et pour le pire - nous manquons la pluie, la ville est de plus en plus pollue, notre solidarité ne semble pas être daltonienne et avec toutes les manifestations et la violence des derniers ans, je me demande comment définir la démocratie aujourd'hui. À mon avis, la conclusion à laquelle je suis parvenue est qu'il ne suffit pas de seulement à voter - une société opérationnelle exige plus de contributions dans un temps qui semble dans un état de flux. Je n'ai pas expérience dans le monde de politique, mais je veux bien apprendre sur le tas. Je ne ferais pas les promesses. Je parlerai de mes convictions et je proposerai ça que j'aimerais bien voir un jour changé d'une perspective citoyen. Je vais probablement l'apprendre que c'est incroyablement difficile à vraiment changer quelque chose. Mais rien ne semble facile à changer aujourd'hui - il faut encore essayer. Envoyez-nous vos idées et propositions comment améliorer Lille, parce que - élus ou pas, chaque contribution sera un pas vers une communauté plus active et engagée - c'est ce dont on a besoin.",
+      "suburb": "Saint-Maurice",
+      "mandates": ""    
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-09-28 09:02 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/404912770212347/",
+      "twitter_url": "https://twitter.com/SvenFranck",
+      "instagram_url": "https://www.instagram.com/sven.franck/"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

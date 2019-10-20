@@ -1,0 +1,60 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0b02c34e-b134-d635-3910-ab884333e9e8",
+  "file_name": "EU-FR-Lille.Proposal.0b02c34e-b134-d635-3910-ab884333e9e8.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Zone.Piétonne.En.Centre.Ville",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["traffic reduction_", "pedestrian zone_", "free electric shuttles_", "bike infrastructure_"],
+    "fr": ["réduction du trafic_", "zone piétonne_", "navettes electriques gratuits_", "infrastructure vélo_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Innercity pedestrian zone",
+      "description": "Prohibit downtown access for cars and enforce reduced speed throughout Lille.",
+      "text_content": "Convert Old Lille in a pedestrian zone and the interior of Lille between D651 / D750 / D749 in a no wake zone (speed reduced, crit'air <3) by replacing streets with bike paths and by installing tracks along with free  electric shuttles in the city center for the elderly and the disabled."
+    },
+    "fr": {
+      "title": "Zone piétonne en centre-ville",
+      "description": "Interdire l'accès en centre-ville pour les voitures et appliquer la vitesse réduite dans toute la ville.",
+      "text_content": "Convertir Vieux Lille dans une zone piétonne et l'intérieur de Lille entre D651/D750/D749 dans une zone sans sillage (vitesse réduit, crit'air <3 ) en remplaçant des rues avec les pistes cyclables et en installant des voies pour et navettes électriques gratuits dans le centre-ville pour les personnes âgées et les handicapés"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.lemonde.fr/smart-cities/article/2019/06/12/cinq-exemples-de-grandes-villes-qui-ont-banni-les-voitures_5475072_4811534.html",
+    "title": "Cinq exemples de grandes villes qui veulent bannir les voitures",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.certificat-air.gouv.fr/",
+    "title": "Obtenir son certificat qualité de l'air",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.francebleu.fr/infos/climat-environnement/en-2021-les-vehicules-les-plu-polluants-seront-bannis-du-centre-de-la-metropole-lilloise-1560279810",
+    "title": "En 2021, les véhicules les plus polluants seront bannis du centre de la métropole lilloise",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}
+

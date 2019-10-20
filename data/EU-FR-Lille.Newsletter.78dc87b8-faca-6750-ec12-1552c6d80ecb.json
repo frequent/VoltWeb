@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "78dc87b8-faca-6750-ec12-1552c6d80ecb",
+  "file_name": "EU-FR-Lille.Newsletter.78dc87b8-faca-6750-ec12-1552c6d80ecb",
+  "reference": "EU-FR-Lille.Newsletter.2019-09-23",
+  "title": "Volt Lille Newsletter, Semaine #38",
+  "img_url": "../../../../img/volt_lille_hebdo_512x256.38.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x256.38.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #38 - The Climate",
+      "description": "The climate and what to do about it after another weekend of protests.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #38 - Le climat",
+      "description": "Le climat et ce qu'il faut faire à ce sujet après un week-end de manifestations.",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-09-23 23:41:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-09-23 23:41:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-23.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-09-23.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}

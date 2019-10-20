@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "8fc7fd88-8643-4dec-4613-22f43f4d0f3b",
+  "file_name": "EU-FR-Lille.Publication.8fc7fd88-8643-4dec-4613-22f43f4d0f3b.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Mobilite.2019-07-01",
+  "title": "Lille Municipales 2020 - Propositions Mobilité",
+  "img_url": "",
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipal Elections 2020 - Proposals Mobility",
+      "description": "Ideas for a less car dependent and more citizen-centric transportation system.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Propositions Mobilité",
+      "description": "Les idées pour un système de transport plus axé sur les citoyens et moins dépendant dans les voitures.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Mobilite.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Mobilite.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

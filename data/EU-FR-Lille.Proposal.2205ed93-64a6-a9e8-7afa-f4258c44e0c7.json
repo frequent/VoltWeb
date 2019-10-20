@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "2205ed93-64a6-a9e8-7afa-f4258c44e0c7",
+  "file_name": "EU-FR-Lille.Proposal.2205ed93-64a6-a9e8-7afa-f4258c44e0c7.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Bâtir.Des.Communautés.Au.Lieu.De.Dortoirs",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["community building_", "sustainable urbanism_"],
+    "fr": ["développement communautaire_", "urbanisme soutenable_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Build communities instead of dormitories",
+      "description": "Do not give permissions for residence-only construction projects without access to public transport.",
+      "text_content": "Build communities instead of dormitories and require that constructions in vacant or agricultural land are only granted if constructed no more than 500m from a metro / tram / train station and if they include public spaces and services."
+    },
+    "fr": {
+      "title": "Bâtir des communautés au lieu de dortoirs",
+      "description": "Ne permer pas des projets de construction de résidences uniquement sans accès au transport en commun.",
+      "text_content": "Bâtir des communautés au lieu de dortoirs et exiger que les constructions dans le terrain vacant ou agricole sont uniquement accordées si construit pas plus de 500m d'une station du métro/tram/train et s'ils comprennent des espaces et des services 5 publics."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

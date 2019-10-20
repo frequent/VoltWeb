@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "4aaf6508-b1d2-4e7d-b2ce-89c775f825f4",
+  "file_name": "EU-FR-Lille.Proposal.4aaf6508-b1d2-4e7d-b2ce-89c775f825f4.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Un.Frais.Pour.Les.Sacs.À.Provisions",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["waste reduction_"],
+    "fr": ["réduction des déchets_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Shopping bag fee",
+      "description": "Bags should only be available for a fee.",
+      "text_content": "Make it mandatory to offer cotton bags instead of plastic and paper in retail stores in Lille. Require all merchants to request a payment for bags used (including not just food traders)."
+    },
+    "fr": {
+      "title": "Un frais pour les sacs à provisions",
+      "description": "Les sacs ne devraient pas être disponible sans coût visible.",
+      "text_content": "Rendrer obligatoire les sacs de coton au lieu de plastique et papier dans le commerce en détail à Lille. Exiger à toutes les commerçants pour demander un paiement pour les sacs utilisés (y compris pas seulement les commerçants alimentaires)."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "",
+    "title": "",
+    "i18n": "",
+    "mime-type": ""
+  }]
+}

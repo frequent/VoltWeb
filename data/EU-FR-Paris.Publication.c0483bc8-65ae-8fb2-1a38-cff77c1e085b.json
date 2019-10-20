@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Paris",
+  "id": "8fc7fd88-8643-4dec-4613-22f43f4d0f3b",
+  "file_name": "EU-FR-Paris.Publication.8fc7fd88-8643-4dec-4613-22f43f4d0f3b.json",
+  "reference": "EU-FR-Paris.Publication.Campagne.Municipales.2020.Propositions.Mobilite.2019-07-01",
+  "title": "Paris Municipales 2020 - Propositions Mobilité",
+  "img_url": "",
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Paris Municipal Elections 2020 - Proposals Mobility",
+      "description": "",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Paris Municipales 2020 - Propositions Mobilité",
+      "description": "",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-05-15 17:23:00 GMT+2", 
+  "location": {},
+  "scope": "EU/FR/Paris",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

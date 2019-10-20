@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "79bc3d44-4196-2f84-0bac-d1a32cbcae68",
+  "file_name": "EU-FR-Lille.Proposal.79bc3d44-4196-2f84-0bac-d1a32cbcae68.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Reimaginer.Les.Livraisons.En.Centre.Ville",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["soft transport_", "electric delivery_"],
+    "fr": ["transport douce_", "livraison electrique_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Rethink innercity deliveries",
+      "description": "Use more light delivery instead of heavy duty transporters.",
+      "text_content": "Establish a soft delivery network in the city center and encourage their use by limiting access to downtown for the most polluting trucks."
+    },
+    "fr": {
+      "title": "Re-imaginer les livraisons en centre-ville",
+      "description": "Utiliser plus la livraison douce comme les transports lourds.",
+      "text_content": "Établir un réseau de livraison douce dans le centre ville et inciter leur utilisation en limitant l'accès à centre-ville pour les camions le plus polluantes."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "http://citeliv.fr/",
+    "title": "Citéliv, vos livraisons du centre-ville de Lille en modes doux",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

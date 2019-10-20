@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "49b0f84a-15c6-de56-91a0-2691c1582333",
+  "file_name": "EU-FR-Lille.Meeting.49b0f84a-15c6-de56-91a0-2691c1582333.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Marcher.Un.Peu.Plus.2019-09-21",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Marcher.Un.Peu.Plus.2019-09-21.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Marcher.Un.Peu.Plus.2019-09-21.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Let's walk a bit more",
+      "description": "for the climat and social justice. Join us and raise awareness for the public hearings on the SRADDET",
+      "text_content": "Aside from cleaning up, Saturday is also the day to march for climate and social justice. We will use this opportunity to raise awareness for the public hearing on the SRADDET plan, which sets the long term objectives for the region and more or less ignores climate change effects then the ecocide. The MRES will organise an event on how to submit opinions and analyse the plan. We will advertise this event during the march" 
+    },
+    "fr": {
+      "title": "Volt Lille - Marcher un peu plus",
+      "description": "Pour le climat et la justice sociale. Rejoignez-nous pour faire connaître les enquêtes publiques pour la SRADDET",
+      "text_content": "À part le nettoyage, le samedi est aussi la journée de la mobilisation pour le climat et la justice sociale. Nous devrions saisir l'occasion pour une prise de conscience concernant la SRADDET, une schéma pour définir les objectives en long terme pour la région qui pratiquement écaler le changement climatique et l'écocide. La MRES va organiser un événement pour explique comment donner un avis et faire analyse du plan. Nous l'annoncerons l'événement pendant la marche."
+    }
+  },
+  "start_date": "2019-09-21 14:00:00 GMT+2",
+  "stop_date": "2019-09-21 14:00:00 GMT+2",
+  "release_date": "2019-09-17 02:35 GMT+2",
+  "location": {
+    "coordinates": [50.637004, 3.063907],
+    "title": "Grande Place",
+    "physical_address": "Place Charles de Gaulle, Furet du Nord",
+    "city": "Lille",
+    "zip": "59800",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/460650734662706/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/264922201",
+      "evensi_url": "https://www.evensi.fr/volt-lille-marcher-entre-furet-nord/340020318"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

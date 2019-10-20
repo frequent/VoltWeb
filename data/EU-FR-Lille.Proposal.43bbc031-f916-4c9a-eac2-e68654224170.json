@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "43bbc031-f916-4c9a-eac2-e68654224170",
+  "file_name": "EU-FR-Lille.Proposal.43bbc031-f916-4c9a-eac2-e68654224170.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Coefficient.Des.Casiers.Vélo.Et.D.Espace.Vert",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["bike infrastructure_", "green spaces_", "traffic reduction_"],
+    "fr": ["infrastructure vélo_", "espaces verts_", "réduction du trafic_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Coefficient for bike lockers and green spaces",
+      "description": "",
+      "text_content": "Replace the requirement to build parking spaces with new buildings with requirements for green space, trees and a bicycle network."
+    },
+    "fr": {
+      "title": "Coefficient des casiers vélo et d'espace vert",
+      "description": "",
+      "text_content": "Remplacer l'exigence pour construire des espaces du parking avec de nouveaux bâtiments avec des exigences pour l'espace vert, des arbres et un réseau vélo. 1"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.frequenceterre.com/2018/04/24/houten-aux-pays-bas-la-ville-eco-responsable-devenue-le-paradis-du-velo/",
+    "title": "HOUTEN aux Pays-Bas, le paradis du vélo (rediffusion)",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

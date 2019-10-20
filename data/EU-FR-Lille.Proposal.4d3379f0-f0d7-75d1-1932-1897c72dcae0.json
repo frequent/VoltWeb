@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "4d3379f0-f0d7-75d1-1932-1897c72dcae0",
+  "file_name": "EU-FR-Lille.Proposal.4d3379f0-f0d7-75d1-1932-1897c72dcae0.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Une.Ville.Pour.Les.Citoyens",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["sustainable tourism_"],
+    "fr": ["tourism durable_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "A city for citizens",
+      "description": "",
+      "text_content": "Limit the number of nights a property can be rented per year and the number of properties an owner can list with services such as AirBnB."
+    },
+    "fr": {
+      "title": "Une ville pour les citoyens",
+      "description": "",
+      "text_content": "Limiter le nombre de nuits qu'une propriété peut être louée par an et le nombre de propriétés qu'un propriétaire peut répertorier avec des services tels que AirBnB."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.theguardian.com/commentisfree/2018/oct/24/airbnb-unregulated-damage-cities-barcelona-law-locals",
+    "title": "Airbnb can’t go on unregulated – it does too much damage to cities",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

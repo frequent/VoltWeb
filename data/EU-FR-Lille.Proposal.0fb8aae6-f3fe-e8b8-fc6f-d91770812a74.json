@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0fb8aae6-f3fe-e8b8-fc6f-d91770812a74",
+  "file_name": "EU-FR-Lille.Proposal.0fb8aae6-f3fe-e8b8-fc6f-d91770812a74.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Circuits.Pour.L.Eau.Grises",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["sustainable housing_", "save drinking water_"],
+    "fr": ["logements soutenables_", "économiser l'eau potable_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Gray water circuits",
+      "description": "",
+      "text_content": "Request new buildings to have rainwater collectors and a gray water circuit to stop using potable water for toilet flushing and gardening."
+    },
+    "fr": {
+      "title": "Les Circuits pour l'eau grises",
+      "description": "",
+      "text_content": "Demander les nouveaux bâtiments d'avoir les collecteurs d'eau de pluie et un circuit pour l'eau grises pour arrêter d'utiliser l'eau potable pour les chasses des toilettes et la jardinage."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.zdnet.com/article/the-toilet-re-imagined-four-water-saving-designs/",
+    "title": "Zdnet: Water saving designs",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

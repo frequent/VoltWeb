@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0127e180-e4a5-70fe-c07a-6230827b0edd",
+  "file_name": "EU-FR-Lille.Proposal.0127e180-e4a5-70fe-c07a-6230827b0edd.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Réserve.De.Maintenance",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["sustainable housing_", "housing stock maintenance_"],
+    "fr": ["logements soutenable_", "maintenance du parc des bâtiments_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Maintenance Reserves",
+      "description": "",
+      "text_content": "Ask homeowners to accumulate a 'maintenance reserve' to prevent the degradation of a building by reassuring that minimum standards are met and apartments remaining commendable and usable."
+    },
+    "fr": {
+      "title": "Réserve de maintenance",
+      "description": "",
+      "text_content": "Demander aux propriétaires d'accumuler un 'réserve de maintenance' pour prévenir la dégradation d'un bâtiment en rassurant que les normes minimales sont respectées et les appartements restant louable et utilisable."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

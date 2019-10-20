@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "d25bd04c-0d27-91f3-a4c0-f230da72f083",
+  "file_name": "EU-FR-Lille.Proposal.d25bd04c-0d27-91f3-a4c0-f230da72f083.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Introduir.Les.Tasse.De.Café.Réutilisables",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["waste reduction_"],
+    "fr": ["réduction des déchets_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Introduce reusable coffee mugs",
+      "description": "Replace paper cups with reuseable mugs",
+      "text_content": "Eliminate paper cups that are not recyclable (plastic coating inside) by introducing a reusable and exchangeable cup (1 € deposit) in all participating stores."
+    },
+    "fr": {
+      "title": "Introduir les tasses de café réutilisables",
+      "description": "Remplacer les gobelets de papier avec des tasses réutilisables",
+      "text_content": "Éliminer les gobelets en papier qui ne sont pas recyclables (revêtement plastique à l'intérieur) en introduisant un gobelet réutilisable et échangeable (1€ de consigne) dans tous les magasins participants"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.treehugger.com/environmental-policy/city-freiburg-has-brilliant-alternative-disposable-coffee-cups.html",
+    "title": "City of Freiburg has a brilliant alternative to disposable coffee cups",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Grid Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/ics.min.js"></script>
+    <script src="../lib/polyfill.dialog.js"></script>
+    <script src="../lib/renderjs.latest.min.js"></script>
+    <script src="gadget_global.js"></script>
+    <script src="gadget_grid.js"></script>
+
+    <!-- event card template fallback -->
+    <script id="event_card_template_fallback" type="text/x-supplant">
+      <i class="material-icons">description</i>
+    </script>
+
+    <!-- event card template -->
+    <script id="event_card_template_image" type="text/x-supplant">
+      <img class="volt-card-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}" />
+    </script>
+
+    <!-- event card meeting -->
+    <script id="event_card_template_meeting_action" type="text/x-supplant">
+      <span data-i18n="card-Add to Calendar" class="volt-dialog__action-share">Ajouter au calendrier</span>
+      <form name="volt-share-calendar" class="volt-dialog-action-form">
+        <input type="hidden" name="calendar_reference" value="{reference}" />
+        <input type="hidden" name="calendar_subject" value="{subject}" />
+        <input type="hidden" name="calendar_description" value="{description}" />
+        <input type="hidden" name="calendar_begin" value="{start_date}" />
+        <input type="hidden" name="calendar_end" value="{stop_date}" />
+        <input type="hidden" name="calendar_location" value="{location}" />
+        <button type="submit" class="mdl-button volt-dialog-share-calendar">
+          <i class="material-icons">event</i>
+        </button>
+      </form>
+    </script>
+
+    <!-- event card publication -->
+    <script id="event_card_template_publication_action" type="text/x-supplant">
+      <span data-i18n="card-Share" class="volt-dialog__action-share">Partager</span>
+      <form name="volt-share-facebook" class="volt-dialog-action-form">
+        <input type="hidden" name="share_description" value="{description}" />
+        <input type="hidden" name="share_url" value="{url}" />
+        <button type="submit" class="mdl-button volt-dialog-share-fb">
+          <i class="fab fa-facebook"></i>
+        </button>
+      </form>
+      <form name="volt-share-twitter" class="volt-dialog-action-form">
+        <input type="hidden" name="share_description" value="{description}" />
+        <input type="hidden" name="share_url" value="{url}" />
+        <button type="submit" class="mdl-button volt-dialog-share-tw">
+          <i class="fab fa-twitter"></i>
+        </button>
+      </form>
+    </script>
+
+    <!-- event card proposal url -->
+    <script id="event_card_template_proposal_url" type="text/x-supplant">
+      <form name="volt-dialog" data-action="event">
+        <input type="hidden" value="{reference}" name="event_reference" />
+        <button type="submit" class="mdl-button volt-dialog__button" data-i18n="card-Details">Voir les Détails</button>
+      </form>
+    </script>
+
+    <!-- event card publication url -->
+    <script id="event_card_template_publication_url" type="text/x-supplant">
+      <a href="{document_url}" class="volt-dialog__link {disabled}" target="_blank" data-i18n="card-Open">Ouvrez</a>
+    </script>
+
+    <!-- event card meeting url -->
+    <script id="event_card_template_meeting_url" type="text/x-supplant">
+      <form name="volt-dialog" data-action="event">
+        <input type="hidden" value="{reference}" name="event_reference" />
+        <button type="submit" class="mdl-button volt-dialog__button" data-i18n="card-Details">Voir les Détails</button>
+      </form>
+    </script>
+
+    <!-- card template -->
+    <script id="event_card_template" type="text/x-supplant">
+      <div class="volt-event__card {mini} mdl-cell  mdl-cell--4-col mdl-cell--4-col-phone mdl-shadow--2dp">
+        <div class="mdl-card">
+          <form name="volt-event" data-action="{portal_type}" class="{event_handler}">
+            <input type="hidden" value="{reference}" name="event_reference" />
+            <button type="submit" class="volt-event__action-button">
+              <figure class="mdl-card__media volt-card__media material-icons">
+                {image}
+              </figure>
+            </button>
+          </form>
+          <div class="mdl-card__title">
+            <form name="volt-event" data-action="{portal_type}" class="{event_handler}">
+              <input type="hidden" value="{reference}" name="event_reference" />
+              <button type="submit" class="volt-event__action-button">
+                <h3 class="mdl-card__title-text">{start_date}{title}</h3>
+              </button>
+            </form>
+          </div>
+          <div class="mdl-card__supporting-text">{description}</div>
+          <div class="mdl-card__actions mdl-card--border">
+            {event_action_list}
+            <div class="mdl-layout-spacer"></div>
+            {call_to_action}
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <!-- proposal keyword template -->
+    <script id="event_dialog_keyword_template" type="text/x-supplant">
+      <div class="event_dialog__keyword-form-wrapper">
+        <form name="keyword_search">
+          <input type="hidden" name="proposal_keyword" value="{search_term}" />
+          <button type="submit" class="volt-dialog__button mdl-button">{display_text}</button>
+        </form>
+      </div>
+    </script>
+
+    <!-- proposal reference template -->    
+    <script id="event_dialog_reference_template" type="text/x-supplant">
+      <li class="volt-dialog__reference_item"><a href="{reference_url}" class="volt-dialog__reference-link volt-dialog__link" target="_blank">({language})&nbsp;{reference_title}</a></li>
+    </script>
+
+    <!-- proposal dialog template -->
+    <script id="event_dialog_proposal_template" type="text/x-supplant">
+      <div class="volt-event__dialog-image-wrapper">
+        <img class="volt-card-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}" />
+      </div>
+      <h2 class="volt-event__dialog-title">{title}</h2>
+      <div class="volt-marker__floater">
+        <p class="volt-event__dialog-description">{description}</p>
+      </div>
+      <div class="volt-event__dialog-details-wrapper">
+        <p class="volt-event__dialog-field volt-event__dialog-text-content"><i class="material-icons">info</i><span class="volt-event__dialog-text">{text_content}</span></p>
+        <p>{keyword_list}</p>
+        <h4 class="volt-event__dialog-reference-header" data-i18n="dialog-Reference list">Liste de référence</h4>
+        <ul class="volt-dialog__reference_list">{reference_list}</ul>
+      </div>
+      <div class="volt-venue__wrapper"></div>
+      <div class="mdl-card__actions mdl-card--border volt-dialog__actions">
+        <form name="volt-fullscreen" class="volt-dialog__action-form volt-dialog__action-full">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen</i>
+            <span data-i18n="dialog-Fullscreen" class="volt-dialog__text-responsive">Plein Écran</span>
+          </button>
+        </form>
+        <form name="volt-minimize" class="volt-dialog__action-form volt-dialog__action-exit volt-hidden">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen_exit</i>
+            <span data-i18n="dialog-Minimize" class="volt-dialog__text-responsive">Minimiser</span>
+          </button>
+        </form>
+        <form name="volt-dialog-close" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
+        </form>
+      </div>
+    </script>
+
+    <!-- meeting dialog template -->
+    <script id="event_dialog_meeting_template" type="text/x-supplant">
+      <div class="volt-event__dialog-image-wrapper">
+        <img class="volt-card-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}" />
+      </div>
+      <h2 class="volt-event__dialog-title">{title}</h2>
+      <div class="volt-marker__floater">
+        <a class="volt-link volt-dialog__social-media-link {facebook_disabled}" target="_blank" href="{facebook_url}"><i class="fab fa fa-facebook"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {meetup_disabled}" target="_blank" href="{meetup_url}"><i class="fab fa fa-meetup"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {evensi_disabled}" target="_blank" href="{evensi_url}"><i class="pf pf-evensi"></i></a>
+      </div>
+      <div class="volt-event__dialog-details-wrapper">
+        <p class="volt-event__dialog-time"><i class="material-icons">access_time</i><span class="volt-event__dialog-text">{datetime}</span></p>
+        <div class="volt-event__dialog-ics">{add_to_calendar}</div>
+        <p class="volt-event__dialog-location"><i class="material-icons">location_on</i><span class="volt-event__dialog-text">{location}</span></p>
+        <p class="volt-event__dialog-description"><i class="material-icons">info</i><span class="volt-event__dialog-text">{description}</span></p>
+      </div>
+      <div class="volt-venue__wrapper"></div>
+      <div class="mdl-card__actions mdl-card--border volt-dialog__actions">
+        <form name="volt-fullscreen" class="volt-dialog__action-form volt-dialog__action-full">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen</i>
+            <span data-i18n="dialog-Fullscreen" class="volt-dialog__text-responsive">Plein Écran</span>
+          </button>
+        </form>
+        <form name="volt-minimize" class="volt-dialog__action-form volt-dialog__action-exit volt-hidden">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen_exit</i>
+            <span data-i18n="dialog-Minimize" class="volt-dialog__text-responsive">Minimiser</span>
+          </button>
+        </form>
+        <form name="volt-localise" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog__action-localise volt-link__disabled">
+            <i class="material-icons">person_pin</i>
+            <span data-i18n="dialog-Localiser" class="volt-dialog__text-responsive">Localisateur</span>
+          </button>
+        </form>
+        <form name="volt-dialog-close" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
+        </form>
+      </div>
+    </script>
+
+    <!-- keyword search template -->
+    <script id="event_keyword_search_template" type="text/x-supplant">
+      <p class="volt-category__item-text volt-category__teaser" data-i18n="category-Filter by">Filtrer par</p>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="" />
+          <button type="submit" class="mdl-button">
+            <span data-i18n="category-All" class="volt-category__item-text">Affichez tous</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="logements_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png" alt="" />
+            <span data-i18n="category-Housing" class="volt-category__item-text">Logements</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="waste management_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png" alt="" />
+            <span data-i18n="category-Waste Management" class="volt-category__item-text">Gestion des déchets</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="espaces verts_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png" alt="" />
+            <span data-i18n="category-Green Spaces" class="volt-category__item-text">Espaces verts</span>
+          </button>
+        </form>
+      </div>
+      <div class="volt-category__item">
+        <form name="volt-search" class="">
+          <input type="hidden" name="category_reference" value="mobilité_" />
+          <button type="submit" class="mdl-button">
+            <img class="volt-category__item-image" src="../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png" alt="" />
+            <span data-i18n="category-Mobility" class="volt-category__item-text">Mobilité</span>
+          </button>
+        </form>
+      </div>
+      <p class="volt-category__item-text volt-category__teaser" data-i18n="category-More soon">(Plus à venir)</p>
+    </script>
+  </head>
+  
+  <body>
+    <div class="volt-category__container"></div>
+    <div class="mdl-grid volt-item__container"></div>
+    <div class="dot-flashing"></div>
+    <div class="volt-search-more volt-hidden">
+      <form name="volt-search-more">
+        <button type="submit" class="mdl-button volt-search__action-button" data-i18n="card-Load more">Plus de résultats</button>
+      </form>
+    </div>
+    <p class="volt-grid__no-records volt-hidden" data-i18n="card-No records found">Pas de résultats trouvés.</p>
+    <dialog class="mdl-dialog volt-dialog volt-dialog-event"></dialog>
+  </body>
+</html>

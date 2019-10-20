@@ -1,0 +1,1952 @@
+{
+  "eu": {
+    "position": [54.5260, 15.2551],
+    "zoom": 2,
+    "i18n": "Europe",
+    "facebook_url": "https://www.facebook.com/VoltEuropa/",
+    "twitter_url": "https://twitter.com/volteuropa",
+    "instagram_url": "https://www.instagram.com/volteuropa",
+    "youtube_url": "https://www.youtube.com/c/VoltEuropa",
+    "linkedin_url": "https://www.linkedin.com/company/11067656/",
+    "reddit_url": "https://www.reddit.com/r/VoltEuropa/",
+    "web_url": "https://www.volteuropa.org",
+    "contact_url": "mailto:info@volteuropa.org",
+    "city_list": []
+  },
+  "al": {
+    "position": [41.1533, 20.1683],
+    "zoom": 5,
+    "i18n": "Albania",
+    "city_list": [
+      {
+        "position": [41.3275459,19.8186982],
+        "i18n": "Tirana, Albania"
+      }
+    ]
+  },
+  "at": {
+    "position": [47.5162, 14.5501],
+    "zoom": 5,
+    "i18n": "Austria",
+    "facebook_url": "https://www.facebook.com/VoltOesterreich/",
+    "twitter_url": "https://twitter.com/volteuropa",
+    "web_url": "https://www.voltoesterreich.org/",
+    "city_list": [
+      {
+        "position": [48.2081743,16.3738189],
+        "i18n": "Vienna, Austria"
+      },
+      {
+        "position": [48.306, 14.286],
+        "i18n": "Linz, Austria"
+      },
+      {
+        "position": [47.263, 11.400],
+        "i18n": "Innsbruck, Austria"
+      },
+      {
+        "position": [47.0709, 15.441],
+        "i18n": "Graz, Austria"
+      }
+    ]
+  },
+  "be": {
+    "position": [50.5039, 4.4699],
+    "zoom": 5,
+    "i18n": "Belgium",
+    "facebook_url": "https://www.facebook.com/VoltBelgie/",
+    "twitter_url": "https://twitter.com/VoltBelgium",
+    "web_url": "https://www.voltbelgie.org/",
+    "city_list": [
+      {
+          "position": [50.643909,5.571560],
+          "i18n": "Luik, Belgium"
+      },
+      {
+          "position": [50.466528,4.866189],
+          "i18n": "Namen, Belgium"
+      },
+    
+      {
+          "position": [50.8798438,4.7005176],
+          "i18n": "Leuven, Belgium"
+      },
+      {
+          "position": [51.0543422,3.7174243],
+          "i18n": "Ghent, Belgium"
+      },
+      {
+          "position": [50.8194776,3.2577263],
+          "i18n": "Kortrijk, Belgium"
+      },
+      {
+          "position": [51.2194475,4.4024643],
+          "i18n": "Antwerp, Belgium"
+      },
+      {
+          "position": [50.8503463,4.3517211],
+          "i18n": "Brussels, Belgium"
+      }
+    ]
+  },
+  "bu": {
+    "position": [42.7339, 25.4858],
+    "zoom": 5,
+    "i18n": "Bulgaria",
+    "facebook_url": "https://www.facebook.com/VoltBulgaria/",
+    "twitter_url": "https://twitter.com/volteuropa",
+    "web_url": "https://www.voltbulgaria.org/",
+    "city_list": [
+      {
+        "position": [42.6977082,23.3218675],
+        "i18n": "Sofia, Bulgaria"
+      },
+      {
+          "position": [43.2140504,27.9147333],
+          "i18n": "Varna, Bulgaria"
+      },
+      {
+          "position": [43.57259,27.8272606],
+          "i18n": "Dobrich, Bulgaria"
+      },
+      {
+          "position": [43.83557130000001,25.9656554],
+          "i18n": "Russe, Bulgaria"
+      },
+      {
+          "position": [42.1927654,24.3335662],
+          "i18n": "Pazardjik, Bulgaria"
+      },
+      {
+          "position": [42.50479259999999,27.4626361],
+          "i18n": "Bourgas, Bulgaria"
+      },
+      {
+          "position": [43.2102375,23.5528803],
+          "i18n": "Vratsa, Bulgaria"
+      },
+      {
+          "position": [42.4257769,25.6344644],
+          "i18n": "Stara Zagora, Bulgaria"
+      },
+      {
+          "position": [41.5774233,24.7011138],
+          "i18n": "Smolyan, Bulgaria"
+      },
+      {
+          "position": [41.6338439,25.3777119],
+          "i18n": "Kardjali, Bulgaria"
+      },
+      {
+          "position": [43.0756739,25.6171514],
+          "i18n": "Veliko Turnovo, Bulgaria"
+      },
+      {
+          "position": [42.1354079,24.7452904],
+          "i18n": "Plovdiv, Bulgaria"
+      }
+    ]
+  },
+  "ch": {
+    "position": [46.8182, 8.2275],
+    "zoom": 5,
+    "i18n": "Switzerland",
+    "city_list": [    
+      {
+          "position": [46.2043907,6.1431577],
+          "i18n": "Geneva, Switzerland"
+      }
+    ]
+  },
+  "cy": {
+    "position": [35.1264, 33.4299],
+    "zoom": 5,
+    "i18n": "Cyprus",
+    "facebook_url": "https://www.facebook.com/VoltCyprus/",
+    "city_list": [
+      {
+          "position": [34.7071301,33.0226174],
+          "i18n": "Limassol, Cyprus"
+      },
+      {
+          "position": [35.1855659,33.38227639999999],
+          "i18n": "Nicosia, Cyprus"
+      }
+    ]
+  },
+  "cz": {
+    "position": [49.8175, 15.4730],
+    "zoom": 5,
+    "i18n": "Czechia",
+    "facebook_url": "https://www.facebook.com/VoltCzechia",
+    "twitter_url": "https://www.voltczechia.org/",
+    "instagram_url": "https://www.instagram.com/voltczechia",
+    "web_url": "https://www.voltczechia.org/",
+    "city_list": [
+      {
+        "position": [50.0755381,14.4378005],
+        "i18n": "Prague, Czechia"
+      }
+    ]
+  },
+  "dk": {
+    "position": [56.2639, 9.5018],
+    "zoom": 5,
+    "i18n": "Denmark",
+    "facebook_url": "https://www.facebook.com/VoltDanmark/",
+    "twitter_url": "https://twitter.com/voltdanmark?lang=en",
+    "instagram_url": "https://www.instagram.com/Voltdanmark/",
+    "linkedin_url": "https://www.linkedin.com/company/volt-danmark/",
+    "web_url": "https://www.voltdanmark.org/",
+    "city_list": [
+      {
+          "position": [57.0488,9.9217],
+          "i18n": "Aalborg, Denmark"
+      },
+      {
+          "position": [55.6760968,12.5683372],
+          "i18n": "Copenhagen, Denmark"
+      },
+  
+      {
+          "position": [56.162937,10.203921],
+          "i18n": "Aarhus, Denmark"
+      },
+      {
+          "position": [55.396229,10.390600],
+          "i18n": "Odense, Denmark"
+      }
+    ]
+  },
+  "de": {
+    "position": [51.1657, 10.4515],
+    "zoom": 5,
+    "i18n": "Germany",
+    "facebook_url": "https://www.facebook.com/VoltDeutschland/",
+    "twitter_url": "https://twitter.com/deutschlandvolt",
+    "instagram_url": "https://www.instagram.com/voltdeutschland/",
+    "web_url": "https://www.voltdeutschland.org/",
+    "city_list": [   
+      {
+          "position": [50.7753, 6.0839],
+          "i18n": "Aachen, Germany",
+          "web_url": "https://www.voltdeutschland.org/aachen"
+      },
+      {
+          "position": [48.8367, 10.0971],
+          "i18n": "Aalen, Germany",
+          "web_url": "https://www.voltdeutschland.org/aalen"
+      },
+      {
+          "position": [49.7462, 8.1171],
+          "i18n": "Alzey, Germany"
+      },
+      {
+          "position": [49.4403, 11.8633],
+          "i18n": "Amberg, Germany"
+      },
+      {
+          "position": [49.3004, 10.5719],
+          "i18n": "Ansbach, Germany"
+      },
+      {
+          "position": [49.9807, 9.1356],
+          "i18n": "Aschaffenburg, Germany"
+      },
+      {
+          "position": [48.37154, 10.89851],
+          "i18n": "Augsburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/augsburg"
+      },
+      {
+          "position": [50.20228, 10.07784],
+          "i18n": "Bad Kissingen, Germany"
+      },
+      {
+          "position": [50.32174, 10.20673],
+          "i18n": "Bad Neustadt, Germany"
+      },
+      {
+          "position": [49.89873, 10.90067],
+          "i18n": "Bamberg, Germany",
+          "web_url": "https://www.voltdeutschland.org/banburg"
+      },
+      {
+          "position": [49.94782, 11.57893],
+          "i18n": "Bayreuth, Germany",
+          "web_url": "https://www.voltdeutschland.org/bayreuth"
+      },
+      {
+          "position": [52.52437, 13.41053],
+          "i18n": "Berlin, Germany",
+          "web_url": "https://www.voltdeutschland.org/berlin"
+      },
+      {
+          "position": [48.09345, 9.79053],
+          "i18n": "Biberach, Germany"
+      },
+      {
+          "position": [52.03333, 8.53333],
+          "i18n": "Bielefeld, Germany",
+          "web_url": "https://www.voltdeutschland.org/bielefeld"
+      },
+      {
+          "position": [49.96675, 7.8992],
+          "i18n": "Bingen, Germany"
+      },
+      {
+          "position": [49.96794, 6.52734],
+          "i18n": "Bitburg, Germany"
+      },
+      {
+          "position": [51.83879, 6.61531],
+          "i18n": "Bocholt, Germany",
+          "web_url": "https://www.voltdeutschland.org/bocholt"
+      },
+      {
+          "position": [50.73438, 7.09549],
+          "i18n": "Bonn, Germany",
+          "web_url": "https://www.voltdeutschland.org/bonn"
+      },
+      {
+          "position": [52.26594, 10.52673],
+          "i18n": "Braunschweig, Germany",
+          "web_url": "https://www.voltdeutschland.org/braunschweig"
+      },
+      {
+          "position": [53.07516, 8.80777],
+          "i18n": "Bremen, Germany",
+          "web_url": "https://www.voltdeutschland.org/bremen"
+      },
+      {
+          "position": [53.55021, 8.57673],
+          "i18n": "Bremerhaven, Germany"
+      },
+      {
+          "position": [48.16925, 12.83139],
+          "i18n": "Burghausen, Germany"
+      },
+      {
+          "position": [49.2239, 12.6621],
+          "i18n": "Cham, Germany"
+      },
+      {
+          "position": [50.8357, 12.92922],
+          "i18n": "Chemnitz, Germany",
+          "web_url": "https://www.voltdeutschland.org/chemnitz"
+      },
+      {
+          "position": [50.25937, 10.96384],
+          "i18n": "Coburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/coburg"
+      },
+      {
+          "position": [51.9383, 7.1676],
+          "i18n": "Coesfeld, Germany",
+          "web_url": "https://www.voltdeutschland.org/coesfeld"
+      },
+      {
+          "position": [51.75769, 14.32888],
+          "i18n": "Cottbus, Germany",
+          "web_url": "https://www.voltdeutschland.org/cottbus"
+      },
+      {
+          "position": [53.0967, 11.09001],
+          "i18n": "Dannenberg, Germany",
+          "web_url": "https://www.voltdeutschland.org/dannenberg"
+      },
+      {
+          "position": [49.87167, 8.65027],
+          "i18n": "Darmstadt, Germany",
+          "web_url": "https://www.voltdeutschland.org/darmstadt"
+      },
+      {
+          "position": [51.83864, 12.24555],
+          "i18n": "Dessau-Roßlau, Germany"
+      },
+      {
+          "position": [50.00976, 8.77783],
+          "i18n": "Dietzenbach, Germany"
+      },
+      {
+          "position": [51.51494, 7.466],
+          "i18n": "Dortmund, Germany",
+          "web_url": "https://www.voltdeutschland.org/dortmund"
+      },
+      {
+          "position": [50.01997, 8.69611],
+          "i18n": "Dreieich, Germany"
+      },
+      {
+          "position": [51.05089, 13.73832],
+          "i18n": "Dresden, Germany",
+          "web_url": "https://www.voltdeutschland.org/dresden"
+      },
+      {
+          "position": [51.43247, 6.76516],
+          "i18n": "Duisburg, Germany"
+      },
+      {
+          "position": [51.22172, 6.77616],
+          "i18n": "Düsseldorf, Germany",
+          "web_url": "https://www.voltdeutschland.org/duesseldorf"
+      },
+      {
+          "position": [50.9848, 11.0299],
+          "i18n": "Erfurt, Germany",
+          "web_url": "https://www.voltdeutschland.org/erfurt"
+      },
+      {
+          "position": [49.59099, 11.00783],
+          "i18n": "Erlangen, Germany",
+          "web_url": "https://www.voltdeutschland.org/erlangen"
+      },
+      {
+          "position": [51.45657, 7.01228],
+          "i18n": "Essen, Germany",
+          "web_url": "https://www.voltdeutschland.org/essen"
+      },
+      {
+          "position": [50.47788, 12.37129],
+          "i18n": "Falkenstein, Germany"
+      },
+      {
+          "position": [54.78431, 9.43961],
+          "i18n": "Flensburg, Germany"
+      },
+      {
+          "position": [49.71754, 11.05877],
+          "i18n": "Forchheim, Germany",
+          "web_url": "https://www.voltdeutschland.org/forchheim"
+      },
+      {
+          "position": [50.11552, 8.68417],
+          "i18n": "Frankfurt, Germany",
+          "web_url": "https://www.voltdeutschland.org/frankfurt"
+      },
+      {
+          "position": [47.9959, 7.85222],
+          "i18n": "Freiburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/freiburg"
+      },
+      {
+          "position": [47.65689, 9.47554],
+          "i18n": "Friedrichshafen, Germany"
+      },
+      {
+          "position": [50.555809, 9.680845],
+          "i18n": "Fulda, Germany"
+      },
+      {
+          "position": [49.47593, 10.98856],
+          "i18n": "Fürth, Germany",
+          "web_url": "https://www.voltdeutschland.org/fuerth"
+      },
+      {
+          "position": [47.49209, 11.09576],
+          "i18n": "Garmisch-Partenkirchen, Germany"
+      },
+      {
+          "position": [50.58727, 8.67554],
+          "i18n": "Gießen, Germany"
+      },
+      {
+          "position": [51.15518, 14.98853],
+          "i18n": "Görlitz, Germany"
+      },
+      {
+          "position": [51.545483, 9.905548],
+          "i18n": "Göttingen, Germany",
+          "web_url": "https://www.voltdeutschland.org/goettingen"
+      },
+      {
+          "position": [54.09311, 13.38786],
+          "i18n": "Greifswald, Germany"
+      },
+      {
+          "position": [51.5, 12],
+          "i18n": "Halle (Saale), Germany"
+      },
+      {
+          "position": [53.57532, 10.01534],
+          "i18n": "Hamburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/hamburg"
+      },
+      {
+          "position": [50.13423, 8.91418],
+          "i18n": "Hanau, Germany"
+      },
+      {
+          "position": [52.37052, 9.73322],
+          "i18n": "Hannover, Germany",
+          "web_url": "https://www.voltdeutschland.org/hannover"
+      },
+      {
+          "position": [53.46057, 9.98388],
+          "i18n": "Harburg, Germany"
+      },
+      {
+          "position": [50.03521, 10.5156],
+          "i18n": "Haßfurth, Germany"
+      },
+      {
+          "position": [49.40768, 8.69079],
+          "i18n": "Heidelberg, Germany",
+          "web_url": "https://www.voltdeutschland.org/heidelberg"
+      },
+      {
+          "position": [48.67798, 10.15162],
+          "i18n": "Heidenheim an der Brenz, Germany",
+          "web_url": "https://www.voltdeutschland.org/heidenheim_an_der_brenz"
+      },
+      {
+          "position": [49.13995, 9.22054],
+          "i18n": "Heilbronn, Germany",
+          "web_url": "https://www.voltdeutschland.org/heilbronn"
+      },
+      {
+          "position": [47.9960, 11.1745],
+          "i18n": "Herrsching am Ammersee, Germany",
+          "web_url": "https://www.voltdeutschland.org/herrsching_am_ammersee"
+      },
+      {
+          "position": [50.31297, 11.91261],
+          "i18n": "Hof, Germany"
+      },
+      {
+          "position": [51.43787, 14.23549],
+          "i18n": "Hoyerwerda, Germany"
+      },
+      {
+          "position": [49.71443, 7.30776],
+          "i18n": "Idar-Oberstein, Germany"
+      },
+      {
+          "position": [48.76508, 11.42372],
+          "i18n": "Ingolstadt, Germany"
+      },
+      {
+          "position": [53.92099, 9.51529],
+          "i18n": "Itzehoe, Germany"
+      },
+      {
+          "position": [50.92878, 11.5899],
+          "i18n": "Jena, Germany",
+          "web_url": "https://www.voltdeutschland.org/jena"
+      },
+      {
+          "position": [49.443, 7.77161],
+          "i18n": "Kaiserslautern, Germany"
+      },
+      {
+          "position": [49.00937, 8.40444],
+          "i18n": "Karlsruhe, Germany",
+          "web_url": "https://www.voltdeutschland.org/karlsruhe"
+      },
+      {
+          "position": [51.31667, 9.5],
+          "i18n": "Kassel, Germany",
+          "web_url": "https://www.voltdeutschland.org/kassel"
+      },
+      {
+          "position": [48.57297, 7.81523],
+          "i18n": "Kehl, Germany"
+      },
+      {
+          "position": [47.72674, 10.31389],
+          "i18n": "Kempten, Germany",
+          "web_url": "https://www.voltdeutschland.org/kempten"
+      },
+      {
+          "position": [54.32133, 10.13489],
+          "i18n": "Kiel, Germany",
+          "web_url": "https://www.voltdeutschland.org/kiel"
+      },
+      {
+          "position": [51.78826, 6.13865],
+          "i18n": "Kleve, Germany",
+          "web_url": "https://www.voltdeutschland.org/kleve"
+      },
+      {
+          "position": [50.35357, 7.57883],
+          "i18n": "Koblenz, Germany",
+          "web_url": "https://www.voltdeutschland.org/koblenz"
+      },
+      {
+          "position": [47.6779, 9.17582],
+          "i18n": "Constance, Germany",
+          "web_url": "https://www.voltdeutschland.org/konstanz"
+      },
+      {
+          "position": [50.93333, 6.95],
+          "i18n": "Cologne, Germany",
+          "web_url": "https://www.voltdeutschland.org/koeln"
+      },
+      {
+          "position": [49.19844, 8.11692],
+          "i18n": "Landau, Germany",
+          "web_url": "https://www.voltdeutschland.org/landau"
+      },
+      {
+          "position": [48.5442, 12.1469],
+          "i18n": "Landshut, Germany"
+      },
+      {
+          "position": [51.09727, 14.30789],
+          "i18n": "Lusatia, Germany",
+          "web_url": "https://www.voltdeutschland.org/lausitz"
+      },
+      {
+          "position": [53.23157, 7.461],
+          "i18n": "Leer, Germany",
+          "web_url": "https://www.voltdeutschland.org/leer"
+      },
+      {
+          "position": [51.33962, 12.37129],
+          "i18n": "Leipzig, Germany",
+          "web_url": "https://www.voltdeutschland.org/leipzig"
+      },
+      {
+          "position": [47.54612, 9.68431],
+          "i18n": "Lindau, Germany"
+      },
+      {
+          "position": [53.86893, 10.68729],
+          "i18n": "Lübeck, Germany",
+          "web_url": "https://www.voltdeutschland.org/luebeck"
+      },
+      {
+          "position": [53.2509, 10.41409],
+          "i18n": "Lüneburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/lueneburg"
+      },
+      {
+          "position": [52.12773, 11.62916],
+          "i18n": "Magdeburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/magdeburg"
+      },
+      {
+          "position": [50.1472, 8.8250],
+          "i18n": "Maintal, Germany"
+      },
+      {
+          "position": [49.98419, 8.2791],
+          "i18n": "Mainz, Germany",
+          "web_url": "https://www.voltdeutschland.org/mainz"
+      },
+      {
+          "position": [49.48121, 8.44641],
+          "i18n": "Mannnheim/Ludwigshafen, Germany",
+          "web_url": "https://www.voltdeutschland.org/mannheim"
+      },
+      {
+          "position": [50.80904, 8.77069],
+          "i18n": "Marburg, Germany"
+      },
+      {
+          "position": [49.70452, 9.26725],
+          "i18n": "Miltenberg, Germany"
+      },
+      {
+          "position": [48.13743, 11.57549],
+          "i18n": "Munich, Germany",
+          "web_url": "https://www.voltdeutschland.org/muenchen"
+      },
+      {
+          "position": [51.96236, 7.62571],
+          "i18n": "Münster, Germany",
+          "web_url": "https://www.voltdeutschland.org/muenster"
+      },
+      {
+          "position": [53.56414, 13.27532],
+          "i18n": "Neubrandenburg, Germany"
+      },
+      {
+          "position": [49.280, 11.463],
+          "i18n": "Neumarkt i.d.OPf., Germany"
+      },
+      {
+          "position": [52.92815, 12.80311],
+          "i18n": "Neuruppin, Germany"
+      },
+      {
+          "position": [51.19807, 6.68504],
+          "i18n": "Neuss, Germany"
+      },
+      {
+          "position": [49.57953, 10.61126],
+          "i18n": "Neustadt an der Aisch, Germany"
+      },
+      {
+          "position": [53.3613, 13.07292],
+          "i18n": "Neustrelitz, Germany"
+      },
+      {
+          "position": [53.6859, 9.98041],
+          "i18n": "Norderstedt, Germany"
+      },
+      {
+          "position": [49.45421, 11.07752],
+          "i18n": "Nurnberg, Germany",
+          "web_url": "https://www.voltdeutschland.org/nuernberg"
+      },
+      {
+          "position": [50.07139, 8.85123],
+          "i18n": "Obertshausen, Germany"
+      },
+      {
+          "position": [50.10061, 8.76647],
+          "i18n": "Offenbach, Germany",
+          "web_url": "https://www.voltdeutschland.org/offenbach"
+      },
+      {
+          "position": [48.47377, 7.94495],
+          "i18n": "Offenburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/offenburg"
+      },
+      {
+          "position": [48.47377, 7.94495],
+          "i18n": "Oldenburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/oldenburg"
+      },
+      {
+          "position": [52.27264, 8.0498],
+          "i18n": "Osnabrück, Germany",
+          "web_url": "https://www.voltdeutschland.org/osnabrueck"
+      },
+      {
+          "position": [53.4708, 7.4851],
+          "i18n": "East Frisia, Germany",
+          "web_url": "https://www.voltdeutschland.org/ostfriesland"
+      },
+      {
+          "position": [51.71905, 8.75439],
+          "i18n": "Paderborn, Germany",
+          "web_url": "https://www.voltdeutschland.org/paderborn"
+      },
+      {
+          "position": [48.5665, 13.43122],
+          "i18n": "Passau, Germany",
+          "web_url": "https://www.voltdeutschland.org/passau"
+      },
+      {
+          "position": [48.88436, 8.69892],
+          "i18n": "Pforzheim, Germany",
+          "web_url": "https://www.voltdeutschland.org/pforzheim"
+      },
+      {
+          "position": [50.95843, 13.93702],
+          "i18n": "Pirna, Germany",
+          "web_url": "https://www.voltdeutschland.org/pirna"
+      },
+      {
+          "position": [50.4973, 12.13782],
+          "i18n": "Plauen, Germany"
+      },
+      {
+          "position": [52.39886, 13.06566],
+          "i18n": "Potsdam, Germany",
+          "web_url": "https://www.voltdeutschland.org/potsdam"
+      },
+      {
+          "position": [53.31625, 13.86261],
+          "i18n": "Prenzlau, Germany"
+      },
+      {
+          "position": [48.85851, 8.20965],
+          "i18n": "Rastatt / Baden-Baden, Germany",
+          "web_url": "https://www.voltdeutschland.org/rastatt_baden_baden"
+      },
+      {
+          "position": [49.03451, 12.11923],
+          "i18n": "Regensburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/regensburg"
+      },
+      {
+          "position": [47.85637, 12.12247],
+          "i18n": "Rosenheim, Germany",
+          "web_url": "https://www.voltdeutschland.org/rosenheim"
+      },
+      {
+          "position": [54.0887, 12.14049],
+          "i18n": "Rostock, Germany"
+      },
+      {
+          "position": [49.98955, 8.42251],
+          "i18n": "Rüsselsheim am Main, Germany"
+      },
+      {
+          "position": [49.2354, 6.98165],
+          "i18n": "Saarbrücken, Germany",
+          "web_url": "https://www.voltdeutschland.org/saarbruecken"
+      },
+      {
+          "position": [54.52156, 9.5586],
+          "i18n": "Schleswig, Germany"
+      },
+      {
+          "position": [48.79947, 9.79809],
+          "i18n": "Schwäbisch Gmünd, Germany"
+      },
+      {
+          "position": [49.11127, 9.73908],
+          "i18n": "Schwäbisch Hall, Germany",
+          "web_url": "https://www.voltdeutschland.org/schwaebisch_gmuend"
+      },
+      {
+          "position": [50.04937, 10.22175],
+          "i18n": "Schweinfurt, Germany"
+      },
+      {
+          "position": [53.62937, 11.41316],
+          "i18n": "Schwerin, Germany",
+          "web_url": "https://www.voltdeutschland.org/schwerin"
+      },
+      {
+          "position": [50.9320, 8.2212],
+          "i18n": "Siegerland/Sauerland (Siegen-Wittgenstein), Germany"
+      },
+      {
+          "position": [49.9836, 7.5348],
+          "i18n": "Simmern (Hunsrück), Germany"
+      },
+      {
+          "position": [50.4, 7.6667],
+          "i18n": "Simmern (Westerwald), Germany"
+      },
+      {
+          "position": [49.32083, 8.43111],
+          "i18n": "Speyer, Germany"
+      },
+      {
+          "position": [53.59337, 9.47629],
+          "i18n": "Stade, Germany"
+      },
+      {
+          "position": [52.15045, 7.33664],
+          "i18n": "Steinfurt, Germany",
+          "web_url": "https://www.voltdeutschland.org/steinfurt"
+      },
+      {
+          "position": [54.30911, 13.0818],
+          "i18n": "Stralsund, Germany"
+      },
+      {
+          "position": [48.88126, 12.57385],
+          "i18n": "Straubing, Germany"
+      },
+      {
+          "position": [48.78232, 9.17702],
+          "i18n": "Stuttgart, Germany",
+          "web_url": "https://www.voltdeutschland.org/stuttgart"
+      },
+      {
+          "position": [47.86825, 12.64335],
+          "i18n": "Traunstein, Germany"
+      },
+      {
+          "position": [49.75565, 6.63935],
+          "i18n": "Trier, Germany",
+          "web_url": "https://www.voltdeutschland.org/trier"
+      },
+      {
+          "position": [48.52266, 9.05222],
+          "i18n": "Tübingen, Germany",
+          "web_url": "https://www.voltdeutschland.org/tuebingen"
+      },
+      {
+          "position": [47.98464, 8.8177],
+          "i18n": "Tuttlingen, Germany"
+      },
+      {
+          "position": [48.39841, 9.99155],
+          "i18n": "Ulm, Germany",
+          "web_url": "https://www.voltdeutschland.org/ulm"
+      },
+      {
+          "position": [52.72632, 8.28598],
+          "i18n": "Vechta (Lohne/Cloppenburg), Germany"
+      },
+      {
+          "position": [48.06226, 8.49358],
+          "i18n": "Villingen-Schwenningen, Germany",
+          "web_url": "https://www.voltdeutschland.org/villingen_schwennigen"
+      },
+      {
+          "position": [50.4956, 12.1235],
+          "i18n": "Vogtland-Sachsen, Germany",
+          "web_url": "https://www.voltdeutschland.org/vogtland"
+      },
+      {
+          "position": [49.6076, 8.2282],
+          "i18n": "Wachenheim, Germany",
+          "web_url": "https://www.voltdeutschland.org/wachenheim"
+      },
+      {
+          "position": [47.62323, 8.21717],
+          "i18n": "Waldshut, Germany"
+      },
+      {
+          "position": [52.86147, 9.5926],
+          "i18n": "Walsrode (Bad Fallingborstel), Germany"
+      },
+      {
+          "position": [49.67682, 12.15613],
+          "i18n": "Weiden, Germany"
+      },
+      {
+          "position": [50.9803, 11.32903],
+          "i18n": "Weimar, Germany",
+          "web_url": "https://www.voltdeutschland.org/weimar"
+      },
+      {
+          "position": [49.03095, 10.97221],
+          "i18n": "Weissenburg in Bavaria, Germany"
+      },
+      {
+          "position": [50.4358, 7.8258],
+          "i18n": "Westerwaldkreis (Montabaur), Germany"
+      },
+      {
+          "position": [50.08258, 8.24932],
+          "i18n": "Wiesbaden, Germany"
+      },
+      {
+          "position": [53.89314, 11.45286],
+          "i18n": "Wismar, Germany"
+      },
+      {
+          "position": [51.8744,12.606],
+          "i18n": "Wittenberg, Germany"
+      },
+      {
+          "position": [53.16118, 12.48287],
+          "i18n": "Wittstock, Germany"
+      },
+      {
+          "position": [49.63278, 8.35916],
+          "i18n": "Worms, Germany"
+      },
+      {
+          "position": [51.27027, 7.16755],
+          "i18n": "Wuppertal, Germany",
+          "web_url": "https://www.voltdeutschland.org/wuppertal"
+      },
+      {
+          "position": [49.79391, 9.95121],
+          "i18n": "Würzburg, Germany",
+          "web_url": "https://www.voltdeutschland.org/wuerzburg"
+      }
+    ]
+  },
+  "ee": {
+    "position": [58.5975, 24.9873],
+    "zoom": 5,
+    "i18n": "Estonia",
+    "facebook_url": "https://www.facebook.com/VoltEstonia/",
+    "city_list": [
+      {
+          "position": [59.43696079999999,24.7535747],
+          "i18n": "Tallin, Estonia"
+      }
+    ]
+  },
+  "es": {
+    "position": [40.4637, 3.7492],
+    "zoom": 5,
+    "i18n": "Spain",
+    "facebook_url": "https://www.facebook.com/VoltEspana/",
+    "twitter_url": "https://twitter.com/voltespana",
+    "instagram_url": "https://instagram.com/voltesp/",
+    "web_url": "https://www.voltespana.org/",
+    "city_list": [
+      {
+          "position": [43.2630, -2.9350],
+          "i18n": "Bilbao, Spain"
+      },
+      {
+          "position": [36.7212737,-4.4213988],
+          "i18n": "Málaga, Spain"
+      },
+      {
+          "position": [38.9394272,-6.365157],
+          "i18n": "Mérida, Spain"
+      },
+      {
+          "position": [39.4699075,-0.3762881],
+          "i18n": "Valencia, Spain"
+      },
+      {
+          "position": [43.3623436,-8.4115401],
+          "i18n": "La Coruña, Spain"
+      },
+      {
+          "position": [41.3850639,2.1734035],
+          "i18n": "Barcelona, Spain"
+      },
+      {
+          "position": [40.4167754,-3.7037902],
+          "i18n": "Madrid, Spain"
+      }
+    ]
+  },
+  "fi": {
+    "position": [61.9241, 25.7482],
+    "zoom": 5,
+    "i18n": "Finland",
+    "facebook_url": "https://www.facebook.com/VoltFinland/",
+    "city_list": [
+      {
+          "position": [60.16985569999999,24.9383791],
+          "i18n": "Helsinki, Finland"
+      }
+    ]
+  },
+  "fr": {
+    "position": [47.824905, 2.618787],
+    "zoom": 5,
+    "i18n": "France",
+    "facebook_url": "https://www.voltfrance.org/",
+    "twitter_url": "https://twitter.com/volt_france",
+    "instagram_url": "https://www.instagram.com/volt_france/",
+    "linkedin_url": "https://www.linkedin.com/company/voltfrance",
+    "contact_url": "mailto:info@voltfrance.org",
+    "web_url": "https://www.voltfrance.org",
+    "city_list": [
+      {
+        "position": [43.710836, 7.262784],
+        "i18n": "Nice, France"
+      },
+      {
+        "position": [47.217080, -1.554935],
+        "i18n": "Nantes, France"
+      },
+      {
+        "position": [43.610975, 3.872102],
+        "i18n": "Montpellier, France"
+      },
+      {
+        "position": [43.604875, 1.446238],
+        "i18n": "Toulouse, France"
+      },
+      {
+        "position": [45.762701, 4.839247],
+        "i18n": "Lyon, France"
+      },
+      {
+        "position": [43.295214, 5.382590],
+        "i18n": "Marseille, France"
+      },
+      {
+        "position": [44.837887, -0.582397],
+        "i18n": "Bordeaux, France"
+      },
+      {
+        "position": [48.8566, 2.3522],
+        "i18n": "Paris, France"
+      },
+      {
+        "position": [50.6292, 3.0573],
+        "i18n": "Lille, France",
+        "facebook_url": "https://www.facebook.com/voltlille/",
+        "facebook_group_url": "https://www.facebook.com/groups/volt.europe.fr.lille/",
+        "contact_url": "mailto:info@voltlille.fr",
+        "lead_url": "mailto:sven.franck@volteuropa.org",
+        "twitter_url": "http://twitter.com/voltlille",
+        "instagram_url": "https://www.instagram.com/voltlille/",
+        "web_url": "https://www.voltlille.fr/"
+      },
+      {
+        "position": [51.0344, 2.3768],
+        "i18n": "Dunkerque, France"
+      },
+      {
+        "position": [48.573949, 7.755925],
+        "i18n": "Strasbourg, France"
+      },
+      {
+        "position": [49.119431, 6.176850],
+        "i18n": "Metz, France"
+      },
+      {
+        "position": [48.691806, 6.185457],
+        "i18n": "Nancy, France"
+      },
+      {
+        "position": [49.258449, 4.036553],
+        "i18n": "Reims, France"
+      },
+      {
+        "position": [47.394695, 0.684983],
+        "i18n": "Tours, France"
+      },
+      {
+        "position": [48.389432, -4.487324],
+        "i18n": "Brest, France"
+      },
+      {
+        "position": [48.117013, -1.679526],
+        "i18n": "Rennes, France"
+      },
+      {
+        "position": [47.3220, 5.0415],
+        "i18n": "Dijon, France"
+      },
+      {
+        "position": [45.7772, 3.0870],
+        "i18n": "Clermont-Ferrand, France"
+      },
+      { 
+        "position": [43.94834, 4.80892],
+        "i18n": "Avignon, France"
+      },
+      {
+        "position": [43.11667, 5.93333],
+        "i18n": "Toulon, France"
+      }
+    ]
+  },
+  "gr": {
+    "position": [39.0742, 21.8243],
+    "zoom": 5,
+    "i18n": "Greece",
+    "facebook_url": "https://www.facebook.com/VoltGreece/",
+    "city_list": [
+      {
+          "position": [40.6400629,22.9444191],
+          "i18n": "Thessaloniki, Greece"
+      }
+    ]
+  },
+  "hu": {
+    "position": [47.1625, 19.5033],
+    "zoom": 5,
+    "i18n": "Hungary",
+    "facebook_url":"https://www.facebook.com/VoltHungary/",
+    "city_list": [
+      {
+        "position": [47.497912,19.040235],
+        "i18n": "Budapest, Hungary"
+      }
+    ]
+  },
+  "hr": {
+    "position": [45.1000, 15.2000],
+    "zoom": 5,
+    "i18n": "Croatia",
+    "facebook_url": "https://www.facebook.com/VoltCroatia/",
+    "city_list": [
+      {
+          "position": [45.8150108,15.9819189],
+          "i18n": "Zagreb, Croatia"
+      }
+    ]
+  },
+  "ie": {
+    "position": [53.1424, 7.6921],
+    "zoom": 5,
+    "i18n": "Ireland",
+    "facebook_url": "https://www.facebook.com/VoltIreland/",
+    "city_list": [
+      {
+          "position": [53.3498053,-6.2603097],
+          "i18n": "Dublin, Ireland"
+      }]
+  },
+  "it": {
+    "position":[41.8719, 12.5674],
+    "zoom": 5,
+    "i18n": "Italy",
+    "facebook_url": "https://it-it.facebook.com/VoltITA/",
+    "twitter_url": "https://twitter.com/voltitalia",
+    "instagram_url": "https://www.instagram.com/voltitalia/",
+    "web_url": "https://www.voltitalia.org/",
+    "city_list": [
+      {
+          "contact_url": "",
+          "lead_url": "mailto:daniele.latella@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/voltalessandria/",
+          "facebook_group_url": "",
+          "position": [44.9129225,8.615321],
+          "i18n": "Alessandria, Italy"
+      },
+      {
+          "contact_url": "mailto:avellino@voltitalia.org",
+          "lead_url": "mailto:michele.manfredonia@volteuropa.org", 
+          "facebook_url": "https://www.facebook.com/groups/voltavellino/",
+          "facebook_group_url": "https://www.facebook.com/Volt-Avellino-307327260132010/",
+          "position": [40.9141958,14.7888764],
+          "i18n": "Avellino, Italy"
+      },
+      {
+          "city_lead_url": "mailto:michele.cagnini@volteuropa.org",
+          "contact_url": "",
+          "position": [43.4640246, 11.8604618783394],
+          "i18n": "Arezzo, Italy"
+      },
+      {
+          "position": [44.900542,8.2068876],
+          "i18n": "Asti, Italy"
+      },
+      {
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
+          "facebook_group_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
+          "facebook_url": "https://www.facebook.com/groups/voltravenna/",
+          "position": [44.4161484,11.9765495],
+          "i18n": "Bagnacavallo, Italy"
+      },
+      {
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
+          "facebook_group_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
+          "facebook_url": "https://www.facebook.com/groups/voltravenna/",
+          "position": [44.3891687, 11.8264514],
+          "i18n": "Bagnara di Romagna, Italy"
+      },
+      {
+          "contact_url": "mailto:bari@voltitalia.org",
+          "position": [41.1257843, 16.8620293],
+          "i18n": "Bari, Italy"
+      },
+      {
+          "contact_url": "benevento@voltitalia.org",
+          "lead_url": "mailto:michele.manfredonia@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/groups/voltbenevento/",
+          "facebook_group_url": "https://www.facebook.com/Volt-Benevento-285569712139823/",
+          "position": [41.1295587, 14.7824639],
+          "i18n": "Benevento, Italy"
+      },
+      {
+          "contact_url": "mailto:bergamo@voltitalia.org",
+          "lead_url": "mailto:umberto.bertonelli@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/groups/voltbergamo/",
+          "position": [45.6944947, 9.6698727],
+          "i18n": "Bergamo, Italy"
+      },
+      {
+          "contact_url": "bologna@voltitalia.org/",
+          "lead_url": "mailto:vito.fodera@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/VoltBologna/",
+          "position": [44.4936714,11.3430347],
+          "i18n": "Bologna, Italy"
+      },
+      {
+          "contact_url": "mailto:bolzano@voltitalia.org",
+          "lead_url": "mailto:andreagerards@yahoo.de",
+          "facebook_url": "https://www.facebook.com/VoltBolzano/",
+          "position": [46.4981125,11.3547801],
+          "i18n": "Bolzano, Italy"
+      },
+      {
+          "lead_url": "mailto:diego.gozzoli@volteuropa.org",
+          "position": [45.5398022,10.2200214],
+          "i18n": "Brescia, Italy"
+      },
+      {
+          "lead_url": "mailto:alessio.zuddas@volteuropa.org",
+          "position": [39.2169525, 9.1128513],
+          "i18n": "Cagliari, Italy"
+      },
+      {
+          "contact_url": "mailto:caserta@voltitalia.org",
+          "lead_url": "mailto:michele.manfredonia@volteuropa.org",
+          "facebook_group_url": "https://www.facebook.com/groups/voltcaserta/",
+          "facebook_url": "https://www.facebook.com/voltcaserta/",
+          "position": [41.0820827,14.334708],
+          "i18n": "Caserta, Italy"
+      },
+      {
+          "contact_url": "mailto:catania@voltitalia.org",
+          "lead_url": "mailto:luigi.coccimiglio@volteuropa.org,flavio.fuca@volteuropa.org",
+          "facebook_group_url": "https://www.facebook.com/groups/voltcatania/",
+          "position": [37.5022355,15.08738],
+          "i18n": "Catania, Italy"
+      },
+      {
+          "contact_url": "mailto:chieri@voltitalia.org",
+          "lead_url": "mailto:edoardo.vassallo@volteuropa.org",
+          "position": [45.0138842, 7.8223544],
+          "i18n": "Chieri, Italy"
+      },
+      {
+          "position": [39.0806223, 17.127196],
+          "i18n": "Crotone, Italy"
+      },
+      {
+          "position": [44.3895925,7.5478945],
+          "i18n": "Cuneo, Italy"
+      },
+      {
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltravenna/",
+          "position": [44.2855555,11.8832055],
+          "i18n": "Faenza, Italy"
+      },
+      {
+          "contact_url": "mailto:firenze@voltitalia.org",
+          "facebook_group_url": "https://www.facebook.com/groups/voltfirenze",
+          "position": [43.7698712,11.2555757],
+          "i18n": "Firenze, Italy"
+      },
+      {
+          "lead_url": "mailto:francesco.marino@volteuropa.org, gianluca.damico@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Volt-Forl%C3%AC-368868783692846/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltforli/",
+          "position": [44.2226017, 12.0409384],
+          "i18n": "Forlì, Italy"
+      },
+      {
+          "contact_url": "mailto:genova@voltitalia.org",
+          "facebook_url": "https://www.facebook.com/voltgenova/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltgenovagroup/",
+          "position": [44.40726, 8.9338624],
+          "i18n": "Genova, Italy"
+      },
+      {
+          "lead_url": "mailto:tommaso.ventimiglia@volteuropa.org",
+          "position": [43.8862958,8.0267106],
+          "i18n": "Imperia, Italy"
+      },
+      {
+          "lead_url": "mailto:tommaso.ventimiglia@volteuropa.org",
+          "position": [44.107033,9.8282255],
+          "i18n": "La Spezia, Italy"
+      },
+      {
+          "position": [40.3570373,18.1718482],
+          "i18n": "Lecce, Italy"
+      },
+      {
+          "lead_url": "mailto:michele.barsanti@volteuropa.org,giuseppe.fusco@volteuropa.org",
+          "position": [43.8428381,10.502876],
+          "i18n": "Lucca, Italy"
+      },
+      {
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltravenna/",
+          "position": [44.4188782,11.9082311],
+          "i18n": "Lugo, Italy"
+      },
+      {
+          "position": [43.91741,10.7537268],
+          "i18n": "Massa e Cozzile, Italy"
+      },
+      {
+          "lead_url": "mailto:messina@voltitalia.org, alfredo.mangano@volteuropa.org",
+          "position": [38.1937571,15.5542082],
+          "i18n": "Messina, Italy"
+      },
+      {
+          "contact_url": "mailto:milano@voltitalia.org",
+          "position": [45.4667971,9.1904984],
+          "i18n": "Milano, Italy"
+      },
+      {
+          "contact_url": "modena@voltitalia.org, alessandro.lima@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/VoltModena/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltmodena/",
+          "position": [44.6458885,10.9255707],
+          "i18n": "Modena, Italy"
+      },
+      {
+          "position": [43.883179,10.7709533],
+          "i18n": "Montecatini Terme, Italy"
+      },
+      {
+          "contact_url": "mailto:napoli@voltitalia.org",
+          "lead_url": "mailto:serena.mottola@volteuropa.org",
+          "facebook_group_url": "https://www.facebook.com/groups/voltnapoli/",
+          "facebook_url": "https://www.facebook.com/Volt-Napoli-342825233217641/",
+          "position": [40.8359336,14.2487826],
+          "i18n": "Napoli, Italy"
+      },
+      {
+          "position": [40.7946798,17.1235566],
+          "i18n": "Noci, Italy"
+      },
+      {
+          "contact_url": "mailto:noviligure@voltitalia.org",
+          "position": [44.76085,8.789551],
+          "i18n": "Novi Ligure, Italy"
+      },
+      {
+          "contact_url": "mailto:padova@voltitalia.org",
+          "lead_url": "mailto:alessandro.pace@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Voltpadova/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltpadova/",
+          "position": [45.4077172,11.8734455],
+          "i18n": "Padova, Italy"
+      },
+      {
+          "position": [38.1112268,13.3524434],
+          "i18n": "Palermo, Italy"
+      },
+      {
+          "lead_url": "mailto:matteo.panizzi@volteuropa.org,giorgio.ippolito@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/VoltParma/",
+          "position": [44.8013678,10.3280833],
+          "i18n": "Parma, Italy"
+      },
+      {
+          "contact_url": "mailto:pisa@voltitalia.org",
+          "lead_url": "mailto:milene.calvetti@volteuropa.org, clio.gakis@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/VoltPisa/",
+          "position": [43.7159395,10.4018624],
+          "i18n": "Pisa, Italy"
+      },
+      {
+          "contact_url": "mailto:potenza@voltitalia.org",
+          "position": [40.6384046,15.8022077],
+          "i18n": "Potenza, Italy"
+      },
+      {
+          "contact_url": "mailto:firenze@voltitalia.org",
+          "position": [43.880598,11.0969262],
+          "i18n": "Prato, Italy"
+      },
+      {
+          "contact_url": "mailto:ravenna@voltitalia.org",
+          "lead_url": "mailto:federico.ferraro@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Volt-Ravenna-2375848422634976/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltravenna/",
+          "position": [44.4161414,12.2017617],
+          "i18n": "Ravenna, Italy"
+      },
+      {
+          "lead_url": "mailto:irene.amoroso@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/voltreggiocalabria/",
+          "position": [38.1035389,15.6397556],
+          "i18n": "Reggio Calabria, Italy"
+      },
+      {
+          "lead_url": "mailto:cinzia.tegoni@volteuropa.org",
+          "position": [44.6978446,10.6304958],
+          "i18n": "Reggio Emilia, Italy"
+      },
+      {
+          "contact_url": "roma@voltitalia.org",
+          "lead_url": "mailto:guido.silvestri@volteuropa.org, francesco.tombesi@volteuropa.org",
+          "facebook_group_url":"https://www.facebook.com/groups/voltroma/",
+          "facebook_url": "https://www.facebook.com/Volt-Roma-1481705691966848/",
+          "position": [41.894802,12.4853384],
+          "i18n": "Roma, Italy"
+      },
+      {
+          "contact_url": "mailto:salerno@voltitalia.org",
+          "lead_url": "mailto:antonio.buonadonna@volteuropa.org",
+          "facebook_group_url": "https://www.facebook.com/groups/voltsalerno/",
+          "facebook_url": "https://www.facebook.com/voltsalerno/",
+          "position": [40.6801561,14.7596754],
+          "i18n": "Salerno, Italy"
+      },
+      {
+          "contact_url": "mailto:firenze@voltitalia.org",
+          "position": [43.6569596,11.1856679],
+          "i18n": "San Casciano in Val di Pesa, Italy"
+      },
+      {
+          "lead_url.": "mailto:tommaso.ventimiglia@volteuropa.org",
+          "position": [43.8198253,7.7748827],
+          "i18n": "Sanremo, Italy"
+      },
+      {
+          "contact_url": "mailto:firenze@voltitalia.org",
+          "position": [43.7567104,11.1847619],
+          "i18n": "Scandicci (FI), Italy"
+      },
+      {
+          "contact_url": "mailto:firenze@voltitalia.org",
+          "position": [43.831721,11.1992239],
+          "i18n": "Sesto Fiorentino, Italy"
+      },
+      {
+          "position": [43.3185536,11.3316533],
+          "i18n": "Siena, Italy"
+      },
+      {
+          "lead_url": "mailto:sarah.decaro@volteuropa.org",
+          "position": [37.0646139,15.2907196],
+          "i18n": "Siracusa, Italy"
+      },
+      {
+          "position": [40.4712427,17.2432278],
+          "i18n": "Taranto, Italy"
+      },
+      {
+          "contact_url": "mailto:torino@voltitalia.org",
+          "position": [45.0677551,7.6824892],
+          "i18n": "Torino, Italy"
+      },
+      {
+          "contact_url": "mailto:trento@voltitalia.org",
+          "lead_url": "mailto:mattia.simone@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/VoltTrento/",
+          "position": [46.0664228,11.1257601],
+          "i18n": "Trento, Italy"
+      },
+      {
+          "facebook_url": "https://www.facebook.com/Volt-Treviso-2254738077922798/",
+          "position": [45.6658505,12.2455414],
+          "i18n": "Treviso, Italy"
+      },
+      {
+          "lead_url": "mailto:felice.dipaolo@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Voltudine/",
+          "position": [46.0634632,13.2358377],
+          "i18n": "Udine, Italy"
+      },
+      {
+          "lead_url": "mailto:emiliano.leone@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/VoltVarese/",
+          "facebook_group_url": "https://www.facebook.com/groups/voltvarese/",
+          "position": [45.8175359,8.8263438],
+          "i18n": "Varese, Italy"
+      },
+      {
+          "facebook_url": "https://www.facebook.com/Volt-Venezia-305757556807717/",
+          "position": [45.4371908,12.3345898],
+          "i18n": "Venezia, Italy"
+      },
+      {
+          "facebook_url": "https://www.facebook.com/Volt-Verona-294393204534917/",
+          "position": [45.4384958,10.9924122],
+          "i18n": "Verona, Italy"
+      },
+      {
+          "facebook_group_url": "https://www.facebook.com/groups/voltvicenza/",
+          "position": [45.5488306,11.5478825],
+          "i18n": "Vicenza, Italy"
+      },
+      {
+          "lead_url": "mailto:chiara.pietrucci@volteuropa.org",
+          "position": [43.7148603,13.217754],
+          "i18n": "Senigallia, Italy"
+      },
+      {
+          "position": [43.3007275,13.4535897],
+          "i18n": "Macerata, Italy"
+      },
+      {
+          "position": [43.8424173,13.0146632],
+          "i18n": "Fano, Italy"
+      },
+      {
+          "position": [43.6170137,13.5170982],
+          "i18n": "Ancona, Italy"
+      },
+      {
+          "position": [43.9098114,12.9131228],
+          "i18n": "Pesaro, Italy"
+      },
+      {
+          "position": [42.8546185,13.5755038],
+          "i18n": "Ascoli Piceno, Italy"
+      },
+      {
+          "lead_url": "mailto:mauro.mazzieri@volteuropa.org",
+          "position": [43.5219801,13.2443764],
+          "i18n": "Jesi, Italy"
+      },
+      {
+          "lead_url": "mailto:mauro.mazzieri@volteuropa.org",
+          "position": [43.602662,13.324571],
+          "i18n": "Chiaravalle (AN), Italy"
+      },
+      {
+          "position": [43.9336213,10.9174238],
+          "i18n": "Pistoia, Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.752172,11.3199949],
+          "i18n": "Bagno a Ripoli (FI), Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.6853454,11.2546637],
+          "i18n": "Impruneta (FI), Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.5824597,11.3168731],
+          "i18n": "Greve in Chianti (FI), Italy"
+      },
+      {
+          "lead_url": "mailto:martino.traxler@volteuropa.org",
+          "position": [43.5507411,10.3091456],
+          "i18n": "Livorno, Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.8391003,10.7193421],
+          "i18n": "Chiesina Uzzanese (PT), Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.8409347,10.7475475],
+          "i18n": "Ponte Buggianese (PT), Italy"
+      },
+      {
+          "lead_url": "mailto:anxhelo.qeveri@volteuropa.org",
+          "position": [45.8553764,9.389605],
+          "i18n": "Lecco, Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.8150413,10.6743961],
+          "i18n": "Altopascio (LU), Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.8216342,11.1366776],
+          "i18n": "Campi Bisenzio (FI), Italy"
+      },
+      {
+          "lead_url": "mailto:ludovica.perazzotti@volteuropa.org",
+          "position": [43.4754178,10.7282838],
+          "i18n": "Lajatico (PI), Italy"
+      },
+      {
+          "lead_url": "mailto:daniele.latella@volteuropa.org",
+          "position": [44.89666,8.8641282],
+          "i18n": "Tortona, Italy"
+      },
+      {
+          "lead_url": "mailto:daniele.latella@volteuropa.org",
+          "position": [45.0140247,8.6458214],
+          "i18n": "Valenza, Italy"
+      },
+      {
+          "lead_url": "mailto:matteo.pastore@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/voltTrieste",
+          "facebook_group_url": "https://www.facebook.com/groups/volttrieste/",
+          "position": [45.6500335,13.7706559],
+          "i18n": "Trieste, Italy"
+      },
+      {
+          "lead_url": "mailto:salvatore.trotta@volteuropa.org",
+          "facebook_group_url":"https://www.facebook.com/groups/voltpavia/",
+          "position": [45.1860043,9.1546375],
+          "i18n": "Pavia, Italy"
+      },
+      {
+          "lead_url": "mailto:simone.corbani@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Voltmassacarrara/",
+          "position": [44.0359323,10.1395519],
+          "i18n": "Massa, Italy"
+      },
+      {
+          "lead_url": "mailto:simone.corbani@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Voltmassacarrara/",
+          "position": [44.0791804,10.1023532],
+          "i18n": "Carrara, Italy"
+      },
+      {
+          "lead_url": "mailto:simone.corbani@volteuropa.org",
+          "facebook_url": "https://www.facebook.com/Voltmassacarrara/",
+          "position": [44.214548,9.967787],
+          "i18n": "Aulla, Italy"
+      },
+      {
+          "lead_url": "mailto:michele.eleodori@volteuropa.org",
+          "facebook_url": "https://m.facebook.com/VoltPg",
+          "position": [43.1119613,12.3890104],
+          "i18n": "Perugia, Italy"
+      }
+    ]
+  },
+  "lv": {
+    "position": [56.8796, 24.6032],
+    "zoom": 5,
+    "i18n": "Latvia",
+    "city_list": [
+      {
+          "position": [56.9496,24.1052],
+          "i18n": "Riga, Latvia"
+      }
+    ]
+  },
+  "lt": {
+    "position": [55.1694, 23.8813],
+    "zoom": 5,
+    "i18n": "Lithuania",
+    "facebook_url": "https://www.facebook.com/VoltLatvia/",
+    "city_list": [
+      {
+          "position": [54.6871555,25.2796514],
+          "i18n": "Vilinus, Lithuania"
+      }
+    ]
+  },
+  "lu": {
+    "position": [49.8153, 6.1333],
+    "zoom": 5,
+    "i18n": "Luxemburg",
+    "facebook_url": "https://www.facebook.com/VoltLuxembourg",
+    "twitter_url": "https://twitter.com/voltluxembourg",
+    "instagram_url": "https://www.instagram.com/voltluxembourg",
+    "web_url": "https://www.voltluxembourg.org/",
+    "city_list": [
+      {
+          "position": [49.61162100000001,6.1319346],
+          "i18n": "Luxembourg City, Luxemburg"
+      }
+    ]
+  },
+  "mt": {
+    "position": [35.9375, 14.3754],
+    "zoom": 5,
+    "i18n": "Malta",
+    "facebook_url": "https://www.facebook.com/VoltMalta/",
+    "city_list": [
+      {
+          "position": [35.8957,14.4534],
+          "i18n": "Balzan, Malta"
+      }
+    ]
+  },
+  "nl": {
+    "position": [52.1326, 5.2913],
+    "zoom": 5,
+    "i18n": "Netherlands",
+    "facebook_url": "https://www.facebook.com/VoltNederland/",
+    "twitter_url": "https://twitter.com/VoltNederland/",
+    "instagram_url": "https://www.instagram.com/voltnederland",
+    "youtube_url": "https://www.youtube.com/channel/UCyczP3mO2CDr9k9JbBEB8vA?view_as=subscriber",
+    "whatsapp_url": "https://wa.me/31683415616",
+    "web_url": "https://www.voltnederland.org/",
+    "city_list": [
+      {
+          "position": [52.632381,4.753375],
+          "i18n": "Alkmaar, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/348044895959595/"
+      },
+      {
+          "position": [52.3702157,4.895167900000001],
+          "i18n": "Amsterdam, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/1701664126601242/"
+      },
+      {
+          "position": [51.851509,4.548581],
+          "i18n": "Barendrecht, Nederland"
+      },
+      {
+          "position": [51.525841,5.118750],
+          "i18n": "Brabant, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/299735220877373/"
+      },
+      {
+          "position": [51.571915,4.768323],
+          "i18n": "Breda, Nederland"
+      },
+      {
+          "position": [52.011578,4.357068],
+          "i18n": "Delft, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/648303382238599/"
+      },
+      {
+          "position": [52.0704978,4.3006999],
+          "i18n": "Den Haag, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/381733952368995/"
+      },
+      {
+          "position": [52.255890,6.161370],
+          "i18n": "Deventer, Nederland"
+      },
+      {
+          "position": [51.441642,5.469722],
+          "i18n": "Eindhoven, Nederland"
+      },
+      {
+          "position": [53.2193835,6.5665017],
+          "i18n": "Groningen, Nederland",
+          "facebook_url": "https://www.voltnederland.org/groningen"
+      },
+      {
+          "position": [52.387386,4.646219],
+          "i18n": "Haarlem, Nederland"
+      },
+      {
+          "position": [52.229172,5.166897],
+          "i18n": "Hilversum, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/320906981841069/"
+      },
+      {
+          "position": [52.160114,4.49701],
+          "i18n": "Leiden, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/269690373689167/"
+      },
+      {
+          "position": [50.8513682,5.6909725],
+          "i18n": "Maastricht, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/563674117426386/"
+      },
+      {
+          "position": [51.812565,5.837226],
+          "i18n": "Nijmegen, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/292864498022395/"
+      },
+      {
+          "position": [51.9244201,4.4777326],
+          "i18n": "Rotterdam, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/2069820579728418/"
+      },
+      {
+          "position": [52.09073739999999,5.1214201],
+          "i18n": "Utrecht, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/2245072835505830/"
+      },
+      {
+          "position": [51.969189,5.665395],
+          "i18n": "Wageningen, Nederland",
+          "facebook_url": "https://www.facebook.com/groups/292864498022395/"
+      }
+    ]
+  },
+  "no": {
+    "position": [60.4720, 8.4689],
+    "zoom": 5,
+    "i18n": "Norway",
+    "city_list": [
+      {
+          "position": [59.913868,10.752245],
+          "i18n": "Oslo, Norway"
+      }
+    ]
+  },
+  "pl": {
+    "position": [51.9194, 19.1451],
+    "zoom": 5,
+    "i18n": "Poland",
+    "facebook_url": "https://www.facebook.com/Volt-Poland/",
+    "city_list": [    
+      {
+          "position": [50.06465009999999,19.9449799],
+          "i18n": "Krakow, Poland"
+      },
+      {
+          "position": [52.2296756,21.0122287],
+          "i18n": "Warsaw, Poland"
+      }
+    ]
+  },
+  "pt": {
+    "position": [39.3999, 8.2245],
+    "zoom": 5,
+    "i18n": "Portugal",
+    "facebook_url": "https://www.facebook.com/VoltPortugal/",
+    "city_list": [
+      {
+          "position": [38.7222524,-9.1393366],
+          "i18n": "Lisbon, Portugal"
+      }
+    ]
+  },
+  "ro": {
+    "position": [45.9432, 24.9668],
+    "zoom": 5,
+    "i18n": "Romania",
+    "facebook_url": "https://www.facebook.com/VoltRomania/",
+    "city_list": [
+      {
+          "position": [44.4267674,26.1025384],
+          "i18n": "Bucharest, Romania"
+      },
+      {
+          "position": [46.7712101,23.6236353],
+          "i18n": "Cluj-Napoca, Romania"
+      }
+    ]
+  },
+  "sk": {
+    "position": [48.6690, 19.6990],
+    "zoom": 5,
+    "i18n": "Slovakia",
+    "facebook_url": "https://www.facebook.com/VoltSlovakia/",
+    "city_list": []
+  },
+  "si": {
+    "position": [46.1512, 14.9955],
+    "zoom": 5,
+    "i18n": "Slovenia",
+    "facebook_url": "https://www.facebook.com/VoltSlovenia/",
+    "city_list": [    
+      {
+          "position": [46.0569465,14.5057515],
+          "i18n": "Ljubljana, Slovenia"
+      }
+    ]
+  },
+  "se": {
+    "position": [60.1282, 18.6435],
+    "zoom": 5,
+    "i18n": "Sweden",
+    "facebook_url": "https://www.facebook.com/VoltSweden/",
+    "twitter_url": "https://www.twitter.com/voltsverige",
+    "instagram_url": "https://www.instagram.com/voltsverige",
+    "web_url": "https://www.voltsverige.org/",
+    "city_list": [
+      {
+          "position": [59.85856380000001,17.6389267],
+          "i18n": "Uppsala, Sweden"
+      },
+      {
+          "position": [59.32932349999999,18.0685808],
+          "i18n": "Stockholm, Sweden"
+      }
+    ]
+  },
+  "uk": {
+    "position": [55.3781, 3.4360],
+    "zoom": 5,
+    "i18n": "United Kingdom",
+    "facebook_url": "https://www.facebook.com/VoltUKingdom/",
+    "twitter_url": "https://twitter.com/UkVolt?lang=en-gb",
+    "instagram_url": "https://www.instagram.com/voltukofficial/",
+    "web_url": "https://www.voltuk.org/",
+    "city_list": [
+      {
+          "position": [51.5073509,-0.1277583],
+          "i18n": "London, United Kingdom"
+      },
+      {
+          "position": [53.4807593,-2.2426305],
+          "i18n": "Manchester, United Kingdom"
+      },
+      {
+          "position": [55.953251,-3.188267],
+          "i18n": "Edinburgh, United Kingdom"
+      },
+      {
+          "position": [52.707302,-2.755327],    
+          "i18n": "Shrewsbury, United Kingdom"
+      },
+      {
+          "position": [52.486244,-1.890401],
+          "i18n": "Birmingham, United Kingdom"
+      },
+      {
+          "position": [52.281940,-1.584470],
+          "i18n": "Warwick, United Kingdom"
+      },
+      {
+          "position": [51.454514,-2.587910],
+          "i18n": "Bristol, United Kingdom"
+      },
+      {
+          "position": [52.205338,0.121817],
+          "i18n": "Cambridge, United Kingdom"
+      },
+      {
+          "position": [51.752022,-1.257726],
+          "i18n": "Oxford, United Kingdom"
+      }
+    ]
+  }
+}
+

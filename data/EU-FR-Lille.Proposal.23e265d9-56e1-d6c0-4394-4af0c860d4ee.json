@@ -1,0 +1,53 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "23e265d9-56e1-d6c0-4394-4af0c860d4ee",
+  "file_name": "EU-FR-Lille.Proposal.23e265d9-56e1-d6c0-4394-4af0c860d4ee.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Interdire.Les.Plastiques.Non.Réutilisables",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "keyword_dict": {
+    "en": ["ban single use plastics_", "clean city_", "waste reduction_"],
+    "fr": ["interdire les plastiques non réutilisables_", "ville prope_", "réduction des déchets_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Ban single use plastics within Lille",
+      "description": "Half of the waste floating in the ocean are single use plastics.",
+      "text_content": "Prohibit the sale and sanction the distribution of non-reusable plastic such as single-use plastic cups in Lille before EU regulations and use public events (fête de la musique, la Braderie) to raise awareness of both the public and gastronomy ."
+    },
+    "fr": {
+      "title": "Interdire les plastiques non réutilisables à Lille",
+      "description": "Les déchets marins sont constitués à 50% d'articles en plastique à usage unique.",
+      "text_content": "Interdire la vente et sanctionner la distribution de plastique non réutilisables comme les gobelets plastiques à utilisation unique en Lille avant la réglementation de l'UE et utiliser les évènements publics (fête de la musique, braderie) pour sensibiliser à la fois le public et la gastronomie."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "http://www.europarl.europa.eu/news/en/press-room/20181018IPR16524/plastic-oceans-meps-back-eu-ban-on-throwaway-plastics-by-2021",
+    "title": "Plastic Oceans: MEPs back EU ban on throwaway plastics by 2021",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.ecoconso.be/fr/content/10-objets-en-plastique-jetables-bientot-interdits",
+    "title": "10 objets en plastique jetables bientôt interdits",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

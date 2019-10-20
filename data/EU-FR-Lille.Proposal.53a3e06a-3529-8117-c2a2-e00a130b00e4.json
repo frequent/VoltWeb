@@ -1,0 +1,61 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "53a3e06a-3529-8117-c2a2-e00a130b00e4",
+  "file_name": "EU-FR-Lille.Proposal.53a3e06a-3529-8117-c2a2-e00a130b00e4.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.Débétoniser.Les.Rues",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["green spaces_", "urban gardens_", "transformation of car parking_"],
+    "fr": ["espaces verts_", "jardins urbains_", "transformation du parcage_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Depave the streets",
+      "description": "Transform parking space into green space.",
+      "text_content": "With the reduction of cars in the city center and the installation of the proposed long-term car park, the streets and parking spaces can be 'depaved' under the guidance of local citizens to install trees, gardens and green spaces and manage the microclimate street by street."
+    },
+    "fr": {
+      "title": "Débétoniser les rues",
+      "description": "Transformer les espaces du parcage dans espaces verts.",
+      "text_content": "Avec la réduction des voitures en centre-ville et l'installation du parking long terme proposé, les rues et les espace du parking peuvent être 'débétoniser' (depaved ) guidés par les habitants pour installer des arbres, jardins et des espaces verts et communs pour gérer le microclimat rue par rue."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://depave.org/",
+    "title": "Depave.org - from parking lots to paradise – free your soil",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "http://buildabetterburb.org/asphalt-be-gone-how-depave-is-replacing-parking-lots-with-parks/",
+    "title": "Asphalt, Be Gone! How Depave Is Replacing Parking Lots with Parks",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.lemonde.fr/economie/article/2018/12/20/a-montreal-les-habitants-verdissent-les-rues-pour-lutter-contre-le-rechauffement-climatique_5400032_3234.html",
+    "title": "A Montréal, face au réchauffement climatique, les habitants verdissent les rues",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}
+
+

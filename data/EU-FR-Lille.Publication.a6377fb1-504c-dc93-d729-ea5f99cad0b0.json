@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "a6377fb1-504c-dc93-d729-ea5f99cad0b0",
+  "file_name": "EU-FR-Lille.Publication.a6377fb1-504c-dc93-d729-ea5f99cad0b0.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Espaces.Verts.2019-07-02",
+  "title": "Lille Municipales 2020 - Propositions Espaces Verts",
+  "img_url": "",
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipal Elections 2020 - Proposals Green Spaces",
+      "description": "Proposals for Lille to one day actually qualify for being a green capital.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Propositions Espaces Verts",
+      "description": "Propositions pour Lille de devenir une vraie capital verte à l'avenir",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Espaces.Verts.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Espaces.Verts.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
+

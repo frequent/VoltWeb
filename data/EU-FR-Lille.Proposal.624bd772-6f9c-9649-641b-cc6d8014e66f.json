@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "624bd772-6f9c-9649-641b-cc6d8014e66f",
+  "file_name": "EU-FR-Lille.Proposal.624bd772-6f9c-9649-641b-cc6d8014e66f.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Plus.De.Transport.En.Commun.Fixe.Et.Flexible",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["public transport frequency_", "flexible lines by reservation_"],
+    "fr": ["fréquence de transport publique_", "lignes flexibles sur réservation_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "More fixed and flexible public transport",
+      "description": "Increase fixed public transport frequencies and grow the flexible lines system (via reservation).",
+      "text_content": "Increase public transport frequencies in the evenings and weekends and evolve the Ilevia reservation programme into a flexible network of light shuttle busses without schedules and determined routes. Ask residents of the MEL to post their trips (work, school) to adapt the system to their needs."
+    },
+    "fr": {
+      "title": "Plus de transport en commun fixe et flexible",
+      "description": "Augmenter la fréquence de transport en commun fixe et à grandir des lignes 'flexible' (sur réservation).",
+      "text_content": "Augmenter la fréquence de transport en commun fixe dans les soirées et les week-ends et évoluer le réseau Ilevia sur réservation dans un réseau flexible de bus-navette légère sans horaires et routes déterminés. Demander aux résidents de la MEL de poster leur trajets (travail, école) pour adapter le système à leurs besoins"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.ilevia.fr/cms/institutionnel/reseau-ilevia/transport-sur-reservation/",
+    "title": "Transport sur Réservation",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://crosscut.com/2019/08/seattles-microtransit-experiment-drives-people-light-rail-it-working",
+    "title": "Seattle's 'microtransit' experiment drives people to light rail. Is it working?",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

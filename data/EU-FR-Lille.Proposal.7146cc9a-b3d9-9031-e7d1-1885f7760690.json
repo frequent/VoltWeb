@@ -1,0 +1,55 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "7146cc9a-b3d9-9031-e7d1-1885f7760690",
+  "file_name": "EU-FR-Lille.Proposal.7146cc9a-b3d9-9031-e7d1-1885f7760690.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.Façades.Vertes.Contre.Les.Îlots.De.Chaleur.Urbains",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["vertical gardens_", "prevent urban heat isles_"],
+    "fr": ["jardins verticaux_", "éviter les îlots de chaleur urbains_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Green facades against urban heat islands",
+      "description": "Build to reduce inner city temperatures.",
+      "text_content": "Reclaim vertical space and require that a percentage of the building facades to be built as well as the roofs will be covered with foliage or materials proven to have a low albedo level."
+    },
+    "fr": {
+      "title": "Des façades vertes contre les îlots de chaleur urbains",
+      "description": "Construire en façon de réduire les températures en centre-ville.",
+      "text_content": "Reprendre l'espace vertical et exige qu'un pourcentage des façades de bâtiments à construire ainsi que les toits seront couverts de feuillage ou de matériaux éprouvés d'un niveau albédo bas."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://fr.wikipedia.org/wiki/Alb%C3%A9do",
+    "title": "Wikipedia: Albedo",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "http://theconversation.com/green-and-cool-roofs-provide-relief-for-hot-cities-but-should-be-sited-carefully-60766",
+    "title": "Green and cool roofs provide relief for hot cities, but should be sited carefully",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}
+

@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "ac0f4a35-c134-049c-06d1-1727cc8d0788",
+  "file_name": "EU-FR-Lille.Publiction.ac0f4a35-c134-049c-06d1-1727cc8d0788.json",
+  "reference": "EU-FR-Lille.Publication.Avis.Sraddet.Hauts.De.France.2019-10-16",
+  "title": "SRADDET Hauts-de-France - Avis de Volt Lille",
+  "img_url": "../../../../img/FR-HDF.Sraddet.Banner.Dark.png", 
+  "thumb_url": "../../../../img/FR-HDF.Sraddet.Banner.Dark.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "SRADDET Hauts-de-France - Opinion of Volt Lille",
+      "description": "Our opinion on the Scheme for the regional, sustainablie and coherent development of the territories in Hauts-de-France",
+      "text_content": "Volt Lille is against this incomplete and inconsistent SRADDET, our opinion is negative. We would like to request a new version of the SRADDET to be written - easier to read and understand and more consistent. A SRADDET which takes its five axes as well as the effects of climate change and the Brexit for our region into account. A SRADDET which is again posted to the public in a new enquête."
+    },
+    "fr": {
+      "title": "SRADDET Hauts-de-France - Avis de Volt Lille",
+      "description": "Notre avis au Schéma régional d'aménagement, de développement durable et d'égalité des territoires",
+      "text_content": "Volt Lille est contre ce SRADDET incomplet et incohérent, notre avis est négatif. Nous demandons d'une nouvelle version de SRADDET - plus lisible, plus compréhensible et plus cohérent. Un SRADDET qui rend compte de ses cinq axes et pris en compte les effets du changement climatique et du Brexit pour la région. Un SRADDET qui est posé a nouveau au public dans une nouvelle enquête."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-10-06 23:56:27 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-HDF-Avis.Sraddet.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-HDF-Avis.Sraddet.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

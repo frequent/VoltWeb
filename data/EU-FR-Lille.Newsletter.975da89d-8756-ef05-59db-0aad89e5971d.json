@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "975da89d-8756-ef05-59db-0aad89e5971d",
+  "file_name": "EU-FR-Lille.Newsletter.975da89d-8756-ef05-59db-0aad89e5971d",
+  "reference": "EU-FR-Lille.Newsletter.2019-10-17",
+  "title": "Volt Lille Newsletter, Semaine #41",
+  "img_url": "../../../../img/volt_lille_hebdo_512x256.41.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x256.41.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #41 - Sofia",
+      "description": "Back from Bulgaria with a lot of takeaways, a new board and plenty of ideas for our local elections.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #41 - Sofia",
+      "description": "De retour de Bulgarie avec beaucoup avec un nouveau conseil d'administration et beaucoup d'idées pour nos élections locales.",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-10-17 10:23:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-10-17 10:23:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-10-17.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-10-17.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}

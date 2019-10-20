@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "b71ddf93-6f81-1ff3-cbb1-3f64ec08f2b5",
+  "file_name": "EU-FR-Lille.Proposal.b71ddf93-6f81-1ff3-cbb1-3f64ec08f2b5.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Les.Rues.Silencieuses",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["reduction of noise_"],
+    "fr": ["réduction de bruit_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Silent streets",
+      "description": "",
+      "text_content": "Prohibit the use of noisy vehicles in the no wake zone (quads, motorcycles with modified exhaust pipe, etc.)."
+    },
+    "fr": {
+      "title": "Les rues silencieuses",
+      "description": "",
+      "text_content": "Interdire l'usage de tous véhicules bruyant dans la zone sans sillage (quads, motos avec tuyau d'échappement modifiés, etc)."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

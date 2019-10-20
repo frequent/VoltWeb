@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Panini Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/renderjs.latest.min.js"></script>
+    <script src="gadget_panini.js"></script>
+
+    <script id="panini_dialog_template" type="text/x-supplant">
+      <div class="volt-event__dialog-image-wrapper">
+        <img class="volt-card-image volt-card__panini-image volt-lazy" src="{fallback_url}" data-src="{img_url}" alt="{title}" />
+      </div>
+      <h2 class="volt-event__dialog-title">{title}</h2>
+      <div class="volt-marker__floater">
+        <a class="volt-link volt-dialog__social-media-link {facebook_disabled}" target="_blank" href="{facebook_url}"><i class="fab fa fa-facebook"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {twitter_disabled}" target="_blank" href="{twitter_url}"><i class="fab fa fa-twitter"></i></a>
+        <a class="volt-link volt-dialog__social-media-link {instagram_disabled}" target="_blank" href="{instagram_url}"><i class="fab fa fa-instagram"></i></a>
+      </div>
+      <div class="volt-event__dialog-details-wrapper">
+        <p class="volt-event__dialog-field volt-event__dialog-text-content"><i class="material-icons">info</i><span class="volt-event__dialog-text">{text_content}</span></p>
+        <p class="volt-event__dialog-field volt-event__dialog-age"><i class="material-icons">hourglass_empty</i><span class="volt-event__dialog-text">{age}</span>
+        <p class="volt-event__dialog-field volt-event__dialog-nationality"><i class="material-icons">language</i><span class="volt-event__dialog-text">{nationality}</span>
+        <p class="volt-event__dialog-field volt-event__dialog-profession"><i class="material-icons">work</i><span class="volt-event__dialog-text">{profession}</span>
+        <p class="volt-event__dialog-field volt-event__dialog-party"><i class="material-icons">policy</i><span class="volt-event__dialog-text">{party}</span>
+        <p class="volt-event__dialog-field volt-event__dialog-suburb"><i class="material-icons">location_on</i><span class="volt-event__dialog-text">{suburb}</span></p>
+        <p class="volt-event__dialog-field volt-event__dialog-mandate"><i class="material-icons">account_balance</i><span class="volt-event__dialog-text">{mandate}</span></p>
+      </div>
+      <div class="volt-venue__wrapper"></div>
+      <div class="mdl-card__actions mdl-card--border volt-dialog__actions">
+        <form name="volt-fullscreen" class="volt-dialog__action-form volt-dialog__action-full">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen</i>
+            <span data-i18n="dialog-Fullscreen" class="volt-dialog__text-responsive">Plein Écran</span>
+          </button>
+        </form>
+        <form name="volt-minimize" class="volt-dialog__action-form volt-dialog__action-exit volt-hidden">
+          <button type="submit" class="volt-dialog__button mdl-button">
+            <i class="material-icons">fullscreen_exit</i>
+            <span data-i18n="dialog-Minimize" class="volt-dialog__text-responsive">Minimiser</span>
+          </button>
+        </form>
+        <form name="volt-dialog-close" class="volt-dialog__action-form">
+          <button type="submit" class="volt-dialog__button mdl-button volt-dialog-close" autofocus data-i18n="dialog-Close">Fermer</button>
+        </form>
+      </div>
+    </script>
+
+    <script id="panini_placeholer_template" type="text/x-supplant">
+       <li class="volt-team__panini-item">
+        <img class="volt-team__portrait-image" src="../../../../img/FR-Graphics.Members.Profile.Outline.svg" alt="Outline" />
+        <figcaption><a href="elections-candidates.html" data-i18n="panini-You">Vous ?</a></figcaption>
+      </li>    
+    </script>
+
+    <script id="panini_person_template" type="text/x-supplant">
+     <li class="volt-team__panini-item">
+      <form name="volt-dialog" data-action="event">
+        <input type="hidden" value="{reference}" name="event_reference" />
+        <button type="submit" class="volt-team__panini-button">
+          <img class="volt-team__panini-image" src="{thumbnail_url}" alt="Outline" />
+          <figcaption>{position}{title}, {age}, {profession}</figcaption>
+        </button>
+      </form>
+    </li>
+    </script>
+
+  </head>
+  <body>
+    <div class="volt-panini__wrapper">
+      <ul class="volt-team__panini-list mdl-grid volt-item__container"></ul>
+    </div>
+    <div class="dot-flashing"></div>
+    <p class="volt-grid__no-records volt-hidden" data-i18n="panini-No records found">Pas de résultats trouvés.</p>
+    <dialog class="mdl-dialog volt-dialog volt-dialog-event"></dialog>
+  </body>
+</html>

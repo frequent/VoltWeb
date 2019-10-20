@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "fd113f0f-3050-f2e0-ee56-bb04b02f8d2c",
+  "file_name": "EU-FR-Lille.Meeting.fd113f0f-3050-f2e0-ee56-bb04b02f8d2c.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Carousel des candidates.2019-09-04",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Carousel.Candidates.2019-09-05.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Carousel.Candidates.2019-09-05.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Candidate Carousel",
+      "description": "Who will be our 61 candidates ?",
+      "text_content": "We want to run for the municipal elections in Lille. For this, we need a list of 61 candidates: not easy for the beginners in politics like us! Nevertheless, it is the opportunity to show that beyond a list, we also have a real program created by citizens, around constructive and progressive ideas. I am one of the 61 candidates, but who are the remaining 60? Our campaign is called 'You are part of it' - so we're looking for the 60 among you ! How does it work to become a candidate? What ideas do you have and what are the requirements? Come and chat with us over a drink, if you want to be part of the brave (candidates 1 to 10), the ambitious (candidates 11 to 20), the sympathizers (candidates 21 to 50) or the witnesses (candidates 51 to 61 )!"
+    },
+    "fr": {
+      "title": "Volt Lille - Carousel des Candidat.e.s",
+      "description": "C'est qui nos 61 candidat.e.s ?",
+      "text_content": "Nous souhaitons nous présenter aux élections municipales à Lille. Pour cela, nous avons besoin d’une liste de 61 candidats: pas facile pour les « petits loups » de la politique comme nous! Néanmoins, c’est l’opportunité de montrer, au delà d’une liste, un véritable programme définit par des citoyens, autour d’idées constructives et progressistes. Moi, je fais parti des 61 candidats, mais qui sont les 60 restants ? Notre campagne s'appelle 'Vous en faites partie' - donc nous cherchons les 61 parmi vous ! Comment ça marche pour devenir candidat ? Selon quelles idées et quelles exigences ? Venez en discuter avec nous autour d’un verre, si vous voulez faire parti des courageux (candidats 1 à 10), des ambitieux (candidats 11 à 20), des sympathisants (candidats 21 à 50) ou des témoins (candidats 51 à 61) !."
+    }
+  },
+  "start_date": "2019-09-05 19:30:00 GMT+2",
+  "stop_date": "2019-09-05 21:30:00 GMT+2",
+  "release_date": "2019-09-03 23:31 GMT+2",
+  "location": {
+    "coordinates": [50.627131, 3.071741],
+    "title": "Gare Saint Sauveur",
+    "physical_address": "17 Boulevard Jean-Baptiste Lebas",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/440656569880546/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/264506643/",
+      "evensi_url": "https://www.evensi.fr/carousel-candidat-gare-saint-sauveur/336092763"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

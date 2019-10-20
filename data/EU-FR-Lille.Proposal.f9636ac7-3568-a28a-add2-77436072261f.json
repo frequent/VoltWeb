@@ -1,0 +1,74 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "f9636ac7-3568-a28a-add2-77436072261f",
+  "file_name": "EU-FR-Lille.Proposal.f9636ac7-3568-a28a-add2-77436072261f.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Appuyer.Les.Initiatives.Contre.Dechets.Alimentaires",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["food waste reduction_", "social enterprise_"],
+    "fr": ["réduction des déchets_", "commerce sociale_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Support initiatives to reduce food waste in local retail",
+      "description": "10 million tons of consumable food is wasted every year in France",
+      "text_content": "Study best practices in Europe and support initiatives to reduce food waste in supermarkets and retail. Daily reports of food surplus and the use of apps such as thefoodlife.org, which re-distribute to charities should be made mandatory."
+    },
+    "fr": {
+      "title": "Appuyer les initiatives visant à réduire les déchets alimentaires dans commerce de détail",
+      "description": "10 millions de tonnes d’aliments consommables partent chaque année à la poubelle en France",
+      "text_content": "Étudiez les meilleures pratiques européennes en matière de commerce et appuyer les initiatives visant à réduire les déchets alimentaires en détail. Les rapports quotidiens de surplus alimentaire et l'utilisation d'applis telles que thefoodlife.org, qui re-distribuent aux organismes de bienfaisance devraient être rendus obligatoires."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.lemonde.fr/les-decodeurs/article/2018/06/07/le-gaspillage-alimentaire-en-france-en-chiffres_5311079_4355770.html",
+    "title": "En France, le gaspillage alimentaire en chiffres",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://zero-gachis.com/fr/quelques-chiffres",
+    "title": "Le gaspillage alimentaire en quelques chiffres",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.openaccessgovernment.org/how-are-uk-supermarkets-tackling-their-food-waste/45013/",
+    "title": "How are UK supermarkets tackling their food waste?",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.theguardian.com/environment/2017/dec/23/tesco-pledges-to-end-edible-food-waste-by-march-2018",
+    "title": "Tesco pledges to end edible food waste by March 2018",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://food.cloud/",
+    "title": "Food Cloud - Surplus Food Redistribution",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.thefoodlife.org/",
+    "title": "Récupération gratuite d'aliments des supermarchés - TheFoodLife",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

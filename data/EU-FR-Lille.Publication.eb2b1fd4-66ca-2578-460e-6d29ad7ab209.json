@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "eb2b1fd4-66ca-2578-460e-6d29ad7ab209",
+  "file_name": "EU-FR-Lille.Publication.eb2b1fd4-66ca-2578-460e-6d29ad7ab209.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Gestion.Dechets.2019-07-01",
+  "title": "Lille Municipales 2020 - Propositions Gestion Déchets",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipal Elections 2020 - Proposals Waste Management",
+      "description": "Our collection of ideas how to make Lille a cleaner city and work towards reducing our overall waste.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Propositions Gestion Déchets",
+      "description": "Notre collection de propositions comment nettoyer Lille et travailler vers la réduction des déchets et générale.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "fb527b71-6d7d-13c3-5bae-dbfe526a61ab",
+  "file_name": "EU-FR-Lille.Newsletter.fb527b71-6d7d-13c3-5bae-dbfe526a61ab",
+  "reference": "EU-FR-Lille.Newsletter.2019-08-25",
+  "title": "Volt Lille Newsletter, Semaine #34",
+  "img_url": "../../../../img/volt_lille_hebdo_512x512.34.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x512.34.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #34 - La Braderie",
+      "description": "This week we're hoping to have our booth accepted at the Braderie's village of associations.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #34 - La Braderie",
+      "description": "Cette semaine nous esperons d'être accepter dans la village des associations à la Braderie",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-08-25 20:00:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-08-25 20:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-08-25.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-08-25.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}

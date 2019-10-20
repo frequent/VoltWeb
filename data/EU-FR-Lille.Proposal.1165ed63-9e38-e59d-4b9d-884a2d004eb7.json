@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "1165ed63-9e38-e59d-4b9d-884a2d004eb7",
+  "file_name": "EU-FR-Lille.Proposal.1165ed63-9e38-e59d-4b9d-884a2d004eb7.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["prevent urban heat isles_", "green spaces_"],
+    "fr": ["éviter les îlots de chaleur urbains_", "espaces verts_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Plant more innercity trees",
+      "description": "300-400 trees per year are not enough to create a better microclimate in the city.",
+      "text_content": "Define new targets for trees to plant in Lille (more than 5000 to 2020) and continue the program with at least a few thousand trees to plant per year."
+    },
+    "fr": {
+      "title": "Planter davantage d'arbres",
+      "description": "300-400 arbres par ans ne suffisant pas afin de améliorer le microclima dans la ville.",
+      "text_content": "Définir les nouvelles cibles pour des arbres à planter à Lille (plus que 5000 jusqu'à 2020) et continuer le programme avec au moins quelques milliers d'arbres à planter par an."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.adu-lille-metropole.org/wp-content/uploads/2017/09/cahier6.pdf",
+    "title": "L'arbre en ville",
+    "i18n": "fr",
+    "mime-type": "application/pdf"
+  }, {
+    "url": "https://www.lille.fr/Actualites/5000-arbres-plantes-d-ici-2020-a-Lille",
+    "title": "5000 arbres plantés d’ici 2020 à Lille",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

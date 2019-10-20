@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "91f4f750-6b0d-6727-6923-e5d2d1a4c74c",
+  "file_name": "EU-FR-Lille.Proposal.91f4f750-6b0d-6727-6923-e5d2d1a4c74c.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Péage.Urbain.Basé.Sur.Les.Sièges.Vacants",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["traffic_reduction_", "inner city toll_", "free public transport_"],
+    "fr": ["réduction du trafic_", "péage urbain_", "transport en commun gratuit_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "City toll based on empty seats",
+      "description": "Free public transport is more likely to be used and financial feasible if cars congesting inner city streets pay a toll.",
+      "text_content": "To counterbalance free public transport, introduce an inner city toll inside the no-wake area based on vacant seats in a car (eg 1 € per empty seat, 50c for hybrids / electric cars)."
+    },
+    "fr": {
+      "title": "Péage urbain basé sur les sièges vacants",
+      "description": "Le transport en commun gratuit sont plus utilisés et faisable si les voitures, qui encombrent les rues en centre-ville payent un péage.",
+      "text_content": "Pour contrebalancer les transport en commun gratuit, introduire un péage urbain dans la zone sans sillage avec cotisation basé dans les sièges vacants dans une voiture (par exemple 1€ par siège vide, 50c pour les hybrides/voitures électriques)."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

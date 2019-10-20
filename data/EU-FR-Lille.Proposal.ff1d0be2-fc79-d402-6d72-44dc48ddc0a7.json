@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "ff1d0be2-fc79-d402-6d72-44dc48ddc0a7",
+  "file_name": "EU-FR-Lille.Proposal.ff1d0be2-fc79-d402-6d72-44dc48ddc0a7.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.50.Pourcent.Logements.Sociaux",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["social housing_", "housing policy_"],
+    "fr": ["logements sociaux_", "politique des logements_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "50% social housing",
+      "description": "Increase and favor construction of social housing while Lille is a 'zone tendue'",
+      "text_content": "Establish a larger social housing stock by increasing the coefficient of these dwellings in buildings to 50% during the definition of Lille as 'zone tendue' and by adapting the housing policy to best practices like Vienna (owner of 220,000 homes, co-owner of 200,000 for 1.8 million residents, accessible with a salary below 40,000 € / year, 5.80 € / m² rent, 1% tax to maintain the housing stock)"
+    },
+    "fr": {
+      "title": "50% logements sociaux",
+      "description": "Augementer et favoriser les logements sociaux tandis que Lille est une 'zone tendue'",
+      "text_content": "Établir un parc de logements sociaux plus grand en augmentant la coefficient de ces logements dans les constructions à 50% pendant la définition de Lille comme zone tendue et en orientant la politique de logements à les villes comme Vienne (propriétaire de 220.000 logements, copropriétaire de 200.000 pour 1.8 million de résidents, accessible avec un salaire au-dessous de 40.000€/ans, 5.80€/m² loyer, 1% impôt pour maintenir le parc de logements)"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.deutschlandfunk.de/sozialer-wohnungsbau-warum-wiener-guenstig-wohnen.769.de.html?dram:article_id=428615",
+    "title": "Social Housing - Why Vienna is so affordable?",
+    "i18n": "de",
+    "mime-type": "text/html"
+  }]
+}

@@ -1,0 +1,59 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "dc3f7045-07a5-57ca-760a-ace0bd4b55e0",
+  "file_name": "EU-FR-Lille.Proposal.dc3f7045-07a5-57ca-760a-ace0bd4b55e0.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Inciter.La.Collection.De.Mégots",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["waste reduction_", "clean city_", "recycling_", "deposit for recyclables_", "local money_"],
+    "fr": ["réduction des déchets_", "ville propre_", "recyclage_", "consigne pour les recyclables_", "monnaie locale_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Credit 1c for each collected cigarette butt",
+      "description": "Add a surcharge for cigarette packs and credit return to (PassPass) residential cards.",
+      "text_content": "Encourage the collection of cigarette butts instead of using a penalty regime as in Paris and install a surcharge of 25cents for each pack of cigarettes purchased in Lille and the MEL. Credit 1c for each butt returned to PassPass cards (or a similar residential card) at a downtown collection and recycling station."
+    },
+    "fr": {
+      "title": "Créditer 1c par mégot collecté",
+      "description": "Installer un surcharge par paquet et créditer les mégots retournées à les cartes (PassPass) résidentiels",
+      "text_content": "Inciter la collection de mégots au lieu d'un régime de pénalisation comme à Paris et installer un surcharge de 25cents pour chaque paquet de cigarettes achetée dans la Lille et la MEL. Créditer 1c pour chaque mégot retournée aux cartes PassPass (ou une carte résidentielle similaire) dans une station de collection et recyclage en centre-ville."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-08-24 12:24:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.terracycle.com/fr-CA/brigades/cigarette-waste-brigade",
+    "title": "TerraCycle - Programme de recyclage des déchets de cigarettes",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.lepetitvapoteur.com/fr/blog/anne-hidalgo-vs-les-megots-des-millions-jetes-chaque-jour-a-paris--n546",
+    "title": "Anne Hidalgo VS le tabagisme : Paris polluée par des millions de mégots",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.lexpress.fr/actualite/societe/megots-urine-ordures-les-amendes-pour-incivilites-ont-double-a-paris_1948828.html",
+    "title": "Mégots, urine, ordures: les amendes pour 'incivilités' ont doublé à Paris",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "041e5358-0b93-51f4-38e3-da5f65a3a59e",
+  "file_name": "EU-FR-Lille.Proposal.041e5358-0b93-51f4-38e3-da5f65a3a59e.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.Un.Toit.Pour.Lautoroute.",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["green spaces_", "reducing pollution_", "recreational space_"],
+    "fr": ["espaces verts_", "réduction de la pollution_", "espace loisirs_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "A green roof for highway",
+      "description": "Cover the motorway with a new innercity park - a new green lung for Lille.",
+      "text_content": "Develop a new green grid across Lille by covering the A1 / A22 / A25 / N356 motorways with a roof and vegetated park above. Similar efforts are underway in other cities to add green spaces, significantly reducing air and noise pollution. For Lille, this band will also form a natural link with the Fives and Lille Sud neighborhoods bringing them back into the city."
+    },
+    "fr": {
+      "title": "Un toit vert pour l'autoroute",
+      "description": "Couvrir l'autoroute avec un toit vert et végétale - un nouveau poumon pour Lille.",
+      "text_content": "Développer un nouveau trame vert à travers Lille en couvrant les autoroutes A1/A22/A25/N356 avec une toiture et parc végétalisé au-dessus. Les efforts similaires sont en cours dans autres villes pour ajouter les espaces verts, réduire considérablement la pollution d'air et de bruit. Pour Lille, ce tram et parc sont aussi une bande de connexion naturelle avec les quartiers Fives et Lille Sud."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.dezeen.com/2019/04/03/bqp-big-news-bqe-brooklyn-highway-park/",
+    "title": "BIG unveils park-covered highway for Brooklyn's waterfront",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://en.globes.co.il/en/article-plan-approved-to-cover-ayalon-highway-1001139393",
+    "title": "Plan approved to cover Ayalon Highway",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

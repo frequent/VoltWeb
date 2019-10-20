@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "c9096471-e804-c20e-13c1-ab9a29438713",
+  "file_name": "EU-FR-Lille.Proposal.c9096471-e804-c20e-13c1-ab9a29438713",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Installer.Les.Poubelles.Publiques.Souterrains",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["clean city_", "public underground trashbins_", "recycle_"],
+    "fr": ["ville propre_", "poubelles publiques souterrains_", "recyclage_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Install public underground trashbins",
+      "description": "'Lille is a dirty city!' shouldn't be the first impression of a visitor.",
+      "text_content": "Replace public garbage cans without the option of sorting in the city center with underground garbage containers separated by categories that already exist in some municipalities of the MEL and other cities to prevent litter from strewing the streets.  Introduce fines for throwing waste and misusing containers."
+    },
+    "fr": {
+      "title": "Installer les poubelles publiques souterrains",
+      "description": "'Lille est une ville sale !' ne devrait être pas la première impression d'un visiteur.",
+      "text_content": "Remplacer les poubelles publiques sans option de trier dans le centre-ville avec les conteneurs souterrains séparés par catégories d'ordures qui déjà existent dans quelques communes de la MEL et des autres villes pour prévenir que les déchets jonchent les rues. Introduire les amendes pour jeter des déchets."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.total-slovenia-news.com/how-to-slovenia/1591-how-to-use-the-underground-trash-containers-in-ljubljana",
+    "title": "How to Use the Underground Trash Containers in Ljubljana",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

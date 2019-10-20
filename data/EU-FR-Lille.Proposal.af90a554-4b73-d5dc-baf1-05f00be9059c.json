@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "af90a554-4b73-d5dc-baf1-05f00be9059c",
+  "file_name": "EU-FR-Lille.Proposal.af90a554-4b73-d5dc-baf1-05f00be9059c.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Mel.Mange.Mobile",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["waste reduction_"],
+    "fr": ["réduction des déchets_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "MEL Mobile Foodbox",
+      "description": "System of reusable lunch and delivery containers to reduce daily waste.",
+      "text_content": "Reduce paper and plastic waste at lunch and delivieries by requiring take-away food vendors to participate in a reusable containers program instead of using single use paper and plastics."
+    },
+    "fr": {
+      "title": "Boîte 'MEL Mange Mobile'",
+      "description": "Programme des conteneurs re-utilisables au déjeuner et pour les livraisons.",
+      "text_content": "Diminuer les déchets de papier et de plastique au déjeuner et pour les livraisons en demandant les commerçants de participer dans un programme des conteneurs re-utilisables au lieu de déchets jetables"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.goboxpdx.com/",
+    "title": "Go zero waste with GO Box reusables",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://durhamgreentogo.com/using-greentogo/",
+    "title": "GreenToGo is a reusable take-out container service",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

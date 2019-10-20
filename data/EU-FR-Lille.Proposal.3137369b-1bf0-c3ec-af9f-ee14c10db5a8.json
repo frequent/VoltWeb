@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "3137369b-1bf0-c3ec-af9f-ee14c10db5a8",
+  "file_name": "EU-FR-Lille.Proposal.3137369b-1bf0-c3ec-af9f-ee14c10db5a8.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Étendre.Le.Réseau.Régional.De.Fret.Ferroviaire",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["reduce pollution_", "reduce traffic_", "railway infrastructure_"],
+    "fr": ["réduction de pollution_", "réduction du traffic_", "réseau ferroviaire_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Expand régional freight railway network",
+      "description": "Get transit cargo traffic off of the roads and onto rail.",
+      "text_content": "Work with the Eurometropolis and develop rail freight-transit routes between the ports Dunkirk / Calais / Zeebrugge / Rotterdam and Paris according to the TenTec route 'North Sea - Mediterranean' to reduce the number of heavy duty trucks that is only passing through HdF and Lille."
+    },
+    "fr": {
+      "title": "Étendre le réseau régional de fret ferroviaire",
+      "description": "Éloignez le trafic marchandises en transit des routes en développant le réseau fret ferroviaire.",
+      "text_content": "Travailler avec l'Eurométropole en développant de voies de fret-transit ferroviaires entre les ports Dunkerque/Calais/Zeebrugge/Rotterdam et Paris selon la TenTec route 'Mer du Nord - Méditerranée' pour réduire les camions qui seulement passaient l'HdF et Lille."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://ec.europa.eu/transport/themes/infrastructure_en",
+    "title": "Infrastructure - TEN-T - Connecting Europe",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

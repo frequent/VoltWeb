@@ -1,0 +1,59 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "692acc1c-ce4f-1c52-b1b1-bdb8d716b327",
+  "file_name": "EU-FR-Lille.Proposal.692acc1c-ce4f-1c52-b1b1-bdb8d716b327.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Plus.Des.Pistes.Et.Casiers.Pour.Les.Velos",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["bike infrastructure_"],
+    "fr": ["casiers sécurisés_", "infrastructure vélo_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "More bike lanes and lockers",
+      "description": "Provide safe spaces to drive and store bicycles - while every second bike in France gets stolen.",
+      "text_content": "Increase and prioritize bike lanes in Lille and the MEL based on the 500,000 km covered in 'Ensemble en selle' by installing secure bike garage and V'Lille secure parking in work and residential areas that are accessible and usable with private bicycles and Pass Pass/Residential card."
+    },
+    "fr": {
+      "title": "Plus de pistes et casiers pour les vélos",
+      "description": "Fournir un espace sécurisé pour les vélos et leurs stationnements - chaque vélo sur deux en France est volée.",
+      "text_content": "Agrandir et prioriser les pistes vélo dans Lille et la MEL en base le 500.000 km parcourus dans 'Ensemble en selle' en installant de (garages de ) parking V'Lille sécurisé dans les zones du travail et résidentiel qui sont aussi accessibles et utilisables avec les vélos privées et la carte Pass Pass ou résidentiel."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.spiegel.de/video/houten-in-den-niederlanden-stadt-fuers-fahrrad-video-99028066.html",
+    "title": "Houten, NL - Wo das Fahrrad immer Vorfahrt hat",
+    "i18n": "de",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://challengevelo.lillemetropole.fr/",
+    "title": "Challenge métropolitain du Vélo",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.economist.com/europe/2018/07/12/the-dutch-underground-bicycle-park-arms-race",
+    "title": "The Dutch underground bicycle-park arms race",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

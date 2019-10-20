@@ -1,0 +1,64 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "46402e4d-4db5-a9a4-9291-6a25defa6bdc",
+  "file_name": "EU-FR-Lille.Proposal.46402e4d-4db5-a9a4-9291-6a25defa6bdc.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["green spaces_", "recreational spaces"],
+    "fr": ["espaces verts_", "espaces loisirs_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Peuple Belge (outdoor) swimming-pool",
+      "description": "Add a parc and natural swimming pool by reopening the ancient waterway.",
+      "text_content": "Reevaluate the conversion of Avenue de Peuple Belge into a canal and park by taking inspiration from existing proposals and ideas in other cities - including open natural pools like in Copenhagen."
+    },
+    "fr": {
+      "title": "Piscine (naturelle) Peuple Belge",
+      "description": "Ajoute un parc et piscine naturelle en réouvertant l'ancien cours d'eau.",
+      "text_content": "Réévaluer la conversion d'avenue de Peuple Belge en un canal et parc en prenant l'inspiration des propositions existants et des idées dans autres villes - y compris des piscines naturelles ouvertes comme à Copenhague."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://axeculture.com/vieux-lille-quel-projet-pour-lavenue-du-peuple-belge/",
+    "title": "Quel projet pour l’Avenue du Peuple Belge ?",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://mutabilis-paysage.com/projet/avenue-du-peuple-belge/",
+    "title": "Avenue de Peuple Belge",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.iconeye.com/architecture/features/item/10937-urban-plunge-wild-swimming-in-the-city",
+    "title": "Urban Plunge – wild swimming in the city",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.smithgroup.com/perspectives/2019/lessons-in-danish-urbanism-part-2-urban-swimming-in-copenhagenand-washington-dc",
+    "title": "Lessons in Danish Urbanism | Part 2: Urban Swimming in Copenhagen",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

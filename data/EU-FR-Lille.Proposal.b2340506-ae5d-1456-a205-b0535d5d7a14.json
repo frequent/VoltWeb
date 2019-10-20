@@ -1,0 +1,74 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "b2340506-ae5d-1456-a205-b0535d5d7a14",
+  "file_name": "EU-FR-Lille.Proposal.b2340506-ae5d-1456-a205-b0535d5d7a14.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Reduire.Et.Revaloriser.Les.Dechets.Btp",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["waste reduction_", "recycling_"],
+    "fr": ["réduction des déchets_", "recyclage_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Cut down et reuse construction waste",
+      "description": "The construction and public works sector is responsable for 72% of overall waste in France (3400kg per citizen compared to 568kg of household waste).",
+      "text_content": "Go beyond the European norm and recycle/reuse 90% of construction and demolition waste as done by other EU countries for all construction works undertaken in Lille. Require reports on each intervention for the amount of waste generated and how much of it was recoverd/reused. Adapt practices from other countries, like reusing old bricks recoverable during demolition (a re-used brick saves up to 0.5kg of CO²."
+    },
+    "fr": {
+      "title": "Reduire et revaloriser les déchets BTP",
+      "description": "Le secteur BTP (bâtiments et des travaux publics) est responsable de 72% de déchets en France (3400kg par habitant comparé à 568kg des ménages.",
+      "text_content": "Dépasser la norme européenne de trier et re-valoriser 90% de déchets BTP (bâtiments et des travaux publics) comme dans les autres pays Européennes pour tous les projets entrepris à Lille. Demander les bilans d'ordures et leur valorisation pour chaque intervention et suivre la mode de réutiliser les matériaux des anciens bâtiments démolis (chaque brique re-utilisé épargne 0.5kg de CO²)."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.ademe.fr/sites/default/files/assets/documents/dechets_chiffres_cles_essentiel2018_010690.pdf",
+    "title": "Déchets Chiffres-clés 2018",
+    "i18n": "fr",
+    "mime-type": "application/pdf"
+  }, {
+    "url": "https://ec.europa.eu/eurostat/statistics-explained/images/2/29/Waste_generation_by_economic_activities_and_households%2C_2016_%28%25%29.png",
+    "title": "Waste_generation_by_economic_activities_and_households 2016",
+    "i18n": "en",
+    "mime-type": "image/png"
+  }, {
+    "url": "https://www.ecologique-solidaire.gouv.fr/dechets-du-batiment-et-des-travaux-publics",
+    "title": "Déchets du bâtiment et des travaux publics",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.ffbatiment.fr/federation-francaise-du-batiment/laffb/mediatheque/batimetiers.html?id_article=2853",
+    "title": "Déchets de Chantier - Comment font nos voisins européens ?",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "http://www.terranoi.fr/uploads/pdf/ressources_guides/29/1.pdf",
+    "title": "Gestion et valorisation des déchets de chantier de construction",
+    "i18n": "fr",
+    "mime-type": "application/pdf"
+  }, {
+    "url": "https://www.weforum.org/agenda/2018/03/copenhagen-denmark-rebuilding-recycled-rubble/",
+    "title": "Why this Danish city is rebuilding itself out of recycled rubble",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

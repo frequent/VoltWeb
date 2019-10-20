@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "f2c87a82-93fa-90c3-4e6d-706812ef7c08",
+  "file_name": "EU-FR-Lille.Meeting.f2c87a82-93fa-90c3-4e6d-706812ef7c08.json",
+  "reference": "EU-FR-Lille.Meeting.Reunion.Publique.2019-08-22",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Meetup.2019-08-22.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Meetup.2019-08-22.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Public Meet & Greet",
+      "description": "Sneak Preview of our campagin for the Municipal Elections",
+      "text_content": "Join us for the last meetup before launching our municipal campaign to get an inside-scoop and be able to add to our ideas."
+    },
+    "fr": {
+      "title": "Volt Lille - Réunion Publique",
+      "description": "L'aperçu de notre campagne pour les élections municipales",
+      "text_content": "Rejoignez-nous pour le dernier rencontre avant le début de notre campagne municipale pour jeter un coup d'oeil exclusif et contribuer dans nos idées et propositions."
+    }
+  },
+  "start_date": "2019-08-22 19:00:00 GMT+2",
+  "stop_date": "2019-08-22 22:00:00 GMT+2",
+  "release_date": "2019-07-12 18:31 GMT+2",
+  "location": {
+    "coordinates": [50.627659, 3.064498],
+    "title": "L'Ecart",
+    "physical_address": "36, Rue Jean Bart",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/364106297839795/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264114370/",
+      "evensi_url": "https://www.evensi.fr/volt-lille-reunion-rentree-lecart/330481275"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

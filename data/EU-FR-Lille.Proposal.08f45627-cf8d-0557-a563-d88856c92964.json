@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "08f45627-cf8d-0557-a563-d88856c92964",
+  "file_name": "EU-FR-Lille.Proposal.08f45627-cf8d-0557-a563-d88856c92964.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.Parcage.Vert",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["green spaces_"],
+    "fr": ["espaces verts_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Green parking spaces",
+      "description": "Convert remaining parking spaces into green parking.",
+      "text_content": "Request that all remaining parking spaces be converted into green parking spaces as in the Champ de Mars."
+    },
+    "fr": {
+      "title": "Parcage vert",
+      "description": "Convertir les espaces restant à un parcage vert.",
+      "text_content": "Demande que tous les espaces parking restant sont convertis dans espaces parking verts comme au champ de Mars."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://en.wikipedia.org/wiki/Green_parking_lot",
+    "title": "Wikipedia: Green Parking",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "a2eaa92f-393e-2f83-82ad-62adde779b1d",
+  "file_name": "EU-FR-Lille.Meeting.a2eaa92f-393e-2f83-82ad-62adde779b1d.json",
+  "reference": "EU-FR-Lille.Meeting.Pique.Nique.Participation.Citoyens.2019-09-15",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Picnic.Participation.Citoyens.2019-09-15.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Picnic.Participation.Citoyens.2019-09-15.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Picnic Citizen Participation",
+      "description": "What contributions to current citizen concertation projects?",
+      "text_content": "To finish our general assembly in Lille we would like to invite you to a sunday atélier 'Picnic Citizen Participation' in Wazemmes. Bring something to eat and drink from the market and join us on the grass in front of the Maison Folie Wazemmes (if it's raining we'll be in Cafe Sarazin). We'll try to discuss and find proposals for the concertations currently active on the website of the city of Lille and the MEL."
+    },
+    "fr": {
+      "title": "Pique-Nique Participation Citoyens",
+      "description": "Quels réponses pour les concertations de citoyens du moment ?",
+      "text_content": "Pour la fin de notre Assemblé Générale à Lille nous vous invitons à un atelier 'pique-nique participation citoyens' à Wazemmes. Trouver quelque chose à boire et manger dans la Marche et rejoignez-nous sur la pelouse devant la Maison Folie Wazemmes (en case de pluie à Cafe Sarazin). Nous essayerons de discuter et trouver de propositions pour les sujets actifs sur les sites de la ville de Lille et la MEL."
+    }
+  },
+  "start_date": "2019-09-15 13:00:00 GMT+2",
+  "stop_date": "2019-09-15 15:00:00 GMT+2",
+  "release_date": "2019-08-25 16:40 GMT+2",
+  "location": {
+    "coordinates": [50.624183, 3.048874],
+    "title": "La pelouse devant la Maison Folie Wazemmes",
+    "physical_address": "Allée Martha Desrumaux",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/375406826458811/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264290294/",
+      "evensi_url": "https://www.evensi.fr/pique-nique-participation-citoyens-pelouse/333524806"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

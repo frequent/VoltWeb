@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "f247d550-f688-704e-69cd-3279f843bf35",
+  "file_name": "EU-FR-Lille.Proposal.f247d550-f688-704e-69cd-3279f843bf35.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Inverser.Stop.Pub",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["waste reduction_"],
+    "fr": ["réduction des déchets_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Invert «Stop Pub»",
+      "description": "Prohibit the distribution of advertising unless a mailbox clearly indicates «Pub Oui»",
+      "text_content": "Inverse «Stop Pub». Provide «Pub Oui» stickers in local town halls and do not allow the distribution of paper ads unless indicated on the mailboxes."
+    },
+    "fr": {
+      "title": "Inverser «Stop Pub»",
+      "description": "Interdire la distribution de publicités sauf autocollant «Pub Oui»",
+      "text_content": "Inverser «Stop Pub». Fournir des autocollants «Pub Oui» dans les mairies locales et n'autorise pas la distribution de publicités sur papier sauf indication sur les boîtes aux lettres."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "",
+    "title": "",
+    "i18n": "",
+    "mime-type": ""
+  }]
+}

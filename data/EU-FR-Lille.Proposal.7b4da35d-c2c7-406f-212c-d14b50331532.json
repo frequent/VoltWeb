@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "7b4da35d-c2c7-406f-212c-d14b50331532",
+  "file_name": "EU-FR-Lille.Proposal.7b4da35d-c2c7-406f-212c-d14b50331532.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Carrefours.Roulants",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["reduction of traffic jams_", "traffic flow_"],
+    "fr": ["réduction des embouteillages_", "flux de trafic_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Rolling crossroads",
+      "description": "Prevent traffic gridlocks caused by cars stopping in intersections",
+      "text_content": "Define 'rolling' crossroads (as in Erfurt Bridge) or box junctions, in which it is strictly forbidden to stop (marked with yellow grid) to maintain the flow of traffic. Install cameras and give fines for infringements."
+    },
+    "fr": {
+      "title": "Les Carrefours 'roulants'",
+      "description": "Prévenir les embouteillages à cause voitures qui occupent les zones carrefours",
+      "text_content": "Définir des carrefours 'roulants' (comme dans Pont d'Erfurt), dans qui c'est strictement interdit d'arrêter (marqué par quadrillé jaune) pour maintenir le flux de trafic . Installe caméras et donner des amendes pour les infraction."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://fr.wikipedia.org/wiki/Box_junction",
+    "title": "Wikipedia: Box junction",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.youtube.com/watch?v=Dz1gr4VoOss",
+    "title": "Traffic Rules 101: Meaning of the yellow box junctions marked with criss cross lines",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

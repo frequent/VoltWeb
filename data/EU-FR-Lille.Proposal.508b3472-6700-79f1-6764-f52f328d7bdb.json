@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "508b3472-6700-79f1-6764-f52f328d7bdb",
+  "file_name": "EU-FR-Lille.Proposal.508b3472-6700-79f1-6764-f52f328d7bdb.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.Feuillage.Pour.Ilevia",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["vertical gardens_", "green spaces_", "reduction of pollution_"],
+    "fr": ["jardins verticaux_", "espaces verts_", "réduction de la pollution_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "A green dress for Ilevia",
+      "description": "Cover the metro line pillars with vertical gardens.",
+      "text_content": "Create vertical gardens on the Ilevia network as well as in flagship projects like “Via Verde“ which has transformed more than a thousand concrete columns into vertical gardens and install air filters at key congestion points."
+    },
+    "fr": {
+      "title": "Feuillage pour Ilevia",
+      "description": "Couvrir les piliers de la ligne de métro.",
+      "text_content": "Créer les jardins verticaux sur le réseau Ilevia comme dans le projets phares comme “Via Verde” qui a transformé de plus d’un millier de colonnes en béton en jardins verticaux et installer des filtres à air aux points d'embouteillage."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "http://viaverde.com.mx/v2/?lang=fr",
+    "title": "Via Verde - le plus grand projet en construction de renaturation urbaine de la planète",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://greencitysolutions.de/en/solutions/#section2",
+    "title": "Green City Solutions",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

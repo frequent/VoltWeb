@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "e21e6be4-810d-3e8e-dc8f-65eb9c63a39b",
+  "file_name": "EU-FR-Lille.Proposal.e21e6be4-810d-3e8e-dc8f-65eb9c63a39b.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Inciter.La.Rénovation.Des.Bâtiments.Existants",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["sustainable housing_", "save energy_"],
+    "fr": ["logements soutenables_", "économiser de la énergie_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Incentivize renovation of existing buildings",
+      "description": "",
+      "text_content": "Put in place financial and regulatory incentives for the renovation of existing building stock with local specialists - including authorization for the height extension of buildings, gray water circuits, better insulation and installation of double / triple glazed windows."
+    },
+    "fr": {
+      "title": "Inciter la rénovation du parc des bâtiments.Existants",
+      "description": "",
+      "text_content": "Mettre en place des incitations financier et réglementaire pour la rénovation du parc des bâtiments existants avec les spécialistes locaux - y compris l'autorisation pour l'extension en hauteur des bâtiments, les circuits d'eau grise, une meilleure isolation et l'installation des fenêtres double/triple vitrage."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "http://www.habiter2030.com/wp-content/uploads/Doc_dossier-de-candidature.pdf",
+    "title": "Solar Decathlon Europe - Candidature équipe Habitat2030 de Lille",
+    "i18n": "fr",
+    "mime-type": "application/pdf"
+  }]
+}

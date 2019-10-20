@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "272036c6-47c6-75cb-2026-ecd7906f2542",
+  "file_name": "EU-FR-Lille.Proposal.272036c6-47c6-75cb-2026-ecd7906f2542.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Verts.Parc.De.Wault",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Green.Space.min.png",
+  "category_dict": {
+    "en": {
+      "title": "green spaces_"
+    },
+    "fr": {
+      "title": "espaces verts_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["green spaces_", "traffic reduction", "inner city parks_"],
+    "fr": ["espaces verts_", "réduction du trafic_", "les parcs en centre-ville_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Park de Wault",
+      "description": "Remove surrounding and crossing streets to create Park de Wault.",
+      "text_content": "Enlarge the canal and green space in Quai de Wault up to Rue National by removing the cross-streets to have a larger and uninterrupted inner city park with water access."
+    },
+    "fr": {
+      "title": "Parc de Wault",
+      "description": "Supprimer les rues environnant et traversant et créer la Park de Wault.",
+      "text_content": "Agrandir le canal et espace vert dans Quai de Wault jusqu'à Rue National en supprimant les rues transversant pour avoir un petit parc en centre-ville plus grand et sans interruption jusque à l'eau."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

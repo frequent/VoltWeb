@@ -1,0 +1,62 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "c4e34d2d-d04e-f642-7ebe-ad57aa2c2da6",
+  "file_name": "EU-FR-Lille.Proposal.c4e34d2d-d04e-f642-7ebe-ad57aa2c2da6.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["recycle_", "urban farming_", "waste reduction_"],
+    "fr": ["recyclage_", "agriculture urbaine_", "réduction des déchets_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Seperate organic food waste",
+      "description": "Organic waste is throwing away fertilizer.",
+      "text_content": "Ask residents of Lille to collect and dispose of food waste separately before the EU deadline of 2023 by requiring the purchase of biodegradable food bags. Re-use the dried garbage as fertilizer instead of landfill and make information accessible how to regrow fruit and vegetable from perceived food waste."
+    },
+    "fr": {
+      "title": "Trier les déchets alimentaires",
+      "description": "Les déchets alimentaires sont les engrais naturelles jetées.",
+      "text_content": "Demander des résidents de Lille de collecter et déposer les déchets alimentaires séparément avant le délai prévu par l'UE en 2023 en exigeant d'acheter des sacs biodégradables pour matières alimentaires . Re-utiliser les ordures séchées comme fertilisant au lieu des les déposées dans des sites d'enfouissement et rendre l'information accessible comment cultiver des produits avec les déchets alimentaires perçues."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.weforum.org/agenda/2019/04/south-korea-recycling-food-waste/",
+    "title": "South Korea once recycled 2% of its food waste. Now it recycles 95%",
+    "i18n": "South Korea once recycled 2% of its food waste. Now it recycles 95%",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://eu.azcentral.com/story/entertainment/dining/food-waste/2017/08/03/san-francisco-mandatory-composting-law-turns-food-waste-money/440879001/",
+    "title": "How San Francisco's mandatory composting laws turn food waste into profit",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.youtube.com/watch?v=9CkHET7e_7k",
+    "title": "Récultiver les fruits et les légumes",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}
+
+
+

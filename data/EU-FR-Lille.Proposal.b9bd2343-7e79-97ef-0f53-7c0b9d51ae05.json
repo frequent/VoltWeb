@@ -1,0 +1,69 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "b9bd2343-7e79-97ef-0f53-7c0b9d51ae05",
+  "file_name": "EU-FR-Lille.Proposal.b9bd2343-7e79-97ef-0f53-7c0b9d51ae05.json",
+  "reference": "EU-FR-Lille.Proposal.Dechets.Pass.Pass.Consigne",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Trash.min.png",
+  "category_dict": {
+    "en": {
+      "title": "waste management_"
+    },
+    "fr": {
+      "title": "gestion des déchets_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["recycling_", "deposit for recyclables_", "local money_"], 
+    "fr": ["recyclage_", "consigne pour les recyclables_", "monnaie locale_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "PassPass Deposit for Recyclables",
+      "description": "Use PassPass or residential cards to receive payments on deposited recyclables - Beep and earn",
+      "text_content": "Extend the PassPass card to into a local payment card (such as the Octopus card) and introduce a deposit regime in Lille, which allows residents to return recyclable packaging (glasses, plastic, paper) at collection points and be credited with the reselling prize on their cards. Pay a premium for packages previously registered by quantity in retail stores (and for those who are returned by the homeless) and charge these premiums to merchants to encourage them to reduce packaging. Gradually stop the collection of recyclable garbage in parallel."
+    },
+    "fr": {
+      "title": "PassPass Consigne pour les recyclables",
+      "description": "Utilisez les cartes PasPass ou des cartes résidentielles pour recevoir des paiements pour les recyclables déposées -  je bipe, je gagne",
+      "text_content": "Étendre la carte PassPass ou une nouvelle carte résidentielle vers une carte de paiement locale (comme la carte Octopus) et introduire un régime de consigne à Lille, qui permet aux résidents à retourner les emballages recyclables (verres, plastique, papier ) dans points de collection pour être crédité le prix revendeur sur leurs cartes. Payer une prime pour les emballages enregistrés dans la vente au détail (ou ceux qui sont retournés par les SDF) et facturer ces primes aux commerçants pour les inciter à réduire l'emballage. Cesser graduellement la collection d'ordures recyclables en parallèle."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://en.wikipedia.org/wiki/Octopus_card",
+    "title": "Wikipedia: Octopus card",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://mitte.co/2018/07/18/truth-recycling-plastic/",
+    "title": "The truth about recycling plastic",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.iamsterdam.com/en/living/everyday-essentials/waste-and-recycling",
+    "title": "Amsterdam Everyday Recycling",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.letsrecycle.com/prices/plastics/",
+    "title": "Plastic waste prices",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }, {
+    "url": " http://www.wrap.org.uk/content/glass-4",
+    "title": "Glass waste prices",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

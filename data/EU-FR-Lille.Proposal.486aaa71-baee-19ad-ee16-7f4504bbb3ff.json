@@ -1,0 +1,49 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "486aaa71-baee-19ad-ee16-7f4504bbb3ff",
+  "file_name": "EU-FR-Lille.Proposal.486aaa71-baee-19ad-ee16-7f4504bbb3ff.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Construction.Compact.Et.Soutenable",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["sustainable building_"],
+    "fr": ["construction soutenable_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Compact and sustainable construction",
+      "description": "Build according to demand and global warming criteria.",
+      "text_content": "Focus construction towards urban density and realize projects by improveming/renewing the stock of the existing buildings and small grounds to ensure a supply of appartments in the different ranges and conforming with the criteria defined to limit the global warming (30m² per capita, etc.)"
+    },
+    "fr": {
+      "title": "Construction compact et soutenable",
+      "description": "Construire en base des besoins et les exigences de réchauffement.",
+      "text_content": "Concentrer les constructions vers la densité urbaine et réaliser de projets dans l'amélioration des bâtiments existants et terrains petites déjà utilisés en assurant l'approvisionnement d'espace à vivre dans les gammes différentes et conformant avec les critères définis pour limiter le réchauffement global (30m² par habitant, etc.)"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "http://lilleencommun.es/?p=265",
+    "title": "Stratégies et Politiques de l’Effondrement // Lille",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

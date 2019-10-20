@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "42ed0023-c601-ebd2-83e4-2d75539f63a8",
+  "file_name": "EU-FR-Lille.Proposal.42ed0023-c601-ebd2-83e4-2d75539f63a8.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Agrandir.Le.Réseau.Train.Tram.Métro",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["expand public transport_", "railway infrastructure_"],
+    "fr": ["agrandir la réseau de transport en commun_", "réseau ferroviaire_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Expand the train/tram/metro network",
+      "description": "and take sophisticated citizen proposals into account.",
+      "text_content": "Expand the train / tram / metro network based on needs between Lille and the communities of the MEL (based on journeys per day) while also taking into account the sophisticated proposals made in public inquiries and verifying these priorities are granted in the SDIT 2020-2035."
+    },
+    "fr": {
+      "title": "Agrandir le réseau train / tram / métro",
+      "description": "avec encore la prise en compte aux contributions de citoyens.",
+      "text_content": "Élargir le réseau train/tram/métro en base de besoins entre Lille et les communs (déplacements par jour) en prenant en compte les propositions sophistiquées ont fait dans les enquêtes publiques et vérifier ces priorités sont accordées dans la SDIT 2020-2035."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://participation.lillemetropole.fr/uploads/decidim/attachment/file/336/Projet_de_RER_Lillois_proposition_SDIT.pdf",
+    "title": "Un Réseau Express Métropolitain",
+    "i18n": "fr",
+    "mime-type": "application/pdf"
+  }, {
+    "url": "http://transporturbain.canalblog.com/archives/2019/06/14/37428120.html",
+    "title": "Lille annonce 5 nouvelles lignes de tramway sur 15 ans",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

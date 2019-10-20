@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "811814db-1888-4702-b9dd-426490ac0576",
+  "file_name": "EU-FR-Lille.Proposal.811814db-1888-4702-b9dd-426490ac0576.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["reduce traffic_", "carpolling reimbursement_"],
+    "fr": ["réduction du trafic_", "remboursement covoiturage_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Half price for carpooling",
+      "description": "Extend the 50% reimbursement of public transport to carpooling",
+      "text_content": "Promote carpooling by offering the equivalent of the 50% reimbursement on public transport for the use of carpooling with platforms such as blablalines and by installing lanes reserved for high-occupancy vehicles on the MEL highways."
+    },
+    "fr": {
+      "title": "Prix moitié pour le covoiturage",
+      "description": "Inclure le covoiturage dans le 50% remboursement pour le transport public.",
+      "text_content": "Promouvoir le covoiturage en offrant de l'équivalent du 50% remboursement transport commun pour l'utilisation du covoiturage avec les plateformes comme blablalines et en installant les voies réservées aux véhicules à occupation multiple dans les autoroutes du MEL."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.blablalines.com/",
+    "title": "L'app du covoiturage domicile-travail par BlaBlaCar",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://fr.wikipedia.org/wiki/Voie_r%C3%A9serv%C3%A9e_aux_v%C3%A9hicules_%C3%A0_occupation_multiple",
+    "title": "Wikipedia: Voie réservée aux véhicules à occupation multiple",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "e5ce5d7c-c71d-cc5c-5173-e12a2745e7a8",
+  "file_name": "EU-FR-Lille.Meeting.e5ce5d7c-c71d-cc5c-5173-e12a2745e7a8.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Nettoyons.Les.Rues.2019-09-21",
+  "img_url": "../../../../img/FR-Graphics.Lille.Nettoyons.Les.Rues.2019-09-21.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Nettoyons.Les.Rues.2019-09-21.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Cleaning up the Streets",
+      "description": "Clean the streets and speak about Lille as a zero-waste city",
+      "text_content": "It's 'world cleanup day' this Saturday et we're living in a city considered to be very dirty - so let's cleanup! While walking we're proposing to brainstorm how to transform Lille into a zero-waste city. Join us at 10:00 at the paddle boat ticket counter and bring your ideas." 
+    },
+    "fr": {
+      "title": "Volt Lille - Nettoyons Les Rues",
+      "description": "Nettoyer les rues et parler de Lille comme un ville de zero-déchets",
+      "text_content": "C'est la 'world cleanup day' ce samedi et nous vivons dans une ville assez sale - donc nettoyons notre ville avec-nous ! En baladant nous proposons une réflexion comment transformer Lille dans une ville zero-déchets. Rejoignez-nous à 10:00 dans le guichet des pédalos et rammenez vos idées."
+    }
+  },
+  "start_date": "2019-09-21 10:00:00 GMT+2",
+  "stop_date": "2019-09-21 11:30:00 GMT+2",
+  "release_date": "2019-09-17 02:20 GMT+2",
+  "location": {
+    "coordinates": [50.638018, 3.050386],
+    "title": "Pédalo Bateux",
+    "physical_address": "1 Avenue Mathias Delobel, Parc de la Citadelle",
+    "city": "Lille",
+    "zip": "59800",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/522533418537829/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/264921871",
+      "evensi_url": "https://www.evensi.fr/volt-lille-nettoyons-rues-cappucine/340020304"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

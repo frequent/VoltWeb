@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "75c757bc-2a99-0a4e-9be4-da388b92ba16",
+  "file_name": "EU-FR-Lille.Publication.75c757bc-2a99-0a4e-9be4-da388b92ba16.json",
+  "reference": "EU-FR-Lille.Publication.Synthese.Vos.Projects.Font.Lille.Budget.Participatif.2019-09-09",
+  "title": "Participation Citoyens - Synthèse 'Vos Projects Font Lille' (Budget Participatif 2020)",
+  "img_url": "",
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Citizen Participation - Synthese 'Your projects make Lille'",
+      "description": "Summary and analysis of citizen proposals made for the participator budget of Lille in 2020.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Participation Citoyens - Synthèse 'Vos Projects Font Lille'",
+      "description": "Synthèse et analyses des propositions faisaient par les citoyens pour le budget participatif de Lille en 2020.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-09-09 22:37:21 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille.Publication.Synthese.Budget.Participatif.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Lille.Publication.Synthese.Budget.Participatif.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

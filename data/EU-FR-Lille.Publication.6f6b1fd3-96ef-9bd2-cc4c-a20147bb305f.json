@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "6f6b1fd3-96ef-9bd2-cc4c-a20147bb305f",
+  "file_name": "EU-FR-Lille.Publication.6f6b1fd3-96ef-9bd2-cc4c-a20147bb305f",
+  "reference": "EU-FR-Lille.Publication.Avis.Reglement.Local.De.Publicite.Intercommunal.2019-10-04",
+  "title": "Pour la Publicité silencieuse et soutenable - Avis pour le Règlement Local de Publicité Intercommunal",
+  "img_url": "../../../../img/FR-Lille.Images.Augmented.Hyperreality.min.png", 
+  "thumb_url": "../../../../img/FR-Lille.Images.Augmented.Hyperreality.480px.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "For silent and sustainable advertising",
+      "description": "Volt Lille's opinion on the Règlement Local de Publicité Intercommunal",
+      "text_content": "We are immersed in a world of noise which include visual noise both in the physical and digital world. We are constantly confronted with advertising - the only refuge being our homes which we can protect with 'Stop pub' stickers (read more in the pdf, photo by Domestic Robocop from Augmented Hyperreality)"
+    },
+    "fr": {
+      "title": "Pour la Publicité silencieuse et soutenable",
+      "description": "Notre avis pour l'enquête publique Règlement Local de Publicité Intercommunal",
+      "text_content": "Nous sommes aujourd'hui immergé dans un monde de bruits, y compris le bruit visuel de la publicité dans le domaine physique ou l’univers digital. Nous sommes exposés à des confrontations constantes avec des publicitaires - les seuls refuges étant nos lieux de vie défendu par les autocollants 'Stop Pub' (lire plus dans le pdf, photo par Domestic Robocop - Augmented Hyperreality)"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-10-04 19:04:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Lille-Avis.Reglement.Local.De.Publicite.Intercommunal.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../docFR-Lille-Avis.Reglement.Local.De.Publicite.Intercommunal.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

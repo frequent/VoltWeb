@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "00918862-9be4-7df4-9bee-3a9abfa31353",
+  "file_name": "EU-FR-Lille.Meeting.00918862-9be4-7df4-9bee-3a9abfa31353.json",
+  "reference": "EU-FR-Lille.Meeting.Avant.Première.Assemblée.Générale.2019-09-13",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Avant.Premiere.2019-09-13.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Avant.Premiere.2019-09-13.360w.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Avant Première 'Assemblée Générale'",
+      "description": "No silence before the Assembly",
+      "text_content": "It's the weekend of our general assembly in Lille et we would like to invite you to our 'Avant-Première' at Cafe á la Sarte. Meet our Lille, French and foreign members to discuss global politics and possible implications for our local politics and upcoming elections - or, just join us for drink and mingle."
+    },
+    "fr": {
+      "title": "Avant Première 'Assemblée Générale'",
+      "description": "Pas de calme avant la assemblé",
+      "text_content": "C'est le week-end de notre Assemblé Générale à Lille et nous vous invitons pour l'avant-première à la Sarte. Rencontrez avec nos membres français et étranger pour parler de la politique du monde et les implications pour notre politique locale et les élections municipales à l'avenir - ou, venez simplement pour prendre un verre avec nous."
+    }
+  },
+  "start_date": "2019-09-13 20:00:00 GMT+2",
+  "stop_date": "2019-09-14 00:01:00 GMT+2",
+  "release_date": "2019-08-25 16:02 GMT+2",
+  "location": {
+    "coordinates": [50.640859, 3.067611],
+    "title": "Cafe à la Sarte",
+    "physical_address": "4 Place aux Bleuets",
+    "city": "Lille",
+    "zip": "59800",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/404912770212347/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264290265/",
+      "evensi_url": "https://www.evensi.fr/assemble-eerale-cafe-a-sarte/333524802"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0d913878-809c-43e2-1ae5-f04f09dc38a7",
+  "file_name": "EU-FR-Lille.Meeting0d913878-809c-43e2-1ae5-f04f09dc38a7.json",
+  "reference": "EU-FR-Lille.Meeting.Assemble.Generale.Volt.France.2019-09-06",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Assemble.Generale.2019-09-14.min.png", 
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Assemble.Generale.2019-09-14.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt France General Assembly",
+      "description": "The annual convention of Volt France is coming to Lille.",
+      "text_content": "This year our annual getogether to discuss the future of Volt France will be held in Lille. We'll be welcoming members from our French chapter and throughout Europe for a late-summer university and preparation for our municipal campaign. Join us on one of our public workshops to learn more about Volt and our ideas for a more solidary, evironmentally friendly and democratic society."
+    },
+    "fr": {
+      "title": "Assemblée Générale Volt France",
+      "description": "La congrès annuelle de Volt France débarque à Lille.",
+      "text_content": "Cette année, notre assemblée générale pour discuter du futur de Volt France sera organisée à Lille. Nous accueillerons les membres de Volt France et de tout en Europe pour notre l'université de fin d'été et la préparation de la campagne pour les élections municipales. Rejoignez-nous dans un des nos ateliers ouverts pour découvrir plus sur Volt et nos idées d'une société plus solidaire, écologique et démocratique."
+    }
+  },
+  "start_date": "2019-09-13 19:00:00 GMT+2",
+  "stop_date": "2019-09-15 15:00:00 GMT+2",
+  "release_date": "2019-07-20 12:37 GMT+2",
+  "location": {
+    "coordinates": [50.624734, 3.057240],
+    "title": "Moulin de Wazemmes",
+    "physical_address": "30 rue des Meuniers",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/2374744409462070/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264290330/",
+      "evensi_url": ""
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

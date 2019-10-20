@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "96d8822d-c9d7-a371-eabf-bab991922c1e",
+  "file_name": "EU-FR-Lille.Meeting.96d8822d-c9d7-a371-eabf-bab991922c1e.json",
+  "reference": "EU-FR-Lille.Meeting.Braderie.2019-07-31",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Braderie.2019-08-31.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Braderie.2019-08-31.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt is at the Braderie",
+      "description": "Presentation of our Campaign for the Municipal Elections",
+      "text_content": "Visit our team on this year's Braderie to learn more about our campaign for the municipal elections 2020, our goal of creating or helping to create a citizen list for Lille and the MEL communes and our way of building our citizen agenda."
+    },
+    "fr": {
+      "title": "Volt à la Bradérie de Lille",
+      "description": "La présentation de notre campagne pour les élections municipales",
+      "text_content": "Venez visiter notre équipe dans la Braderie pour découvrir l'idée de notre campagne à Lille pour les élections municipales, notre enjeu de créer ou assister de créer une liste de citoyens pour Lille et la MEL et notre façon de développer notre agenda citoyens."
+    }
+  },
+  "start_date": "2019-08-31 08:00:00 GMT+2",
+  "stop_date": "2019-09-01 15:00:00 GMT+2",
+  "release_date": "2019-07-14 13:31 GMT+2",
+  "location": {
+    "coordinates": [50.629933, 3.068850],
+    "title": "Arc de Triomphe",
+    "physical_address": "Place Simon Vollant",
+    "city": "Lille",
+    "zip": "59800",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/724131021343012/",
+      "meetup_url": "https://www.meetup.com/politique-volt-europe-france-lille/events/264290199/",
+      "evensi_url": "https://www.evensi.fr/volt-a-braderie-lille-esperons-village-associations/333524799"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

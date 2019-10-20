@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "41307267-9912-e274-e29a-12a6965b9232",
+  "file_name": "EU-FR-Lille.Proposal.41307267-9912-e274-e29a-12a6965b9232.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Rassurer.La.Mixité.Urbaine",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["urban diversity_"],
+    "fr": ["mixité urbaine_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Ensure urban diversity",
+      "description": "",
+      "text_content": "Define a social and geographical coefficient of social diversity for all housing constructions to prevent the agglomeration of social housing and high-end housing by creating walled communities next to perceived “ghettos”."
+    },
+    "fr": {
+      "title": "Rassurer la mixité urbaine",
+      "description": "",
+      "text_content": "Définir un coefficient de mixité sociale et géographique obligatoire pour toutes constructions de logements pour prévenir l'agglomération de logements sociaux et de logements de haute gamme en créant des communautés murée à côté des “ghettos”."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

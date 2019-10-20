@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "e25630db-f62f-d4bd-e9ee-2859160f2f43",
+  "file_name": "EU-FR-Lille.Proposal.e25630db-f62f-d4bd-e9ee-2859160f2f43.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Mobilité.Transport.En.Commun.Gratuit.Si.Utilisé",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Mobility.min.png",
+  "category_dict": {
+    "en": {
+      "title": "mobility_"
+    },
+    "fr": {
+      "title": "mobilité_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["free public transport_", "refund based on rides made_"],
+    "fr": ["transport en commun gratuit_", "remboursement par trajet_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Free public transport in case they are being used",
+      "description": "Try to provide a sound financial base for Lille's sophisticated public transportation being free of charge.",
+      "text_content": "Allow free public transport for Lilleois.es by using 50% reimbursement of commuting costs and by offering the other 50% reimbursement for use of the Ilevia network - for example with a Pass Pass Resident (or similar card) and 1 € reimbursed per ride up to 50% of the subscription"
+    },
+    "fr": {
+      "title": "Transport en commun gratuit s'ils sont utilisées",
+      "description": "Essayer de rassurer une solidité financière pour permettre un réseau de transport commun sophistiqué comme à Lille d'être gratuit.",
+      "text_content": "Permettre les transports en commun gratuit pour les Lillois.es en utilisant de 50% remboursement de frais de transport domicile-travail et en offrant le remboursement des autres 50% pour l'utilisation de réseau Ilevia - par exemple avec un Pass Pass Résident (ou carte similar) et 1€ remboursé par trajet jusqu'à 50% du abonnement"
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

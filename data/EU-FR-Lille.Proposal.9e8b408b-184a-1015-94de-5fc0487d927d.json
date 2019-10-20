@@ -1,0 +1,54 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "9e8b408b-184a-1015-94de-5fc0487d927d",
+  "file_name": "EU-FR-Lille.Proposal.9e8b408b-184a-1015-94de-5fc0487d927d.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Améliorer.L.Utilisation.Du.Parc.Des.Bâtiments",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["improve building utilisation_", "housing policy_"],
+    "fr": ["utilisation du parc des bâtiments_", "politique des logements_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Improve building utilisation",
+      "description": "",
+      "text_content": "Improve the use of existing buildings by penalizing those left (partly) empty (10% in 2016 in Lille) or unused and encourage the reconstruction of abandoned or uninhabitable downtown apartments."
+    },
+    "fr": {
+      "title": "Améliorer l'utilisation du parc des bâtiments",
+      "description": "",
+      "text_content": "Améliorer l'utilisation du parc des bâtiments existants en pénalisant ceux qui sont laissés (en partie) vides (10% en 2016 à Lille ) ou inutilisés et inciter la reconstruction des appartements en centre-ville abandonnés ou inhabitables."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": [{
+    "url": "https://www.insee.fr/fr/statistiques/2011101?geo=COM-59350#tableau-LOG_T2",
+    "title": "Commune de Lille - Catégories et types de logements",
+    "i18n": "fr",
+    "mime-type": "text/html"
+  }, {
+    "url": "https://www.latimes.com/local/lanow/la-me-ln-vacant-housing-tax-rental-homeless-crisis-20190611-story.html",
+    "title": "L.A. council members propose taxing landlords who leave homes vacant",
+    "i18n": "en",
+    "mime-type": "text/html"
+  }]
+}

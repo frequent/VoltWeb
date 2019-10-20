@@ -1,0 +1,44 @@
+{
+  "type": "event",
+  "event_type": "Proposal",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "def52fe4-27eb-24ec-c495-20677bb9c7d3",
+  "file_name": "EU-FR-Lille.Proposal.def52fe4-27eb-24ec-c495-20677bb9c7d3.json",
+  "reference": "EU-FR-Lille.Proposal.Espaces.Logements.Hôtel.Sans.Abri",
+  "img_url": "", 
+  "thumb_url": "../../../../img/EU-Graphics.Municipal.Icon.Housing.min.png",
+  "category_dict": {
+    "en": {
+      "title": "housing_"
+    },
+    "fr": {
+      "title": "logements_"
+    }
+  },
+  "contributor_list": {},
+  "keyword_dict": {
+    "en": ["solidary city_", "homeless shelter_"],
+    "fr": ["ville solidaire_", "refuge pour sans-abri_"]
+  },
+  "content_dict": {
+    "en": {
+      "title": "Homeless Hotel",
+      "description": "",
+      "text_content": "With the ban of cars in the city center convert parking garages (Grande Place, Lille Flandres) into free night accommodation for the homeless by supplying showers, linen and a hot meal for sober people who register before 20:00."
+    },
+    "fr": {
+      "title": "Hôtel Sans-Abri",
+      "description": "",
+      "text_content": "Avec l'interdiction des voitures en centre-ville convertir les garages du parking (Grande Place, Lille Flandres) en hébergements de nuit gratuite pour les sans-abri en approvisionnant de douches, linge et un repas chaud pour les personnes sobres qui s'enregistrent avant 20:00."
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {},
+  "document_dict": {},
+  "reference_list": []
+}

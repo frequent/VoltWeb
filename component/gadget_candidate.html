@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Candidate Gadget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../lib/rsvp.latest.min.js"></script>
+    <script src="../lib/renderjs.latest.min.js"></script>
+
+    <script src="gadget_candidate.js"></script>
+
+  </head>
+  <body>
+    <div class="volt-candidate__wrapper">
+      <form name="volt-form__candidate" class="volt-form volt-form__candidate">
+        <section class="volt-form__section">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="candidate_first_name" type="text" id="candidate-first-name" />
+            <label class="volt-form__label mdl-textfield__label" for="candidate-first-name" data-i18n="candidate-First Name">Prénom</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="candidate_last_name" type="text" id="candidate-last-name" />
+            <label class="volt-form__label mdl-textfield__label" for="candidate-last-name" data-i18n="candidate-Last Name">Nom</label>
+          </div>
+        </section>
+
+        <section class="volt-form__section">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="candidate_zip_code" type="text" id="candidate-zip-code" />
+            <label class="volt-form__label mdl-textfield__label" for="candidate-zip-code" data-i18n="candidate-Zip Code">Code Postal</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input required class="mdl-textfield__input" name="candidate_age" type="text" id="candidate-age" />
+            <label class="volt-form__label mdl-textfield__label" for="candidate-age" data-i18n="candidate-Age">Age</label>
+          </div>
+        </section>
+
+        <section class="volt-form__section volt-form__section-fullscreen">
+          <label class="volt-checkbox-expander-l volt-form__label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="candidate-declaration">
+            <input type="checkbox" id="candidate-declaration" name="candidate_declaration" class="mdl-checkbox__input" />
+            <span class="volt-form__text mdl-checkbox__label" data-i18n="candidate-I wish to become a candidate">Je souhaite être candidat à une position éligible.</span>
+          </label>
+          <label class="volt-checkbox-expander-xl volt-form__label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="candidate-validity">
+            <input required type="checkbox" id="candidate-validity" name="candidate_validity" class="mdl-checkbox__input" />
+            <span class="volt-form__text mdl-checkbox__label" data-i18n="candidate-I declare by my honor">Je certifie sur l'honneur que l'ensemble des informations fournies sont exactes et être légalement à même d'être candidat aux municipales</span>
+          </label>
+          <button type="submit" class="volt-form__submit-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <span class="volt-text volt-submit__action" data-i18n="candidate-Send">Envoyer !</span>
+            <span class="volt-text volt-submit__hint" data-i18n="candidate-(opens your email editor)">(ouvre votre editor de courriel)</span>  
+          </button>
+        </section>       
+      </form>
+      
+    </div>
+  </body>
+</html>
