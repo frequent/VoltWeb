@@ -729,12 +729,17 @@
     // start/entry point, initial render call and global error handler
     .declareService(function () {
       var gadget = this;
+      var dict = gadget.property_dict;
 
       if (getCookie("init") === null) {
         setCookie("init", 1, 1);
       }
       if (getCookie("consent") === null) {
-        gadget.property_dict.consent_wrapper.classList.remove(HIDDEN);
+
+        // quick fix, ensure cookie expiring doesn't break page
+        if (dict.consent_wrapper) {
+          dict.consent_wrapper.classList.remove(HIDDEN);
+        }
       }
 
       return new RSVP.Queue()
