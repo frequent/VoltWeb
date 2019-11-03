@@ -47,7 +47,8 @@
         "available_language_list": [
           {"id": "en", "i18n": "English", "text": "English"},
           {"id": "fr", "i18n": "French", "text": "French"}
-        ]
+        ],
+        "grid_config": {"limit": [0,12]}
       };
       if (window.document.cookie.match('(^|;) ?init=([^;]*)(;|$)')) {
         window.document.getElementsByTagName("html")[0].classList.add("volt-override-splash");
@@ -139,11 +140,11 @@
 
         <div class="volt-content__spacer"></div>
 
-        <!--h4 class="volt-footer__header volt-newsreel__header" data-i81n="landing-Latest News">Dernières nouvelles</h4-->
-        <!--div data-gadget-url="../../../../component/gadget_grid.html"
+        <h4 class="volt-footer__header volt-newsreel__header" data-i81n="landing-Latest News">Latest News</h4>
+        <div data-gadget-url="../../../../component/gadget_grid.html"
           data-gadget-scope="grid"
           data-gadget-sandbox="public">
-        </div-->
+        </div>
 
         <div class="volt-content__spacer"></div>
         <h4 class="volt-footer__header volt-newsreel__header" data-i18n="landing-In the Media">Dans les médias</h4>
