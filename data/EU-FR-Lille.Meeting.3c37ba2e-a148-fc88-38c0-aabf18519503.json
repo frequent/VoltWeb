@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "3c37ba2e-a148-fc88-38c0-aabf18519503",
+  "file_name": "EU-FR-Lille.Meeting.3c37ba2e-a148-fc88-38c0-aabf18519503.json",
+  "reference": "EU-FR-Lille.Meeting.Digestif.Politique.2019.11.05",
+  "img_url": "../../../../img/FR-Graphic.Lille.Banner.Digestif.Politique.min.png",
+  "thumb_url": "../../../../img/FR-Graphic.Lille.Banner.Digestif.Politique.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Political Digestive",
+      "description": "Let's meet after all the meetings are done to discuss the local elections.",
+      "text_content": "Too many meetings at the same time ? No problem ! Let's meet aftwards for a 'political digestive'. Which options for the local elections ? The possibility to create a citizen list ? What points for a programme ? There are many topics we want to talk about so join us and share your ideas." 
+    },
+    "fr": {
+      "title": "Volt Lille - Digestif Politique",
+      "description": "Rendez-vous tous après que toutes les autres réunions aient été faites pour parler des élections municipales",
+      "text_content": "Trop de réunions en même temps ? Pas de problème ! On se voit après pour un 'digestif politique'. Quelles options pour les élections municipales ? La possibilité de créer une liste participative à Lille ? Quelles de points pour le programme ? Il n'y a pas mal de sujets à discuter, donc venez et partagez vos idées."
+    }
+  },
+  "start_date": "2019-11-05 20:30:00 GMT+2",
+  "stop_date": "2019-11-05 22:00:00 GMT+2",
+  "release_date": "2019-11-03 20:11 GMT+2",
+  "location": {
+    "coordinates": [50.632751, 3.063383],
+    "title": "Café Citoyens",
+    "physical_address": "7 Place du Vieux Marché aux Chevaux",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/1429110787246746/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/266177256/",
+      "evensi_url": "https://www.evensi.fr/lessive-politique-wash/352196945"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

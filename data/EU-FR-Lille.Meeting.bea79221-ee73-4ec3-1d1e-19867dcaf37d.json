@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "49b0f84a-15c6-de56-91a0-2691c1582333",
+  "file_name": "EU-FR-Lille.Meeting.bea79221-ee73-4ec3-1d1e-19867dcaf37d.json",
+  "reference": "EU-FR-Lille.Meeting.Assemble.Generale.Volt.Belgique.2019.11.09",
+  "img_url": "../../../../img/FR-Graphics.Volt.Belgique.Assemble.Generale.jpg",
+  "thumb_url": "../../../../img/FR-Graphics.Volt.Belgique.Assemble.Generale.360w.jpg",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Belgium - General Assembly",
+      "description": "Let's hop over the border and support the Belgium Volt chapter at their general assembly",
+      "text_content": "The general assembly of our neighbours in Belgium is approaching quckly. Being in a European movement also means supporting other chapters, so let's go and visit! For everyone from Lille wishing to join to go to Brussels, please send me a message, so that we can organize the round trip together." 
+    },
+    "fr": {
+      "title": "Volt Belgique - Assemblé Générale",
+      "description": "Sautons de l'autre côté de la frontière et soutenons le chapitre Volt Belgique lors de leur assemblée générale.",
+      "text_content": "L'assemblée générale de nos voisins en Belgique approche en grands pas. D'être dans un mouvement européen signifie aussi de soutenir d'autres chapitres, alors allons-nous ! Pour tous les Lillois.e.s désireux d'y aller, merci de m'envoyer un message, afin que nous puissions organiser l'aller-retour ensemble."
+    }
+  },
+  "start_date": "2019-11-09 09:30:00 GMT+2",
+  "stop_date": "2019-11-09 17:00:00 GMT+2",
+  "release_date": "2019-11-03 20:00 GMT+2",
+  "location": {
+    "coordinates": [50.637004, 3.063907],
+    "title": "Pianofabriek",
+    "physical_address": "Rue du Fort 35",
+    "city": "Saint-Gilles",
+    "zip": "1060",
+    "country": "Belgium"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/2371683123092606/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/266177097",
+      "evensi_url": ""
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}
