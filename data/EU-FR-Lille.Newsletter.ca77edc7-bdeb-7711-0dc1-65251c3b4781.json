@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "ca77edc7-bdeb-7711-0dc1-65251c3b4781",
+  "file_name": "EU-FR-Lille.Newsletter.ca77edc7-bdeb-7711-0dc1-65251c3b4781",
+  "reference": "EU-FR-Lille.Newsletter.2019-11-03",
+  "title": "Volt Lille Newsletter, Semaine #44",
+  "img_url": "../../../../img/volt_lille_hebdo_512x256.44.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x256.44.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #44 - The options",
+      "description": "Aside from trying to finish our programme, this week we'll be busy sorting out our options for the municipal elections. We'll meet with a few other parties and have to determine and whether we'll be able to find 61 citizen candidates who are willing to put their name on our list with the first dozen or so being aware that they might get elected. May we live in interesting times !",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #44 - Les options",
+      "description": "En plus d'essayer de terminer notre programme, cette semaine, nous serons investies à trier nos options pour les élections municipales. Nous rencontrerons d'autres partis afin d'échanger et nous devrons déterminer si nous serons en mesure de trouver les 61 candidats citoyens prêts à inscrire leur nom sur notre liste - la première douzaine étant conscient qu'ils pourraient être élus. Les temps intéressants !",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-11-03 20:00:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-11-03 20:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-11-03.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-11-03.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}

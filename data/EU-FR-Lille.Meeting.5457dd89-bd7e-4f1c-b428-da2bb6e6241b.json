@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "5457dd89-bd7e-4f1c-b428-da2bb6e6241b",
+  "file_name": "EU-FR-Lille.Meeting.5457dd89-bd7e-4f1c-b428-da2bb6e6241b.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Lessive.Politique.2019-11-10",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Lessive.Politique.2019-09-08.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Lessive.Politique.2019-09-21.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Political Laundry",
+      "description": "Giving a different spin to political discussions",
+      "text_content": "No idea what to do on a sunday morning? Join us for political laundry! 43 minutes at 60⁰ (and another 30 for the dryer) to talk about local politics and the upcoming municipal elections, your wishes, your ideas and proposals. Join our open discussion, we'll only be setting the programm on our washing machine, so you will have the word." 
+    },
+    "fr": {
+      "title": "Volt Lille - Lessive Politique",
+      "description": "Une nouvelle manière de discuter de la politique",
+      "text_content": "Aucune idée de ce que vous voulez faire dans un dimanche matin ? Faisons la lessive politique ! 43 minutes à 60⁰ (et encore 30 minutes dans le séchoir) pour parler la politique locale, les élections municipales à venir, vos souhaits, idées et propositions. Discussion ouverte, nous choisissons seulement le programme de notre machine à laver, donc rejoignez-nous, c'est à vous la parole."
+    }
+  },
+  "start_date": "2019-11-10 10:00:00 GMT+2",
+  "stop_date": "2019-11-10 12:00:00 GMT+2",
+  "release_date": "2019-11-03 20:00 GMT+2",
+  "location": {
+    "coordinates": [50.629791, 3.055355],
+    "title": "Wash&Co",
+    "physical_address": "151 Rue Léon Gambetta",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/457076921826713/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/266176591/",
+      "evensi_url": "https://www.evensi.fr/volt-lille-lessive-politique-wash-laverie-gourmande/349174272"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}
