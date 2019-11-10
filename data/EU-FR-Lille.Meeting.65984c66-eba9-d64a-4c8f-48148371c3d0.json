@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "65984c66-eba9-d64a-4c8f-48148371c3d0",
+  "file_name": "EU-FR-Lille.Meeting.65984c66-eba9-d64a-4c8f-48148371c3d0.json",
+  "reference": "EU-FR-Lille.Meeting.Reunion.Publique.2019-11-14",
+  "img_url": "../../../../img/FR-Graphics.Lille.Banner.Reunion.Politique.min.png",
+  "thumb_url": "../../../../img/FR-Graphics.Lille.Banner.Reunion.Politique.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille - Public Meet & Greet",
+      "description": "Political parties in Lille seem to pretend to be citizen movements - so let the citizen movement be a political party",
+      "text_content": "If you are curious on how to help us create a participatory list based on European citizenship with an ambitious programme for the municipal elections next year - come and visit us on our public meet&greet."
+    },
+    "fr": {
+      "title": "Volt Lille - Réunion Publique",
+      "description": "Les partis politiques à Lille deviennent mouvements de citoyens pour les élections municipales - donc les citoyens deviennent parti politique",
+      "text_content": "Si vous êtes curieux de nous aider à montrer une liste participative autour d'une citoyenneté européenne ainsi qu'un programme ambitieux pour les élections l'an prochaine - rejoignez-nous pour notre réunion politique."
+    }
+  },
+  "start_date": "2019-11-14 18:30:00 GMT+2",
+  "stop_date": "2019-11-14 21:30:00 GMT+2",
+  "release_date": "2019-11-10 19:00 GMT+2",
+  "location": {
+    "coordinates": [50.627659, 3.064498],
+    "title": "L'Ecart",
+    "physical_address": "36, Rue Jean Bart",
+    "city": "Lille",
+    "zip": "59000",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/1344596352376960/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/266357914/",
+      "evensi_url": "https://www.evensi.fr/volt-lille-reunion-politique-ecart/353096925"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "009eb161-a896-ead8-5c2d-1b2d17203204",
+  "file_name": "EU-FR-Lille.Meeting.009eb161-a896-ead8-5c2d-1b2d17203204.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Nous.Toutes.Lille.2019-11-23",
+  "img_url": "../../../../img/FR-Graphic.Lille.Marche.Nous.Toutes.Lille.min.png",
+  "thumb_url": "../../../../img/FR-Graphic.Lille.Marche.Nous.Toutes.Lille.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Capture the Flag - Marche Nous Toutes Lille",
+      "description": "We're marching against sexist and sexual violence.",
+      "text_content": "On the 23th of November, Lille is marching against sexist and sexual violence - 'Nous Toutes Lille'. We'll participate at the march with a small team and as usual it's 'Capture the flag', meaning find us in the crowd and tell us what you would change to reduce violence." 
+    },
+    "fr": {
+      "title": "Capture du drapeau - Marche Nous Toutes Lille",
+      "description": "Nous marchon avec Nous Toutes Lille contre les violences sexistes et sexuelles.",
+      "text_content": "Le 23 novembre sera la Marche Nous Toutes Lille pour dire stop aux violences sexistes et sexuelles. Nous participons à la marche avec une équipe - capturez notre drapeau et donnez vos propositions qu'est-ce que vous voulez changer pour diminuer les violences."
+    }
+  },
+  "start_date": "2019-11-23 14:00:00 GMT+2",
+  "stop_date": "2019-11-23 17:00:00 GMT+2",
+  "release_date": "2019-11-10 19:00 GMT+2",
+  "location": {
+    "coordinates": [50.637004, 3.063907],
+    "title": "Grande Place",
+    "physical_address": "Place Charles de Gaulle, Furet du Nord",
+    "city": "Lille",
+    "zip": "59800",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/710583099447129/",
+      "meetup_url": "https://www.meetup.com/voltlille/events/266359446/",
+      "evensi_url": ""
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

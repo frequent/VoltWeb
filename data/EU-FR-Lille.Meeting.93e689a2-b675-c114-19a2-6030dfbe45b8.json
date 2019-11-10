@@ -1,0 +1,47 @@
+{
+  "type": "event",
+  "event_type": "Meeting",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "93e689a2-b675-c114-19a2-6030dfbe45b8",
+  "file_name": "EU-FR-Lille.Meeting.93e689a2-b675-c114-19a2-6030dfbe45b8.json",
+  "reference": "EU-FR-Lille.Meeting.Volt.Capture.Du.Drapeau.2019-11-23",
+  "img_url": "../../../../img/FR-Graphic.Lille.S.Amuser.Au.Musee.min.png",
+  "thumb_url": "../../../../img/FR-Graphic.Lille.S.Amuser.Au.Musee.360w.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Musing in the museum - and talking culture",
+      "description": "Modern art. Electronic Music. And we're talking culure.",
+      "text_content": "The 9th electronique night is scheduled for next Wednesday at the LaM Museum of Modern Art in Villeneuve d'Ascq (19h00-0h00). Entree is free and there is a free shuttle going from Republique/Beaux Arts. A treat for eyes and ears for all lovers of art. We're also looking for ideas to add to our new approach of cultural activities in Lille - less external make-up, more interal activities and developing the character of Lille. Join us and let us know what you think." 
+    },
+    "fr": {
+      "title": "S'amuser au musée - et parler de la culture",
+      "description": "L'art moderne. La musique électronique. On parle de la culture.",
+      "text_content": "Ce mercredi il sera la 9e nuit électronique dans le musée Lam à Villeneuve-d'Ascq (7h00-00h00). L'entrée ainsi la navette au départ de République/Beaux-Arts sont gratuites. Les amoureux de la culture, venez et profitez de l'art moderne et acoustique en même temps. Nous cherchons aussi encore les idées pour une nouvelle approche de la culture à Lille - moins de maquillage externe, plus d'activités et caractère de la ville. Donnez vos propositions, vous en faites partie."
+    }
+  },
+  "start_date": "2019-11-13 21:00:00 GMT+2",
+  "stop_date": "2019-11-13 23:59:00 GMT+2",
+  "release_date": "2019-11-10 19:00 GMT+2",
+  "location": {
+    "coordinates": [50.638460, 3.150323],
+    "title": "LaM, Lille Métropole Musée d'art moderne, d'art contemporain",
+    "physical_address": "1 Allée du Musée",
+    "city": "Villeneuve-d'Ascq",
+    "zip": "59650",
+    "country": "France"
+  },
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/events/2563693570405425",
+      "meetup_url": "https://www.meetup.com/voltlille/events/266357495/",
+      "evensi_url": "https://www.evensi.fr/amuser-musee-culture-lam-lille-metropole-art-moderne-contemporain-brut/353092825"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}
