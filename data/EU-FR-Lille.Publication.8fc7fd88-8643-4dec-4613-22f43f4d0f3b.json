@@ -5,8 +5,7 @@
   "event_origin": "EU/FR/Lille",
   "id": "8fc7fd88-8643-4dec-4613-22f43f4d0f3b",
   "file_name": "EU-FR-Lille.Publication.8fc7fd88-8643-4dec-4613-22f43f4d0f3b.json",
-  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Mobilite.2019-07-01",
-  "title": "Lille Municipales 2020 - Propositions Mobilité",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Mobilité.2019-10-26",
   "img_url": "",
   "thumb_url": "",
   "category_dict": {},
@@ -14,30 +13,30 @@
   "keyword_dict": {},
   "content_dict": {
     "en": {
-      "title": "Lille Municipal Elections 2020 - Proposals Mobility",
-      "description": "Ideas for a less car dependent and more citizen-centric transportation system.",
+      "title": "Lille Municipals 2020 - Mobility without cars",
+      "description": "Put Lille and the MEL as an example of a region in transition to a society less dependent on cars by making public transport the backbone of urban mobility - both affordable and encouraged, innovative and inclusive",
       "text_content": ""
     },
     "fr": {
-      "title": "Lille Municipales 2020 - Propositions Mobilité",
-      "description": "Les idées pour un système de transport plus axé sur les citoyens et moins dépendant dans les voitures.",
+      "title": "Lille Municipales 2020 - La Mobilité - sans voitures",
+      "description": "Mettre Lille et la MEL un exemple d'une région en transition à un sociètè moins dépendant de voitures en faisant les transports en commun le colonne vertébrale de la mobilité urbaine - à la fois abordable et incité, à la fois innovante et inclusive",
       "text_content": ""
     }
   },
   "start_date": "",
   "stop_date": "",
-  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {},
     "document_dict": {
       "fr": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Mobilite.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Proposition.Mobilite.v26.10.2019.pdf",
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Mobilite.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Proposition.Mobilite.v26.10.2019.pdf",
         "mime-type": "application/pdf"
       }
     }

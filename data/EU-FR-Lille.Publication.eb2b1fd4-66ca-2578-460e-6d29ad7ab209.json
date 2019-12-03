@@ -5,8 +5,7 @@
   "event_origin": "EU/FR/Lille",
   "id": "eb2b1fd4-66ca-2578-460e-6d29ad7ab209",
   "file_name": "EU-FR-Lille.Publication.eb2b1fd4-66ca-2578-460e-6d29ad7ab209.json",
-  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Gestion.Dechets.2019-07-01",
-  "title": "Lille Municipales 2020 - Propositions Gestion Déchets",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Proprete.2019-07-01",
   "img_url": "", 
   "thumb_url": "",
   "category_dict": {},
@@ -14,30 +13,30 @@
   "keyword_dict": {},
   "content_dict": {
     "en": {
-      "title": "Lille Municipal Elections 2020 - Proposals Waste Management",
-      "description": "Our collection of ideas how to make Lille a cleaner city and work towards reducing our overall waste.",
+      "title": "Lille Municipals 2020 - Zero Waste Lille",
+      "description": "To make Lille the first 'zero waste' city in France by finding innovative and incentive measures to significantly reduce and recover household waste and waste in companies and the construction sector. In addition, to make Lille a clean city, to change the feelings and behaviours of visitors and residents.",
       "text_content": ""
     },
     "fr": {
-      "title": "Lille Municipales 2020 - Propositions Gestion Déchets",
-      "description": "Notre collection de propositions comment nettoyer Lille et travailler vers la réduction des déchets et générale.",
+      "title": "Lille Municipales 2020 - La ville 'Zéro déchets'",
+      "description": "Exercer pour Lille de devenir la première ville 'zéro déchets' en France en trouvant des mesures innovantes et incitants pour réduire et valoriser significativement les ordures ménagers et les déchets dans les entreprises et le secteur de construction. En plus, rendre Lille une ville propre, pour changer les sentiments et comportements des visiteurs et résidents.",
       "text_content": ""
     }
   },
   "start_date": "",
   "stop_date": "",
-  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {},
     "document_dict": {
       "fr": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Proprete.v06.10.2019.pdf",
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Gestion.Dechets.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Proprete.v06.10.2019.pdf",
         "mime-type": "application/pdf"
       }
     }

@@ -5,8 +5,7 @@
   "event_origin": "EU/FR/Lille",
   "id": "a6377fb1-504c-dc93-d729-ea5f99cad0b0",
   "file_name": "EU-FR-Lille.Publication.a6377fb1-504c-dc93-d729-ea5f99cad0b0.json",
-  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Espaces.Verts.2019-07-02",
-  "title": "Lille Municipales 2020 - Propositions Espaces Verts",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Urbanism.2019-10-26",
   "img_url": "",
   "thumb_url": "",
   "category_dict": {},
@@ -14,30 +13,30 @@
   "keyword_dict": {},
   "content_dict": {
     "en": {
-      "title": "Lille Municipal Elections 2020 - Proposals Green Spaces",
-      "description": "Proposals for Lille to one day actually qualify for being a green capital.",
+      "title": "Lille Municipals 2020 - Green Urbanism",
+      "description": "Meet Lille's ambitions to be a green capital and find innovative ways to add greenery to the urban landscape to capture carbon emissions, reduce the risk of urban heat islands and create much-needed spaces and allow citizens to breathe.",
       "text_content": ""
     },
     "fr": {
-      "title": "Lille Municipales 2020 - Propositions Espaces Verts",
-      "description": "Propositions pour Lille de devenir une vraie capital verte à l'avenir",
+      "title": "Lille Municipales 2020 - L’Urbanisme Vert",
+      "description": "Répondre aux ambitions de Lille d'être une capitale verte et trouver des pistes innovantes comment ajouter le verdure dans le paysage urbain pour capter les émissions de carbone, réduire le risque des îlots de chaleur urbains et pour créer les espaces tant attendus et permettre aux citoyens à respirer.",
       "text_content": ""
     }
   },
   "start_date": "",
   "stop_date": "",
-  "release_date": "2019-07-02 19:00:00 GMT+2",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {},
     "document_dict": {
       "fr": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Espaces.Verts.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Urbanism.v26.10.2019.pdf",
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Espaces.Verts.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Urbanism.v26.10.2019.pdf",
         "mime-type": "application/pdf"
       }
     }

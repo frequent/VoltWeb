@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "a3c008dd-c945-8be1-ea6d-19d2ace4852b",
+  "file_name": "EU-FR-Lille.Publication.a3c008dd-c945-8be1-ea6d-19d2ace4852b.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Agriculture.Urbaine.2019-11-15",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Urban Agriculture",
+      "description": "Adopt the best practices of other European cities and participate in MUFPP 1 2 in order to integrate agriculture and biodiversity into the city. The objectives are to quantify demand, install short-distance infrastructure and provide financial incentives for peri-urban farmers and citizens to invest in greater food self-sufficiency.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - L’agriculture urbaine",
+      "description": "Adopter les meilleures pratiques des autres villes européennes et participer au MUFPP 1 2 afin d'intégrer l'agriculture et la biodiversité dans la ville. Les objectifs sont de quantifier la demande, d'installer une infrastructure sur courte distance et de mettre en place les incitations financières aux agriculteurs périurbaines ainsi qu'aux citoyens de s'investir vers plus d'autonomie alimentaire.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Agriculture.Urbaine.v15.11.2019.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Agriculture.Urbaine.v15.11.2019.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
