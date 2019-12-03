@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0f202c75-70c5-8a53-1d9d-411c3fd64805",
+  "file_name": "EU-FR-Lille.Publication.0f202c75-70c5-8a53-1d9d-411c3fd64805.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Emploi.2019-11-27",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Local Employment",
+      "description": "Focus trade development policy on creating an administrative environment that attracts business and helps entrepreneurs create new businesses while creating opportunities for low-skilled workers. Make participation in European research on urban development a priority for Lille and orient economic policies towards sustainability, local employment and greater security for the weakest actors on the labour market.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - L’emploi dans l'économie locale",
+      "description": "Concentrer la politique du développement commercial sur la création d'un environnement administratif qui attire les entreprises et qui aide les entrepreneurs à créer de nouvelles entreprises tout en créant des possibilités pour les travailleurs peu qualifiés. Faire de la participation à la recherche européenne sur le développement urbain une priorité pour Lille et orienter les politiques économiques vers la durabilité, l'emploi local et une plus grande sécurité pour les acteurs les plus faibles du marché du travail.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Economie.Locale.v27.11.2019.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Economie.Locale.v27.11.2019.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

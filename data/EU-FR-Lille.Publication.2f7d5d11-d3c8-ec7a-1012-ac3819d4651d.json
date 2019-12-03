@@ -5,7 +5,7 @@
   "event_origin": "EU/FR/Lille",
   "id": "2f7d5d11-d3c8-ec7a-1012-ac3819d4651d",
   "file_name": "EU-FR-Lille.Publication.2f7d5d11-d3c8-ec7a-1012-ac3819d4651d.json",
-  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Logements.2019-07-01",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Logements.2019-10-11",
   "img_url": "",
   "thumb_url": "",
   "category_dict": {},
@@ -13,30 +13,30 @@
   "keyword_dict": {},
   "content_dict": {
     "en": {
-      "title": "Lille Municpial Elections 2020 - Proposals Housing",
-      "description": "Summary of our proposals for a more ecologic, social and holistic housing policy.",
+      "title": "Lille Municpials 2020 - Housing based on needs",
+      "description": "Ensure that the development of Lille provides a home for all and the space for a growing citizenship - without sacrificing the quality of life, the waste of arable land and without car travel needing to compensate for negligent urban planning.",
       "text_content": ""
     },
     "fr": {
-      "title": "Lille Municipales 2020 - Propositions Logements",
-      "description": "Résumé des nos propositions pour une politique de logements plus sociale, plus écologique et plus holistique.",
+      "title": "Lille Municipales 2020 - Les Logements à la hauteur de besoin",
+      "description": "Rassurer que le développement de Lille fournit un domicile pour toutes et tous et l'espace nécessaire pour une citoyenneté en croissance - sans sacrifier la qualité de vivre, le gaspillage des terres arables et sans que les déplacements par voiture ont besoin de compenser pour un urbanisme négligent.",
       "text_content": ""
     }
   },
   "start_date": "",
   "stop_date": "",
-  "release_date": "2019-07-01 19:00:00 GMT+2",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {},
     "document_dict": {
       "fr": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Logements.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Proposition.Logements.v10.11.2019.pdf",
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "../../../../doc/FR-Lille.Campagne.Municipale.2020.Propositions.Logements.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Proposition.Logements.v10.11.2019.pdf",
         "mime-type": "application/pdf"
       }
     }

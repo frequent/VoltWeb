@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "aae7e84a-2cf1-6153-7c35-42277d79cae1",
+  "file_name": "EU-FR-Lille.Publication.aae7e84a-2cf1-6153-7c35-42277d79cae1.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Sécurité.2019-11-27",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Security without Surveillance",
+      "description": "Make Lille a city where everyone feels safe - without video surveillance and increased police violence, but with an emphasis on deterring offenders, caring for the homeless and enforcing existing rules and regulations by an attentive municipal police force.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - La Sécurité sans surveillance",
+      "description": "Faire Lille une ville où tout le monde se sent en sécurité - sans vidéosurveillance et l'augmentation de la violence policière, mais en mettant l'accent sur la dissuasion des délinquants, la prise en charge des personnes sans-abri et l'application des règles et réglementations existantes par une police municipale attentive.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Sécurité.v27.11.2019.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Sécurité.v27.11.2019.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

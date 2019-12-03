@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "09257f5a-f251-c33c-bda3-b9cb6e5ab236",
+  "file_name": "EU-FR-Lille.Publication.09257f5a-f251-c33c-bda3-b9cb6e5ab236.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Service.Publique.2019-11-27",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Citizens treated like customers",
+      "description": "Digitize local public services and their accessibility so that they no longer require appointments, in-person attendance during public opening hours or processing fees. Transparent processes, accountability of actors and focus on face-to-face services should all be part of a new definition of public services. A city that cares for its citizens and businesses as well as customers can also distinguish itself in terms of attractiveness.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Les citoyens bien traités comme des clients",
+      "description": "Digitaliser les services publics locaux et leur accessibilité pour qu'ils n'aient plus exigé des rendez-vous, de la présence en personne pendant les heures d'ouverture au public ou des frais de traitement. Les processus transparents, la responsabilisation des acteurs et l'accent aux services rendent face-à-face devraient tous faire partie d'une nouvelle définition de services publics. Une ville qui prend soin pour ses citoyens et ses entreprises comme des clients peut également se distinguer en terme de l'attractivité.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Service.Publique.v26.10.2019.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Service.Publique.v26.10.2019.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

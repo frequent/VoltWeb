@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "60427341-d8e0-7a21-8021-1a6569b32afe",
+  "file_name": "EU-FR-Lille.Publication.60427341-d8e0-7a21-8021-1a6569b32afe.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Éducation.2019-11-27",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Learning for Life !!",
+      "description": "The third industrial revolution is devouring its children - it is necessary to have an education adapted to this reality - which trains individuals whose personalities flourish in harmony with their interests and skills - capable of social interaction and curious to train themselves throughout life. Citizens who know how to take responsibility for their families, the community and thus the planet.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - L'école - un lieu de vie !!",
+      "description": "La troisième révolution industrielle dévore ses enfants - il faut avoir une éducation adaptée à cette réalité - qui forme des individus à la personnalité épanouie en harmonie avec leurs intérêts et compétences - capables d'interaction sociale et curieux de se former tout au long de la vie. Les citoyens qui savent prendre leur responsabilité pour leurs familles, la communauté et ainsi pour la planète.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-03 06:00:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Education.v25.10.2019.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Éducation.v25.10.2019.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
