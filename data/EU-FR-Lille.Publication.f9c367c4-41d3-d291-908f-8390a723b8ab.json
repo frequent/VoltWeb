@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "f9c367c4-41d3-d291-908f-8390a723b8ab",
+  "file_name": "EU-FR-Lille.Publication.f9c367c4-41d3-d291-908f-8390a723b8ab.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Culture.Et.Loisirs",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Un eldorado culturel",
+      "description": "Turn the city's cultural and leisure capacities inward - by launching initiatives to promote the internationality and different cultures that exist in the city. Support exchanges and integration between neighbourhoods and create living spaces for all.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Un eldorado culturel",
+      "description": "Tourner les capacités de la ville en terme de culture et de loisirs vers l’intérieur - en lançant les initiatives inciter la promotion l’internationalité et les cultures différentes qu’existent dans la ville. Appuyer les échanges et l'intégration entre les quartiers et créer des espaces à vivre pour tous et toutes.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-14 18:12:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Culture.Et.Loisirs.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Culture.Et.Loisirspdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}

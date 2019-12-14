@@ -5,7 +5,7 @@
   "event_origin": "EU/FR/Lille",
   "id": "09257f5a-f251-c33c-bda3-b9cb6e5ab236",
   "file_name": "EU-FR-Lille.Publication.09257f5a-f251-c33c-bda3-b9cb6e5ab236.json",
-  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Service.Publique.2019-11-27",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Services.Publics.2019-11-27",
   "img_url": "", 
   "thumb_url": "",
   "category_dict": {},
@@ -25,18 +25,18 @@
   },
   "start_date": "",
   "stop_date": "",
-  "release_date": "2019-12-03 06:00:00 GMT+2",
+  "release_date": "2019-12-14 18:12:00 GMT+2",
   "location": {},
   "scope": "EU/FR/Lille",
   "attachment_dict": {
     "social_media_url_dict": {},
     "document_dict": {
       "fr": {
-        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Service.Publique.v26.10.2019.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Service.Public",
         "mime-type": "application/pdf"
       },
       "en": {
-        "document_url": "../../../../doc/FR-Campagne.Municipale.Lille.2020.Propositions.Service.Publique.v26.10.2019.pdf",
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Service.Public",
         "mime-type": "application/pdf"
       }
     }
