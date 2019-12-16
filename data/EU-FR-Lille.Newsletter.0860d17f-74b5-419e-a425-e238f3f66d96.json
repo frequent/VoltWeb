@@ -1,0 +1,46 @@
+{
+  "type": "event",
+  "event_type": "Newsletter",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "0860d17f-74b5-419e-a425-e238f3f66d96",
+  "file_name": "EU-FR-Lille.Newsletter.0860d17f-74b5-419e-a425-e238f3f66d96.json",
+  "reference": "EU-FR-Lille.Newsletter.2019-12-15",
+  "title": "Volt Lille Newsletter, Semaine #50",
+  "img_url": "../../../../img/volt_lille_hebdo_512x256.50.min.png",
+  "thumb_url": "../../../../img/volt_lille_hebdo_512x256.50.min.png",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Volt Lille Newsletter #50 - Let's go to the Municipals",
+      "description": "A lot of things happened the last weeks and we do not want to finish the year on a silent note - quite the opposite : we'll be participating in the municipal elections !",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Volt Lille Bulletin #50 - Aux Municipales !",
+      "description": "Beaucoup de choses se sont passées ces dernières semaines et nous ne voulons pas finir l'année en silence, bien au contraire, nous allons participer aux élections municipales !",
+      "text_content": ""
+    }
+  },
+  "start_date": "2019-12-15 23:59:00 GMT+2",
+  "stop_date": "",
+  "release_date": "2019-12-15 23:59:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-12-15.html",
+        "mime-type": "text/html"
+      },
+      "en": {
+        "document_url": "../../../../doc/EU-FR-Lille.Bulletin.2019-12-15.html",
+        "mime-type": "text/html"
+      }
+    }
+  },
+  "reference_list": []
+}
