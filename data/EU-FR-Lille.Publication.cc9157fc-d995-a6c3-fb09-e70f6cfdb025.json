@@ -1,0 +1,46 @@
+FR-Campagne.Municipale.Lille.2020.Propositions.Energie.Renouvelable.pdf
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "cc9157fc-d995-a6c3-fb09-e70f6cfdb025",
+  "file_name": "EU-FR-Lille.Publication.cc9157fc-d995-a6c3-fb09-e70f6cfdb025.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Propositions.Energie.Renouvelable",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Moins de consommation, plus d'énergies renouvelables",
+      "description": "Create a regulatory environment that allows both the creation of renewable energy on site, local distribution and consumption. The objective should be both to significantly reduce our energy consumption and to create alternative and local energy sources.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - Moins de consommation, plus d'énergies renouvelables",
+      "description": "Créer un environnement réglementaire qui permette à la fois la création d'énergie renouvelable sur place, la distribution locale ainsi que la consommation. L'objectif devrait être à la fois de réduire considérablement notre consommation d'énergie et de créer des sources d'énergie alternatives et locales.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-16 12:01:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FFR-Campagne.Municipales.Lille.2020.Propositions.Energie.Renouvelable.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Energie.Renouvelable.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
