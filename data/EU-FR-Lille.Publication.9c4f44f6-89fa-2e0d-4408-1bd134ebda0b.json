@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "9c4f44f6-89fa-2e0d-4408-1bd134ebda0b",
+  "file_name": "EU-FR-Lille.Publication.9c4f44f6-89fa-2e0d-4408-1bd134ebda0b.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Democratie.Participative.2019-11-15",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Participator Democracy",
+      "description": "Work to establish a new style of municipal politics in Lille - more transparent, more accessible and more democratic, focusing on elected representatives rather than concentrating power on omnipresent and omnipotent mayors.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - La démocratie participative",
+      "description": "Travailler à l'établissement d'un nouveau style de politique municipale à Lille - plus transparent, plus accessible et plus démocratique, en mettant l'accent sur les représentants élus plutôt que de concentrer les pouvoirs sur des maires omniprésents et omnipotents.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2019-12-19 20:12:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Democratie.Participative.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Democratie.Participative.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
