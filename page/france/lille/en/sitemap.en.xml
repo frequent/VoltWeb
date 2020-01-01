@@ -32,11 +32,6 @@
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://www.voltweb.eu/page/france/lille/en/participate-candidate.html</loc>
-  <lastmod>2019-09-04T20:23:03+00:00</lastmod>
-  <priority>0.90</priority>
-</url>
-<url>
   <loc>https://www.voltweb.eu/page/france/lille/en/participate-events.html</loc>
   <lastmod>2019-09-04T22:41:17+00:00</lastmod>
   <priority>0.90</priority>
@@ -48,11 +43,6 @@
 </url>
 <url>
   <loc>https://www.voltweb.eu/page/france/lille/en/participate-volunteers.html</loc>
-  <lastmod>2019-09-04T23:09:33+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://www.voltweb.eu/page/france/lille/en/participate-start-a-team.html</loc>
   <lastmod>2019-09-04T23:09:33+00:00</lastmod>
   <priority>0.70</priority>
 </url>
@@ -88,11 +78,6 @@
 </url>
 <url>
   <loc>https://www.voltweb.eu/page/france/lille/en/volt-about.html</loc>
-  <lastmod>2019-09-04T20:25:02+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://www.voltweb.eu/page/france/lille/en/volt-blog.html</loc>
   <lastmod>2019-09-04T20:25:02+00:00</lastmod>
   <priority>0.70</priority>
 </url>
