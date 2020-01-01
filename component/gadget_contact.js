@@ -129,7 +129,7 @@
 
       if (action === undefined) {
         queue.push(function () {
-          return gadget.getDestination(dict.scope);
+          return gadget.getDestinationDict(dict.scope);
         });
       }
 
