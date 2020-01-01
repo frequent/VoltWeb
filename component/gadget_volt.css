@@ -948,6 +948,19 @@
   margin-top: -3em;
   padding-right: 20vh;
 }
+@media (max-width: 54em) {
+  .volt-footer__floater {
+    padding-right: 36vh;
+  }
+}
+@media (max-width: 32em) {
+  .volt-footer__floater {
+    float: none;
+    margin-left: .75em;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
 .volt-footer__social-media-link {
   font-size: 1.5em;
   margin: 0 .25em;
@@ -1014,12 +1027,6 @@
     margin-top: 0;
     text-align: center;
   }
-  .volt-footer__floater {
-    float: none;
-    margin: 0;
-    text-align: center;
-    padding-bottom: 1em;
-  }
   .volt-footer__top .volt-navbar__item:before {
     content: "";
     position: absolute;
@@ -1067,7 +1074,7 @@
     font-weight: bold;
     text-align: center;
     color: #612095;
-    right: 3.25em;
+    right: 3.6em;
     bottom: 2em;
     font-size: 2em;
     line-height: 1em;
@@ -1077,13 +1084,14 @@
     right: -3.5em;
   }
   .volt-footer__action .volt-action__banner-message {
-    right: 1em;
-    bottom: 8em;
+    right: 2em;
+    bottom: 10em;
     font-size: 1.5em;
   }
   .volt-footer__action .volt-action__banner-date {
-    bottom: 2em;
-    right: 1.7em;
+    bottom: 3em;
+    right: 3.25em;
+    font-size: 1.65em;
   }
 }
 @media (max-width: 32em) {
@@ -1097,42 +1105,19 @@
   }
   .volt-footer__action .volt-action__banner-date {
     font-size: 1.25em;
-    right: 1.75em;
-    bottom: 2.25em;
+    right: 2em;
+    bottom: 2em;
   }
 }
 
 /* overrides for the calendar-banner */
-@media (max-width: 54em) {
-  .volt-footer__floater {
-    margin-top: -3.2em;
-    padding-right: 34%;
-    padding-right: 23vh;
-  }
-  .volt-action__banner-calendar {
-    width: 20em;
-  }
-}
 @media (max-width: 32em) {
   .volt-action__banner-calendar {
     width: 14em;
   }
-  .volt-footer__floater {
-    float: none;
-    margin-top: 0;
-    /*
-    text-align: left;
-    padding-left: .5em;
-    padding-right: 0;
-    */
-  }
   .volt-footer__header {
     text-align: left;
     padding-left: .5em;
-  }
-  .volt-footer__bottom_content {
-    text-align: left;
-    padding-left: .75em;
   }
 }
 .volt-footer__bottom_content,
