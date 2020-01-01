@@ -1,0 +1,60 @@
+{
+  "type": "event",
+  "event_type": "Person",
+  "event_nature": "Representative",
+  "event_origin": "EU/FR/Lille",
+  "id": "522b5e1e-361d-8a42-4ad6-425f26da6a87",
+  "file_name": "EU-FR-Lille.Person.522b5e1e-361d-8a42-4ad6-425f26da6a87.json",
+  "reference": "EU-FR-Lille.Person.Candidate.Kévin.Gosselin",
+  "img_url": "../../../../img/FR-Images.Lille.Kevin.Gosselin.jpg",
+  "thumb_url": "../../../../img/FR-Images.Lille.Kevin.Gosselin.jpg",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "role": "",
+      "position": "",
+      "title": "Kévin GOSSELIN",
+      "last_name": "Gosselin",
+      "first_name": "Kévin",
+      "age": "23 years old",
+      "profession": "Physiotherapiste",
+      "political_party": "",
+      "nationality": "French",
+      "description": "23yo, French, Physiotherapiste",
+      "text_content": "",
+      "suburb": "Vieux-Lille",
+      "mandates": ""
+    },
+    "fr": {
+      "role": "",
+      "position": "",
+      "title": "Kévin GOSSELIN",
+      "last_name": "Kévin",
+      "first_name": "Gosselin",
+      "age": "23ans",
+      "profession": "Kinésithérapeute",
+      "political_party": "",
+      "nationality": "Francais",
+      "description": "23 ans, Francais, Kinésithérapeute",
+      "text_content": "",
+      "suburb": "Vieux Lille",
+      "mandates": ""    
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2020-01-01 16:59 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/kevin.gosselin.5",
+      "twitter_url": "https://twitter.com/kevin_Gsselin",
+      "instagram_url": ""
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}

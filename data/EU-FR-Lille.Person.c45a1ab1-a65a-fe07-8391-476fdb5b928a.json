@@ -1,0 +1,60 @@
+{
+  "type": "event",
+  "event_type": "Person",
+  "event_nature": "Representative",
+  "event_origin": "EU/FR/Lille",
+  "id": "c45a1ab1-a65a-fe07-8391-476fdb5b928a",
+  "file_name": "EU-FR-Lille.Person.c45a1ab1-a65a-fe07-8391-476fdb5b928a.json",
+  "reference": "EU-FR-Lille.Person.Candidate.Pauline.Juif",
+  "img_url": "../../../../img/FR-Images.Lille.Pauline.Juif.jpg",
+  "thumb_url": "../../../../img/FR-Images.Lille.Pauline.Juif.jpg",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "role": "",
+      "position": "",
+      "title": "Pauline JUIF",
+      "last_name": "Juif",
+      "first_name": "Pauline",
+      "age": "21 years old",
+      "profession": "Student (Informatics and Public Statistics)",
+      "political_party": "",
+      "nationality": "French",
+      "description": "21yo, French, Student",
+      "text_content": "",
+      "suburb": "Moulin",
+      "mandates": ""
+    },
+    "fr": {
+      "role": "",
+      "position": "",
+      "title": "Pauline JUIF",
+      "last_name": "Juif",
+      "first_name": "Pauline",
+      "age": "21ans",
+      "profession": "Étudiante (Numérique & Statistiques Publiques)",
+      "political_party": "",
+      "nationality": "Francaise",
+      "description": "21 ans, Francaise, Étudiante",
+      "text_content": "",
+      "suburb": "Moulin",
+      "mandates": ""    
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2020-01-01 16:59 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {
+      "facebook_url": "https://www.facebook.com/pauline.juif",
+      "twitter_url": "",
+      "instagram_url": "https://www.instagram.com/paulettecacahuete/"
+    }
+  },
+  "document_dict": {},
+  "reference_list": []
+}
