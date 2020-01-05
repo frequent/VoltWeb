@@ -1,0 +1,45 @@
+{
+  "type": "event",
+  "event_type": "Publication",
+  "event_nature": "",
+  "event_origin": "EU/FR/Lille",
+  "id": "09a9ffa6-3e6e-3f06-26e5-e21bb50d5a48.json",
+  "file_name": "EU-FR-Lille.Publication.09a9ffa6-3e6e-3f06-26e5-e21bb50d5a48.json",
+  "reference": "EU-FR-Lille.Publication.Campagne.Municipales.2020.Égalité.2020-01-05",
+  "img_url": "", 
+  "thumb_url": "",
+  "category_dict": {},
+  "contributor_list": {},
+  "keyword_dict": {},
+  "content_dict": {
+    "en": {
+      "title": "Lille Municipals 2020 - Equality between women and men in everyday life",
+      "description": "Help to build a society of gender equality by supporting efforts to increase knowledge and recognition of young people's sexuality, by ambitiously strengthening the inter-ministerial policy on sexuality education, by organizing and increasing the visibility of national education action on sexuality and by empowering other actors and spaces for the socialization of young people outside school.",
+      "text_content": ""
+    },
+    "fr": {
+      "title": "Lille Municipales 2020 - L’égalité Femme Homme dans le quotidien",
+      "description": "Aider à construire une société d’égalité femmes-hommes en soutenant les efforts pour mieux connaitre et reconnaitre la sexualité des jeunes, en renforçant de manière ambitieuse la politique interministérielle d’éducation à la sexualité, en organisant et en renforçant la visibilité de l’action de l’éducation nationale en matière d’éducation à la sexualité et par la responsabilisation des autres espaces clés de socialisation des jeunes hors école.",
+      "text_content": ""
+    }
+  },
+  "start_date": "",
+  "stop_date": "",
+  "release_date": "2020-01-05 22:59:00 GMT+2",
+  "location": {},
+  "scope": "EU/FR/Lille",
+  "attachment_dict": {
+    "social_media_url_dict": {},
+    "document_dict": {
+      "fr": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Egalite.pdf",
+        "mime-type": "application/pdf"
+      },
+      "en": {
+        "document_url": "../../../../doc/FR-Campagne.Municipales.Lille.2020.Propositions.Egalite.pdf",
+        "mime-type": "application/pdf"
+      }
+    }
+  },
+  "reference_list": []
+}
